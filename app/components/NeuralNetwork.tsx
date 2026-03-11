@@ -187,8 +187,8 @@ export default function NeuralNetwork() {
         const dist = Math.sqrt(dx * dx + dy * dy);
         if (dist < mouseRadius && dist > 0) {
           const force = (1 - dist / mouseRadius) * mouseStrength;
-          node.vx += (dx / dist) * force;
-          node.vy += (dy / dist) * force;
+          node.vx -= (dx / dist) * force;
+          node.vy -= (dy / dist) * force;
         }
         node.vx += Math.sin(time + node.pulseOffset) * 0.002;
         node.vy += Math.cos(time * 0.7 + node.pulseOffset) * 0.002;
@@ -249,15 +249,11 @@ export default function NeuralNetwork() {
 
       for (const [i, j, dist] of pairs) {
         const opacity = (1 - dist / maxDist) * 0.35;
-        const midX = (nodes[i].x + nodes[j].x) / 2;
-        const midY = (nodes[i].y + nodes[j].y) / 2;
-        const mouseDist = Math.sqrt((mouse.x - midX) ** 2 + (mouse.y - midY) ** 2);
-        const mouseBoost = mouseDist < mouseRadius ? (1 - mouseDist / mouseRadius) * 0.3 : 0;
         const lineColor = (nodeColors[i] + nodeColors[j]) / 2;
         ctx.beginPath();
         ctx.moveTo(nodes[i].x, nodes[i].y);
         ctx.lineTo(nodes[j].x, nodes[j].y);
-        ctx.strokeStyle = colorStr(lineColor, opacity + mouseBoost);
+        ctx.strokeStyle = colorStr(lineColor, opacity);
         ctx.lineWidth = 0.6;
         ctx.stroke();
       }
