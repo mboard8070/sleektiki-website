@@ -45,7 +45,7 @@ export default function About() {
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="px-3 py-1.5 text-xs rounded-full border border-[var(--surface-border)] text-[var(--text-secondary)] bg-[var(--surface)] font-[family-name:var(--font-geist-mono)]"
+                    className="px-4 py-2 text-xs rounded-full border border-[var(--surface-border)] text-[var(--text-secondary)] bg-[var(--surface)] font-[family-name:var(--font-geist-mono)]"
                   >
                     {tag}
                   </span>

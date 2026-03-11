@@ -150,13 +150,13 @@ export default function Projects() {
         />
 
         {/* Filter tabs */}
-        <ScrollReveal delay={0.1} className="mb-12">
+        <ScrollReveal delay={0.1} className="mb-16">
           <div className="flex gap-2">
             {filters.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className={`px-4 py-2 text-xs rounded-full font-[family-name:var(--font-geist-mono)] tracking-wide transition-all duration-200 ${
+                className={`px-5 py-2.5 text-xs rounded-full font-[family-name:var(--font-geist-mono)] tracking-wide transition-all duration-200 ${
                   filter === f.key
                     ? "bg-[var(--accent)] text-[var(--background)] shadow-[0_0_20px_rgba(0,212,255,0.3)]"
                     : "bg-[var(--surface)] text-[var(--text-secondary)] border border-[var(--surface-border)] hover:border-[var(--accent)]/30"
@@ -232,7 +232,7 @@ function ProjectCard({
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-2 py-0.5 text-[10px] rounded-md bg-[var(--surface-light)] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+              className="px-3 py-1 text-[10px] rounded-md bg-[var(--surface-light)] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
             >
               {tag}
             </span>
