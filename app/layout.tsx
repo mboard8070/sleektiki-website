@@ -33,6 +33,21 @@ export const metadata: Metadata = {
     url: "https://sleektiki.ai",
     siteName: "sleektiki.ai",
     type: "website",
+    images: [
+      {
+        url: "https://sleektiki.ai/images/sleektiki_banner.jpeg",
+        width: 1400,
+        height: 350,
+        alt: "sleektiki.ai banner",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Matthew Board | sleektiki.ai",
+    description:
+      "Technical artist, indie developer, and creative AI researcher.",
+    images: ["https://sleektiki.ai/images/sleektiki_banner.jpeg"],
   },
 };
 
