@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "MAUDE Mobile",
     slug: "maude-mobile",
     description:
-      "A native Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and settings with theme switching. Built with React, Ionic Capacitor, and Tailwind CSS \u2014 a single TypeScript codebase compiled as a native APK.",
+      "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and settings with theme switching. Built with React, Ionic Capacitor, and Tailwind CSS \u2014 a single TypeScript codebase compiled to native iOS and Android apps.",
     tags: ["React", "Capacitor", "Tailwind", "WebSocket", "Opus Codec", "PersonaPlex"],
     category: "ai",
     image: "/images/projects/maude-mobile.png",

@@ -67,11 +67,11 @@ const projects: ProjectDetail[] = [
   {
     slug: "maude-mobile",
     title: "MAUDE Mobile",
-    subtitle: "Native Android Companion App",
+    subtitle: "Native iOS & Android Companion App",
     description: [
-      "A native Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
+      "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
       "Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization using PersonaPlex, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and a settings panel with theme switching and model selection.",
-      "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS — a single TypeScript codebase compiled as a native APK. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile.",
+      "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS — a single TypeScript codebase compiled to native iOS and Android apps. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile.",
     ],
     tags: ["React", "Capacitor", "Tailwind", "WebSocket", "Opus Codec", "PersonaPlex", "xterm.js"],
     hero: "/images/projects/maude-mobile.png",
