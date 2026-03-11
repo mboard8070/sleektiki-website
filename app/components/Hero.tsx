@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import NeuralNetwork from "./NeuralNetwork";
 
 const titles = [
   "Technical Artist",
@@ -25,24 +26,27 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ height: "100vh", display: "flex", alignItems: "flex-end" }}
     >
-      {/* Banner image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/sleektiki_banner.jpeg"
-          alt="Sleek Tiki"
-          className="w-full h-full object-cover object-center"
-        />
-        {/* Dark overlays for readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/50 to-[#050508]/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050508]/70 via-transparent to-[#050508]/70" />
-        {/* Accent glow from the tiki's eyes */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_40%,rgba(0,212,255,0.08)_0%,transparent_60%)]" />
-      </div>
+      {/* Animated neural network background */}
+      <NeuralNetwork />
+
+      {/* Radial vignette overlay */}
+      <div
+        className="fixed inset-0 pointer-events-none"
+        style={{
+          zIndex: 2,
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(5,5,8,0.6) 100%)",
+        }}
+      />
+
+      {/* Bottom fade to page background */}
+      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#050508] to-transparent" style={{ height: "12rem", zIndex: 2 }} />
 
       {/* Content — rule of thirds, lower third of viewport */}
       <div
-        className="relative z-10 w-full"
+        className="relative w-full"
         style={{
+          zIndex: 10,
           paddingBottom: "8vh",
           paddingLeft: "max(1.5rem, 5vw)",
           paddingRight: "max(1.5rem, 5vw)",
@@ -143,11 +147,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Bottom fade to page background */}
-      <div
-        className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#050508] to-transparent"
-        style={{ height: "6rem" }}
-      />
     </section>
   );
 }

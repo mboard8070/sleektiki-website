@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Research from "./components/Research";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Background3DWrapper from "./components/Background3DWrapper";
 
 function Divider() {
   return (
@@ -14,17 +15,20 @@ function Divider() {
 
 export default function Home() {
   return (
-    <main className="relative z-[1]">
-      <Navbar />
-      <Hero />
-      <Projects />
-      <Divider />
-      <Research />
-      <Divider />
-      <Contact />
-      <Divider />
-      <About />
-      <Footer />
-    </main>
+    <>
+      <Background3DWrapper />
+      <main className="relative z-[1]">
+        <Navbar />
+        <Hero />
+        <Projects />
+        <Divider />
+        <Research />
+        <Divider />
+        <Contact />
+        <Divider />
+        <About />
+        <Footer />
+      </main>
+    </>
   );
 }
