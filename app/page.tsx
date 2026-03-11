@@ -17,7 +17,6 @@ export default function Home() {
     <main className="relative z-[1]">
       <Navbar />
       <Hero />
-      <Divider />
       <Projects />
       <Divider />
       <Research />
