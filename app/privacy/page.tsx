@@ -19,7 +19,7 @@ export default function Privacy() {
           </p>
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            Last updated: March 5, 2026
+            Last updated: March 13, 2026
           </p>
         </header>
 
@@ -52,12 +52,54 @@ export default function Privacy() {
               Google Workspace Data
             </h2>
             <p>
-              When the user issues a command that involves a Google service
-              (Gmail, Drive, Sheets, Slides, Calendar, Contacts, or YouTube),
+              When the user issues a command that involves a Google service,
               Maude calls the relevant Google API and displays the response in
               the terminal. API responses are used transiently during the
               session and are not persisted to disk or forwarded to any
               external service.
+            </p>
+            <p className="mt-3">
+              Maude requests access to the following Google services, each for
+              a specific purpose driven by user commands:
+            </p>
+            <ul className="list-disc list-inside mt-3 space-y-2">
+              <li>
+                <strong>Gmail</strong> &mdash; Read, compose, and send emails
+                on the user&apos;s behalf when they issue email-related
+                commands.
+              </li>
+              <li>
+                <strong>Google Drive</strong> &mdash; List, search, read, and
+                upload files so the user can manage their Drive storage from
+                the terminal.
+              </li>
+              <li>
+                <strong>Google Sheets</strong> &mdash; Read and write
+                spreadsheet data when the user requests spreadsheet operations.
+              </li>
+              <li>
+                <strong>Google Slides</strong> &mdash; Create and edit
+                presentations when the user requests slide-related tasks.
+              </li>
+              <li>
+                <strong>Google Calendar</strong> &mdash; View, create, and
+                modify calendar events so the user can manage their schedule.
+              </li>
+              <li>
+                <strong>Google Contacts</strong> &mdash; Look up contact
+                information when the user needs to reference or manage their
+                contacts.
+              </li>
+              <li>
+                <strong>YouTube</strong> &mdash; Search and retrieve video
+                metadata when the user requests YouTube-related queries.
+              </li>
+            </ul>
+            <p className="mt-3">
+              In every case, data is fetched only in direct response to an
+              explicit user command, displayed in the terminal, and discarded
+              at the end of the session. No Google user data is stored,
+              cached, or transmitted to any third party.
             </p>
           </section>
 
