@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Research from "./components/Research";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Background3DWrapper from "./components/Background3DWrapper";
@@ -21,8 +20,6 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Projects />
-        <Divider />
-        <Research />
         <Divider />
         <Contact />
         <Divider />
