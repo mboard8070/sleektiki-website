@@ -99,6 +99,8 @@ const projects: ProjectDetail[] = [
       },
     ],
     links: [
+      { label: "Setup Guide", url: "/projects/maude/setup" },
+      { label: "Documentation", url: "/projects/maude/docs" },
       { label: "GitHub", url: "https://github.com/mboard8070/terminal-llm" },
       { label: "Privacy Policy", url: "/privacy" },
       { label: "Terms of Service", url: "/terms" },
