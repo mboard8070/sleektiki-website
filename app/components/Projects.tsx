@@ -150,13 +150,13 @@ export default function Projects() {
         />
 
         {/* Filter tabs */}
-        <ScrollReveal delay={0.1} className="mb-16">
+        <ScrollReveal delay={0.1} style={{ marginBottom: "4rem" }}>
           <div className="flex gap-2">
             {filters.map((f) => (
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className={`px-5 py-2.5 text-xs rounded-full font-[family-name:var(--font-geist-mono)] tracking-wide transition-all duration-200 ${
+                className={`px-6 py-3 text-xs rounded-full font-[family-name:var(--font-geist-mono)] tracking-wide transition-all duration-200 ${
                   filter === f.key
                     ? "bg-[var(--accent)] text-[var(--background)] shadow-[0_0_20px_rgba(0,212,255,0.3)]"
                     : "bg-[var(--surface)] text-[var(--text-secondary)] border border-[var(--surface-border)] hover:border-[var(--accent)]/30"
@@ -200,9 +200,9 @@ function ProjectCard({
   return (
     <ScrollReveal delay={index * 0.05}>
       <Link href={`/projects/${project.slug}`} className="block h-full">
-      <div className="group relative h-full rounded-xl bg-[var(--surface)] border border-[var(--surface-border)] p-6 transition-all duration-300 hover:border-[var(--accent)]/20 card-glow gradient-border cursor-pointer">
+      <div className="group relative h-full rounded-xl bg-[var(--surface)] border border-[var(--surface-border)] transition-all duration-300 hover:border-[var(--accent)]/20 card-glow gradient-border cursor-pointer" style={{ padding: "1.5rem" }}>
         {/* Thumbnail */}
-        <div className="w-full h-44 rounded-lg bg-[var(--surface-light)] mb-5 overflow-hidden relative">
+        <div className="w-full h-44 rounded-lg bg-[var(--surface-light)] overflow-hidden relative" style={{ marginBottom: "1.5rem" }}>
           <img
             src={project.image}
             alt={project.title}
@@ -228,11 +228,11 @@ function ProjectCard({
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-1.5 mt-auto">
+        <div className="flex flex-wrap gap-2 mt-auto" style={{ paddingTop: "0.25rem" }}>
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className="px-3 py-1 text-[10px] rounded-md bg-[var(--surface-light)] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+              className="px-3 py-1.5 text-[10px] rounded-md bg-[var(--surface-light)] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
             >
               {tag}
             </span>

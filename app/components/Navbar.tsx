@@ -1,6 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const socials = [
@@ -63,10 +65,20 @@ const socials = [
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
+  { href: "/portfolio", label: "Portfolio" },
   { href: "#contact", label: "Contact" },
 ];
 
+function resolveHref(href: string, pathname: string) {
+  // Hash links should point to home page when not on home
+  if (href.startsWith("#") && pathname !== "/") {
+    return `/${href}`;
+  }
+  return href;
+}
+
 export default function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -90,23 +102,27 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-between" style={{ paddingLeft: "max(1.5rem, 5vw)", paddingRight: "max(1.5rem, 5vw)" }}>
-        <a
-          href="#"
+        <Link
+          href="/"
           className="text-lg font-semibold tracking-tight text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors"
         >
           sleektiki<span className="text-[var(--accent)]">.ai</span>
-        </a>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors duration-200"
+              href={resolveHref(link.href, pathname)}
+              className={`text-sm transition-colors duration-200 ${
+                link.href === pathname
+                  ? "text-[var(--accent)]"
+                  : "text-[var(--text-secondary)] hover:text-[var(--accent)]"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
 
           {/* Social icons */}
@@ -160,14 +176,18 @@ export default function Navbar() {
           >
             <div className="px-6 py-4 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  href={resolveHref(link.href, pathname)}
                   onClick={() => setMobileOpen(false)}
-                  className="text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors"
+                  className={`text-sm transition-colors ${
+                    link.href === pathname
+                      ? "text-[var(--accent)]"
+                      : "text-[var(--text-secondary)] hover:text-[var(--accent)]"
+                  }`}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </div>
           </motion.div>
