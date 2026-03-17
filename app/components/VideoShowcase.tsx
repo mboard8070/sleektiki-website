@@ -166,6 +166,23 @@ export default function VideoShowcase() {
           subtitle="Automotive scene generation, product placement, character lighting, and LoRA-driven architectural visualization. Hover to play."
         />
 
+        {/* Montage hero video */}
+        <ScrollReveal>
+          <div
+            className="rounded-xl overflow-hidden border border-[var(--surface-border)] bg-[var(--surface)]"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            <video
+              src="/videos/homepage_montage_web.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full aspect-video object-cover"
+            />
+          </div>
+        </ScrollReveal>
+
         {/* Row 1: Videos — 4 col, 16:9 */}
         <ScrollReveal>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" style={{ marginBottom: "2rem" }}>
