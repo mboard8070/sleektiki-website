@@ -43,7 +43,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   // Video — Chevrolet Blazer
   {
-    src: "/images/portfolio/blazer_urban_cafe.png",
+    src: "/images/portfolio/blazer_mountain_lodge.png",
     videoSrc: "/videos/blazer_transition_moving_kling3.mp4",
     title: "World Transitions",
     vehicle: "Chevrolet Blazer",
@@ -118,13 +118,30 @@ const portfolioItems: PortfolioItem[] = [
     model: "Flux 2 Pro",
     tags: ["Chevrolet", "SUV", "Landscape"],
   },
+  // Cadillac Lyriq
   {
-    src: "/images/portfolio/blazer_urban_cafe.png",
-    title: "Urban Cafe",
-    vehicle: "Chevrolet Blazer",
-    scene: "Trendy city street, morning light",
+    src: "/images/portfolio/lyriq_rooftop_helipad.png",
+    title: "Rooftop Helipad",
+    vehicle: "Cadillac Lyriq",
+    scene: "Downtown skyline at blue hour",
     model: "Flux 2 Pro",
-    tags: ["Chevrolet", "SUV", "Urban"],
+    tags: ["Cadillac", "EV", "Night"],
+  },
+  {
+    src: "/images/portfolio/lyriq_vineyard_estate.png",
+    title: "Vineyard Estate",
+    vehicle: "Cadillac Lyriq",
+    scene: "Napa Valley golden hour",
+    model: "Flux 2 Pro",
+    tags: ["Cadillac", "EV", "Landscape"],
+  },
+  {
+    src: "/images/portfolio/lyriq_art_gallery.png",
+    title: "Art Gallery",
+    vehicle: "Cadillac Lyriq",
+    scene: "Modern minimalist architecture at dusk",
+    model: "Flux 2 Pro",
+    tags: ["Cadillac", "EV", "Urban"],
   },
   // Cadillac Escalade
   {
@@ -150,31 +167,6 @@ const portfolioItems: PortfolioItem[] = [
     scene: "Modern estate at sunset",
     model: "Flux 2 Klein",
     tags: ["Cadillac", "SUV", "Luxury"],
-  },
-  // Cadillac Lyriq
-  {
-    src: "/images/portfolio/lyriq_art_museum.png",
-    title: "Art Museum",
-    vehicle: "Cadillac Lyriq",
-    scene: "Modern museum at dusk, LED ambiance",
-    model: "Flux 2 Klein",
-    tags: ["Cadillac", "EV", "Urban"],
-  },
-  {
-    src: "/images/portfolio/lyriq_hillside_charging.png",
-    title: "Hillside Charging",
-    vehicle: "Cadillac Lyriq",
-    scene: "City skyline overlook at twilight",
-    model: "Flux 2 Klein",
-    tags: ["Cadillac", "EV", "Lifestyle"],
-  },
-  {
-    src: "/images/portfolio/lyriq_big_sur.png",
-    title: "Big Sur",
-    vehicle: "Cadillac Lyriq",
-    scene: "Pacific coast, golden hour cliffs",
-    model: "Flux 2 Klein",
-    tags: ["Cadillac", "EV", "Landscape"],
   },
 ];
 
