@@ -148,12 +148,13 @@ export default function Hero() {
             </motion.div>
           </div>
 
-          {/* Right — montage video */}
+          {/* Right — montage video (offset upward for asymmetry) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
             className="w-full lg:max-w-[55%] flex-shrink"
+            style={{ marginBottom: "8rem" }}
           >
             <div className="rounded-xl overflow-hidden border border-[var(--surface-border)]/30" style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}>
               <video
