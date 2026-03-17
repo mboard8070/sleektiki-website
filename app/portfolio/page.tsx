@@ -12,6 +12,7 @@ import ScrollReveal from "../components/ScrollReveal";
 
 interface PortfolioItem {
   src: string;
+  videoSrc?: string;
   title: string;
   vehicle: string;
   scene: string;
@@ -20,6 +21,36 @@ interface PortfolioItem {
 }
 
 const portfolioItems: PortfolioItem[] = [
+  // Video — Chevrolet Colorado
+  {
+    src: "/images/portfolio/colorado_desert_canyon.png",
+    videoSrc: "/videos/colorado_bison_stampede_v3_kling3.mp4",
+    title: "Bison Stampede",
+    vehicle: "Chevrolet Colorado",
+    scene: "Leading a bison stampede across the Montana prairie",
+    model: "Kling v3",
+    tags: ["Chevrolet", "Truck", "Video", "Action"],
+  },
+  // Video — Cadillac Escalade
+  {
+    src: "/images/portfolio/escalade_red_carpet.png",
+    videoSrc: "/videos/escalade_red_carpet_kling3.mp4",
+    title: "Red Carpet Arrival",
+    vehicle: "Cadillac Escalade",
+    scene: "VIP arrival with paparazzi flashbulbs",
+    model: "Kling v3",
+    tags: ["Cadillac", "SUV", "Video", "Night"],
+  },
+  // Video — Chevrolet Blazer
+  {
+    src: "/images/portfolio/blazer_urban_cafe.png",
+    videoSrc: "/videos/blazer_transition_moving_kling3.mp4",
+    title: "World Transitions",
+    vehicle: "Chevrolet Blazer",
+    scene: "Driving through rapidly shifting environments",
+    model: "Kling v3",
+    tags: ["Chevrolet", "SUV", "Video", "Cinematic"],
+  },
   // Chevrolet Colorado
   {
     src: "/images/portfolio/colorado_desert_canyon.png",
@@ -225,13 +256,26 @@ export default function Portfolio() {
                   }}
                 >
                   <div className="relative aspect-video overflow-hidden">
-                    <Image
-                      src={item.src}
-                      alt={`${item.vehicle} — ${item.title}`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
+                    {item.videoSrc ? (
+                      <video
+                        src={item.videoSrc}
+                        poster={item.src}
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => e.currentTarget.play()}
+                        onMouseLeave={(e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; }}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    ) : (
+                      <Image
+                        src={item.src}
+                        alt={`${item.vehicle} — ${item.title}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    )}
                   </div>
                   <div style={{ padding: "1.25rem" }}>
                     <h3
@@ -286,7 +330,9 @@ export default function Portfolio() {
                 <p>
                   Models used: <span className="text-[var(--text-primary)]">Flux 2 Pro</span> and{" "}
                   <span className="text-[var(--text-primary)]">Flux 2 Klein 4B</span> by
-                  Black Forest Labs, accessed via Replicate.
+                  Black Forest Labs for image generation, and{" "}
+                  <span className="text-[var(--text-primary)]">Kling v3</span> by
+                  Kuaishou for video generation &mdash; all accessed via Replicate.
                 </p>
               </div>
             </div>
@@ -316,14 +362,25 @@ export default function Portfolio() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="relative w-full" style={{ aspectRatio: "16/9" }}>
-                <Image
-                  src={lightbox.src}
-                  alt={`${lightbox.vehicle} — ${lightbox.title}`}
-                  fill
-                  sizes="100vw"
-                  className="object-contain rounded-lg"
-                  priority
-                />
+                {lightbox.videoSrc ? (
+                  <video
+                    src={lightbox.videoSrc}
+                    autoPlay
+                    loop
+                    controls
+                    playsInline
+                    className="w-full h-full object-contain rounded-lg"
+                  />
+                ) : (
+                  <Image
+                    src={lightbox.src}
+                    alt={`${lightbox.vehicle} — ${lightbox.title}`}
+                    fill
+                    sizes="100vw"
+                    className="object-contain rounded-lg"
+                    priority
+                  />
+                )}
               </div>
               <div
                 className="text-center"
