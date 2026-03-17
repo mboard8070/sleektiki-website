@@ -80,6 +80,24 @@ const projects: Project[] = [
     image: "/images/projects/machina-prima.png",
   },
   {
+    title: "Input Streamliner",
+    slug: "input-streamliner",
+    description:
+      "An Unreal Engine 5 editor plugin that generates complete multiplatform input configurations from natural language descriptions using a local Ollama LLM. Describe your controls conversationally and get a full input system \u2014 keyboard, mouse, gamepad, and mobile touch \u2014 with one click. Runs entirely local, no API keys or cloud dependency.",
+    tags: ["UE5", "C++", "Ollama", "Enhanced Input", "Slate UI"],
+    category: "ai",
+    image: "/images/projects/input-streamliner-output.jpg",
+  },
+  {
+    title: "DataTable Streamliner",
+    slug: "datatable-streamliner",
+    description:
+      "An Unreal Engine 5 editor plugin that generates fully populated DataTable assets from natural language descriptions using a local Ollama LLM. Describe your data \u2014 \"12 fantasy weapons with name, damage, weight, and rarity\" \u2014 and get a complete DataTable with an AI-defined or existing struct schema. Preview rows before generating, append to existing tables.",
+    tags: ["UE5", "C++", "Ollama", "DataTables", "Slate UI"],
+    category: "ai",
+    image: "/images/projects/datatable-streamliner-assets.png",
+  },
+  {
     title: "Kamodo Steve: Janitor on Fire!",
     slug: "kamodo-steve",
     description:

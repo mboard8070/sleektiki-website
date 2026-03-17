@@ -292,6 +292,85 @@ const projects: ProjectDetail[] = [
     links: [],
   },
   {
+    slug: "input-streamliner",
+    title: "Input Streamliner",
+    subtitle: "UE5 Editor Plugin \u2014 AI-Generated Input Systems",
+    description: [
+      "An Unreal Engine 5 editor plugin that generates complete multiplatform input configurations from natural language descriptions using a local Ollama LLM. Describe your controls conversationally and get a full input system \u2014 keyboard, mouse, gamepad, and mobile touch \u2014 with one click.",
+      "Supports PC, gamepad, Mac, iOS, and Android platforms including mobile touch inputs like virtual joysticks, swipe zones, and gesture detection. Auto-configures dead zones, triggers, and axis modifiers. Generated Input Actions include runtime rebinding with JSON persistence and conflict detection.",
+      "The plugin runs entirely local via Ollama \u2014 no API keys or cloud dependency. Pick from any available model, describe the controls you need in plain English, and the plugin generates Input Actions with all bindings and settings automatically configured.",
+    ],
+    tags: ["UE5", "C++", "Ollama", "Enhanced Input", "Slate UI", "MIT License"],
+    hero: "/images/projects/input-streamliner-output.jpg",
+    gallery: [
+      { src: "/images/projects/input-streamliner-model.jpg", alt: "Input Streamliner \u2014 Model Selection" },
+      { src: "/images/projects/input-streamliner-settings.jpg", alt: "Input Streamliner \u2014 Generated Actions & Settings" },
+      { src: "/images/projects/input-streamliner-output.jpg", alt: "Input Streamliner \u2014 Generated Output" },
+    ],
+    features: [
+      {
+        title: "Natural Language Input",
+        description: "Describe your controls in plain English \u2014 \"third-person game with dodge, jump, lock-on, and mobile touch\" \u2014 and the plugin generates all Input Actions with correct value types, bindings, and platform mappings.",
+      },
+      {
+        title: "Multiplatform",
+        description: "Generates bindings for keyboard, mouse, gamepad, and mobile touch simultaneously. Mobile support includes virtual joysticks, swipe zones, gesture detection, and tap inputs.",
+      },
+      {
+        title: "Auto-Configured Settings",
+        description: "Dead zones, triggers, axis modifiers, and accumulation behaviors are automatically set based on the action type. 2D axes get proper dead zones, bools get correct trigger types.",
+      },
+      {
+        title: "Local LLM via Ollama",
+        description: "Runs entirely on your machine with any Ollama model. No API keys, no cloud dependency, no data leaving your workstation.",
+      },
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/mboard8070/InputStreamliner" },
+    ],
+  },
+  {
+    slug: "datatable-streamliner",
+    title: "DataTable Streamliner",
+    subtitle: "UE5 Editor Plugin \u2014 AI-Generated DataTables",
+    description: [
+      "An Unreal Engine 5 editor plugin that generates fully populated DataTable assets from natural language descriptions using a local Ollama LLM. Describe your data \u2014 \"12 fantasy weapons with name, damage, weight, and rarity\" \u2014 and get a complete DataTable with an AI-defined or existing struct schema.",
+      "Preview generated rows in a table before committing to an asset. Append to existing DataTables with overwrite or merge options. The plugin discovers all UScriptStruct types in your project, or you can let the AI define the schema from scratch.",
+      "Like Input Streamliner, runs entirely local via Ollama with no cloud dependency. Accessible from the Tools menu in the Unreal Editor.",
+    ],
+    tags: ["UE5", "C++", "Ollama", "DataTables", "Slate UI", "MIT License"],
+    hero: "/images/projects/datatable-streamliner-assets.png",
+    gallery: [
+      { src: "/images/projects/datatable-streamliner-prompt.png", alt: "DataTable Streamliner \u2014 Prompt & Settings" },
+      { src: "/images/projects/datatable-streamliner-preview.png", alt: "DataTable Streamliner \u2014 Data Preview" },
+      { src: "/images/projects/datatable-streamliner-assets.png", alt: "DataTable Streamliner \u2014 Generated Assets" },
+      { src: "/images/projects/datatable-streamliner-struct.png", alt: "DataTable Streamliner \u2014 Struct Selection" },
+      { src: "/images/projects/datatable-streamliner-menu.png", alt: "DataTable Streamliner \u2014 Tools Menu" },
+      { src: "/images/projects/datatable-streamliner-append.png", alt: "DataTable Streamliner \u2014 Append Mode" },
+    ],
+    features: [
+      {
+        title: "Natural Language Data Generation",
+        description: "Describe your data requirements conversationally \u2014 item tables, enemy stats, dialogue entries, loot pools \u2014 and the plugin generates fully populated rows with appropriate values.",
+      },
+      {
+        title: "AI-Defined or Existing Structs",
+        description: "Let the LLM create a schema from your description, or select any existing UScriptStruct in your project. The plugin discovers all registered struct types automatically.",
+      },
+      {
+        title: "Data Preview",
+        description: "Review all generated rows in a table before creating the asset. Verify column types, values, and row count before committing.",
+      },
+      {
+        title: "Append Mode",
+        description: "Add rows to existing DataTables with overwrite or merge conflict resolution. Useful for iteratively building large datasets.",
+      },
+    ],
+    links: [
+      { label: "GitHub", url: "https://github.com/mboard8070/DataTableStreamliner" },
+    ],
+  },
+  {
     slug: "kamodo-steve",
     title: "Kamodo Steve: Janitor on Fire!",
     subtitle: "Solo-Developed Indie Game on Steam",
