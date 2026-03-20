@@ -13,134 +13,141 @@ export interface ProjectDetail {
   splatEmbeds?: { name: string; marbleUrl: string; thumbnail: string }[];
   panoramas?: { src: string; alt: string }[];
   heroPosition?: string;
+  changelog?: { version: string; date: string; notes: string }[];
 }
 
 const projects: ProjectDetail[] = [
   {
     slug: "maude",
-    title: "MAUDE",
-    subtitle: "Multi-Agent Unified Dispatch Engine",
-    heroPosition: "left top",
-    description: [
-      "MAUDE is a full-stack AI operating environment running on the NVIDIA DGX Spark. It coordinates 10+ specialized models through a unified gateway — routing between local inference (Nemotron), cloud code generation (Codestral, Devstral), vision analysis (LLaVA), and frontier reasoning (Claude, Mistral) based on task requirements.",
-      "Over 100 tools span file operations, web browsing, Google Workspace (Gmail, Drive, Sheets, Calendar, Slides, Contacts, YouTube), GitHub (PRs, issues, CI/CD, releases), browser automation, image generation, social media posting, and system monitoring. Tools are dynamically filtered per message to minimize token usage.",
-      "The system runs across five client interfaces — a server TUI on the Spark, a pip-installable Mac/PC/Linux CLI, a native iOS & Android app, a Telegram bot, and a web dashboard — all connected over Tailscale VPN through a single gateway that handles SSE streaming, WebSocket terminal/voice proxying, file transfers, and tool execution loops.",
-    ],
-    tags: ["Nemotron", "Codestral", "Claude", "Mistral", "Devstral", "LLaVA", "Whisper", "Tailscale", "Docker", "Python", "React", "Capacitor"],
-    hero: "/images/projects/maude.png",
-    gallery: [
-      { src: "/images/projects/maude.png", alt: "MAUDE Server TUI" },
-      { src: "/images/projects/maude-client.png", alt: "MAUDE Client on Mac" },
-    ],
-    features: [
-      {
-        title: "Multi-Model Gateway",
-        description: "A Python gateway on port 30000 routes all traffic — 10+ LLM models (Mistral, Codestral, Devstral, Nemotron, Claude Opus, Claude Sonnet, LLaVA), WebSocket proxying for SSH terminal and voice, file transfers, tool execution loops, and SSE streaming with real-time pipeline traces. Models are resolved via short aliases with per-model context window awareness.",
-      },
-      {
-        title: "100+ LLM-Callable Tools",
-        description: "File operations, shell execution, web search & browsing, image generation (FLUX + LoRA), vision analysis, browser automation (Playwright), and AI delegation to frontier models. Dynamic keyword-based tool filtering reduces context window usage by 30-40% per request.",
-      },
-      {
-        title: "Google Workspace Integration",
-        description: "30+ tools for Gmail (read, compose, send), Drive (search, upload, create docs/sheets/folders), Sheets (read, write, append), Calendar (events, search), Slides (create, edit), Contacts (CRUD, search), and YouTube (search, playlists, comments). Full OAuth 2.0 with verified domain.",
-      },
-      {
-        title: "GitHub Integration",
-        description: "25+ tools for pull requests (create, review, merge, diff, comment), issues (create, close, comment), repositories, branches, commits, CI/CD workflow runs (view, re-run), releases, code search, and notifications.",
-      },
-      {
-        title: "Forge \u2014 Autonomous Builder",
-        description: "Plan \u2192 Execute \u2192 Verify \u2192 Fix loop with mandatory verification. Builds software autonomously in a Docker sandbox (Ubuntu 24.04, Python 3.12, Node 22, Go 1.22). Automatic model escalation from free local Nemotron to Codestral to Mistral. Budget-capped token tracking with blueprint templates for web apps, APIs, AI tools, and SaaS MVPs.",
-      },
-      {
-        title: "Cross-Machine Collaboration",
-        description: "Dispatch tasks to remote clients over Tailscale mesh. Presence heartbeats track online devices with activity snapshots. Project management with task assignment, file sharing, and cross-machine shell execution. Target resolution by client ID, hostname, or platform name.",
-      },
-      {
-        title: "Voice Mode (PersonaPlex)",
-        description: "Full-duplex speech-to-speech via PersonaPlex with configurable voice personas. Opus-encoded audio over WebSocket with scheduled-playback buffering. Also supports local Whisper STT, Piper/ElevenLabs/OpenAI TTS, wake word detection, and continuous listening mode. Camera capture during voice calls injects image context via LLaVA.",
-      },
-      {
-        title: "Persistent Memory",
-        description: "SQLite-backed memory with semantic search via nomic-embed-text embeddings. Stores facts, preferences, people, tasks, and conversation context across sessions. Automatic memory injection into prompts based on relevance. Access counting tracks memory importance over time.",
-      },
-      {
-        title: "Five Client Interfaces",
-        description: "Server TUI (Textual) on the Spark, pip-installable Mac/PC/Linux CLI with braille spinner and trace visualization, native iOS & Android app (React + Capacitor) with voice/terminal/browser/file manager, Telegram bot with full tool access, and a web-based Command Center dashboard.",
-      },
-      {
-        title: "Command Center",
-        description: "Real-time system monitoring module: CPU, RAM, disk, GPU temperature and utilization, VRAM usage by process, conversation sessions across channels, activity feed, scheduled task status, and mesh node health. Available as both LLM-callable tools and a dedicated mobile app view with auto-refresh.",
-      },
-      {
-        title: "Scheduled Tasks & Agents",
-        description: "Cron-based task scheduler with natural language parsing, persistent storage, and automatic execution. Specialized subagents (code, research, writer, reasoning, search) can be dispatched in parallel with tool inheritance and result aggregation.",
-      },
-      {
-        title: "Security & Sandbox Isolation",
-        description: "Docker containerization for autonomous builds with resource limits (8GB RAM, 4 CPUs, 256 PID max). Client allowlist via authorized.json. Tailscale VPN for encrypted mesh networking. Local-first inference keeps data on-device. Optional cloud escalation with explicit delegation.",
-      },
-      {
-        title: "Browser Automation",
-        description: "Playwright-based headless browser with 9 tools: open, navigate, click, type, fill forms, select dropdowns, screenshot, extract content, and close. Persistent session data with 5-minute inactivity timeout.",
-      },
-      {
-        title: "Social Media & Publishing",
-        description: "Post to Twitter/X, LinkedIn, and Bluesky with image attachments and platform-specific formatting. Substack integration for draft creation, editing, publishing, and statistics tracking. Rate limit enforcement per platform.",
-      },
-      {
-        title: "Image Generation",
-        description: "FLUX image generation via ComfyUI with LoRA support (Stillion style, marker-mech style). Configurable prompt, dimensions, seed, and steps. Generated images delivered to the shared folder with markdown preview. Mesh router auto-discovers ComfyUI across the network.",
-      },
-      {
-        title: "Telegram Bot",
-        description: "Full remote access via Telegram. Send messages, receive tool-augmented responses, share photos for vision analysis, and trigger any MAUDE tool. Cross-channel activity syncs to the TUI and mobile app in real time.",
-      },
-    ],
-    links: [
-      { label: "Setup Guide", url: "/projects/maude/setup" },
-      { label: "Documentation", url: "/projects/maude/docs" },
-      { label: "GitHub", url: "https://github.com/mboard8070/terminal-llm" },
-      { label: "Privacy Policy", url: "/privacy" },
-      { label: "Terms of Service", url: "/terms" },
-    ],
+  title: "MAUDE",
+  subtitle: "Multi-Agent Unified Dispatch Engine",
+  heroPosition: "left top",
+  description: [
+    "MAUDE is a full-stack AI operating environment running on the NVIDIA DGX Spark. It coordinates 10+ specialized models through a unified gateway — routing between local inference (Nemotron), cloud code generation (Codestral, Devstral), vision analysis (LLaVA), and frontier reasoning (Claude, Mistral) based on task requirements.",
+    "Over 100 tools span file operations, web browsing, Google Workspace (Gmail, Drive, Sheets, Calendar, Slides, Contacts, YouTube), GitHub (PRs, issues, CI/CD, releases), browser automation, image generation, social media posting, and system monitoring. Tools are dynamically filtered per message to minimize token usage.",
+    "The system runs across five client interfaces — a server TUI on the Spark, a pip-installable Mac/PC/Linux CLI, a native iOS & Android app, a Telegram bot, and a web dashboard — all connected over Tailscale VPN through a single gateway that handles SSE streaming, WebSocket terminal/voice proxying, file transfers, and tool execution loops."
+  ],
+  tags: ["Nemotron", "Codestral", "Claude", "Mistral", "Devstral", "LLaVA", "Whisper", "Tailscale", "Docker", "Python", "React", "Capacitor"],
+  hero: "/images/projects/maude.png",
+  gallery: [
+    { src: "/images/projects/maude.png", alt: "MAUDE Server TUI" },
+    { src: "/images/projects/maude-client.png", alt: "MAUDE Client on Mac" }
+  ],
+  features: [
+    {
+      title: "Multi-Model Gateway",
+      description: "A Python gateway on port 30000 routes all traffic — 10+ LLM models (Mistral, Codestral, Devstral, Nemotron, Claude Opus, Claude Sonnet, LLaVA), WebSocket proxying for SSH terminal and voice, file transfers, tool execution loops, and SSE streaming with real-time pipeline traces. Models are resolved via short aliases with per-model context window awareness."
+    },
+    {
+      title: "100+ LLM-Callable Tools",
+      description: "File operations, shell execution, web search & browsing, image generation (FLUX + LoRA), vision analysis, browser automation (Playwright), and AI delegation to frontier models. Dynamic keyword-based tool filtering reduces context window usage by 30-40% per request."
+    },
+    {
+      title: "Google Workspace Integration",
+      description: "30+ tools for Gmail (read, compose, send), Drive (search, upload, create docs/sheets/folders), Sheets (read, write, append), Calendar (events, search), Slides (create, edit), Contacts (CRUD, search), and YouTube (search, playlists, comments). Full OAuth 2.0 with verified domain"
+    },
+    {
+      title: "GitHub Integration",
+      description: "25+ tools for pull requests (create, review, merge, diff, comment), issues (create, close, comment), repositories, branches, commits, CI/CD workflow runs (view, re-run), releases, code search, and notifications."
+    },
+    {
+      title: "Forge \u2014 Autonomous Builder",
+      description: "Plan \u2192 Execute \u2192 Verify \u2192 Fix loop with mandatory verification. Builds software autonomously in a Docker sandbox (Ubuntu 24.04, Python 3.12, Node 22, Go 1.22). Automatic model escalation from free local Nemotron to Codestral to Mistral. Budget-capped token tracking with blueprint templates for web apps, APIs, AI tools, and SaaS MVPs."
+    },
+    {
+      title: "Cross-Machine Collaboration",
+      description: "Dispatch tasks to remote clients over Tailscale mesh. Presence heartbeats track online devices with activity snapshots. Project management with task assignment, file sharing, and cross-machine shell execution. Target resolution by client ID, hostname, or platform name."
+    },
+    {
+      title: "Voice Mode (PersonaPlex)",
+      description: "Full-duplex speech-to-speech via PersonaPlex with configurable voice personas. Opus-encoded audio over WebSocket with scheduled-playback buffering. Also supports local Whisper STT, Piper/ElevenLabs/OpenAI TTS, wake word detection, and continuous listening mode. Camera capture during voice calls injects image context via LLaVA."
+    },
+    {
+      title: "Persistent Memory",
+      description: "SQLite-backed memory with semantic search via nomic-embed-text embeddings. Stores facts, preferences, people, tasks, and conversation context across sessions. Automatic memory injection into prompts based on relevance. Access counting tracks memory importance over time."
+    },
+    {
+      title: "Five Client Interfaces",
+      description: "Server TUI (Textual) on the Spark, pip-installable Mac/PC/Linux CLI with braille spinner and trace visualization, native iOS & Android app (React + Capacitor) with voice/terminal/browser/file manager, Telegram bot with full tool access, and a web-based Command Center dashboard."
+    },
+    {
+      title: "Command Center",
+      description: "Real-time system monitoring module: CPU, RAM, disk, GPU temperature and utilization, VRAM usage by process, conversation sessions across channels, activity feed, scheduled task status, and mesh node health. Available as both LLM-callable tools and a dedicated mobile app view with auto-refresh."
+    },
+    {
+      title: "Scheduled Tasks & Agents",
+      description: "Cron-based task scheduler with natural language parsing, persistent storage, and automatic execution. Specialized subagents (code, research, writer, reasoning, search) can be dispatched in parallel with tool inheritance and result aggregation."
+    },
+    {
+      title: "Security & Sandbox Isolation",
+      description: "Docker containerization for autonomous builds with resource limits (8GB RAM, 4 CPUs, 256 PID max). Client allowlist via authorized.json. Tailscale VPN for encrypted mesh networking. Local-first inference keeps data on-device. Optional cloud escalation with explicit delegation."
+    },
+    {
+      title: "Browser Automation",
+      description: "Playwright-based headless browser with 9 tools: open, navigate, click, type, fill forms, select dropdowns, screenshot, extract content, and close. Persistent session data with 5-minute inactivity timeout."
+    },
+    {
+      title: "Social Media & Publishing",
+      description: "Post to Twitter/X, LinkedIn, and Bluesky with image attachments and platform-specific formatting. Substack integration for draft creation, editing, publishing, and statistics tracking. Rate limit enforcement per platform."
+    },
+    {
+      title: "Image Generation",
+      description: "FLUX image generation via ComfyUI with LoRA support (Stillion style, marker-mech style). Configurable prompt, dimensions, seed, and steps. Generated images delivered to the shared folder with markdown preview. Mesh router auto-discovers ComfyUI across the network."
+    }
+  ],
+  links: [
+    { label: "Setup Guide", url: "/projects/maude/setup" },
+    { label: "Documentation", url: "/projects/maude/docs" },
+    { label: "GitHub", url: "https://github.com/mboard8070/terminal-llm" },
+    { label: "Privacy Policy", url: "/privacy" },
+    { label: "Terms of Service", url: "/terms" }
+  ],
+  changelog: [
+    { version: "v0.5.0", date: "2026-01-15", notes: "Added support for Nemotron 3 VoiceChat NIM; improved voice latency; added new tools for Google Workspace and GitHub." },
+    { version: "v0.4.2", date: "2025-12-01", notes: "Fixed memory leak in persistent memory subsystem; added braille spinner to CLI; improved Tailscale reconnection logic." },
+    { version: "v0.4.0", date: "2025-10-20", notes: "Initial public release with core features: multi-model gateway, 100+ tools, voice mode, persistent memory, and five client interfaces." }
+  ]
   },
   {
     slug: "maude-mobile",
-    title: "MAUDE Mobile",
-    subtitle: "Native iOS & Android Companion App",
-    description: [
-      "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
-      "Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization using PersonaPlex, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and a settings panel with theme switching and model selection.",
-      "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS — a single TypeScript codebase compiled to native iOS and Android apps. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile.",
-    ],
-    tags: ["React", "Capacitor", "Tailwind", "WebSocket", "Opus Codec", "PersonaPlex", "xterm.js"],
-    hero: "/images/projects/maude-mobile.png",
-    gallery: [
-      { src: "/images/projects/maude-mobile.png", alt: "MAUDE Mobile — Home Screen" },
-      { src: "/images/projects/maude-mobile-voice.png", alt: "MAUDE Mobile — Voice Chat" },
-      { src: "/images/projects/maude-mobile-settings.png", alt: "MAUDE Mobile — Settings" },
-    ],
-    features: [
-      {
-        title: "Voice Chat",
-        description: "Full-duplex voice conversation via PersonaPlex. Opus-encoded audio streams over WebSocket with scheduled-playback buffering for click-free audio on mobile. Supports camera capture during calls — LLaVA analyzes the photo and the voice session reconnects with image context injected into the prompt.",
-      },
-      {
-        title: "Gateway Proxy",
-        description: "A single Python HTTP server on port 30000 routes all traffic: multi-model LLM requests (Mistral, Codestral, Nemotron, LLaVA), WebSocket proxying for terminal and voice, file upload/download, image analysis via the /api/analyze-image endpoint, and static PWA hosting.",
-      },
-      {
-        title: "SSH Terminal",
-        description: "Full terminal access via xterm.js running over a WebSocket PTY connection. Run commands, edit files, and manage the DGX Spark directly from the phone.",
-      },
-      {
-        title: "File Manager",
-        description: "Browse, upload, and download files on the Spark. Camera integration lets you snap a photo and upload it directly. Shared storage accessible from all MAUDE interfaces.",
-      },
-    ],
-    links: [],
+  title: "MAUDE Mobile",
+  subtitle: "Native iOS & Android Companion App",
+  description: [
+    "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
+    "Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization using PersonaPlex, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and a settings panel with theme switching and model selection.",
+    "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS — a single TypeScript codebase compiled to native iOS and Android apps. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile."
+  ],
+  tags: ["React", "Capacitor", "Tailwind", "WebSocket", "Opus Codec", "PersonaPlex", "xterm.js"],
+  hero: "/images/projects/maude-mobile.png",
+  gallery: [
+    { src: "/images/projects/maude-mobile.png", alt: "MAUDE Mobile — Home Screen" },
+    { src: "/images/projects/maude-mobile-voice.png", alt: "MAUDE Mobile — Voice Chat" },
+    { src: "/images/projects/maude-mobile-settings.png", alt: "MAUDE Mobile — Settings" }
+  ],
+  features: [
+    {
+      title: "Voice Chat",
+      description: "Full-duplex voice conversation via PersonaPlex. Opus-encoded audio streams over WebSocket with scheduled-playback buffering for click-free audio on mobile. Supports camera capture during calls — LLaVA analyzes the photo and the voice session reconnects with image context injected into the prompt."
+    },
+    {
+      title: "Gateway Proxy",
+      description: "A single Python HTTP server on port 30000 routes all traffic: multi-model LLM requests (Mistral, Codestral, Nemotron, LLaVA), WebSocket proxying for terminal and voice, file upload/download, image analysis via the /api/analyze-image endpoint, and static PWA hosting."
+    },
+    {
+      title: "SSH Terminal",
+      description: "Full terminal access via xterm.js running over a WebSocket PTY connection. Run commands, edit files, and manage the DGX Spark directly from the phone."
+    },
+    {
+      title: "File Manager",
+      description: "Browse, upload, and download files on the Spark. Camera integration lets you snap a photo and upload it directly. Shared storage accessible from all MAUDE interfaces."
+    }
+  ],
+  links: [],
+  changelog: [
+    { version: "v1.2.0", date: "2026-01-12", notes: "Added support for Nemotron 3 VoiceChat NIM; improved voice latency; added new model selection UI." },
+    { version: "v1.1.0", date: "2025-11-20", notes: "Introduced three selectable themes (Amber CRT, Matrix Green, Classic Black); added background voice service; improved file upload reliability." },
+    { version: "v1.0.0", date: "2025-09-15", notes: "Initial release with core modules: AI chat, voice calls, SSH terminal, file manager, web browser proxy, Telegram viewer, and settings." }
+  ]
   },
   {
     slug: "tessera",
