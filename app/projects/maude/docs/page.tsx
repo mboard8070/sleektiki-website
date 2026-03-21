@@ -20,7 +20,7 @@ export default function Docs() {
             Documentation
           </h1>
           <p className="text-sm text-[var(--text-muted)]">
-            Last updated: March 15, 2026
+            Last updated: March 21, 2026
           </p>
         </header>
 
@@ -175,7 +175,7 @@ Gateway (port 30000 HTTPS / 30080 HTTP)
               <PortRow port="30080" service="Gateway (HTTP)" note="Local clients, internal API" />
               <PortRow port="30010" service="llama-server" note="Nemotron local inference" />
               <PortRow port="30002" service="File Server" note="File transfers" />
-              <PortRow port="8998" service="PersonaPlex" note="Voice server (WebSocket)" />
+              <PortRow port="8998" service="Voice Server" note="Nemotron ASR + Magpie TTS (WebSocket)" />
             </div>
           </section>
 
@@ -223,6 +223,71 @@ data/conversations/        Conversation history (JSON)`}</Pre>
                 TUI &mdash; services keep running.
               </p>
             </div>
+          </section>
+
+          {/* Best Practice Guides */}
+          <section>
+            <p
+              className="text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-geist-mono)]"
+              style={{ color: "var(--accent)", marginBottom: "0.5rem" }}
+            >
+              Knowledge
+            </p>
+            <h2 className="text-2xl font-semibold" style={{ marginBottom: "1rem" }}>
+              Best Practice Guides
+            </h2>
+            <div className="text-[var(--text-secondary)]" style={{ lineHeight: 1.8, display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <p>
+                MAUDE includes 10 markdown-based reference guides that are
+                automatically injected into the system prompt when the
+                user&rsquo;s message matches relevant keywords. This gives the
+                model domain expertise on demand without permanently bloating
+                the context window &mdash; max 2 guides are loaded per turn.
+              </p>
+            </div>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))", gap: "0.75rem", marginTop: "1rem" }}>
+              <ToolCard title="Coding" tools="Architecture, code quality, error handling, security, testing, Python patterns" />
+              <ToolCard title="Website Design" tools="Layout, typography, color, responsive, performance, accessibility, forms" />
+              <ToolCard title="Web Design Patterns" tools="Modals, toasts, loading states, navigation, tables, dark mode, CSS architecture" />
+              <ToolCard title="Graphic Design" tools="Composition, color theory, typography, imagery, icons, brand consistency" />
+              <ToolCard title="Color Theory" tools="Color wheel, harmony systems, psychology, 60-30-10 rule, palette building" />
+              <ToolCard title="Writing" tools="Clarity, structure, tone, technical writing, editing, grammar" />
+              <ToolCard title="API Design" tools="REST conventions, status codes, pagination, auth, versioning, documentation" />
+              <ToolCard title="Prompt Engineering" tools="System prompts, few-shot, chain-of-thought, tool descriptions, image prompts" />
+              <ToolCard title="Image Generation" tools="Prompt structure, composition, lighting, styles, quality modifiers, aspect ratios" />
+              <ToolCard title="Cybersecurity" tools="Authentication, injection prevention, secrets, network hardening, containers" />
+            </div>
+          </section>
+
+          {/* Skills */}
+          <section>
+            <p
+              className="text-xs tracking-[0.3em] uppercase font-[family-name:var(--font-geist-mono)]"
+              style={{ color: "var(--accent)", marginBottom: "0.5rem" }}
+            >
+              Plugins
+            </p>
+            <h2 className="text-2xl font-semibold" style={{ marginBottom: "1rem" }}>
+              Skills
+            </h2>
+            <div className="text-[var(--text-secondary)]" style={{ lineHeight: 1.8, display: "flex", flexDirection: "column", gap: "1rem" }}>
+              <p>
+                Skills are Python-based plugins registered via a{" "}
+                <code className="text-[var(--accent)]">@skill</code> decorator.
+                Each skill is exposed to the LLM as an OpenAI-compatible tool
+                definition with typed parameters and JSON schema. Built-in
+                skills include weather, calculator, stocks, screenshots, image
+                generation, datetime utilities, notes, and system info. User
+                skills can be added to{" "}
+                <code className="text-[var(--accent)]">~/.config/maude/skills/</code>.
+              </p>
+            </div>
+            <Pre>{`/skills              List all installed skills
+/skills enable <n>   Enable a skill
+/skills disable <n>  Disable a skill
+/skills info <n>     Show skill details
+/skills run <n> ...  Run a skill directly
+/skills reload       Reload all skills`}</Pre>
           </section>
 
           {/* Client Interfaces */}

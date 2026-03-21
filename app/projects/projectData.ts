@@ -59,8 +59,8 @@ const projects: ProjectDetail[] = [
       description: "Dispatch tasks to remote clients over Tailscale mesh. Presence heartbeats track online devices with activity snapshots. Project management with task assignment, file sharing, and cross-machine shell execution. Target resolution by client ID, hostname, or platform name."
     },
     {
-      title: "Voice Mode (PersonaPlex)",
-      description: "Full-duplex speech-to-speech via PersonaPlex with configurable voice personas. Opus-encoded audio over WebSocket with scheduled-playback buffering. Also supports local Whisper STT, Piper/ElevenLabs/OpenAI TTS, wake word detection, and continuous listening mode. Camera capture during voice calls injects image context via LLaVA."
+      title: "Voice Mode",
+      description: "Speech-to-speech via Nemotron ASR (0.6B) for transcription and Magpie TTS (357M) for synthesis. Opus-encoded audio input over WebSocket (24kHz), PCM float32 output (24kHz). Binary protocol: 0x00 handshake, 0x01 audio-in, 0x02 text, 0x03 audio-out. Continuous listening mode with camera capture during voice calls for image context via LLaVA."
     },
     {
       title: "Persistent Memory",
@@ -93,6 +93,14 @@ const projects: ProjectDetail[] = [
     {
       title: "Image Generation",
       description: "FLUX image generation via ComfyUI with LoRA support (Stillion style, marker-mech style). Configurable prompt, dimensions, seed, and steps. Generated images delivered to the shared folder with markdown preview. Mesh router auto-discovers ComfyUI across the network."
+    },
+    {
+      title: "Best Practice Guides",
+      description: "10 markdown reference guides (coding, website design, graphic design, color theory, writing, API design, prompt engineering, image generation, cybersecurity, web UI/UX patterns) automatically injected into the system prompt based on keyword triggers in the user\u2019s message. Max 2 guides per turn to keep context focused. Gives the model domain expertise on demand without permanent context bloat."
+    },
+    {
+      title: "Skills Plugin System",
+      description: "Python-based plugin framework with @skill decorator registration. Each skill is exposed as an OpenAI-compatible tool with typed parameters and JSON schema. Built-in skills include weather, calculator, stocks, screenshots, datetime utilities, notes, and system info. User-installable skills via ~/.config/maude/skills/. Enable, disable, and reload at runtime via /skills command."
     }
   ],
   links: [
