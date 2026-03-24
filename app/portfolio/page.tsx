@@ -730,9 +730,9 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     src: "/images/portfolio/nike/mens4_on_model.png",
-    title: "Skatepark Stand",
+    title: "Ollie",
     subject: "Nike Court Vision — Mens",
-    scene: "Standing atop a halfpipe, foot on the skateboard",
+    scene: "Mid-ollie at a skatepark, golden hour",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Court Vision"],
     category: "nike",
