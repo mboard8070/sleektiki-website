@@ -18,7 +18,7 @@ interface PortfolioItem {
   scene: string;
   model: string;
   tags: string[];
-  category: "automotive" | "product" | "sketches" | "nike";
+  category: "automotive" | "product" | "nike";
   aspect?: "video" | "square";
 }
 
@@ -395,102 +395,6 @@ const portfolioItems: PortfolioItem[] = [
     aspect: "square",
   },
 
-  // ═══════════════════════════════════════════
-  // SKETCHES — Hand-drawn & LoRA-generated
-  // ═══════════════════════════════════════════
-  // Hand-drawn marker sketches
-  {
-    src: "/images/portfolio/sketch_mech_01.jpeg",
-    title: "Mech Studies I",
-    subject: "Marker on Paper",
-    scene: "Six mechanical walker concepts",
-    model: "Hand-drawn",
-    tags: ["Marker", "Concept Art", "Mechs"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_mech_02.jpeg",
-    title: "Mech Studies II",
-    subject: "Marker on Paper",
-    scene: "Artillery walker and scout variants",
-    model: "Hand-drawn",
-    tags: ["Marker", "Concept Art", "Mechs"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_mech_03.jpeg",
-    title: "Mech Studies III",
-    subject: "Marker on Paper",
-    scene: "Heavy combat walker designs",
-    model: "Hand-drawn",
-    tags: ["Marker", "Concept Art", "Mechs"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_mech_04.jpeg",
-    title: "Mech Studies IV",
-    subject: "Marker on Paper",
-    scene: "Bipedal and quadruped variants",
-    model: "Hand-drawn",
-    tags: ["Marker", "Concept Art", "Mechs"],
-    category: "sketches",
-  },
-  // LoRA-generated from marker style
-  {
-    src: "/images/portfolio/sketch_gen_sculpture_hall.png",
-    title: "Sculpture Hall",
-    subject: "Marker-Mech LoRA",
-    scene: "Generated exhibit room from sketch style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Architecture", "Generated"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_gen_installation.png",
-    title: "Suspended Installation",
-    subject: "Marker-Mech LoRA",
-    scene: "Generated exhibit room from sketch style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Architecture", "Generated"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_gen_projection.png",
-    title: "Projection Room",
-    subject: "Marker-Mech LoRA",
-    scene: "Generated exhibit room from sketch style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Architecture", "Generated"],
-    category: "sketches",
-  },
-  {
-    src: "/images/portfolio/sketch_gen_centerpiece.png",
-    title: "Rotunda Centerpiece",
-    subject: "Marker-Mech LoRA",
-    scene: "Generated exhibit room from sketch style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Architecture", "Generated"],
-    category: "sketches",
-  },
-  // Stillion LoRA-generated paintings
-  {
-    src: "/images/projects/stillion-gen1.jpg",
-    title: "Face Jug & Poppies",
-    subject: "Stillion Style LoRA",
-    scene: "Generated painting in Stillion\u2019s oil style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Painting", "Generated"],
-    category: "sketches",
-  },
-  {
-    src: "/images/projects/stillion-gen2.jpg",
-    title: "Abstract Portrait",
-    subject: "Stillion Style LoRA",
-    scene: "Generated painting in Stillion\u2019s oil style",
-    model: "FLUX LoRA",
-    tags: ["LoRA", "Painting", "Generated"],
-    category: "sketches",
-  },
   // ═══════════════════════════════════════════
   // NIKE — Mens
   // ═══════════════════════════════════════════
@@ -1123,7 +1027,6 @@ const categories = [
   { key: "All", label: "All" },
   { key: "automotive", label: "Automotive" },
   { key: "product", label: "Product" },
-  { key: "sketches", label: "Sketches" },
   { key: "nike", label: "Nike" },
 ];
 
@@ -1275,13 +1178,6 @@ export default function Portfolio() {
                   product placement and depth-aware blending. A single product photo on a white
                   background is composited into a professionally lit environment &mdash;
                   the AI handles lighting, shadows, and spatial integration automatically.
-                </p>
-                <p>
-                  <span className="text-[var(--text-primary)]">Sketches:</span>{" "}
-                  Hand-drawn marker sketches were used as training data for custom FLUX LoRAs.
-                  The trained models generate new images in the learned style &mdash; from
-                  architectural exhibit concepts to oil painting reproductions. No manual editing
-                  is applied to the generated outputs.
                 </p>
               </div>
             </div>
