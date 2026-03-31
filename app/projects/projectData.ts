@@ -477,6 +477,24 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/InputStreamliner" },
     ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Setting up input bindings in Unreal Engine 5 is tedious and error-prone. The Enhanced Input system is powerful but requires manually creating Input Actions, configuring value types, adding per-platform bindings, setting dead zones, triggers, and modifiers — for every action, on every platform. A typical third-person game might need 15-20 actions across keyboard, mouse, gamepad, and mobile touch. That's hours of clicking through property panels, and one wrong value type or missing dead zone creates bugs that are hard to track down."
+      },
+      {
+        heading: "Design Challenge",
+        body: "How do you let a developer describe what they want in plain language and get a correctly configured input system — without the LLM hallucinating invalid UE5 settings? Unreal's Enhanced Input has strict requirements: value types must match (bool vs. axis2D vs. axis3D), triggers have specific valid combinations, and mobile touch inputs need different modifier stacks than gamepad. An LLM that doesn't understand these constraints will generate broken configs."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The plugin runs entirely local via Ollama — no API keys, no cloud, no data leaving the developer's machine. This was a deliberate choice: game studios won't send project details to external APIs. The LLM generates a structured JSON spec, not raw UE5 code — the plugin then validates and translates that spec into proper Input Actions with correct value types, triggers, dead zones, and platform-specific bindings. This separation means the LLM can make mistakes in the JSON and the plugin catches them before creating assets. Mobile touch support (virtual joysticks, swipe zones, gesture detection) was a key differentiator since most input setup tools ignore mobile entirely."
+      },
+      {
+        heading: "Outcome",
+        body: "Open-source UE5 plugin (MIT license) that reduces input system setup from hours to seconds. One natural language prompt generates a complete multiplatform input configuration — keyboard, mouse, gamepad, and mobile touch — with all settings correctly configured. Published on GitHub with Slate-based editor UI that fits natively into the Unreal Editor workflow."
+      }
+    ],
   },
   {
     slug: "datatable-streamliner",
@@ -517,6 +535,24 @@ const projects: ProjectDetail[] = [
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/DataTableStreamliner" },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Game designers and developers spend significant time manually populating DataTables in Unreal Engine — item databases, enemy stat sheets, dialogue tables, loot pools. Each row requires creating a struct, defining fields, and hand-entering values. For prototyping, this is wasted effort: you need 50 placeholder weapons to test your inventory UI, not hand-crafted game design. And when the schema changes, you rebuild the table from scratch."
+      },
+      {
+        heading: "Design Challenge",
+        body: "DataTables in UE5 are typed — every row must conform to a UScriptStruct with specific field types (float, int, FString, enum, etc.). An LLM generating data needs to produce values that match these types exactly, or the asset won't compile. The plugin also needs to work with existing project structs the developer has already defined, not just AI-invented schemas."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The plugin auto-discovers every UScriptStruct registered in the project, so developers can select their own data structures as the target schema. Alternatively, the LLM can define a new struct from the natural language description. A preview table shows all generated rows before committing — the developer sees exactly what they'll get and can regenerate if the data doesn't look right. Append mode with merge/overwrite conflict resolution lets you build large datasets iteratively rather than generating everything at once. Like Input Streamliner, it runs fully local via Ollama — no external dependencies."
+      },
+      {
+        heading: "Outcome",
+        body: "Open-source UE5 plugin (MIT license) that generates populated DataTable assets from plain English descriptions. Useful for rapid prototyping — describe '20 sci-fi weapons with name, damage, fire rate, ammo type, and rarity' and get a complete, correctly typed DataTable in seconds. Published on GitHub with native Slate editor UI."
+      }
     ],
   },
   {
