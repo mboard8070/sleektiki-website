@@ -279,6 +279,24 @@ const projects: ProjectDetail[] = [
       { label: "GitHub", url: "https://github.com/mboard8070/article-gen" },
       { label: "Substack", url: "https://substack.com/@matthewboard" },
     ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Content marketing requires a relentless publishing cadence — blog posts, newsletters, social updates — but producing quality articles with original imagery is slow and expensive. Stock photos feel generic. Commissioning illustrations doesn't scale. And AI-generated text without images looks like what it is: low-effort filler. The gap is a tool that produces complete, publish-ready content — words and visuals together — without requiring a writer, a photographer, and an editor."
+      },
+      {
+        heading: "Design Challenge",
+        body: "Fully automated content generation has an obvious trust problem: if a human isn't writing it, how do you maintain voice, accuracy, and relevance? And AI-generated images paired with AI-generated text can compound the uncanny valley effect — the whole piece feels synthetic. The challenge was designing a pipeline where automation handles the labor but a human's style and editorial judgment still shape the output."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The writing style is fine-tunable via LoRA on Gemma 2 9B — train it on your own published writing and the generated articles carry your voice, not a generic AI tone. Each article gets three contextual images generated via Flux.1-dev, with prompts derived from the article content so the visuals actually match the text. LLaVA then captions each image for accessibility and SEO. The pipeline offers two modes: auto mode (discovers trending topics and writes about them) and custom mode (you provide the topic and framing). One-click publishing to Substack means the output goes from zero to published without copy-pasting between tools."
+      },
+      {
+        heading: "Outcome",
+        body: "A complete zero-input-to-published pipeline. In auto mode, it discovers trending topics, writes an article in a trained voice, generates three matched images with captions, and publishes directly to Substack — no human in the loop unless you want one. Custom mode gives full editorial control while still automating the production work."
+      }
+    ],
   },
   {
     slug: "pixelus",
