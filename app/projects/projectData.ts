@@ -518,6 +518,7 @@ const projects: ProjectDetail[] = [
     slug: "input-streamliner",
     title: "Input Streamliner",
     subtitle: "UE5 Editor Plugin \u2014 AI-Generated Input Systems",
+    architectureDiagram: "/images/projects/input-streamliner-architecture.svg",
     description: [
       "An Unreal Engine 5 editor plugin that generates complete multiplatform input configurations from natural language descriptions using a local Ollama LLM. Describe your controls conversationally and get a full input system \u2014 keyboard, mouse, gamepad, and mobile touch \u2014 with one click.",
       "Supports PC, gamepad, Mac, iOS, and Android platforms including mobile touch inputs like virtual joysticks, swipe zones, and gesture detection. Auto-configures dead zones, triggers, and axis modifiers. Generated Input Actions include runtime rebinding with JSON persistence and conflict detection.",
@@ -574,6 +575,7 @@ const projects: ProjectDetail[] = [
     slug: "datatable-streamliner",
     title: "DataTable Streamliner",
     subtitle: "UE5 Editor Plugin \u2014 AI-Generated DataTables",
+    architectureDiagram: "/images/projects/datatable-streamliner-architecture.svg",
     description: [
       "An Unreal Engine 5 editor plugin that generates fully populated DataTable assets from natural language descriptions using a local Ollama LLM. Describe your data \u2014 \"12 fantasy weapons with name, damage, weight, and rarity\" \u2014 and get a complete DataTable with an AI-defined or existing struct schema.",
       "Preview generated rows in a table before committing to an asset. Append to existing DataTables with overwrite or merge options. The plugin discovers all UScriptStruct types in your project, or you can let the AI define the schema from scratch.",
