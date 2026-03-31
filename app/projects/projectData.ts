@@ -403,6 +403,24 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/machina-pano-vault.png", alt: "Underground Vault — Panoramic Render" },
     ],
     links: [],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "There's no established pipeline from hand-drawn concept art to navigable 3D space. Architects and exhibit designers sketch ideas on paper, but translating those sketches into spatial experiences requires 3D modeling, texturing, lighting, and environment design — weeks of work per room. AI image generation can produce photorealistic interiors from text, but they're flat images. And converting 2D images to 3D has been either low-quality (NeRF artifacts) or prohibitively expensive (manual modeling)."
+      },
+      {
+        heading: "Design Challenge",
+        body: "How do you preserve the artistic intent of hand-drawn sketches through a multi-stage AI pipeline — from ink on paper to LoRA training to image generation to 3D reconstruction — without the output becoming generic? Each stage introduces its own biases and failure modes. The LoRA can overfit or lose the style. The image generation can ignore spatial logic. The Gaussian splatting can produce floaters and ghost geometry."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The pipeline was designed as a series of human checkpoints rather than a fully automated chain. The LoRA was trained on just 15 hand-drawn mechanical sketches — small enough to preserve the specific marker rendering style rather than averaging it into something generic. Each of the 11 rooms was generated individually with prompts that described spatial function (sculpture hall, projection room, observation deck) so the AI had to solve real architectural problems, not just produce pretty images. The Gaussian splats via World Labs API were auto-cleaned to remove floaters and blob artifacts, then rendered as navigable 360° panoramas. Embedding interactive 3D viewers directly on the project page lets visitors experience the spaces rather than just look at screenshots."
+      },
+      {
+        heading: "Outcome",
+        body: "11 navigable exhibition rooms generated from pen-on-paper sketches, each converted to a 22-million-Gaussian 3D environment. The project demonstrates a complete concept-to-spatial pipeline: hand-drawn input → AI style transfer → architectural image generation → 3D reconstruction → interactive web experience. The entire process — from first sketch to explorable 3D museum — took days, not months."
+      }
+    ],
   },
   {
     slug: "input-streamliner",
