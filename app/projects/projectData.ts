@@ -275,6 +275,24 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/article-gen.png", alt: "Article-Gen — Auto Mode" },
       { src: "/images/projects/article-gen-custom.png", alt: "Article-Gen — Custom Prompts" },
     ],
+    features: [
+      {
+        title: "Auto Mode",
+        description: "Discovers trending news topics via DuckDuckGo, selects the most relevant, and generates a complete article with zero human input. The system handles topic selection, research, writing, image generation, captioning, and publishing."
+      },
+      {
+        title: "Custom Mode",
+        description: "Full editorial control — provide the topic, angle, and tone. The AI handles the writing and image generation while you direct the content strategy."
+      },
+      {
+        title: "LoRA-Tuned Writing Style",
+        description: "Fine-tune Gemma 2 9B on your own published writing samples to match your voice. The generated articles carry your tone, phrasing, and editorial perspective rather than generic AI prose."
+      },
+      {
+        title: "Contextual Image Generation",
+        description: "Three images per article generated via Flux.1-dev with prompts derived from the article content. LLaVA vision model auto-generates captions for accessibility and SEO. Images match the article context rather than being generic stock."
+      },
+    ],
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/article-gen" },
       { label: "Substack", url: "https://substack.com/@matthewboard" },
@@ -315,6 +333,24 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/pixelus-sneaker.png", alt: "Pixelus — Sneaker Product Shot" },
       { src: "/images/projects/pixelus-watch.png", alt: "Pixelus — Watch Product Shot" },
     ],
+    features: [
+      {
+        title: "Product-Preserving Compositing",
+        description: "The product image is never regenerated — it's composited into AI-generated scenes using inpainting and depth-aware blending. Logos, labels, and fine details stay pixel-perfect while the surrounding scene is fully synthetic."
+      },
+      {
+        title: "AI Prompt Refinement",
+        description: "Claude API rewrites user descriptions into effective image generation prompts. Users see both their original intent and the refined prompt, building trust in how their input is interpreted before spending a generation credit."
+      },
+      {
+        title: "Automated Quality Evaluation",
+        description: "Claude scores each generated image on composition, lighting match, and product integration. The best results surface first, reducing the number of generations needed to get a usable shot."
+      },
+      {
+        title: "Production SaaS Stack",
+        description: "Next.js frontend, Python backend, Supabase for auth and PostgreSQL storage, Stripe billing with usage-based credits, ML-based content moderation. Deployed on Railway with CI from GitHub."
+      },
+    ],
     links: [
       { label: "Pixelus.io", url: "https://pixelus.io" },
     ],
@@ -354,6 +390,20 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/stillion-generate.png", alt: "Stillion AI — Generation Interface" },
       { src: "/images/projects/stillion-gen1.jpg", alt: "Stillion AI — Generated Sample 1" },
       { src: "/images/projects/stillion-gen2.jpg", alt: "Stillion AI — Generated Sample 2" },
+    ],
+    features: [
+      {
+        title: "Guided Training Workflow",
+        description: "Three artist-friendly stages: curate images with drag-and-drop and auto-captioning, train with simplified controls and sensible defaults, and evaluate with side-by-side checkpoint comparisons."
+      },
+      {
+        title: "Real-Time Progress",
+        description: "Loss curves and periodic sample generations during training so the artist can watch the model learning their style. Auto-saved checkpoints at intervals for picking the best version."
+      },
+      {
+        title: "DGX Spark Native",
+        description: "Runs locally on NVIDIA DGX Spark with full CUDA acceleration. No cloud dependency — all training data stays on-device. Gradio interface accessible over the local network."
+      },
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/LoRA-trainer" },
@@ -419,6 +469,24 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/machina-pano-rotunda.png", alt: "Rotunda Centerpiece — Panoramic Render" },
       { src: "/images/projects/machina-pano-observation.png", alt: "Observation Deck — Panoramic Render" },
       { src: "/images/projects/machina-pano-vault.png", alt: "Underground Vault — Panoramic Render" },
+    ],
+    features: [
+      {
+        title: "Custom LoRA Training",
+        description: "FLUX LoRA trained on just 15 hand-drawn mechanical sketches. The small, focused dataset preserved the specific marker rendering style rather than averaging it into generic output."
+      },
+      {
+        title: "3D Gaussian Splatting",
+        description: "Each generated room converted to a 22-million-Gaussian 3D environment via the World Labs API. Auto-cleaned to remove floaters, ghost splats, and blob artifacts for navigable quality."
+      },
+      {
+        title: "Interactive Web Viewers",
+        description: "Gaussian splats embedded directly on the project page as interactive 3D viewers. WASD navigation, mouse look, scroll speed — visitors experience the spaces, not just screenshots."
+      },
+      {
+        title: "Panoramic Renders",
+        description: "HDR panoramic renders extracted from the Gaussian splats for flat display. Full 360° coverage of each exhibition room for contexts where interactive 3D isn't available."
+      },
     ],
     links: [],
     caseStudy: [
