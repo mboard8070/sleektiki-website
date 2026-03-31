@@ -1,3 +1,8 @@
+export interface CaseStudySection {
+  heading: string;
+  body: string;
+}
+
 export interface ProjectDetail {
   slug: string;
   title: string;
@@ -14,6 +19,8 @@ export interface ProjectDetail {
   panoramas?: { src: string; alt: string }[];
   heroPosition?: string;
   changelog?: { version: string; date: string; notes: string }[];
+  caseStudy?: CaseStudySection[];
+  architectureDiagram?: string;
 }
 
 const projects: ProjectDetail[] = [
@@ -32,6 +39,25 @@ const projects: ProjectDetail[] = [
   gallery: [
     { src: "/images/projects/maude.png", alt: "MAUDE Server TUI" },
     { src: "/images/projects/maude-client.png", alt: "MAUDE Client on Mac" }
+  ],
+  architectureDiagram: "/images/projects/maude-architecture.svg",
+  caseStudy: [
+    {
+      heading: "The Problem",
+      body: "Every commercial AI assistant locks you into one model, one provider, and their cloud. If you want Claude's reasoning, Mistral's speed, and a local model for privacy — you need three different apps, three billing accounts, and no shared context between them. For a power user who wants AI integrated into their actual workflow (files, email, calendar, code, devices), the gap between what chatbots offer and what's needed is enormous."
+    },
+    {
+      heading: "Design Challenge",
+      body: "How do you build a single AI interface that spans 10+ models, 100+ tools, five client surfaces (desktop TUI, CLI, mobile app, Telegram bot, web dashboard), and multiple physical machines — without the complexity leaking through to the user? The user should say what they want and the system should figure out which model, which tools, and which machine to use."
+    },
+    {
+      heading: "Key Design Decisions",
+      body: "The central architectural choice was a unified gateway that absorbs all complexity. Every client connects to one endpoint. The gateway resolves model aliases, translates between API formats (OpenAI vs. Anthropic), executes tools server-side, manages context windows, and streams results back with optional trace visibility. Tool selection is dynamic — keyword filtering on each message activates only relevant tools, keeping token usage 30-40% lower than sending the full 100+ tool catalog. For the mobile app, I designed collapsible tool execution traces: power users can see exactly what the AI is doing (which tools it called, what it found, how long it took), while casual users see only the final response."
+    },
+    {
+      heading: "Outcome",
+      body: "MAUDE is my daily-driver AI system, running 24/7 on a DGX Spark with clients on Mac, iPhone, and Windows. It handles email triage, calendar management, code generation, file operations, web research, image generation, social media posting, and cross-machine task dispatch. The autonomous builder (Forge) can scaffold and deploy complete web applications in Docker sandboxes with zero human intervention."
+    }
   ],
   features: [
     {
@@ -131,6 +157,24 @@ const projects: ProjectDetail[] = [
     { src: "/images/projects/maude-mobile.png", alt: "MAUDE Mobile — Home Screen" },
     { src: "/images/projects/maude-mobile-voice.png", alt: "MAUDE Mobile — Voice Chat" },
     { src: "/images/projects/maude-mobile-settings.png", alt: "MAUDE Mobile — Settings" }
+  ],
+  caseStudy: [
+    {
+      heading: "The Problem",
+      body: "MAUDE runs on a DGX Spark at home, but I need to use it everywhere — from the couch, on a walk, at a coffee shop. SSH into a terminal TUI from a phone is technically possible but terrible UX. And voice interaction, file sharing, and camera integration don't work through a terminal."
+    },
+    {
+      heading: "Design Challenge",
+      body: "How do you fit seven distinct capabilities — AI chat, voice calls, SSH terminal, web browser, messaging, file management, and system settings — into a single mobile app without it feeling like a Swiss Army knife that does everything poorly? Each module has fundamentally different interaction patterns: chat is conversational, voice is real-time streaming, terminal is keyboard-intensive, files are spatial."
+    },
+    {
+      heading: "Key Design Decisions",
+      body: "Rather than tabs or a hamburger menu hiding modules, I designed a home screen that surfaces the most-used modules prominently with real-time status indicators (gateway connection, active model, unread messages). Each module opens full-screen with its own optimized UI. The critical decision was making tool execution visible but optional in the chat view — a collapsible trace panel shows what MAUDE is doing (reading files, searching the web, calling APIs) so you understand the AI's reasoning without the noise overwhelming the conversation. For voice, I implemented scheduled-playback buffering with Opus encoding to eliminate the audio clicks that plague WebSocket streaming on mobile."
+    },
+    {
+      heading: "Outcome",
+      body: "Shipped as a native iOS and Android app from a single TypeScript codebase (React, Ionic Capacitor, Tailwind). Three selectable themes including an 80s Amber CRT mode. Full remote access to every MAUDE capability from a phone over Tailscale VPN."
+    }
   ],
   features: [
     {
@@ -238,6 +282,24 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "Pixelus.io", url: "https://pixelus.io" },
     ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "E-commerce and CPG marketing teams need studio-quality product photography for every SKU across dozens of scenes — lifestyle, seasonal, social media crops. Traditional photoshoots cost $500–2,000 per setup and take weeks to schedule. Existing AI tools (Photoroom, Pebblely) offer simple background removal and templates, but they can't maintain product fidelity — logos warp, labels blur, proportions shift. Marketers don't trust the output enough to use it in paid campaigns."
+      },
+      {
+        heading: "Design Challenge",
+        body: "How do you let a non-technical marketer generate photorealistic product scenes using AI, when the AI itself is unpredictable? Image generation quality varies wildly between runs. Users don't know how to write effective prompts. And the product — the one thing that must be pixel-perfect — is the hardest part for generative models to preserve."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The core insight was separating what the AI controls from what it doesn't. The product image is never regenerated — it's composited into AI-generated scenes using inpainting and depth-aware blending, so logos and labels stay sharp. To solve the prompt literacy gap, I built a refinement layer using Claude's API: the user describes what they want in plain language, Claude rewrites it into an effective generation prompt, and the user sees both versions. This built trust — users could see exactly how their intent was being interpreted before spending a credit. Quality evaluation is also AI-assisted: Claude scores each output on composition, lighting match, and product integration, surfacing the best results first."
+      },
+      {
+        heading: "Outcome",
+        body: "Shipped as a production SaaS at pixelus.io with Stripe billing, user authentication, and a moderation system. The portfolio gallery on this site shows real platform output across automotive, footwear, watches, beverages, and cosmetics. An iOS companion app is in development with platform-specific export presets for Instagram, Amazon, and Shopify."
+      }
+    ],
   },
   {
     slug: "stillion-lora",
@@ -259,6 +321,24 @@ const projects: ProjectDetail[] = [
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/LoRA-trainer" },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Painter Michael Stillion wanted to extend his visual language into AI-generated media for a gallery installation at the Contemporary Arts Center, Cincinnati. But LoRA training requires ML expertise — dataset curation, hyperparameter tuning, checkpoint evaluation — that a fine artist shouldn't need to learn. Existing training UIs assume technical users and expose every parameter without guidance."
+      },
+      {
+        heading: "Design Challenge",
+        body: "How do you translate artistic judgment into model training decisions? A painter knows when a generated image 'feels right' but doesn't know what learning rate or LoRA rank means. The interface needs to let the artist drive the aesthetic while the system handles the ML."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I designed the workflow around three artist-friendly stages: curate (drag-and-drop image selection with auto-captioning), train (simplified controls with sensible defaults — the artist adjusts a 'style strength' slider instead of LoRA rank), and evaluate (side-by-side comparison of checkpoint outputs against the original paintings). Training progress shows loss curves but also periodic sample generations so the artist can see the model learning their style in real time. The system auto-saves checkpoints at intervals so the artist can pick the version that best captures their intent."
+      },
+      {
+        heading: "Outcome",
+        body: "The trained model powered a large-scale video installation at the Contemporary Arts Center, Cincinnati. Stillion was able to generate hundreds of variations extending his painting style into new compositions — poppies, face jugs, and houseflies rendered in his distinctive mark-making — without writing a single line of code or understanding the underlying ML."
+      }
     ],
   },
   {

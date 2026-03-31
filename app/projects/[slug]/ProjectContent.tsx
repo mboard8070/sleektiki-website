@@ -13,6 +13,58 @@ export default function ProjectContent({
 
   return (
     <>
+      {/* Case Study */}
+      {project.caseStudy && project.caseStudy.length > 0 && (
+        <div style={{ marginBottom: "6rem" }}>
+          {project.caseStudy.map((section, i) => (
+            <motion.div
+              key={section.heading}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              style={{ marginBottom: i < project.caseStudy!.length - 1 ? "3rem" : 0 }}
+            >
+              <h3
+                className="text-sm tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
+                style={{ marginBottom: "1rem" }}
+              >
+                {section.heading}
+              </h3>
+              <p
+                className="text-lg text-[var(--text-secondary)]"
+                style={{ lineHeight: 1.8 }}
+              >
+                {section.body}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      )}
+
+      {/* Architecture Diagram */}
+      {project.architectureDiagram && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          style={{ marginBottom: "6rem" }}
+        >
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            System Architecture
+          </h2>
+          <div className="rounded-xl border border-[var(--surface-border)] overflow-hidden">
+            <img
+              src={project.architectureDiagram}
+              alt={`${project.title} — System Architecture`}
+              className="w-full h-auto"
+            />
+          </div>
+        </motion.div>
+      )}
+
       {/* Interactive 3D Splat Viewers — top of page */}
       {project.splatEmbeds && project.splatEmbeds.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>
