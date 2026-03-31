@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="system-ui, -apple-system, sans-serif">
+
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#666" opacity="0.6"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#00d4ff" opacity="0.5"/>
+    </marker>
+    <marker id="arrow-cyan-rev" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+      <path d="M6,0 L0,2 L6,4" fill="#00d4ff" opacity="0.5"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="500" fill="#0a0a0f" rx="8"/>
+
+  <!-- Title -->
+  <text x="500" y="26" fill="#555" font-size="9.5" text-anchor="middle" letter-spacing="3">PIXELUS -- AI PRODUCT PLACEMENT PIPELINE</text>
+
+  <!-- INPUT (LEFT) -->
+
+  <rect x="30" y="140" width="130" height="80" rx="6" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="95" y="170" fill="#00d4ff" font-size="10.5" text-anchor="middle" font-weight="700">Product Image</text>
+  <text x="95" y="185" fill="#00d4ff" font-size="10.5" text-anchor="middle" font-weight="700">Upload</text>
+  <text x="95" y="204" fill="#555" font-size="7.5" text-anchor="middle">User uploads product</text>
+  <text x="95" y="214" fill="#555" font-size="7.5" text-anchor="middle">photo via web UI</text>
+
+  <!-- PROCESSING (CENTER COLUMN, 3 stacked boxes) -->
+
+  <text x="370" y="58" fill="#555" font-size="9" text-anchor="middle" letter-spacing="2">PROCESSING</text>
+
+  <!-- Box 1: Background Removal -->
+  <rect x="275" y="70" width="190" height="52" rx="6" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="370" y="92" fill="#e0e0e0" font-size="10.5" text-anchor="middle" font-weight="600">Background Removal</text>
+  <text x="370" y="110" fill="#555" font-size="8" text-anchor="middle">Isolates product with clean cutout</text>
+
+  <!-- Box 2: FLUX Scene Generation -->
+  <rect x="275" y="140" width="190" height="60" rx="6" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="370" y="163" fill="#e0e0e0" font-size="10.5" text-anchor="middle" font-weight="600">FLUX Scene Generation</text>
+  <text x="370" y="178" fill="#555" font-size="8" text-anchor="middle">Lifestyle &amp; studio backgrounds</text>
+  <text x="370" y="190" fill="#555" font-size="8" text-anchor="middle">via FLUX inpainting</text>
+
+  <!-- Box 3: Depth-Aware Compositing -->
+  <rect x="275" y="218" width="190" height="60" rx="6" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="370" y="241" fill="#e0e0e0" font-size="10.5" text-anchor="middle" font-weight="600">Depth-Aware Compositing</text>
+  <text x="370" y="256" fill="#555" font-size="8" text-anchor="middle">Blends product into scene with</text>
+  <text x="370" y="268" fill="#555" font-size="8" text-anchor="middle">correct depth, shadows, lighting</text>
+
+  <!-- Vertical arrows between processing boxes -->
+  <line x1="370" y1="122" x2="370" y2="136" stroke="#666" stroke-width="0.8" opacity="0.5" marker-end="url(#arrow)"/>
+  <line x1="370" y1="200" x2="370" y2="214" stroke="#666" stroke-width="0.8" opacity="0.5" marker-end="url(#arrow)"/>
+
+  <!-- INPUT to PROCESSING arrow -->
+
+  <line x1="160" y1="180" x2="269" y2="170" stroke="#666" stroke-width="0.8" opacity="0.5" marker-end="url(#arrow)"/>
+
+  <!-- QUALITY / CLAUDE API (RIGHT OF CENTER) -->
+
+  <text x="630" y="58" fill="#555" font-size="9" text-anchor="middle" letter-spacing="2">QUALITY INTELLIGENCE</text>
+
+  <!-- Claude Prompt Refinement -->
+  <rect x="540" y="70" width="180" height="58" rx="6" fill="#111116" stroke="#00d4ff" stroke-width="1"/>
+  <text x="630" y="90" fill="#00d4ff" font-size="9.5" text-anchor="middle" font-weight="600">Claude API</text>
+  <text x="630" y="104" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Prompt Refinement</text>
+  <text x="630" y="119" fill="#555" font-size="7.5" text-anchor="middle">Rewrites intent into optimal prompts</text>
+
+  <!-- Claude Quality Scoring -->
+  <rect x="540" y="218" width="180" height="58" rx="6" fill="#111116" stroke="#00d4ff" stroke-width="1"/>
+  <text x="630" y="238" fill="#00d4ff" font-size="9.5" text-anchor="middle" font-weight="600">Claude API</text>
+  <text x="630" y="252" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Quality Scoring</text>
+  <text x="630" y="267" fill="#555" font-size="7.5" text-anchor="middle">Composition, lighting, integration</text>
+
+  <!-- BIDIRECTIONAL ARROWS: Claude and Processing -->
+
+  <!-- Prompt Refinement to FLUX Scene Generation (feeds into generation) -->
+  <line x1="540" y1="105" x2="470" y2="155" stroke="#00d4ff" stroke-width="1" opacity="0.4" marker-end="url(#arrow-cyan)"/>
+  <!-- FLUX Scene Generation to Prompt Refinement (refinement loop) -->
+  <line x1="465" y1="148" x2="540" y2="95" stroke="#00d4ff" stroke-width="1" opacity="0.4" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Depth-Aware Compositing to Quality Scoring (scoring evaluates output) -->
+  <line x1="465" y1="248" x2="534" y2="248" stroke="#00d4ff" stroke-width="1" opacity="0.4" marker-end="url(#arrow-cyan)"/>
+  <!-- Quality Scoring to FLUX Scene Generation (feedback loop for re-generation) -->
+  <line x1="540" y1="230" x2="470" y2="190" stroke="#00d4ff" stroke-width="1" opacity="0.4" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Feedback loop label -->
+  <text x="505" y="210" fill="#555" font-size="7" text-anchor="middle" font-style="italic">feedback loop</text>
+
+  <!-- OUTPUT (RIGHT) -->
+
+  <rect x="830" y="140" width="140" height="80" rx="6" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="900" y="170" fill="#00d4ff" font-size="10.5" text-anchor="middle" font-weight="700">Production</text>
+  <text x="900" y="185" fill="#00d4ff" font-size="10.5" text-anchor="middle" font-weight="700">Image</text>
+  <text x="900" y="204" fill="#555" font-size="7.5" text-anchor="middle">Campaign-ready</text>
+  <text x="900" y="214" fill="#555" font-size="7.5" text-anchor="middle">product imagery</text>
+
+  <!-- PROCESSING to OUTPUT arrow -->
+
+  <!-- Quality Scoring to Output -->
+  <line x1="720" y1="248" x2="780" y2="210" stroke="#666" stroke-width="0.8" opacity="0.5"/>
+  <!-- Compositing to Output (main pipeline) -->
+  <line x1="465" y1="258" x2="530" y2="290" stroke="#666" stroke-width="0.8" opacity="0.35" stroke-dasharray="3,3"/>
+  <!-- Final output arrow from quality region to production image -->
+  <line x1="720" y1="240" x2="824" y2="190" stroke="#666" stroke-width="0.8" opacity="0.5" marker-end="url(#arrow)"/>
+
+  <!-- MAIN PIPELINE FLOW ARROW (subtle guide) -->
+
+  <!-- Long horizontal flow indicator -->
+  <text x="500" y="310" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">Upload -- Cutout -- Generate -- Composite -- Score -- Deliver</text>
+  <line x1="200" y1="315" x2="800" y2="315" stroke="#1a1a2e" stroke-width="1" opacity="0.3"/>
+
+  <!-- INFRASTRUCTURE (BOTTOM BAR) -->
+
+  <text x="500" y="348" fill="#555" font-size="9" text-anchor="middle" letter-spacing="2">PRODUCTION SAAS STACK</text>
+
+  <!-- Full-width infrastructure bar -->
+  <rect x="30" y="358" width="940" height="58" rx="6" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Divider lines inside the bar -->
+  <line x1="218" y1="366" x2="218" y2="408" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <line x1="406" y1="366" x2="406" y2="408" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <line x1="594" y1="366" x2="594" y2="408" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+  <line x1="782" y1="366" x2="782" y2="408" stroke="#1a1a2e" stroke-width="1" opacity="0.5"/>
+
+  <!-- Next.js + React -->
+  <text x="124" y="384" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Next.js + React</text>
+  <text x="124" y="399" fill="#555" font-size="7.5" text-anchor="middle">TypeScript Frontend</text>
+
+  <!-- Python Backend -->
+  <text x="312" y="384" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Python Backend</text>
+  <text x="312" y="399" fill="#555" font-size="7.5" text-anchor="middle">FastAPI + FLUX Pipeline</text>
+
+  <!-- Supabase -->
+  <text x="500" y="384" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Supabase</text>
+  <text x="500" y="399" fill="#555" font-size="7.5" text-anchor="middle">Auth + PostgreSQL</text>
+
+  <!-- Stripe -->
+  <text x="688" y="384" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Stripe Billing</text>
+  <text x="688" y="399" fill="#555" font-size="7.5" text-anchor="middle">Subscriptions + Metering</text>
+
+  <!-- Railway -->
+  <text x="876" y="384" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Railway Deploy</text>
+  <text x="876" y="399" fill="#555" font-size="7.5" text-anchor="middle">Auto-scaling Infra</text>
+
+  <!-- Vertical connectors: pipeline to infra -->
+
+  <line x1="95" y1="220" x2="95" y2="352" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+  <line x1="370" y1="278" x2="370" y2="352" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+  <line x1="630" y1="276" x2="630" y2="352" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+  <line x1="900" y1="220" x2="900" y2="352" stroke="#1a1a2e" stroke-width="0.8" stroke-dasharray="3,3" opacity="0.25"/>
+
+  <!-- FOOTER -->
+
+  <text x="500" y="440" fill="#333" font-size="7.5" text-anchor="middle">Agentic image pipeline -- Claude refines prompts &amp; scores quality -- FLUX generates scenes -- Zero manual compositing</text>
+
+  <!-- Platform exports label -->
+  <text x="500" y="460" fill="#333" font-size="7.5" text-anchor="middle">Instagram -- TikTok -- Amazon A+ -- DTC -- Print-ready export presets</text>
+
+</svg>

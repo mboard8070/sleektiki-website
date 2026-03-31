@@ -146,6 +146,7 @@ const projects: ProjectDetail[] = [
     slug: "maude-mobile",
   title: "MAUDE Mobile",
   subtitle: "Native iOS & Android Companion App",
+  architectureDiagram: "/images/projects/maude-mobile-architecture.svg",
   description: [
     "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
     "Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization using PersonaPlex, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and a settings panel with theme switching and model selection.",
@@ -205,6 +206,7 @@ const projects: ProjectDetail[] = [
     slug: "tessera",
     title: "Tessera",
     subtitle: "AI-Powered Academic Literature Review",
+    architectureDiagram: "/images/projects/tessera-architecture.svg",
     description: [
       "Tessera is an AI-powered academic literature review platform that searches five major databases — Semantic Scholar, arXiv, OpenAlex, CrossRef, and PubMed — to find relevant research papers.",
       "It generates structured paper summaries and cross-paper literature syntheses, visualizes citation networks with relationship classification, and extracts findings, methods, gaps, and conclusions into a searchable knowledge base.",
@@ -264,6 +266,7 @@ const projects: ProjectDetail[] = [
     slug: "article-gen",
     title: "Article-Gen",
     subtitle: "Multi-Modal AI Content Generation",
+    architectureDiagram: "/images/projects/article-gen-architecture.svg",
     description: [
       "A multi-modal AI content generation platform that creates professional articles with AI-generated images and publishes them directly to Substack.",
       "Article-Gen auto-generates articles from trending news topics, creates three contextual images per article via Flux.1-dev, and adds AI image captioning with the LLaVA vision model. A custom prompt mode provides full creative control over article topics and style.",
@@ -320,6 +323,7 @@ const projects: ProjectDetail[] = [
     slug: "pixelus",
     title: "Pixelus",
     subtitle: "AI Product Placement Platform",
+    architectureDiagram: "/images/projects/pixelus-architecture.svg",
     description: [
       "An AI-powered product placement platform that generates photorealistic brand scenes from a single product photo. Upload a product image, select a scene style, and Pixelus composites the product into a professionally lit environment using AI inpainting and depth-aware blending.",
       "Designed for e-commerce, social media, and marketing teams who need studio-quality product shots without the studio. The platform handles background generation, lighting matching, shadow casting, and seamless compositing automatically.",
@@ -377,6 +381,7 @@ const projects: ProjectDetail[] = [
     slug: "stillion-lora",
     title: "Stillion AI LoRA Trainer",
     subtitle: "FLUX LoRA Training on DGX Spark",
+    architectureDiagram: "/images/projects/stillion-architecture.svg",
     description: [
       "A FLUX LoRA training application running on the NVIDIA DGX Spark. Upload a dataset of images, configure training parameters like steps, learning rate, and rank, and fine-tune FLUX image generation models through an intuitive Gradio interface.",
       "Trained models can be exported and used for custom image generation workflows. The trainer supports various dataset formats, automatic captioning, and real-time training progress monitoring with loss curves.",
@@ -431,6 +436,7 @@ const projects: ProjectDetail[] = [
     slug: "machina-prima",
     title: "Machina Prima",
     subtitle: "LoRA-Generated Exhibit Concepts to 3D Gaussian Splats",
+    architectureDiagram: "/images/projects/machina-prima-architecture.svg",
     description: [
       "An exhibit concept series generated using a custom marker-mech LoRA trained on 15 hand-drawn mechanical sketches. The model learned the marker rendering style and was prompted to envision spaces for a futuristic art exhibition — from gallery entrances and sculpture halls to immersive projection rooms.",
       "Each of the 11 generated rooms was then converted into a pro-quality 3D Gaussian splat via the World Labs API, auto-cleaned to remove floaters, ghost splats, and blob artifacts. The result is a fully navigable virtual exhibition space.",

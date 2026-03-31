@@ -1,0 +1,187 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="system-ui, -apple-system, sans-serif">
+
+  <defs>
+    <marker id="arrow" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#666" opacity="0.6"/>
+    </marker>
+    <marker id="arrow-cyan" markerWidth="6" markerHeight="4" refX="5" refY="2" orient="auto">
+      <path d="M0,0 L6,2 L0,4" fill="#00d4ff" opacity="0.5"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="450" fill="#0a0a0f" rx="8"/>
+
+  <!-- ================================================================== -->
+  <!-- LEFT — MOBILE APP -->
+  <!-- ================================================================== -->
+
+  <!-- Mobile App outer container -->
+  <rect x="24" y="20" width="340" height="410" rx="8" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="194" y="46" fill="#00d4ff" font-size="14" text-anchor="middle" font-weight="700">Mobile App</text>
+  <text x="194" y="62" fill="#555" font-size="8.5" text-anchor="middle">React + Ionic Capacitor + TypeScript</text>
+
+  <!-- Module grid: 2 columns, 4 rows -->
+  <!-- Column 1: x=38, Column 2: x=200 -->
+  <!-- Row heights: 40px each, starting at y=78, spacing 8px -->
+
+  <!-- Row 1 -->
+  <rect x="38" y="78" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="114" y="96" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">AI Chat</text>
+  <text x="114" y="109" fill="#555" font-size="7" text-anchor="middle">Tool execution traces</text>
+
+  <rect x="198" y="78" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="274" y="96" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Voice Calls</text>
+  <text x="274" y="109" fill="#555" font-size="7" text-anchor="middle">Opus / WebSocket</text>
+
+  <!-- Row 2 -->
+  <rect x="38" y="126" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="114" y="144" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">SSH Terminal</text>
+  <text x="114" y="157" fill="#555" font-size="7" text-anchor="middle">xterm.js / PTY</text>
+
+  <rect x="198" y="126" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="274" y="144" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Web Browser</text>
+  <text x="274" y="157" fill="#555" font-size="7" text-anchor="middle">Proxied</text>
+
+  <!-- Row 3 -->
+  <rect x="38" y="174" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="114" y="192" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Telegram Viewer</text>
+  <text x="114" y="205" fill="#555" font-size="7" text-anchor="middle">Notifications &amp; history</text>
+
+  <rect x="198" y="174" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="274" y="192" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">File Manager</text>
+  <text x="274" y="205" fill="#555" font-size="7" text-anchor="middle">Camera upload</text>
+
+  <!-- Row 4 (centered single box) -->
+  <rect x="118" y="222" width="152" height="40" rx="5" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="194" y="240" fill="#e0e0e0" font-size="9.5" text-anchor="middle" font-weight="600">Settings</text>
+  <text x="194" y="253" fill="#555" font-size="7" text-anchor="middle">Themes, model selection</text>
+
+  <!-- Platform badges -->
+  <rect x="78" y="278" width="48" height="18" rx="9" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="102" y="290" fill="#555" font-size="7.5" text-anchor="middle">iOS</text>
+
+  <rect x="134" y="278" width="48" height="18" rx="9" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="158" y="290" fill="#555" font-size="7.5" text-anchor="middle">Android</text>
+
+  <rect x="190" y="278" width="48" height="18" rx="9" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="214" y="290" fill="#555" font-size="7.5" text-anchor="middle">PWA</text>
+
+  <rect x="246" y="278" width="68" height="18" rx="9" fill="none" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="280" y="290" fill="#555" font-size="7.5" text-anchor="middle">Desktop</text>
+
+  <!-- Phone icon (simplified) -->
+  <rect x="170" y="316" width="48" height="84" rx="8" fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.3"/>
+  <rect x="178" y="326" width="32" height="56" rx="2" fill="#00d4ff" opacity="0.06"/>
+  <circle cx="194" cy="392" r="3" fill="none" stroke="#00d4ff" stroke-width="0.8" opacity="0.3"/>
+  <text x="194" y="420" fill="#444" font-size="7" text-anchor="middle">Native device APIs</text>
+
+  <!-- ================================================================== -->
+  <!-- CENTER — TAILSCALE VPN CONNECTION -->
+  <!-- ================================================================== -->
+
+  <!-- Main connection: mobile app right edge to gateway left edge -->
+  <!-- Upper arrow (request: mobile -> gateway) -->
+  <line x1="370" y1="170" x2="572" y2="38" stroke="#00d4ff" stroke-width="1.5" opacity="0.45" marker-end="url(#arrow-cyan)"/>
+
+  <!-- Lower arrow (response: gateway -> mobile), dashed -->
+  <line x1="572" y1="54" x2="370" y2="186" stroke="#666" stroke-width="0.8" opacity="0.3" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+  <!-- Tailscale VPN label pill (positioned on the diagonal) -->
+  <rect x="422" y="86" width="104" height="22" rx="11" fill="#0a0a0f" stroke="#00d4ff" stroke-width="1" opacity="0.4"/>
+  <text x="474" y="101" fill="#00d4ff" font-size="8.5" text-anchor="middle" font-weight="600">Tailscale VPN</text>
+
+  <!-- Protocol + descriptor labels below the pill -->
+  <text x="474" y="120" fill="#555" font-size="7" text-anchor="middle">HTTPS / SSE / WebSocket</text>
+  <text x="474" y="132" fill="#444" font-size="6.5" text-anchor="middle" font-style="italic">Encrypted mesh, zero config</text>
+
+  <!-- ================================================================== -->
+  <!-- RIGHT — MAUDE GATEWAY -->
+  <!-- ================================================================== -->
+
+  <!-- Gateway box -->
+  <rect x="578" y="20" width="200" height="52" rx="8" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="678" y="43" fill="#00d4ff" font-size="13" text-anchor="middle" font-weight="700">MAUDE Gateway</text>
+  <text x="678" y="59" fill="#555" font-size="8.5" text-anchor="middle">:30000 HTTPS / :30080 HTTP</text>
+
+  <!-- Vertical line from gateway down to backend services -->
+  <line x1="678" y1="72" x2="678" y2="100" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3" opacity="0.3"/>
+
+  <!-- Backend services section label -->
+  <text x="678" y="96" fill="#555" font-size="8" text-anchor="middle" letter-spacing="2">BACKEND SERVICES</text>
+
+  <!-- Backend service boxes -->
+
+  <!-- 10+ AI Models -->
+  <rect x="578" y="108" width="200" height="46" rx="5" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="678" y="127" fill="#e0e0e0" font-size="10" text-anchor="middle" font-weight="600">10+ AI Models</text>
+  <text x="678" y="143" fill="#555" font-size="7.5" text-anchor="middle">Claude, Mistral, Codestral, Nemotron</text>
+
+  <!-- Connection from gateway to models -->
+  <line x1="678" y1="100" x2="678" y2="108" stroke="#666" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- 100+ Server-Side Tools -->
+  <rect x="578" y="164" width="200" height="46" rx="5" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="678" y="183" fill="#e0e0e0" font-size="10" text-anchor="middle" font-weight="600">100+ Server-Side Tools</text>
+  <text x="678" y="199" fill="#555" font-size="7.5" text-anchor="middle">Files, email, calendar, GitHub, browser</text>
+
+  <!-- Connection -->
+  <line x1="678" y1="154" x2="678" y2="164" stroke="#666" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Voice Pipeline -->
+  <rect x="578" y="220" width="200" height="46" rx="5" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="678" y="239" fill="#e0e0e0" font-size="10" text-anchor="middle" font-weight="600">Voice Pipeline</text>
+  <text x="678" y="255" fill="#555" font-size="7.5" text-anchor="middle">Nemotron ASR + Magpie TTS</text>
+
+  <!-- Connection -->
+  <line x1="678" y1="210" x2="678" y2="220" stroke="#666" stroke-width="0.7" opacity="0.4"/>
+
+  <!-- Fan-out lines from gateway to backend services (subtle) -->
+  <line x1="654" y1="72" x2="618" y2="108" stroke="#666" stroke-width="0.5" opacity="0.25" stroke-dasharray="2,2"/>
+  <line x1="702" y1="72" x2="738" y2="108" stroke="#666" stroke-width="0.5" opacity="0.25" stroke-dasharray="2,2"/>
+
+  <!-- ================================================================== -->
+  <!-- BOTTOM RIGHT — DGX SPARK -->
+  <!-- ================================================================== -->
+
+  <!-- Connection to hardware -->
+  <line x1="678" y1="266" x2="678" y2="290" stroke="#00d4ff" stroke-width="1" stroke-dasharray="3,3" opacity="0.25"/>
+
+  <rect x="578" y="290" width="200" height="44" rx="6" fill="#111116" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="678" y="309" fill="#e0e0e0" font-size="10" text-anchor="middle" font-weight="600">NVIDIA DGX Spark</text>
+  <text x="678" y="324" fill="#555" font-size="7.5" text-anchor="middle">GB10 Blackwell -- 128 GB unified</text>
+
+  <!-- ================================================================== -->
+  <!-- ADDITIONAL CONTEXT — Right side labels -->
+  <!-- ================================================================== -->
+
+  <!-- Agentic loop annotation -->
+  <text x="678" y="358" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">Agentic tool loop -- all execution server-side, traces stream to mobile</text>
+
+  <!-- Tool trace flow annotation (right side) -->
+  <rect x="816" y="130" width="160" height="72" rx="5" fill="none" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+  <text x="896" y="148" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">1. Prompt from phone</text>
+  <text x="896" y="162" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">2. Gateway routes to model</text>
+  <text x="896" y="176" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">3. Tools execute server-side</text>
+  <text x="896" y="190" fill="#444" font-size="7.5" text-anchor="middle" font-style="italic">4. Traces stream back live</text>
+
+  <!-- Connection from annotation to services -->
+  <line x1="816" y1="166" x2="778" y2="166" stroke="#1a1a2e" stroke-width="0.8" opacity="0.3" stroke-dasharray="3,3"/>
+
+  <!-- ================================================================== -->
+  <!-- DATA FLOW ANNOTATIONS -->
+  <!-- ================================================================== -->
+
+  <!-- Subtle connection dots at mobile edge showing all modules feed into the VPN link -->
+  <circle cx="367" cy="98" r="2" fill="#00d4ff" opacity="0.15"/>
+  <circle cx="367" cy="146" r="2" fill="#00d4ff" opacity="0.15"/>
+  <circle cx="367" cy="194" r="2" fill="#00d4ff" opacity="0.15"/>
+  <circle cx="367" cy="242" r="2" fill="#00d4ff" opacity="0.15"/>
+
+  <!-- ================================================================== -->
+  <!-- FOOTER -->
+  <!-- ================================================================== -->
+
+  <text x="500" y="440" fill="#333" font-size="7.5" text-anchor="middle">One codebase, all platforms -- Capacitor bridges native device APIs (camera, biometrics, push notifications) to the web layer</text>
+
+</svg>

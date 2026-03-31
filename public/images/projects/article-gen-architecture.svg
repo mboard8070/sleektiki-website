@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="1000" height="350" fill="#0a0a0f" rx="0"/>
+
+  <!-- Pipeline boxes -->
+  <!-- 1. Trending Topics -->
+  <rect x="20" y="45" width="150" height="85" rx="10" fill="#111116" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="95" y="76" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="600">Trending Topics</text>
+  <text x="95" y="96" text-anchor="middle" fill="#555" font-size="10">DuckDuckGo</text>
+  <text x="95" y="110" text-anchor="middle" fill="#555" font-size="10">discovery</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="170" y1="87" x2="198" y2="87" stroke="#555" stroke-width="1.2"/>
+  <polygon points="198,83 206,87 198,91" fill="#555"/>
+
+  <!-- 2. Gemma 2 9B -->
+  <rect x="208" y="35" width="170" height="105" rx="10" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="293" y="66" text-anchor="middle" fill="#00d4ff" font-size="14" font-weight="700">Gemma 2 9B</text>
+  <text x="293" y="86" text-anchor="middle" fill="#e0e0e0" font-size="10">Article writing</text>
+  <rect x="222" y="97" width="142" height="30" rx="6" fill="#0a0a0f" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="293" y="116" text-anchor="middle" fill="#555" font-size="9">LoRA fine-tuned on</text>
+  <text x="293" y="128" text-anchor="middle" fill="#555" font-size="9">user's writing style</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="378" y1="87" x2="406" y2="87" stroke="#555" stroke-width="1.2"/>
+  <polygon points="406,83 414,87 406,91" fill="#555"/>
+
+  <!-- 3. Flux.1-dev -->
+  <rect x="416" y="45" width="155" height="85" rx="10" fill="#111116" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="493" y="76" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="600">Flux.1-dev</text>
+  <text x="493" y="96" text-anchor="middle" fill="#555" font-size="10">3 contextual images</text>
+  <text x="493" y="110" text-anchor="middle" fill="#555" font-size="10">per article</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="571" y1="87" x2="599" y2="87" stroke="#555" stroke-width="1.2"/>
+  <polygon points="599,83 607,87 599,91" fill="#555"/>
+
+  <!-- 4. LLaVA -->
+  <rect x="609" y="45" width="150" height="85" rx="10" fill="#111116" stroke="#1a1a2e" stroke-width="1.5"/>
+  <text x="684" y="76" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="600">LLaVA</text>
+  <text x="684" y="96" text-anchor="middle" fill="#555" font-size="10">AI captions</text>
+  <text x="684" y="110" text-anchor="middle" fill="#555" font-size="10">for images</text>
+
+  <!-- Arrow 4→5 -->
+  <line x1="759" y1="87" x2="787" y2="87" stroke="#555" stroke-width="1.2"/>
+  <polygon points="787,83 795,87 787,91" fill="#555"/>
+
+  <!-- 5. Substack -->
+  <rect x="797" y="45" width="175" height="85" rx="10" fill="#111116" stroke="#00d4ff" stroke-width="1.5"/>
+  <text x="884" y="76" text-anchor="middle" fill="#00d4ff" font-size="14" font-weight="700">Substack</text>
+  <text x="884" y="96" text-anchor="middle" fill="#e0e0e0" font-size="10">One-click publish</text>
+
+  <!-- Bottom mode bar -->
+  <rect x="20" y="185" width="952" height="55" rx="10" fill="#111116" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <!-- Divider -->
+  <line x1="496" y1="195" x2="496" y2="230" stroke="#1a1a2e" stroke-width="1"/>
+
+  <!-- Auto Mode -->
+  <text x="258" y="211" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="600">Auto Mode</text>
+  <text x="258" y="229" text-anchor="middle" fill="#555" font-size="11">Zero input</text>
+
+  <!-- Custom Mode -->
+  <text x="734" y="211" text-anchor="middle" fill="#00d4ff" font-size="13" font-weight="600">Custom Mode</text>
+  <text x="734" y="229" text-anchor="middle" fill="#555" font-size="11">Editorial control</text>
+
+  <!-- Connecting line -->
+  <line x1="496" y1="140" x2="496" y2="185" stroke="#1a1a2e" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
