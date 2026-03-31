@@ -241,6 +241,24 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/tessera" },
     ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Academic literature review is one of the most time-intensive parts of research. A graduate student starting a new topic might spend weeks reading abstracts across multiple databases, manually tracking citations, and trying to synthesize themes across dozens of papers. Existing tools like Google Scholar or Zotero help with discovery and organization, but they don't help you understand the research landscape — where the consensus is, where the gaps are, or how papers relate to each other."
+      },
+      {
+        heading: "Design Challenge",
+        body: "AI-generated summaries of academic papers are inherently risky — a hallucinated finding or misattributed claim could send a researcher down the wrong path. The core design challenge was making AI-assisted analysis trustworthy enough for academic use. Every AI-generated insight needs to be traceable back to its source, and the system needs to surface uncertainty rather than hide it."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "Tessera searches five databases simultaneously (Semantic Scholar, arXiv, OpenAlex, CrossRef, PubMed) and deduplicates results, so researchers get comprehensive coverage without manually cross-referencing. Each paper gets a structured summary with explicit source attribution — not a freeform paragraph, but extracted findings, methods, gaps, and conclusions that can be individually verified. The citation graph classifies relationship types (supports, contradicts, extends) rather than just showing who cited whom, making the intellectual structure of a field visible at a glance. Cross-paper synthesis identifies themes and contradictions across collections, but always links back to the specific papers driving each claim. Export to BibTeX preserves academic workflow compatibility."
+      },
+      {
+        heading: "Outcome",
+        body: "A working research tool that compresses weeks of literature review into hours. The knowledge base and citation graph give researchers a structured, navigable map of their field rather than a pile of PDFs. Results export as BibTeX for citation managers, JSON for programmatic use, or a deployable static website for sharing with collaborators."
+      }
+    ],
   },
   {
     slug: "article-gen",
