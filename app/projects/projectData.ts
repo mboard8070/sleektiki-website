@@ -767,11 +767,19 @@ const projects: ProjectDetail[] = [
       { src: "/images/portfolio/12_scale_model_closeup.png", alt: "Scale Model — Detail Close-Up" },
     ],
     splatEmbeds: [
-      { name: "Scale Model Studio", marbleUrl: "https://marble.worldlabs.ai/world/9f84ef7c-5e43-475a-851f-eb6b209a30ee", thumbnail: "/images/portfolio/06_scale_model_studio.png" },
-      { name: "Rooftop Pool", marbleUrl: "https://marble.worldlabs.ai/world/4b405cfd-a72c-4b7f-aa31-11fc0abc8834", thumbnail: "/images/portfolio/09_rooftop_pool_urban.png" },
-      { name: "Waterfront Promenade", marbleUrl: "https://marble.worldlabs.ai/world/8c9a2856-1de6-4b41-946f-0b568e860c0c", thumbnail: "/images/portfolio/10_waterfront_promenade_evening.png" },
+      { name: "Scale Model Studio", marbleUrl: "/archviz-viewer.html?room=Scale+Model+Studio", thumbnail: "/images/portfolio/06_scale_model_studio.png" },
+      { name: "Rooftop Pool", marbleUrl: "/archviz-viewer.html?room=Rooftop+Pool", thumbnail: "/images/portfolio/09_rooftop_pool_urban.png" },
+      { name: "Waterfront Promenade", marbleUrl: "/archviz-viewer.html?room=Waterfront+Promenade", thumbnail: "/images/portfolio/10_waterfront_promenade_evening.png" },
     ],
-    links: [],
+    caseStudy: [
+      { heading: "Approach", body: "Each scene was generated from a single text prompt using Flux 2 Dev via the Replicate API. Prompts were engineered for architectural photography conventions: specific lens focal lengths, time-of-day lighting conditions, and compositional framing. No post-processing, compositing, or manual editing was applied." },
+      { heading: "Scene Variety", body: "The collection covers the core deliverable types in architectural marketing: exterior hero shots at golden hour and dusk, interior lifestyle renders, aerial masterplan views, night renders with architectural lighting, and presentation-quality scale model photography. Styles range from Mediterranean coastal to contemporary Middle Eastern, demonstrating prompt-driven versatility across regional design languages." },
+      { heading: "Image to 3D", body: "Three scenes were selected for conversion to interactive 3D Gaussian splats via World Labs Marble (marble-1.0 model). The resulting 500K-point splats load in-browser using Spark.js and Three.js, allowing full fly-through navigation with WASD controls. This demonstrates a complete pipeline from text prompt to navigable 3D environment with no manual 3D modeling." },
+      { heading: "Production Use", body: "This workflow targets early-stage architectural marketing where traditional 3D rendering pipelines are too slow or expensive for concept exploration. A developer or agency can generate dozens of scene variations in minutes, select the strongest compositions, then convert hero shots to interactive 3D for client presentations or website embeds." },
+    ],
+    links: [
+      { label: "View Full Portfolio", url: "/portfolio" },
+    ],
     features: [
       { title: "Text-to-Scene", description: "Every image generated from a single text prompt using Flux 2 Dev, with no compositing, inpainting, or manual editing." },
       { title: "Interactive 3D", description: "Select scenes converted to navigable Gaussian splats via World Labs Marble for immersive browser-based exploration." },

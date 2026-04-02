@@ -140,7 +140,7 @@ const portfolioItems: PortfolioItem[] = [
   // ═══════════════════════════════════════════
   {
     src: "/images/portfolio/06_scale_model_studio.png",
-    splatUrl: "https://marble.worldlabs.ai/world/9f84ef7c-5e43-475a-851f-eb6b209a30ee",
+    splatUrl: "/archviz-viewer.html?room=Scale+Model+Studio",
     title: "Scale Model Studio — 3D Splat",
     subject: "Interactive Gaussian Splat",
     scene: "Navigable 3D environment generated from AI image",
@@ -150,7 +150,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     src: "/images/portfolio/09_rooftop_pool_urban.png",
-    splatUrl: "https://marble.worldlabs.ai/world/4b405cfd-a72c-4b7f-aa31-11fc0abc8834",
+    splatUrl: "/archviz-viewer.html?room=Rooftop+Pool",
     title: "Rooftop Pool — 3D Splat",
     subject: "Interactive Gaussian Splat",
     scene: "Navigable 3D environment generated from AI image",
@@ -160,7 +160,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     src: "/images/portfolio/10_waterfront_promenade_evening.png",
-    splatUrl: "https://marble.worldlabs.ai/world/8c9a2856-1de6-4b41-946f-0b568e860c0c",
+    splatUrl: "/archviz-viewer.html?room=Waterfront+Promenade",
     title: "Waterfront Promenade — 3D Splat",
     subject: "Interactive Gaussian Splat",
     scene: "Navigable 3D environment generated from AI image",

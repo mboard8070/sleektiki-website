@@ -1,0 +1,22 @@
+{
+  "splats": [
+    {
+      "name": "Scale Model Studio",
+      "cleanedSpzUrl": "/splats_archviz/scale_model_studio.spz",
+      "scaleFactor": 1.5672723054885864,
+      "groundPlaneOffset": 1.5078237056732178
+    },
+    {
+      "name": "Rooftop Pool",
+      "cleanedSpzUrl": "/splats_archviz/rooftop_pool.spz",
+      "scaleFactor": 5.446451187133789,
+      "groundPlaneOffset": 2.9366979598999023
+    },
+    {
+      "name": "Waterfront Promenade",
+      "cleanedSpzUrl": "/splats_archviz/waterfront_promenade.spz",
+      "scaleFactor": 3.4543380737304688,
+      "groundPlaneOffset": 2.4876999855041504
+    }
+  ]
+}
