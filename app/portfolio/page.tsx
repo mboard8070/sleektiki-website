@@ -13,16 +13,161 @@ import ScrollReveal from "../components/ScrollReveal";
 interface PortfolioItem {
   src: string;
   videoSrc?: string;
+  splatUrl?: string;
   title: string;
   subject: string;
   scene: string;
   model: string;
   tags: string[];
-  category: "automotive" | "product" | "nike";
+  category: "automotive" | "product" | "nike" | "archviz";
   aspect?: "video" | "square";
 }
 
 const portfolioItems: PortfolioItem[] = [
+  // ═══════════════════════════════════════════
+  // ARCH-VIZ — Architectural Visualization
+  // ═══════════════════════════════════════════
+  {
+    src: "/images/portfolio/01_beachfront_residential_golden_hour.png",
+    title: "Beachfront Residence",
+    subject: "Luxury Residential",
+    scene: "Contemporary beachfront villa at golden hour",
+    model: "Flux 2 Dev",
+    tags: ["Residential", "Beach", "Golden Hour", "Exterior"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/02_urban_highrise_dusk.png",
+    title: "Urban High-Rise",
+    subject: "Residential Tower",
+    scene: "Coastal city skyline at dusk",
+    model: "Flux 2 Dev",
+    tags: ["Tower", "City", "Dusk", "Aerial"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/03_hotel_lobby_beachfront.png",
+    title: "Hotel Lobby",
+    subject: "Hospitality Interior",
+    scene: "Luxury beachfront hotel lobby with ocean view",
+    model: "Flux 2 Dev",
+    tags: ["Interior", "Hotel", "Beach", "Lobby"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/04_city_residential_night.png",
+    title: "City Night Render",
+    subject: "Mixed-Use Residential",
+    scene: "Architectural lighting design after rain",
+    model: "Flux 2 Dev",
+    tags: ["Night", "City", "Lighting", "Exterior"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/05_aerial_beachfront_development.png",
+    title: "Aerial Masterplan",
+    subject: "Resort Development",
+    scene: "Beachfront mega-development with marina",
+    model: "Flux 2 Dev",
+    tags: ["Aerial", "Masterplan", "Beach", "Resort"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/06_scale_model_studio.png",
+    title: "Scale Model",
+    subject: "Presentation Model",
+    scene: "Architectural model in technical studio",
+    model: "Flux 2 Dev",
+    tags: ["Model", "Studio", "Presentation"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/07_coastal_villas_sunrise.png",
+    title: "Coastal Villas",
+    subject: "Mediterranean Villas",
+    scene: "Rocky coastline villa cluster at sunrise",
+    model: "Flux 2 Dev",
+    tags: ["Residential", "Mediterranean", "Sunrise", "Exterior"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/08_penthouse_interior_cityview.png",
+    title: "Penthouse Interior",
+    subject: "Luxury Penthouse",
+    scene: "Double-height living space with city skyline at twilight",
+    model: "Flux 2 Dev",
+    tags: ["Interior", "Penthouse", "City", "Twilight"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/09_rooftop_pool_urban.png",
+    title: "Rooftop Pool",
+    subject: "Amenity Deck",
+    scene: "Infinity pool overlooking coastal city",
+    model: "Flux 2 Dev",
+    tags: ["Rooftop", "Pool", "City", "Amenity"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/10_waterfront_promenade_evening.png",
+    title: "Waterfront Promenade",
+    subject: "Mixed-Use Development",
+    scene: "Harbor dining and retail at blue hour",
+    model: "Flux 2 Dev",
+    tags: ["Waterfront", "Evening", "Mixed-Use", "Promenade"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/11_desert_resort_luxury.png",
+    title: "Desert Resort",
+    subject: "Middle East Hospitality",
+    scene: "Contemporary mashrabiya resort at golden hour",
+    model: "Flux 2 Dev",
+    tags: ["Desert", "Resort", "Middle East", "Exterior"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/12_scale_model_closeup.png",
+    title: "Model Detail",
+    subject: "Presentation Model",
+    scene: "Macro close-up of residential tower model",
+    model: "Flux 2 Dev",
+    tags: ["Model", "Detail", "Macro", "Studio"],
+    category: "archviz",
+  },
+  // ═══════════════════════════════════════════
+  // ARCH-VIZ — Interactive Gaussian Splats
+  // ═══════════════════════════════════════════
+  {
+    src: "/images/portfolio/06_scale_model_studio.png",
+    splatUrl: "https://marble.worldlabs.ai/world/9f84ef7c-5e43-475a-851f-eb6b209a30ee",
+    title: "Scale Model Studio — 3D Splat",
+    subject: "Interactive Gaussian Splat",
+    scene: "Navigable 3D environment generated from AI image",
+    model: "World Labs Marble",
+    tags: ["Gaussian Splat", "Interactive", "3D", "Studio"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/09_rooftop_pool_urban.png",
+    splatUrl: "https://marble.worldlabs.ai/world/4b405cfd-a72c-4b7f-aa31-11fc0abc8834",
+    title: "Rooftop Pool — 3D Splat",
+    subject: "Interactive Gaussian Splat",
+    scene: "Navigable 3D environment generated from AI image",
+    model: "World Labs Marble",
+    tags: ["Gaussian Splat", "Interactive", "3D", "Rooftop"],
+    category: "archviz",
+  },
+  {
+    src: "/images/portfolio/10_waterfront_promenade_evening.png",
+    splatUrl: "https://marble.worldlabs.ai/world/8c9a2856-1de6-4b41-946f-0b568e860c0c",
+    title: "Waterfront Promenade — 3D Splat",
+    subject: "Interactive Gaussian Splat",
+    scene: "Navigable 3D environment generated from AI image",
+    model: "World Labs Marble",
+    tags: ["Gaussian Splat", "Interactive", "3D", "Waterfront"],
+    category: "archviz",
+  },
   // ═══════════════════════════════════════════
   // AUTOMOTIVE — Video
   // ═══════════════════════════════════════════
@@ -1025,6 +1170,7 @@ const portfolioItems: PortfolioItem[] = [
 
 const categories = [
   { key: "All", label: "All" },
+  { key: "archviz", label: "Arch-Viz" },
   { key: "automotive", label: "Automotive" },
   { key: "product", label: "Product" },
   { key: "nike", label: "Nike" },
@@ -1096,7 +1242,7 @@ export default function Portfolio() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.3 }}
-                  onClick={() => setLightbox(item)}
+                  onClick={() => item.splatUrl ? window.open(item.splatUrl, '_blank') : setLightbox(item)}
                   className="group cursor-pointer rounded-xl overflow-hidden border border-[var(--surface-border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 transition-all duration-300"
                   style={{
                     boxShadow: "0 0 0 0 transparent",
@@ -1125,6 +1271,11 @@ export default function Portfolio() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
+                    )}
+                    {item.splatUrl && (
+                      <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-1 rounded-full border border-white/20">
+                        3D Splat
+                      </div>
                     )}
                   </div>
                   <div style={{ padding: "1.25rem" }}>

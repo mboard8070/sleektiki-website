@@ -71,6 +71,15 @@ const projects: Project[] = [
     image: "/images/projects/stillion-lora.png",
   },
   {
+    title: "Arch-Viz",
+    slug: "arch-viz",
+    description:
+      "AI-generated photorealistic architectural visualizations for real estate marketing, hospitality branding, and large-scale development presentations. Beachfront residences, urban towers, hotel interiors, and desert resorts, all from text prompts. Select scenes converted to interactive 3D Gaussian splats.",
+    tags: ["Flux 2 Dev", "Gaussian Splatting", "World Labs", "Architecture"],
+    category: "creative",
+    image: "/images/portfolio/01_beachfront_residential_golden_hour.png",
+  },
+  {
     title: "Machina Prima",
     slug: "machina-prima",
     description:

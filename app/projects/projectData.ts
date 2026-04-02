@@ -741,6 +741,43 @@ const projects: ProjectDetail[] = [
       { label: "ArtStation", url: "https://www.artstation.com/matthewboard" },
     ],
   },
+  {
+    slug: "arch-viz",
+    title: "Arch-Viz",
+    subtitle: "AI-Generated Architectural Visualization",
+    description: [
+      "A collection of photorealistic architectural visualizations generated entirely through AI, demonstrating Flux 2 Dev's capability for high-end real estate marketing, hospitality branding, and large-scale development presentations.",
+      "Scenes span beachfront luxury residences, urban high-rise towers, hotel interiors, waterfront promenades, desert resorts, and rooftop amenity decks. Each image was generated from a single text prompt with no compositing or manual editing.",
+      "Three scenes were converted to interactive 3D Gaussian splats via World Labs Marble, enabling navigable exploration of the generated environments directly in the browser."
+    ],
+    tags: ["Flux 2 Dev", "World Labs Marble", "Gaussian Splatting", "Architectural Visualization", "Hospitality", "Real Estate"],
+    hero: "/images/portfolio/01_beachfront_residential_golden_hour.png",
+    gallery: [
+      { src: "/images/portfolio/01_beachfront_residential_golden_hour.png", alt: "Beachfront Residence — Golden Hour" },
+      { src: "/images/portfolio/02_urban_highrise_dusk.png", alt: "Urban High-Rise — Dusk" },
+      { src: "/images/portfolio/03_hotel_lobby_beachfront.png", alt: "Hotel Lobby — Beachfront" },
+      { src: "/images/portfolio/04_city_residential_night.png", alt: "City Residential — Night" },
+      { src: "/images/portfolio/05_aerial_beachfront_development.png", alt: "Aerial Masterplan — Beachfront Development" },
+      { src: "/images/portfolio/06_scale_model_studio.png", alt: "Scale Model — Technical Studio" },
+      { src: "/images/portfolio/07_coastal_villas_sunrise.png", alt: "Coastal Villas — Sunrise" },
+      { src: "/images/portfolio/08_penthouse_interior_cityview.png", alt: "Penthouse Interior — City View" },
+      { src: "/images/portfolio/09_rooftop_pool_urban.png", alt: "Rooftop Pool — Urban" },
+      { src: "/images/portfolio/10_waterfront_promenade_evening.png", alt: "Waterfront Promenade — Blue Hour" },
+      { src: "/images/portfolio/11_desert_resort_luxury.png", alt: "Desert Resort — Middle East" },
+      { src: "/images/portfolio/12_scale_model_closeup.png", alt: "Scale Model — Detail Close-Up" },
+    ],
+    splatEmbeds: [
+      { name: "Scale Model Studio", marbleUrl: "https://marble.worldlabs.ai/world/9f84ef7c-5e43-475a-851f-eb6b209a30ee", thumbnail: "/images/portfolio/06_scale_model_studio.png" },
+      { name: "Rooftop Pool", marbleUrl: "https://marble.worldlabs.ai/world/4b405cfd-a72c-4b7f-aa31-11fc0abc8834", thumbnail: "/images/portfolio/09_rooftop_pool_urban.png" },
+      { name: "Waterfront Promenade", marbleUrl: "https://marble.worldlabs.ai/world/8c9a2856-1de6-4b41-946f-0b568e860c0c", thumbnail: "/images/portfolio/10_waterfront_promenade_evening.png" },
+    ],
+    links: [],
+    features: [
+      { title: "Text-to-Scene", description: "Every image generated from a single text prompt using Flux 2 Dev, with no compositing, inpainting, or manual editing." },
+      { title: "Interactive 3D", description: "Select scenes converted to navigable Gaussian splats via World Labs Marble for immersive browser-based exploration." },
+      { title: "Production Versatile", description: "Scenes cover exteriors, interiors, aerials, night renders, scale models, and multiple architectural styles from Mediterranean to Middle Eastern." },
+    ],
+  },
 ];
 
 export function getProject(slug: string): ProjectDetail | undefined {
