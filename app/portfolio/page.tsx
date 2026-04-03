@@ -136,39 +136,6 @@ const portfolioItems: PortfolioItem[] = [
     category: "archviz",
   },
   // ═══════════════════════════════════════════
-  // ARCH-VIZ — Interactive Gaussian Splats
-  // ═══════════════════════════════════════════
-  {
-    src: "/images/portfolio/06_scale_model_studio.png",
-    splatUrl: "/archviz-viewer.html?room=Scale+Model+Studio",
-    title: "Scale Model Studio — 3D Splat",
-    subject: "Interactive Gaussian Splat",
-    scene: "Navigable 3D environment generated from AI image",
-    model: "World Labs Marble",
-    tags: ["Gaussian Splat", "Interactive", "3D", "Studio"],
-    category: "archviz",
-  },
-  {
-    src: "/images/portfolio/09_rooftop_pool_urban.png",
-    splatUrl: "/archviz-viewer.html?room=Rooftop+Pool",
-    title: "Rooftop Pool — 3D Splat",
-    subject: "Interactive Gaussian Splat",
-    scene: "Navigable 3D environment generated from AI image",
-    model: "World Labs Marble",
-    tags: ["Gaussian Splat", "Interactive", "3D", "Rooftop"],
-    category: "archviz",
-  },
-  {
-    src: "/images/portfolio/10_waterfront_promenade_evening.png",
-    splatUrl: "/archviz-viewer.html?room=Waterfront+Promenade",
-    title: "Waterfront Promenade — 3D Splat",
-    subject: "Interactive Gaussian Splat",
-    scene: "Navigable 3D environment generated from AI image",
-    model: "World Labs Marble",
-    tags: ["Gaussian Splat", "Interactive", "3D", "Waterfront"],
-    category: "archviz",
-  },
-  // ═══════════════════════════════════════════
   // AUTOMOTIVE — Video
   // ═══════════════════════════════════════════
   {
