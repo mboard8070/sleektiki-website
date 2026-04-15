@@ -44,6 +44,15 @@ const projects: Project[] = [
     image: "/images/projects/pixelus.png",
   },
   {
+    title: "Pixelus Mobile",
+    slug: "pixelus-mobile",
+    description:
+      "A native iOS app that transforms product photos into lifestyle shots, editorial scenes, and platform-ready content. Upload products, choose from six creative styles, pick platform export presets with native aspect ratios, and generate full campaigns from your phone. Batch processing, on-model shots, photo editing with filters, and brand templates included. Everything runs in the cloud.",
+    tags: ["SwiftUI", "iOS", "Cloud API", "Batch Processing", "Photo Editor"],
+    category: "ai",
+    image: "/images/projects/pixelus_screenshot_1.png",
+  },
+  {
     title: "Surfaced",
     slug: "surfaced",
     description:

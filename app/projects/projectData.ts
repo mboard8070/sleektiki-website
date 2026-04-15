@@ -373,9 +373,83 @@ const projects: ProjectDetail[] = [
       },
       {
         heading: "Outcome",
-        body: "Shipped as a production SaaS at pixelus.io with Stripe billing, user authentication, and a moderation system. The portfolio gallery on this site shows real platform output across automotive, footwear, watches, beverages, and cosmetics. An iOS companion app is in development with platform-specific export presets for Instagram, Amazon, and Shopify."
+        body: "Shipped as a production SaaS at pixelus.io with Stripe billing, user authentication, and a moderation system. The portfolio gallery on this site shows real platform output across automotive, footwear, watches, beverages, and cosmetics. A native iOS companion app followed, with six creative styles, nine platform export presets, batch processing, and a built-in photo editor."
       }
     ],
+  },
+  {
+    slug: "pixelus-mobile",
+    title: "Pixelus Mobile",
+    subtitle: "iOS Companion App for AI Product Photography",
+    description: [
+      "Pixelus transforms product photos into lifestyle shots, editorial scenes, and platform-ready content from your phone. Upload product photos, choose a style, pick your platforms, and hit generate. The AI handles background removal, scene composition, and platform-specific sizing.",
+      "Six creative styles per product: Lifestyle, Product Ad, Artistic, Clay Render, Wireframe, and On Model. Nine platform export presets with native aspect ratios covering Amazon, Shopify, Instagram Post, Instagram Story, TikTok, Facebook Ad, Pinterest, Etsy, and Website Banner.",
+      "Batch processing lets you upload multiple products and get full campaigns back. A built-in photo editor offers filters (Warm, Cool, Vivid, Muted) and manual adjustments. Brand templates save and reuse style settings across shoots. Push notifications fire when a batch is ready. Everything runs in the cloud, no GPU required."
+    ],
+    tags: ["SwiftUI", "iOS", "Cloud API", "Batch Processing", "Photo Editor", "Push Notifications"],
+    hero: "/images/projects/pixelus_screenshot_1.png",
+    gallery: [
+      { src: "/images/projects/pixelus_screenshot_1.png", alt: "Pixelus Mobile - Home Screen" },
+      { src: "/images/projects/pixelus_screenshot_2.png", alt: "Pixelus Mobile - Gallery" },
+      { src: "/images/projects/pixelus_screenshot_9.png", alt: "Pixelus Mobile - Style Selection" },
+      { src: "/images/projects/pixelus_screenshot_10.png", alt: "Pixelus Mobile - Platform Selection" },
+      { src: "/images/projects/pixelus_screenshot_11.png", alt: "Pixelus Mobile - Scene Selection" },
+      { src: "/images/projects/pixelus_screenshot_12.png", alt: "Pixelus Mobile - Review and Generate" },
+      { src: "/images/projects/pixelus_screenshot_5.png", alt: "Pixelus Mobile - On Model Result" },
+      { src: "/images/projects/pixelus_screenshot_8.png", alt: "Pixelus Mobile - On Model Athletic Wear" },
+      { src: "/images/projects/pixelus_screenshot_7.png", alt: "Pixelus Mobile - Artistic Style Result" },
+      { src: "/images/projects/pixelus_screenshot_6.png", alt: "Pixelus Mobile - Photo Editor" },
+      { src: "/images/projects/pixelus_screenshot_3.png", alt: "Pixelus Mobile - Brand Template" },
+      { src: "/images/projects/pixelus_screenshot_4.png", alt: "Pixelus Mobile - Settings" }
+    ],
+    features: [
+      {
+        title: "Six Creative Styles",
+        description: "Lifestyle places products in natural scenes. Product Ad creates clean studio shots on white. Artistic generates surreal fine art compositions with dramatic lighting. Clay Render produces matte grey sculpture visualizations. Wireframe creates glowing technical renders. On Model shows products worn or carried by a person."
+      },
+      {
+        title: "Platform Export Presets",
+        description: "Nine platform presets with native aspect ratios: Amazon (1:1), Shopify (1:1), Instagram Post (1:1), Instagram Story (9:16), TikTok (9:16), Facebook Ad (4:5), Pinterest (2:3), Etsy (4:3), and Website Banner (16:9). Select multiple platforms per shoot and get correctly sized output for each."
+      },
+      {
+        title: "Batch Processing",
+        description: "Upload multiple product photos and generate full campaigns across styles and platforms in a single shoot. Push notifications alert you when the batch completes so you can close the app and come back to finished results."
+      },
+      {
+        title: "Photo Editor",
+        description: "Built-in editor with preset filters (Warm, Cool, Vivid, Muted) and manual adjustments. Edit generated images directly in the app before downloading or sharing."
+      },
+      {
+        title: "Brand Templates",
+        description: "Save brand name, tagline, product category, and tone as reusable templates. Apply a template to new shoots to keep visual consistency across campaigns without re-entering settings every time."
+      },
+      {
+        title: "Scene Control",
+        description: "Choose from preset scenes grouped by category (Food/Beverage, Lifestyle, Luxury/Premium, Tech/Electronics) or write a custom scene description. An Expand with AI toggle rewrites simple ideas into detailed scene prompts."
+      }
+    ],
+    links: [
+      { label: "Pixelus.io", url: "https://pixelus.io" },
+      { label: "Terms of Use", url: "https://pixelus.io/terms" }
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "The Pixelus web platform proved the concept: AI-generated product photography that preserves product fidelity. But e-commerce sellers and social media marketers live on their phones. They shoot product photos on their phone cameras, manage listings from mobile apps, and post to social channels on the go. Requiring them to open a laptop and navigate a web app added friction at every step."
+      },
+      {
+        heading: "Design Challenge",
+        body: "A mobile product photography app needs to feel as simple as posting to Instagram while exposing enough controls to produce professional results. The generation workflow has multiple decision points (style, platform, scene, review) that could easily become overwhelming on a small screen. Each step needs to feel lightweight."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The shoot flow is broken into single-purpose screens: upload, then style, then platform, then scene, then review. Each screen has one job and a clear next action. The review screen shows a cost summary before generating so there are no surprises. Brand templates collapse the repeat setup problem. Save your brand, tagline, and category once, apply it to every future shoot. The gallery uses a masonry grid that shows results at a glance, and tapping into any image opens a detail view with style label, platform format, and action buttons for editing, sharing, or deleting."
+      },
+      {
+        heading: "Outcome",
+        body: "A native iOS app that covers the full workflow from product photo to platform-ready content. Six creative styles, nine platform presets, batch processing with push notifications, a built-in photo editor, and reusable brand templates. Cloud-based generation means no device hardware constraints."
+      }
+    ]
   },
   {
     slug: "surfaced",
