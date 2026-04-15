@@ -62,6 +62,15 @@ const projects: Project[] = [
     image: "/images/projects/pixelus.png",
   },
   {
+    title: "Surfaced",
+    slug: "surfaced",
+    description:
+      "A real-time PBR material generation tool that creates production-ready texture maps from text prompts. Generates base color, normal, height, roughness, metallic, emissive, and AO maps in seconds with live Three.js preview. Includes a color-to-metallic derivation engine, layer compositing, and per-channel painting.",
+    tags: ["React", "Three.js", "FastAPI", "PBR", "fal.ai", "FLUX"],
+    category: "ai",
+    image: "/images/projects/surfaced.png",
+  },
+  {
     title: "Stillion AI LoRA Trainer",
     slug: "stillion-lora",
     description:
