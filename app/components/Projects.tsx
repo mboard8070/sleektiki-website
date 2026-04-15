@@ -35,24 +35,6 @@ const projects: Project[] = [
     image: "/images/projects/maude-mobile.png",
   },
   {
-    title: "Tessera",
-    slug: "tessera",
-    description:
-      "An AI-powered academic literature review platform that searches five major databases \u2014 Semantic Scholar, arXiv, OpenAlex, CrossRef, and PubMed. Generates structured paper summaries and cross-paper literature syntheses, visualizes citation networks with relationship classification, and extracts findings, methods, gaps, and conclusions into a searchable knowledge base. Export as BibTeX, JSON, or a deployable static website.",
-    tags: ["Next.js", "React", "SQLite", "LLM", "Semantic Scholar", "arXiv"],
-    category: "ai",
-    image: "/images/projects/tessera.png",
-  },
-  {
-    title: "Article-Gen",
-    slug: "article-gen",
-    description:
-      "A multi-modal AI content generation platform that creates professional articles with AI-generated images and publishes directly to Substack. Auto-generates articles from trending news topics, creates three contextual images per article via Flux.1-dev, adds AI image captioning with LLaVA vision model, and supports custom prompt mode for full creative control. Writing style is fine-tunable via LoRA on Gemma 2 9B.",
-    tags: ["Gemma 2 9B", "Flux.1-dev", "LLaVA", "Streamlit", "NVIDIA GPU"],
-    category: "ai",
-    image: "/images/projects/article-gen.png",
-  },
-  {
     title: "Pixelus",
     slug: "pixelus",
     description:
@@ -159,6 +141,24 @@ const projects: Project[] = [
     tags: ["ZBrush", "XGen", "Keyshot", "Substance", "UE5", "Sundance"],
     category: "creative",
     image: "/images/projects/iggy-pop.jpg",
+  },
+  {
+    title: "Tessera",
+    slug: "tessera",
+    description:
+      "An AI-powered academic literature review platform that searches five major databases \u2014 Semantic Scholar, arXiv, OpenAlex, CrossRef, and PubMed. Generates structured paper summaries and cross-paper literature syntheses, visualizes citation networks with relationship classification, and extracts findings, methods, gaps, and conclusions into a searchable knowledge base. Export as BibTeX, JSON, or a deployable static website.",
+    tags: ["Next.js", "React", "SQLite", "LLM", "Semantic Scholar", "arXiv"],
+    category: "ai",
+    image: "/images/projects/tessera.png",
+  },
+  {
+    title: "Article-Gen",
+    slug: "article-gen",
+    description:
+      "A multi-modal AI content generation platform that creates professional articles with AI-generated images and publishes directly to Substack. Auto-generates articles from trending news topics, creates three contextual images per article via Flux.1-dev, adds AI image captioning with LLaVA vision model, and supports custom prompt mode for full creative control. Writing style is fine-tunable via LoRA on Gemma 2 9B.",
+    tags: ["Gemma 2 9B", "Flux.1-dev", "LLaVA", "Streamlit", "NVIDIA GPU"],
+    category: "ai",
+    image: "/images/projects/article-gen.png",
   },
 ];
 
