@@ -390,7 +390,6 @@ const projects: ProjectDetail[] = [
     hero: "/images/projects/pixelus_screenshot_1.png",
     gallery: [
       { src: "/images/projects/pixelus_screenshot_1.png", alt: "Pixelus Mobile - Home Screen" },
-      { src: "/images/projects/pixelus_screenshot_2.png", alt: "Pixelus Mobile - Gallery" },
       { src: "/images/projects/pixelus_screenshot_9.png", alt: "Pixelus Mobile - Style Selection" },
       { src: "/images/projects/pixelus_screenshot_10.png", alt: "Pixelus Mobile - Platform Selection" },
       { src: "/images/projects/pixelus_screenshot_11.png", alt: "Pixelus Mobile - Scene Selection" },
