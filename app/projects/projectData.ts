@@ -393,6 +393,7 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/surfaced-suede.png", alt: "Surfaced — Brown Suede with Metallic Derivation" },
       { src: "/images/projects/surfaced-library.png", alt: "Surfaced — Material Library" },
       { src: "/images/projects/surfaced-copper.png", alt: "Surfaced — Oxidized Copper" },
+      { src: "/images/projects/surfaced-aluminum.png", alt: "Surfaced — Brushed Aluminum with Metallic Override" },
     ],
     features: [
       {
