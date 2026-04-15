@@ -390,7 +390,7 @@ const projects: ProjectDetail[] = [
     hero: "/images/projects/surfaced.png",
     gallery: [
       { src: "/images/projects/surfaced.png", alt: "Surfaced — Kevlar Fiber Material" },
-      { src: "/images/projects/surfaced-suede.png", alt: "Surfaced — Brown Suede with Metallic Derivation" },
+      { src: "/images/projects/surfaced-suede.png", alt: "Surfaced — Dark Brown Suede" },
       { src: "/images/projects/surfaced-library.png", alt: "Surfaced — Material Library" },
       { src: "/images/projects/surfaced-copper.png", alt: "Surfaced — Oxidized Copper" },
       { src: "/images/projects/surfaced-aluminum.png", alt: "Surfaced — Brushed Aluminum with Metallic Override" },
