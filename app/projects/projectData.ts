@@ -30,9 +30,9 @@ const projects: ProjectDetail[] = [
   subtitle: "Multi-Agent Unified Dispatch Engine",
   heroPosition: "left top",
   description: [
-    "MAUDE is a full-stack AI operating environment running on the NVIDIA DGX Spark. It coordinates 10+ specialized models through a unified gateway — routing between local inference (Nemotron), cloud code generation (Codestral, Devstral), vision analysis (LLaVA), and frontier reasoning (Claude, Mistral) based on task requirements.",
+    "MAUDE is a full-stack AI operating environment running on the NVIDIA DGX Spark. It coordinates 10+ specialized models through a unified gateway, routing between local inference (Nemotron), cloud code generation (Codestral, Devstral), vision analysis (LLaVA), and frontier reasoning (Claude, Mistral) based on task requirements.",
     "Over 100 tools span file operations, web browsing, Google Workspace (Gmail, Drive, Sheets, Calendar, Slides, Contacts, YouTube), GitHub (PRs, issues, CI/CD, releases), browser automation, image generation, social media posting, and system monitoring. Tools are dynamically filtered per message to minimize token usage.",
-    "The system runs across five client interfaces — a server TUI on the Spark, a pip-installable Mac/PC/Linux CLI, a native iOS & Android app, a Telegram bot, and a web dashboard — all connected over Tailscale VPN through a single gateway that handles SSE streaming, WebSocket terminal/voice proxying, file transfers, and tool execution loops."
+    "The system runs across five client interfaces: a server TUI on the Spark, a pip-installable Mac/PC/Linux CLI, a native iOS & Android app, a Telegram bot, and a web dashboard. All connected over Tailscale VPN through a single gateway that handles SSE streaming, WebSocket terminal/voice proxying, file transfers, and tool execution loops."
   ],
   tags: ["Nemotron", "Codestral", "Claude", "Mistral", "Devstral", "LLaVA", "Whisper", "Tailscale", "Docker", "Python", "React", "Capacitor"],
   hero: "/images/projects/maude.png",
@@ -44,15 +44,15 @@ const projects: ProjectDetail[] = [
   caseStudy: [
     {
       heading: "The Problem",
-      body: "Every commercial AI assistant locks you into one model, one provider, and their cloud. If you want Claude's reasoning, Mistral's speed, and a local model for privacy — you need three different apps, three billing accounts, and no shared context between them. For a power user who wants AI integrated into their actual workflow (files, email, calendar, code, devices), the gap between what chatbots offer and what's needed is enormous."
+      body: "Every commercial AI assistant locks you into one model, one provider, and their cloud. If you want Claude's reasoning, Mistral's speed, and a local model for privacy, you need three different apps, three billing accounts, and no shared context between them. For a power user who wants AI integrated into their actual workflow (files, email, calendar, code, devices), the gap between what chatbots offer and what's needed is enormous."
     },
     {
       heading: "Design Challenge",
-      body: "How do you build a single AI interface that spans 10+ models, 100+ tools, five client surfaces (desktop TUI, CLI, mobile app, Telegram bot, web dashboard), and multiple physical machines — without the complexity leaking through to the user? The user should say what they want and the system should figure out which model, which tools, and which machine to use."
+      body: "How do you build a single AI interface that spans 10+ models, 100+ tools, five client surfaces (desktop TUI, CLI, mobile app, Telegram bot, web dashboard), and multiple physical machines without the complexity leaking through to the user? The user should say what they want and the system should figure out which model, which tools, and which machine to use."
     },
     {
       heading: "Key Design Decisions",
-      body: "The central architectural choice was a unified gateway that absorbs all complexity. Every client connects to one endpoint. The gateway resolves model aliases, translates between API formats (OpenAI vs. Anthropic), executes tools server-side, manages context windows, and streams results back with optional trace visibility. Tool selection is dynamic — keyword filtering on each message activates only relevant tools, keeping token usage 30-40% lower than sending the full 100+ tool catalog. For the mobile app, I designed collapsible tool execution traces: power users can see exactly what the AI is doing (which tools it called, what it found, how long it took), while casual users see only the final response."
+      body: "The central architectural choice was a unified gateway that absorbs all complexity. Every client connects to one endpoint. The gateway resolves model aliases, translates between API formats (OpenAI vs. Anthropic), executes tools server-side, manages context windows, and streams results back with optional trace visibility. Tool selection is dynamic: keyword filtering on each message activates only relevant tools, keeping token usage 30-40% lower than sending the full 100+ tool catalog. For the mobile app, I designed collapsible tool execution traces. Power users can see exactly what the AI is doing (which tools it called, what it found, how long it took), while casual users see only the final response."
     },
     {
       heading: "Outcome",
@@ -62,7 +62,7 @@ const projects: ProjectDetail[] = [
   features: [
     {
       title: "Multi-Model Gateway",
-      description: "A Python gateway on port 30000 routes all traffic — 10+ LLM models (Mistral, Codestral, Devstral, Nemotron, Claude Opus, Claude Sonnet, LLaVA), WebSocket proxying for SSH terminal and voice, file transfers, tool execution loops, and SSE streaming with real-time pipeline traces. Models are resolved via short aliases with per-model context window awareness."
+      description: "A Python gateway on port 30000 routes all traffic: 10+ LLM models (Mistral, Codestral, Devstral, Nemotron, Claude Opus, Claude Sonnet, LLaVA), WebSocket proxying for SSH terminal and voice, file transfers, tool execution loops, and SSE streaming with real-time pipeline traces. Models are resolved via short aliases with per-model context window awareness."
     },
     {
       title: "100+ LLM-Callable Tools",
@@ -148,29 +148,29 @@ const projects: ProjectDetail[] = [
   subtitle: "Native iOS & Android Companion App",
   architectureDiagram: "/images/projects/maude-mobile-architecture.svg",
   description: [
-    "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser — all routed through a single gateway on port 30000.",
+    "A native iOS and Android companion app that connects to MAUDE on the DGX Spark over Tailscale. Provides full voice chat, text conversation, SSH terminal, file management, and a built-in web browser, all routed through a single gateway on port 30000.",
     "Seven modules in one app: AI chat with tool execution, full-duplex voice calls with live waveform visualization using PersonaPlex, SSH terminal via xterm.js over WebSocket PTY, web browser proxied through the Spark, Telegram message viewer, shared file manager with camera upload, and a settings panel with theme switching and model selection.",
-    "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS — a single TypeScript codebase compiled to native iOS and Android apps. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile."
+    "The retro 80s Amber CRT theme shown here is one of three selectable themes. Built with React, Ionic Capacitor, and Tailwind CSS as a single TypeScript codebase compiled to native iOS and Android apps. Voice uses Opus-encoded audio streaming over WebSocket with scheduled-playback buffering for click-free audio on mobile."
   ],
   tags: ["React", "Capacitor", "Tailwind", "WebSocket", "Opus Codec", "PersonaPlex", "xterm.js"],
   hero: "/images/projects/maude-mobile.png",
   gallery: [
-    { src: "/images/projects/maude-mobile.png", alt: "MAUDE Mobile — Home Screen" },
-    { src: "/images/projects/maude-mobile-voice.png", alt: "MAUDE Mobile — Voice Chat" },
-    { src: "/images/projects/maude-mobile-settings.png", alt: "MAUDE Mobile — Settings" }
+    { src: "/images/projects/maude-mobile.png", alt: "MAUDE Mobile - Home Screen" },
+    { src: "/images/projects/maude-mobile-voice.png", alt: "MAUDE Mobile - Voice Chat" },
+    { src: "/images/projects/maude-mobile-settings.png", alt: "MAUDE Mobile - Settings" }
   ],
   caseStudy: [
     {
       heading: "The Problem",
-      body: "MAUDE runs on a DGX Spark at home, but I need to use it everywhere — from the couch, on a walk, at a coffee shop. SSH into a terminal TUI from a phone is technically possible but terrible UX. And voice interaction, file sharing, and camera integration don't work through a terminal."
+      body: "MAUDE runs on a DGX Spark at home, but I need to use it everywhere: from the couch, on a walk, at a coffee shop. SSH into a terminal TUI from a phone is technically possible but terrible UX. And voice interaction, file sharing, and camera integration don't work through a terminal."
     },
     {
       heading: "Design Challenge",
-      body: "How do you fit seven distinct capabilities — AI chat, voice calls, SSH terminal, web browser, messaging, file management, and system settings — into a single mobile app without it feeling like a Swiss Army knife that does everything poorly? Each module has fundamentally different interaction patterns: chat is conversational, voice is real-time streaming, terminal is keyboard-intensive, files are spatial."
+      body: "How do you fit seven distinct capabilities (AI chat, voice calls, SSH terminal, web browser, messaging, file management, and system settings) into a single mobile app without it feeling like a Swiss Army knife that does everything poorly? Each module has fundamentally different interaction patterns: chat is conversational, voice is real-time streaming, terminal is keyboard-intensive, files are spatial."
     },
     {
       heading: "Key Design Decisions",
-      body: "Rather than tabs or a hamburger menu hiding modules, I designed a home screen that surfaces the most-used modules prominently with real-time status indicators (gateway connection, active model, unread messages). Each module opens full-screen with its own optimized UI. The critical decision was making tool execution visible but optional in the chat view — a collapsible trace panel shows what MAUDE is doing (reading files, searching the web, calling APIs) so you understand the AI's reasoning without the noise overwhelming the conversation. For voice, I implemented scheduled-playback buffering with Opus encoding to eliminate the audio clicks that plague WebSocket streaming on mobile."
+      body: "Rather than tabs or a hamburger menu hiding modules, I designed a home screen that surfaces the most-used modules prominently with real-time status indicators (gateway connection, active model, unread messages). Each module opens full-screen with its own optimized UI. The critical decision was making tool execution visible but optional in the chat view. A collapsible trace panel shows what MAUDE is doing (reading files, searching the web, calling APIs) so you understand the AI's reasoning without the noise overwhelming the conversation. For voice, I implemented scheduled-playback buffering with Opus encoding to eliminate the audio clicks that plague WebSocket streaming on mobile."
     },
     {
       heading: "Outcome",
@@ -180,7 +180,7 @@ const projects: ProjectDetail[] = [
   features: [
     {
       title: "Voice Chat",
-      description: "Full-duplex voice conversation via PersonaPlex. Opus-encoded audio streams over WebSocket with scheduled-playback buffering for click-free audio on mobile. Supports camera capture during calls — LLaVA analyzes the photo and the voice session reconnects with image context injected into the prompt."
+      description: "Full-duplex voice conversation via PersonaPlex. Opus-encoded audio streams over WebSocket with scheduled-playback buffering for click-free audio on mobile. Supports camera capture during calls. LLaVA analyzes the photo and the voice session reconnects with image context injected into the prompt."
     },
     {
       title: "Gateway Proxy",
@@ -208,19 +208,19 @@ const projects: ProjectDetail[] = [
     subtitle: "AI-Powered Academic Literature Review",
     architectureDiagram: "/images/projects/tessera-architecture.svg",
     description: [
-      "Tessera is an AI-powered academic literature review platform that searches five major databases — Semantic Scholar, arXiv, OpenAlex, CrossRef, and PubMed — to find relevant research papers.",
+      "Tessera is an AI-powered academic literature review platform that searches five major databases (Semantic Scholar, arXiv, OpenAlex, CrossRef, and PubMed) to find relevant research papers.",
       "It generates structured paper summaries and cross-paper literature syntheses, visualizes citation networks with relationship classification, and extracts findings, methods, gaps, and conclusions into a searchable knowledge base.",
       "Results can be exported as BibTeX, JSON, or a deployable static website. The interactive citation graph lets you explore how papers relate to each other, identifying clusters, influential works, and research gaps.",
     ],
     tags: ["Next.js", "React", "SQLite", "LLM", "Semantic Scholar", "arXiv", "OpenAlex", "PubMed"],
     hero: "/images/projects/tessera.png",
     gallery: [
-      { src: "/images/projects/tessera.png", alt: "Tessera — Dashboard" },
-      { src: "/images/projects/tessera-paper.png", alt: "Tessera — Paper Detail" },
-      { src: "/images/projects/tessera-graph.png", alt: "Tessera — Citation Graph" },
-      { src: "/images/projects/tessera-synthesis.png", alt: "Tessera — Literature Synthesis" },
-      { src: "/images/projects/tessera-knowledge.png", alt: "Tessera — Knowledge Base" },
-      { src: "/images/projects/tessera-collection.png", alt: "Tessera — Collection Detail" },
+      { src: "/images/projects/tessera.png", alt: "Tessera - Dashboard" },
+      { src: "/images/projects/tessera-paper.png", alt: "Tessera - Paper Detail" },
+      { src: "/images/projects/tessera-graph.png", alt: "Tessera - Citation Graph" },
+      { src: "/images/projects/tessera-synthesis.png", alt: "Tessera - Literature Synthesis" },
+      { src: "/images/projects/tessera-knowledge.png", alt: "Tessera - Knowledge Base" },
+      { src: "/images/projects/tessera-collection.png", alt: "Tessera - Collection Detail" },
     ],
     features: [
       {
@@ -233,7 +233,7 @@ const projects: ProjectDetail[] = [
       },
       {
         title: "Citation Graph",
-        description: "Interactive visualization of how papers cite each other. Relationship types are classified (supports, contradicts, extends, etc.) for richer understanding of the research landscape.",
+        description: "Interactive visualization of how papers cite each other. Relationship types are classified (supports, contradicts, extends, etc.) for richer understanding of how a field connects.",
       },
       {
         title: "Knowledge Extraction",
@@ -246,15 +246,15 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Academic literature review is one of the most time-intensive parts of research. A graduate student starting a new topic might spend weeks reading abstracts across multiple databases, manually tracking citations, and trying to synthesize themes across dozens of papers. Existing tools like Google Scholar or Zotero help with discovery and organization, but they don't help you understand the research landscape — where the consensus is, where the gaps are, or how papers relate to each other."
+        body: "Academic literature review is one of the most time-intensive parts of research. A graduate student starting a new topic might spend weeks reading abstracts across multiple databases, manually tracking citations, and trying to synthesize themes across dozens of papers. Existing tools like Google Scholar or Zotero help with discovery and organization, but they don't help you understand where the consensus is, where the gaps are, or how papers relate to each other."
       },
       {
         heading: "Design Challenge",
-        body: "AI-generated summaries of academic papers are inherently risky — a hallucinated finding or misattributed claim could send a researcher down the wrong path. The core design challenge was making AI-assisted analysis trustworthy enough for academic use. Every AI-generated insight needs to be traceable back to its source, and the system needs to surface uncertainty rather than hide it."
+        body: "AI-generated summaries of academic papers are inherently risky. A hallucinated finding or misattributed claim could send a researcher down the wrong path. The core design challenge was making AI-assisted analysis trustworthy enough for academic use. Every AI-generated insight needs to be traceable back to its source, and the system needs to surface uncertainty rather than hide it."
       },
       {
         heading: "Key Design Decisions",
-        body: "Tessera searches five databases simultaneously (Semantic Scholar, arXiv, OpenAlex, CrossRef, PubMed) and deduplicates results, so researchers get comprehensive coverage without manually cross-referencing. Each paper gets a structured summary with explicit source attribution — not a freeform paragraph, but extracted findings, methods, gaps, and conclusions that can be individually verified. The citation graph classifies relationship types (supports, contradicts, extends) rather than just showing who cited whom, making the intellectual structure of a field visible at a glance. Cross-paper synthesis identifies themes and contradictions across collections, but always links back to the specific papers driving each claim. Export to BibTeX preserves academic workflow compatibility."
+        body: "Tessera searches five databases simultaneously (Semantic Scholar, arXiv, OpenAlex, CrossRef, PubMed) and deduplicates results, so researchers get comprehensive coverage without manually cross-referencing. Each paper gets a structured summary with explicit source attribution: not a freeform paragraph, but extracted findings, methods, gaps, and conclusions that can be individually verified. The citation graph classifies relationship types (supports, contradicts, extends) rather than just showing who cited whom, making the intellectual structure of a field visible at a glance. Cross-paper synthesis identifies themes and contradictions across collections, but always links back to the specific papers driving each claim. Export to BibTeX preserves academic workflow compatibility."
       },
       {
         heading: "Outcome",
@@ -275,8 +275,8 @@ const projects: ProjectDetail[] = [
     tags: ["Gemma 2 9B", "Flux.1-dev", "LLaVA", "Streamlit", "NVIDIA GPU", "LoRA"],
     hero: "/images/projects/article-gen.png",
     gallery: [
-      { src: "/images/projects/article-gen.png", alt: "Article-Gen — Auto Mode" },
-      { src: "/images/projects/article-gen-custom.png", alt: "Article-Gen — Custom Prompts" },
+      { src: "/images/projects/article-gen.png", alt: "Article-Gen - Auto Mode" },
+      { src: "/images/projects/article-gen-custom.png", alt: "Article-Gen - Custom Prompts" },
     ],
     features: [
       {
@@ -285,7 +285,7 @@ const projects: ProjectDetail[] = [
       },
       {
         title: "Custom Mode",
-        description: "Full editorial control — provide the topic, angle, and tone. The AI handles the writing and image generation while you direct the content strategy."
+        description: "Full editorial control: provide the topic, angle, and tone. The AI handles the writing and image generation while you direct the content strategy."
       },
       {
         title: "LoRA-Tuned Writing Style",
@@ -303,19 +303,19 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Content marketing requires a relentless publishing cadence — blog posts, newsletters, social updates — but producing quality articles with original imagery is slow and expensive. Stock photos feel generic. Commissioning illustrations doesn't scale. And AI-generated text without images looks like what it is: low-effort filler. The gap is a tool that produces complete, publish-ready content — words and visuals together — without requiring a writer, a photographer, and an editor."
+        body: "Content marketing requires a relentless publishing cadence (blog posts, newsletters, social updates), but producing quality articles with original imagery is slow and expensive. Stock photos feel generic. Commissioning illustrations doesn't scale. And AI-generated text without images looks like what it is: low-effort filler. The gap is a tool that produces complete, publish-ready content, words and visuals together, without requiring a writer, a photographer, and an editor."
       },
       {
         heading: "Design Challenge",
-        body: "Fully automated content generation has an obvious trust problem: if a human isn't writing it, how do you maintain voice, accuracy, and relevance? And AI-generated images paired with AI-generated text can compound the uncanny valley effect — the whole piece feels synthetic. The challenge was designing a pipeline where automation handles the labor but a human's style and editorial judgment still shape the output."
+        body: "Fully automated content generation has an obvious trust problem: if a human isn't writing it, how do you maintain voice, accuracy, and relevance? And AI-generated images paired with AI-generated text can compound the uncanny valley effect. The whole piece feels synthetic. The challenge was designing a pipeline where automation handles the labor but a human's style and editorial judgment still shape the output."
       },
       {
         heading: "Key Design Decisions",
-        body: "The writing style is fine-tunable via LoRA on Gemma 2 9B — train it on your own published writing and the generated articles carry your voice, not a generic AI tone. Each article gets three contextual images generated via Flux.1-dev, with prompts derived from the article content so the visuals actually match the text. LLaVA then captions each image for accessibility and SEO. The pipeline offers two modes: auto mode (discovers trending topics and writes about them) and custom mode (you provide the topic and framing). One-click publishing to Substack means the output goes from zero to published without copy-pasting between tools."
+        body: "The writing style is fine-tunable via LoRA on Gemma 2 9B. Train it on your own published writing and the generated articles carry your voice, not a generic AI tone. Each article gets three contextual images generated via Flux.1-dev, with prompts derived from the article content so the visuals actually match the text. LLaVA then captions each image for accessibility and SEO. The pipeline offers two modes: auto mode (discovers trending topics and writes about them) and custom mode (you provide the topic and framing). One-click publishing to Substack means the output goes from zero to published without copy-pasting between tools."
       },
       {
         heading: "Outcome",
-        body: "A complete zero-input-to-published pipeline. In auto mode, it discovers trending topics, writes an article in a trained voice, generates three matched images with captions, and publishes directly to Substack — no human in the loop unless you want one. Custom mode gives full editorial control while still automating the production work."
+        body: "A complete zero-input-to-published pipeline. In auto mode, it discovers trending topics, writes an article in a trained voice, generates three matched images with captions, and publishes directly to Substack. No human in the loop unless you want one. Custom mode gives full editorial control while still automating the production work."
       }
     ],
   },
@@ -332,15 +332,15 @@ const projects: ProjectDetail[] = [
     tags: ["FLUX", "Inpainting", "Depth Estimation", "Next.js", "Railway", "Python"],
     hero: "/images/projects/pixelus.png",
     gallery: [
-      { src: "/images/projects/pixelus.png", alt: "Pixelus — Landing" },
-      { src: "/images/projects/pixelus-compose.png", alt: "Pixelus — Compose Scene" },
-      { src: "/images/projects/pixelus-sneaker.png", alt: "Pixelus — Sneaker Product Shot" },
-      { src: "/images/projects/pixelus-watch.png", alt: "Pixelus — Watch Product Shot" },
+      { src: "/images/projects/pixelus.png", alt: "Pixelus - Landing" },
+      { src: "/images/projects/pixelus-compose.png", alt: "Pixelus - Compose Scene" },
+      { src: "/images/projects/pixelus-sneaker.png", alt: "Pixelus - Sneaker Product Shot" },
+      { src: "/images/projects/pixelus-watch.png", alt: "Pixelus - Watch Product Shot" },
     ],
     features: [
       {
         title: "Product-Preserving Compositing",
-        description: "The product image is never regenerated — it's composited into AI-generated scenes using inpainting and depth-aware blending. Logos, labels, and fine details stay pixel-perfect while the surrounding scene is fully synthetic."
+        description: "The product image is never regenerated. It is composited into AI-generated scenes using inpainting and depth-aware blending. Logos, labels, and fine details stay pixel-perfect while the surrounding scene is fully synthetic."
       },
       {
         title: "AI Prompt Refinement",
@@ -361,15 +361,15 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "E-commerce and CPG marketing teams need studio-quality product photography for every SKU across dozens of scenes — lifestyle, seasonal, social media crops. Traditional photoshoots cost $500–2,000 per setup and take weeks to schedule. Existing AI tools (Photoroom, Pebblely) offer simple background removal and templates, but they can't maintain product fidelity — logos warp, labels blur, proportions shift. Marketers don't trust the output enough to use it in paid campaigns."
+        body: "E-commerce and CPG marketing teams need studio-quality product photography for every SKU across dozens of scenes: lifestyle, seasonal, social media crops. Traditional photoshoots cost $500-2,000 per setup and take weeks to schedule. Existing AI tools (Photoroom, Pebblely) offer simple background removal and templates, but they can't maintain product fidelity. Logos warp, labels blur, proportions shift. Marketers don't trust the output enough to use it in paid campaigns."
       },
       {
         heading: "Design Challenge",
-        body: "How do you let a non-technical marketer generate photorealistic product scenes using AI, when the AI itself is unpredictable? Image generation quality varies wildly between runs. Users don't know how to write effective prompts. And the product — the one thing that must be pixel-perfect — is the hardest part for generative models to preserve."
+        body: "How do you let a non-technical marketer generate photorealistic product scenes using AI, when the AI itself is unpredictable? Image generation quality varies wildly between runs. Users don't know how to write effective prompts. And the product, the one thing that must be pixel-perfect, is the hardest part for generative models to preserve."
       },
       {
         heading: "Key Design Decisions",
-        body: "The core insight was separating what the AI controls from what it doesn't. The product image is never regenerated — it's composited into AI-generated scenes using inpainting and depth-aware blending, so logos and labels stay sharp. To solve the prompt literacy gap, I built a refinement layer using Claude's API: the user describes what they want in plain language, Claude rewrites it into an effective generation prompt, and the user sees both versions. This built trust — users could see exactly how their intent was being interpreted before spending a credit. Quality evaluation is also AI-assisted: Claude scores each output on composition, lighting match, and product integration, surfacing the best results first."
+        body: "The core insight was separating what the AI controls from what it doesn't. The product image is never regenerated. It is composited into AI-generated scenes using inpainting and depth-aware blending, so logos and labels stay sharp. To solve the prompt literacy gap, I built a refinement layer using Claude's API: the user describes what they want in plain language, Claude rewrites it into an effective generation prompt, and the user sees both versions. This built trust. Users could see exactly how their intent was being interpreted before spending a credit. Quality evaluation is also AI-assisted: Claude scores each output on composition, lighting match, and product integration, surfacing the best results first."
       },
       {
         heading: "Outcome",
@@ -382,18 +382,18 @@ const projects: ProjectDetail[] = [
     title: "Surfaced",
     subtitle: "AI-Powered PBR Material Generation",
     description: [
-      "A real-time PBR material generation tool that creates production-ready texture maps from text prompts. Describe a material — weathered copper, polished concrete, rusted steel — and Surfaced generates base color, normal, height, roughness, metallic, emissive, and AO maps in seconds.",
+      "A real-time PBR material generation tool that creates production-ready texture maps from text prompts. Describe a material (weathered copper, polished concrete, rusted steel) and Surfaced generates base color, normal, height, roughness, metallic, emissive, and AO maps in seconds.",
       "Built around a Three.js viewport with live material preview on sphere, plane, and cube geometries. Full material property controls let you dial in roughness, metalness, displacement, specular, and lighting in real time. Collapsible panels keep the interface clean while giving access to advanced features like layer compositing, per-channel painting, and height map post-processing.",
-      "Surfaced includes a color-to-metallic derivation engine that analyzes the base color map and generates accurate metallic masks — solving a gap in current AI material models that output empty metallic maps for metals. Supports warm metals (copper, brass, gold), cool metals (steel, silver, chrome), and luminance-based detection for mixed surfaces.",
+      "Surfaced includes a color-to-metallic derivation engine that analyzes the base color map and generates accurate metallic masks, solving a gap in current AI material models that output empty metallic maps for metals. Supports warm metals (copper, brass, gold), cool metals (steel, silver, chrome), and luminance-based detection for mixed surfaces.",
     ],
     tags: ["React", "Three.js", "FastAPI", "PBR", "fal.ai", "FLUX", "Python", "DGX Spark"],
     hero: "/images/projects/surfaced.png",
     gallery: [
-      { src: "/images/projects/surfaced.png", alt: "Surfaced — Kevlar Fiber Material" },
-      { src: "/images/projects/surfaced-suede.png", alt: "Surfaced — Dark Brown Suede" },
-      { src: "/images/projects/surfaced-library.png", alt: "Surfaced — Material Library" },
-      { src: "/images/projects/surfaced-copper.png", alt: "Surfaced — Oxidized Copper" },
-      { src: "/images/projects/surfaced-aluminum.png", alt: "Surfaced — Brushed Aluminum with Metallic Override" },
+      { src: "/images/projects/surfaced.png", alt: "Surfaced - Kevlar Fiber Material" },
+      { src: "/images/projects/surfaced-suede.png", alt: "Surfaced - Dark Brown Suede" },
+      { src: "/images/projects/surfaced-library.png", alt: "Surfaced - Material Library" },
+      { src: "/images/projects/surfaced-copper.png", alt: "Surfaced - Oxidized Copper" },
+      { src: "/images/projects/surfaced-aluminum.png", alt: "Surfaced - Brushed Aluminum with Metallic Override" },
     ],
     features: [
       {
@@ -406,7 +406,7 @@ const projects: ProjectDetail[] = [
       },
       {
         title: "Color-Derived Metallic Maps",
-        description: "Current AI material models generate empty metallic maps for metals. Surfaced analyzes the base color and derives accurate metallic masks using color temperature, saturation, and luminance heuristics — with tunable threshold and softness controls for warm metals, cool metals, and mixed surfaces."
+        description: "Current AI material models generate empty metallic maps for metals. Surfaced analyzes the base color and derives accurate metallic masks using color temperature, saturation, and luminance heuristics, with tunable threshold and softness controls for warm metals, cool metals, and mixed surfaces."
       },
       {
         title: "Layer Compositing and Painting",
@@ -417,15 +417,15 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Creating PBR materials for game engines and 3D pipelines requires either expensive tools like Substance Designer with steep learning curves, or hunting through free libraries for something close enough. AI texture generators exist but output single images — not the full set of coordinated maps (normal, roughness, metallic, height) that physically-based rendering requires. And the models that do generate multi-map output have a critical blind spot: metallic maps come back empty for metals, making copper look like clay and steel look like plastic."
+        body: "Creating PBR materials for game engines and 3D pipelines requires either expensive tools like Substance Designer with steep learning curves, or hunting through free libraries for something close enough. AI texture generators exist but output single images, not the full set of coordinated maps (normal, roughness, metallic, height) that physically-based rendering requires. And the models that do generate multi-map output have a critical blind spot: metallic maps come back empty for metals, making copper look like clay and steel look like plastic."
       },
       {
         heading: "Design Challenge",
-        body: "How do you make PBR material creation accessible to non-technical users while still producing output that passes muster in a production pipeline? The tool needs to hide complexity without sacrificing control — a first-time user should get a usable result from a text prompt, while an experienced artist should have access to layer compositing, per-channel painting, and material property fine-tuning."
+        body: "How do you make PBR material creation accessible to non-technical users while still producing output that passes muster in a production pipeline? The tool needs to hide complexity without sacrificing control. A first-time user should get a usable result from a text prompt, while an experienced artist should have access to layer compositing, per-channel painting, and material property fine-tuning."
       },
       {
         heading: "Key Design Decisions",
-        body: "The interface uses progressive disclosure: generate mode is a prompt box and a button, but the right panel exposes the full PBR parameter set in collapsible sections. The metallic map problem was solved by building a client-side derivation engine that analyzes color temperature and saturation in the base color map to generate physically plausible metallic masks — something none of the generation models do correctly. Two generation backends give users the choice between speed (cloud) and cost (local), with identical output formats so the rest of the pipeline doesn't care which was used."
+        body: "The interface uses progressive disclosure: generate mode is a prompt box and a button, but the right panel exposes the full PBR parameter set in collapsible sections. The metallic map problem was solved by building a client-side derivation engine that analyzes color temperature and saturation in the base color map to generate physically plausible metallic masks, something none of the generation models do correctly. Two generation backends give users the choice between speed (cloud) and cost (local), with identical output formats so the rest of the pipeline doesn't care which was used."
       },
       {
         heading: "Outcome",
@@ -441,16 +441,16 @@ const projects: ProjectDetail[] = [
     description: [
       "A FLUX LoRA training application running on the NVIDIA DGX Spark. Upload a dataset of images, configure training parameters like steps, learning rate, and rank, and fine-tune FLUX image generation models through an intuitive Gradio interface.",
       "Trained models can be exported and used for custom image generation workflows. The trainer supports various dataset formats, automatic captioning, and real-time training progress monitoring with loss curves.",
-      "Built for the Stillion & Board collaboration — training custom LoRAs on artistic styles to generate new works that extend the visual language of the source material.",
+      "Built for the Stillion & Board collaboration, training custom LoRAs on artistic styles to generate new works that extend the visual language of the source material.",
     ],
     tags: ["FLUX", "LoRA", "DGX Spark", "Gradio", "Python", "CUDA"],
     hero: "/images/projects/stillion-lora.png",
     gallery: [
-      { src: "/images/projects/stillion-ui.png", alt: "Stillion AI — Training Interface" },
-      { src: "/images/projects/stillion-train.png", alt: "Stillion AI — Training Progress" },
-      { src: "/images/projects/stillion-generate.png", alt: "Stillion AI — Generation Interface" },
-      { src: "/images/projects/stillion-gen1.jpg", alt: "Stillion AI — Generated Sample 1" },
-      { src: "/images/projects/stillion-gen2.jpg", alt: "Stillion AI — Generated Sample 2" },
+      { src: "/images/projects/stillion-ui.png", alt: "Stillion AI - Training Interface" },
+      { src: "/images/projects/stillion-train.png", alt: "Stillion AI - Training Progress" },
+      { src: "/images/projects/stillion-generate.png", alt: "Stillion AI - Generation Interface" },
+      { src: "/images/projects/stillion-gen1.jpg", alt: "Stillion AI - Generated Sample 1" },
+      { src: "/images/projects/stillion-gen2.jpg", alt: "Stillion AI - Generated Sample 2" },
     ],
     features: [
       {
@@ -463,7 +463,7 @@ const projects: ProjectDetail[] = [
       },
       {
         title: "DGX Spark Native",
-        description: "Runs locally on NVIDIA DGX Spark with full CUDA acceleration. No cloud dependency — all training data stays on-device. Gradio interface accessible over the local network."
+        description: "Runs locally on NVIDIA DGX Spark with full CUDA acceleration. No cloud dependency, all training data stays on-device. Gradio interface accessible over the local network."
       },
     ],
     links: [
@@ -472,7 +472,7 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Painter Michael Stillion wanted to extend his visual language into AI-generated media for a gallery installation at the Contemporary Arts Center, Cincinnati. But LoRA training requires ML expertise — dataset curation, hyperparameter tuning, checkpoint evaluation — that a fine artist shouldn't need to learn. Existing training UIs assume technical users and expose every parameter without guidance."
+        body: "Painter Michael Stillion wanted to extend his visual language into AI-generated media for a gallery installation at the Contemporary Arts Center, Cincinnati. But LoRA training requires ML expertise (dataset curation, hyperparameter tuning, checkpoint evaluation) that a fine artist shouldn't need to learn. Existing training UIs assume technical users and expose every parameter without guidance."
       },
       {
         heading: "Design Challenge",
@@ -480,11 +480,11 @@ const projects: ProjectDetail[] = [
       },
       {
         heading: "Key Design Decisions",
-        body: "I designed the workflow around three artist-friendly stages: curate (drag-and-drop image selection with auto-captioning), train (simplified controls with sensible defaults — the artist adjusts a 'style strength' slider instead of LoRA rank), and evaluate (side-by-side comparison of checkpoint outputs against the original paintings). Training progress shows loss curves but also periodic sample generations so the artist can see the model learning their style in real time. The system auto-saves checkpoints at intervals so the artist can pick the version that best captures their intent."
+        body: "I designed the workflow around three artist-friendly stages: curate (drag-and-drop image selection with auto-captioning), train (simplified controls with sensible defaults, where the artist adjusts a 'style strength' slider instead of LoRA rank), and evaluate (side-by-side comparison of checkpoint outputs against the original paintings). Training progress shows loss curves but also periodic sample generations so the artist can see the model learning their style in real time. The system auto-saves checkpoints at intervals so the artist can pick the version that best captures their intent."
       },
       {
         heading: "Outcome",
-        body: "The trained model powered a large-scale video installation at the Contemporary Arts Center, Cincinnati. Stillion was able to generate hundreds of variations extending his painting style into new compositions — poppies, face jugs, and houseflies rendered in his distinctive mark-making — without writing a single line of code or understanding the underlying ML."
+        body: "The trained model powered a large-scale video installation at the Contemporary Arts Center, Cincinnati. Stillion was able to generate hundreds of variations extending his painting style into new compositions: poppies, face jugs, and houseflies rendered in his distinctive mark-making, all without writing a single line of code or understanding the underlying ML."
       }
     ],
   },
@@ -494,9 +494,9 @@ const projects: ProjectDetail[] = [
     subtitle: "LoRA-Generated Exhibit Concepts to 3D Gaussian Splats",
     architectureDiagram: "/images/projects/machina-prima-architecture.svg",
     description: [
-      "An exhibit concept series generated using a custom marker-mech LoRA trained on 15 hand-drawn mechanical sketches. The model learned the marker rendering style and was prompted to envision spaces for a futuristic art exhibition — from gallery entrances and sculpture halls to immersive projection rooms.",
+      "An exhibit concept series generated using a custom marker-mech LoRA trained on 15 hand-drawn mechanical sketches. The model learned the marker rendering style and was prompted to envision spaces for a futuristic art exhibition, from gallery entrances and sculpture halls to immersive projection rooms.",
       "Each of the 11 generated rooms was then converted into a pro-quality 3D Gaussian splat via the World Labs API, auto-cleaned to remove floaters, ghost splats, and blob artifacts. The result is a fully navigable virtual exhibition space.",
-      "The project bridges traditional hand-drawing with AI image generation and cutting-edge 3D reconstruction — starting from pen-on-paper sketches, through LoRA fine-tuning, to explorable 360° panoramic environments.",
+      "The project bridges traditional hand-drawing with AI image generation and advanced 3D reconstruction, starting from pen-on-paper sketches, through LoRA fine-tuning, to explorable 360° panoramic environments.",
     ],
     tags: ["FLUX LoRA", "Gaussian Splatting", "World Labs", "Concept Art", "3D", "Hand-Drawn"],
     hero: "/images/projects/machina-prima.png",
@@ -525,12 +525,12 @@ const projects: ProjectDetail[] = [
       { name: "Observation Deck", marbleUrl: "/machina-room-viewer.html?room=Observation+Deck", thumbnail: "/images/projects/machina-08_observation_deck_thumb.webp" },
     ],
     panoramas: [
-      { src: "/images/projects/machina-pano-sculpture.png", alt: "Sculpture Hall — Panoramic Render" },
-      { src: "/images/projects/machina-pano-entrance.png", alt: "Grand Entrance — Panoramic Render" },
-      { src: "/images/projects/machina-pano-projection.png", alt: "Projection Room — Panoramic Render" },
-      { src: "/images/projects/machina-pano-rotunda.png", alt: "Rotunda Centerpiece — Panoramic Render" },
-      { src: "/images/projects/machina-pano-observation.png", alt: "Observation Deck — Panoramic Render" },
-      { src: "/images/projects/machina-pano-vault.png", alt: "Underground Vault — Panoramic Render" },
+      { src: "/images/projects/machina-pano-sculpture.png", alt: "Sculpture Hall - Panoramic Render" },
+      { src: "/images/projects/machina-pano-entrance.png", alt: "Grand Entrance - Panoramic Render" },
+      { src: "/images/projects/machina-pano-projection.png", alt: "Projection Room - Panoramic Render" },
+      { src: "/images/projects/machina-pano-rotunda.png", alt: "Rotunda Centerpiece - Panoramic Render" },
+      { src: "/images/projects/machina-pano-observation.png", alt: "Observation Deck - Panoramic Render" },
+      { src: "/images/projects/machina-pano-vault.png", alt: "Underground Vault - Panoramic Render" },
     ],
     features: [
       {
@@ -543,7 +543,7 @@ const projects: ProjectDetail[] = [
       },
       {
         title: "Interactive Web Viewers",
-        description: "Gaussian splats embedded directly on the project page as interactive 3D viewers. WASD navigation, mouse look, scroll speed — visitors experience the spaces, not just screenshots."
+        description: "Gaussian splats embedded directly on the project page as interactive 3D viewers. WASD navigation, mouse look, scroll speed. Visitors experience the spaces, not just screenshots."
       },
       {
         title: "Panoramic Renders",
@@ -554,19 +554,19 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "There's no established pipeline from hand-drawn concept art to navigable 3D space. Architects and exhibit designers sketch ideas on paper, but translating those sketches into spatial experiences requires 3D modeling, texturing, lighting, and environment design — weeks of work per room. AI image generation can produce photorealistic interiors from text, but they're flat images. And converting 2D images to 3D has been either low-quality (NeRF artifacts) or prohibitively expensive (manual modeling)."
+        body: "There's no established pipeline from hand-drawn concept art to navigable 3D space. Architects and exhibit designers sketch ideas on paper, but translating those sketches into spatial experiences requires 3D modeling, texturing, lighting, and environment design. That is weeks of work per room. AI image generation can produce photorealistic interiors from text, but they're flat images. And converting 2D images to 3D has been either low-quality (NeRF artifacts) or prohibitively expensive (manual modeling)."
       },
       {
         heading: "Design Challenge",
-        body: "How do you preserve the artistic intent of hand-drawn sketches through a multi-stage AI pipeline — from ink on paper to LoRA training to image generation to 3D reconstruction — without the output becoming generic? Each stage introduces its own biases and failure modes. The LoRA can overfit or lose the style. The image generation can ignore spatial logic. The Gaussian splatting can produce floaters and ghost geometry."
+        body: "How do you preserve the artistic intent of hand-drawn sketches through a multi-stage AI pipeline (from ink on paper to LoRA training to image generation to 3D reconstruction) without the output becoming generic? Each stage introduces its own biases and failure modes. The LoRA can overfit or lose the style. The image generation can ignore spatial logic. The Gaussian splatting can produce floaters and ghost geometry."
       },
       {
         heading: "Key Design Decisions",
-        body: "The pipeline was designed as a series of human checkpoints rather than a fully automated chain. The LoRA was trained on just 15 hand-drawn mechanical sketches — small enough to preserve the specific marker rendering style rather than averaging it into something generic. Each of the 11 rooms was generated individually with prompts that described spatial function (sculpture hall, projection room, observation deck) so the AI had to solve real architectural problems, not just produce pretty images. The Gaussian splats via World Labs API were auto-cleaned to remove floaters and blob artifacts, then rendered as navigable 360° panoramas. Embedding interactive 3D viewers directly on the project page lets visitors experience the spaces rather than just look at screenshots."
+        body: "The pipeline was designed as a series of human checkpoints rather than a fully automated chain. The LoRA was trained on just 15 hand-drawn mechanical sketches, small enough to preserve the specific marker rendering style rather than averaging it into something generic. Each of the 11 rooms was generated individually with prompts that described spatial function (sculpture hall, projection room, observation deck) so the AI had to solve real architectural problems, not just produce pretty images. The Gaussian splats via World Labs API were auto-cleaned to remove floaters and blob artifacts, then rendered as navigable 360° panoramas. Embedding interactive 3D viewers directly on the project page lets visitors experience the spaces rather than just look at screenshots."
       },
       {
         heading: "Outcome",
-        body: "11 navigable exhibition rooms generated from pen-on-paper sketches, each converted to a 22-million-Gaussian 3D environment. The project demonstrates a complete concept-to-spatial pipeline: hand-drawn input → AI style transfer → architectural image generation → 3D reconstruction → interactive web experience. The entire process — from first sketch to explorable 3D museum — took days, not months."
+        body: "11 navigable exhibition rooms generated from pen-on-paper sketches, each converted to a 22-million-Gaussian 3D environment. The project demonstrates a complete concept-to-spatial pipeline: hand-drawn input → AI style transfer → architectural image generation → 3D reconstruction → interactive web experience. The entire process, from first sketch to explorable 3D museum, took days, not months."
       }
     ],
   },
@@ -611,19 +611,19 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Setting up input bindings in Unreal Engine 5 is tedious and error-prone. The Enhanced Input system is powerful but requires manually creating Input Actions, configuring value types, adding per-platform bindings, setting dead zones, triggers, and modifiers — for every action, on every platform. A typical third-person game might need 15-20 actions across keyboard, mouse, gamepad, and mobile touch. That's hours of clicking through property panels, and one wrong value type or missing dead zone creates bugs that are hard to track down."
+        body: "Setting up input bindings in Unreal Engine 5 is tedious and error-prone. The Enhanced Input system is powerful but requires manually creating Input Actions, configuring value types, adding per-platform bindings, setting dead zones, triggers, and modifiers for every action, on every platform. A typical third-person game might need 15-20 actions across keyboard, mouse, gamepad, and mobile touch. That's hours of clicking through property panels, and one wrong value type or missing dead zone creates bugs that are hard to track down."
       },
       {
         heading: "Design Challenge",
-        body: "How do you let a developer describe what they want in plain language and get a correctly configured input system — without the LLM hallucinating invalid UE5 settings? Unreal's Enhanced Input has strict requirements: value types must match (bool vs. axis2D vs. axis3D), triggers have specific valid combinations, and mobile touch inputs need different modifier stacks than gamepad. An LLM that doesn't understand these constraints will generate broken configs."
+        body: "How do you let a developer describe what they want in plain language and get a correctly configured input system without the LLM hallucinating invalid UE5 settings? Unreal's Enhanced Input has strict requirements: value types must match (bool vs. axis2D vs. axis3D), triggers have specific valid combinations, and mobile touch inputs need different modifier stacks than gamepad. An LLM that doesn't understand these constraints will generate broken configs."
       },
       {
         heading: "Key Design Decisions",
-        body: "The plugin runs entirely local via Ollama — no API keys, no cloud, no data leaving the developer's machine. This was a deliberate choice: game studios won't send project details to external APIs. The LLM generates a structured JSON spec, not raw UE5 code — the plugin then validates and translates that spec into proper Input Actions with correct value types, triggers, dead zones, and platform-specific bindings. This separation means the LLM can make mistakes in the JSON and the plugin catches them before creating assets. Mobile touch support (virtual joysticks, swipe zones, gesture detection) was a key differentiator since most input setup tools ignore mobile entirely."
+        body: "The plugin runs entirely local via Ollama. No API keys, no cloud, no data leaving the developer's machine. This was a deliberate choice: game studios won't send project details to external APIs. The LLM generates a structured JSON spec, not raw UE5 code. The plugin then validates and translates that spec into proper Input Actions with correct value types, triggers, dead zones, and platform-specific bindings. This separation means the LLM can make mistakes in the JSON and the plugin catches them before creating assets. Mobile touch support (virtual joysticks, swipe zones, gesture detection) was a key differentiator since most input setup tools ignore mobile entirely."
       },
       {
         heading: "Outcome",
-        body: "Open-source UE5 plugin (MIT license) that reduces input system setup from hours to seconds. One natural language prompt generates a complete multiplatform input configuration — keyboard, mouse, gamepad, and mobile touch — with all settings correctly configured. Published on GitHub with Slate-based editor UI that fits natively into the Unreal Editor workflow."
+        body: "Open-source UE5 plugin (MIT license) that reduces input system setup from hours to seconds. One natural language prompt generates a complete multiplatform input configuration (keyboard, mouse, gamepad, and mobile touch) with all settings correctly configured. Published on GitHub with Slate-based editor UI that fits natively into the Unreal Editor workflow."
       }
     ],
   },
@@ -671,19 +671,19 @@ const projects: ProjectDetail[] = [
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Game designers and developers spend significant time manually populating DataTables in Unreal Engine — item databases, enemy stat sheets, dialogue tables, loot pools. Each row requires creating a struct, defining fields, and hand-entering values. For prototyping, this is wasted effort: you need 50 placeholder weapons to test your inventory UI, not hand-crafted game design. And when the schema changes, you rebuild the table from scratch."
+        body: "Game designers and developers spend significant time manually populating DataTables in Unreal Engine: item databases, enemy stat sheets, dialogue tables, loot pools. Each row requires creating a struct, defining fields, and hand-entering values. For prototyping, this is wasted effort: you need 50 placeholder weapons to test your inventory UI, not hand-crafted game design. And when the schema changes, you rebuild the table from scratch."
       },
       {
         heading: "Design Challenge",
-        body: "DataTables in UE5 are typed — every row must conform to a UScriptStruct with specific field types (float, int, FString, enum, etc.). An LLM generating data needs to produce values that match these types exactly, or the asset won't compile. The plugin also needs to work with existing project structs the developer has already defined, not just AI-invented schemas."
+        body: "DataTables in UE5 are strictly typed. Every row must conform to a UScriptStruct with specific field types (float, int, FString, enum, etc.). An LLM generating data needs to produce values that match these types exactly, or the asset won't compile. The plugin also needs to work with existing project structs the developer has already defined, not just AI-invented schemas."
       },
       {
         heading: "Key Design Decisions",
-        body: "The plugin auto-discovers every UScriptStruct registered in the project, so developers can select their own data structures as the target schema. Alternatively, the LLM can define a new struct from the natural language description. A preview table shows all generated rows before committing — the developer sees exactly what they'll get and can regenerate if the data doesn't look right. Append mode with merge/overwrite conflict resolution lets you build large datasets iteratively rather than generating everything at once. Like Input Streamliner, it runs fully local via Ollama — no external dependencies."
+        body: "The plugin auto-discovers every UScriptStruct registered in the project, so developers can select their own data structures as the target schema. Alternatively, the LLM can define a new struct from the natural language description. A preview table shows all generated rows before committing. The developer sees exactly what they'll get and can regenerate if the data doesn't look right. Append mode with merge/overwrite conflict resolution lets you build large datasets iteratively rather than generating everything at once. Like Input Streamliner, it runs fully local via Ollama with no external dependencies."
       },
       {
         heading: "Outcome",
-        body: "Open-source UE5 plugin (MIT license) that generates populated DataTable assets from plain English descriptions. Useful for rapid prototyping — describe '20 sci-fi weapons with name, damage, fire rate, ammo type, and rarity' and get a complete, correctly typed DataTable in seconds. Published on GitHub with native Slate editor UI."
+        body: "Open-source UE5 plugin (MIT license) that generates populated DataTable assets from plain English descriptions. Useful for rapid prototyping: describe '20 sci-fi weapons with name, damage, fire rate, ammo type, and rarity' and get a complete, correctly typed DataTable in seconds. Published on GitHub with native Slate editor UI."
       }
     ],
   },
@@ -717,7 +717,7 @@ const projects: ProjectDetail[] = [
     title: "Stories from the Cores",
     subtitle: "Educational Game & Museum Installation",
     description: [
-      "An educational game where players analyze evidence from beneath the ocean floor to unlock dramatic stories. Join science bot Rovee on expeditions with the International Ocean Discovery Program — drill core samples, compare layers, investigate hypotheses, and piece together the stories hidden in the Earth's geological record.",
+      "An educational game where players analyze evidence from beneath the ocean floor to unlock dramatic stories. Join science bot Rovee on expeditions with the International Ocean Discovery Program: drill core samples, compare layers, investigate hypotheses, and piece together the stories hidden in the Earth's geological record.",
       "Published on Steam for Windows, Mac, and Android. Also deployed as a museum kiosk interactive installation. The project features hand-sculpted 3D characters including a Columbian mammoth and mosasaur, custom UI design, and scientifically accurate geological data visualization.",
       "The game was designed to make real ocean science accessible to a general audience, translating complex geological concepts into engaging interactive narratives.",
     ],
@@ -725,8 +725,8 @@ const projects: ProjectDetail[] = [
     hero: "/images/projects/stories-cores.jpg",
     gallery: [
       { src: "/images/projects/stories-cores.jpg", alt: "Attract Screen" },
-      { src: "/images/projects/stories-ss1.jpg", alt: "Gameplay — Core Analysis" },
-      { src: "/images/projects/stories-ss3.jpg", alt: "Gameplay — Expedition" },
+      { src: "/images/projects/stories-ss1.jpg", alt: "Gameplay - Core Analysis" },
+      { src: "/images/projects/stories-ss3.jpg", alt: "Gameplay - Expedition" },
       { src: "/images/projects/stories-mammoth.jpg", alt: "Columbian Mammoth" },
       { src: "/images/projects/stories-mosasaur.jpg", alt: "Mosasaur" },
       { src: "/images/projects/stories-rovee.jpg", alt: "Rovee Character" },
@@ -743,13 +743,13 @@ const projects: ProjectDetail[] = [
     subtitle: "SPRING/BREAK Art Show \u2014 Los Angeles, 2022",
     description: [
       "First collaboration between Stillion & Board after six years working together, exhibited at SPRING/BREAK Art Show at Skylight Culver City, Los Angeles in February 2022.",
-      "Stillion\u2019s paintings of face jugs, poppies, and houseflies evoke decomposition and the animation of inanimate objects — referencing African American pottery from 19th-century South Carolina. Board\u2019s custom software manipulates and animates the imagery through code and algorithm, creating a living dialogue between traditional painting and generative computation.",
+      "Stillion\u2019s paintings of face jugs, poppies, and houseflies evoke decomposition and the animation of inanimate objects, referencing African American pottery from 19th-century South Carolina. Board\u2019s custom software manipulates and animates the imagery through code and algorithm, creating a living dialogue between traditional painting and generative computation.",
       "Featured in the \u201cHEARSAY:HERESY\u201d themed exhibition alongside 50+ curated shows. The installation bridges physical painting with real-time digital processing, questioning the boundary between the handmade and the algorithmically generated.",
     ],
     tags: ["Painting", "Custom Software", "Interactive", "Installation", "Los Angeles"],
     hero: "/images/projects/necessary-illusions.jpg",
     gallery: [
-      { src: "/images/projects/necessary-illusions.jpg", alt: "Necessary Illusions — Installation" },
+      { src: "/images/projects/necessary-illusions.jpg", alt: "Necessary Illusions - Installation" },
     ],
     links: [],
   },
@@ -758,7 +758,7 @@ const projects: ProjectDetail[] = [
     title: "Astronaut",
     subtitle: "Character Art \u2014 Realistic Skin & Hair in UE5",
     description: [
-      "A character study exploring realistic skin and hair rendering in Unreal Engine 5. Head textures were built layer-by-layer in Substance Painter — from blood through skin layers to a final makeup pass.",
+      "A character study exploring realistic skin and hair rendering in Unreal Engine 5. Head textures were built layer-by-layer in Substance Painter, from blood through skin layers to a final makeup pass.",
       "Hair was crafted in XGen with guides. Rendering leveraged Metahuman eye shaders and subsurface profiles, with a ZBrush cavity map breaking up surface roughness and doubled-up normals for extra skin detail.",
       "The suit was retopologized in Modo, sculpted in ZBrush, and painted in Substance Painter. The final result demonstrates a complete character art pipeline from high-poly sculpt through real-time rendering.",
     ],
@@ -809,18 +809,18 @@ const projects: ProjectDetail[] = [
     tags: ["Flux 2 Dev", "World Labs Marble", "Gaussian Splatting", "Architectural Visualization", "Hospitality", "Real Estate"],
     hero: "/images/portfolio/01_beachfront_residential_golden_hour.png",
     gallery: [
-      { src: "/images/portfolio/01_beachfront_residential_golden_hour.png", alt: "Beachfront Residence — Golden Hour" },
-      { src: "/images/portfolio/02_urban_highrise_dusk.png", alt: "Urban High-Rise — Dusk" },
-      { src: "/images/portfolio/03_hotel_lobby_beachfront.png", alt: "Hotel Lobby — Beachfront" },
-      { src: "/images/portfolio/04_city_residential_night.png", alt: "City Residential — Night" },
-      { src: "/images/portfolio/05_aerial_beachfront_development.png", alt: "Aerial Masterplan — Beachfront Development" },
-      { src: "/images/portfolio/06_scale_model_studio.png", alt: "Scale Model — Technical Studio" },
-      { src: "/images/portfolio/07_coastal_villas_sunrise.png", alt: "Coastal Villas — Sunrise" },
-      { src: "/images/portfolio/08_penthouse_interior_cityview.png", alt: "Penthouse Interior — City View" },
-      { src: "/images/portfolio/09_rooftop_pool_urban.png", alt: "Rooftop Pool — Urban" },
-      { src: "/images/portfolio/10_waterfront_promenade_evening.png", alt: "Waterfront Promenade — Blue Hour" },
-      { src: "/images/portfolio/11_desert_resort_luxury.png", alt: "Desert Resort — Middle East" },
-      { src: "/images/portfolio/12_scale_model_closeup.png", alt: "Scale Model — Detail Close-Up" },
+      { src: "/images/portfolio/01_beachfront_residential_golden_hour.png", alt: "Beachfront Residence - Golden Hour" },
+      { src: "/images/portfolio/02_urban_highrise_dusk.png", alt: "Urban High-Rise - Dusk" },
+      { src: "/images/portfolio/03_hotel_lobby_beachfront.png", alt: "Hotel Lobby - Beachfront" },
+      { src: "/images/portfolio/04_city_residential_night.png", alt: "City Residential - Night" },
+      { src: "/images/portfolio/05_aerial_beachfront_development.png", alt: "Aerial Masterplan - Beachfront Development" },
+      { src: "/images/portfolio/06_scale_model_studio.png", alt: "Scale Model - Technical Studio" },
+      { src: "/images/portfolio/07_coastal_villas_sunrise.png", alt: "Coastal Villas - Sunrise" },
+      { src: "/images/portfolio/08_penthouse_interior_cityview.png", alt: "Penthouse Interior - City View" },
+      { src: "/images/portfolio/09_rooftop_pool_urban.png", alt: "Rooftop Pool - Urban" },
+      { src: "/images/portfolio/10_waterfront_promenade_evening.png", alt: "Waterfront Promenade - Blue Hour" },
+      { src: "/images/portfolio/11_desert_resort_luxury.png", alt: "Desert Resort - Middle East" },
+      { src: "/images/portfolio/12_scale_model_closeup.png", alt: "Scale Model - Detail Close-Up" },
     ],
     caseStudy: [
       { heading: "Approach", body: "Each scene was generated from a single text prompt using Flux 2 Dev via the Replicate API. Prompts were engineered for architectural photography conventions: specific lens focal lengths, time-of-day lighting conditions, and compositional framing. No post-processing, compositing, or manual editing was applied." },

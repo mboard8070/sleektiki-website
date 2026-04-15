@@ -514,7 +514,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_lifestyle.png",
     title: "Volcanic Edge",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Pre-dawn at a volcanic crater, molten lava glow below",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Lifestyle", "Runner"],
@@ -524,7 +524,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_product_ad_text.png",
     title: "Void Spotlight",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Floating in black void with single overhead spotlight",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Product Ad", "Runner"],
@@ -534,7 +534,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_artistic.png",
     title: "Glass Shatter",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Exploding into red and white glass shards, freeze-frame",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Artistic", "Runner"],
@@ -544,7 +544,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_clay.png",
     title: "Clay Render",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Matte grey clay sculpture, studio lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Clay", "Runner"],
@@ -554,7 +554,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Cyan wireframe mesh on dark blueprint background",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Wireframe", "Runner"],
@@ -564,7 +564,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens1_on_model.png",
     title: "Trail Runner",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Mid-stride on a mountain trail at golden hour",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Runner"],
@@ -575,7 +575,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_lifestyle.png",
     title: "Glacial Peak",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Balanced on the tip of a glacial iceberg, arctic blue water",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Lifestyle", "Runner"],
@@ -585,7 +585,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_product_ad_text.png",
     title: "Black Glass",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Reflective black glass surface, blue gradient background",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Product Ad", "Runner"],
@@ -595,7 +595,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_artistic.png",
     title: "Underwater Cathedral",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Submerged in crystal-clear tropical water with fish",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Artistic", "Runner"],
@@ -605,7 +605,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_clay.png",
     title: "Clay Render",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Matte white porcelain clay sculpture, museum pedestal",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Clay", "Runner"],
@@ -615,7 +615,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Electric blue wireframe with holographic annotations",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Wireframe", "Runner"],
@@ -625,7 +625,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens2_on_model.png",
     title: "Track Ready",
-    subject: "Nike Runner — Mens",
+    subject: "Nike Runner - Mens",
     scene: "Sprinter crouched in starting blocks on the track",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Runner"],
@@ -636,7 +636,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_lifestyle.png",
     title: "Storm Front",
-    subject: "Nike Air Max Excee — Mens",
+    subject: "Nike Air Max Excee - Mens",
     scene: "Unfinished skyscraper ledge, thunderstorm approaching",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Lifestyle", "Air Max"],
@@ -646,7 +646,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_product_ad_text.png",
     title: "Smoke Reveal",
-    subject: "Nike Air Max Excee — Mens",
+    subject: "Nike Air Max Excee - Mens",
     scene: "Emerging from theatrical smoke, hard spotlight",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Product Ad", "Air Max"],
@@ -656,8 +656,8 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_artistic.png",
     title: "Dutch Still Life",
-    subject: "Nike Air Max Excee — Mens",
-    scene: "Golden Age painting — candle, velvet, chiaroscuro",
+    subject: "Nike Air Max Excee - Mens",
+    scene: "Golden Age painting, candle, velvet, chiaroscuro",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Artistic", "Air Max"],
     category: "nike",
@@ -666,7 +666,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_clay.png",
     title: "Clay Render",
-    subject: "Nike Air Max Excee — Mens",
+    subject: "Nike Air Max Excee - Mens",
     scene: "Dark grey clay, dramatic directional lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Clay", "Air Max"],
@@ -676,7 +676,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Air Max Excee — Mens",
+    subject: "Nike Air Max Excee - Mens",
     scene: "White wireframe on black, air bubble as mesh void",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Wireframe", "Air Max"],
@@ -686,7 +686,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens3_on_model.png",
     title: "Tokyo Nights",
-    subject: "Nike Air Max Excee — Mens",
+    subject: "Nike Air Max Excee - Mens",
     scene: "Stepping off a curb in Shibuya at night, neon reflections",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Air Max"],
@@ -697,7 +697,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_lifestyle.png",
     title: "Boxing Ring",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Weathered boxing ring canvas, harsh overhead lights",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Lifestyle", "Court Vision"],
@@ -707,7 +707,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_product_ad_text.png",
     title: "Crimson Mirror",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Mirrored surface, deep crimson gradient background",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Product Ad", "Court Vision"],
@@ -717,7 +717,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_artistic.png",
     title: "Field of Roses",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Vast field of red roses, morning dew, golden backlight",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Artistic", "Court Vision"],
@@ -727,7 +727,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_clay.png",
     title: "Clay Render",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Terracotta clay sculpture, museum gallery lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Clay", "Court Vision"],
@@ -737,7 +737,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Red wireframe mesh, leather panels as distinct sections",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Wireframe", "Court Vision"],
@@ -747,7 +747,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_on_model.png",
     title: "Skatepark Stand",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Standing atop a halfpipe, foot on the skateboard",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Court Vision"],
@@ -757,7 +757,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens4_ollie.png",
     title: "Ollie",
-    subject: "Nike Court Vision — Mens",
+    subject: "Nike Court Vision - Mens",
     scene: "Mid-ollie at a skatepark, golden hour",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Court Vision"],
@@ -768,7 +768,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_lifestyle.png",
     title: "Center Court",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "Empty basketball arena, golden light through high windows",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Lifestyle", "Jordan"],
@@ -778,7 +778,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_product_ad_text.png",
     title: "Red Streak",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "Floating against black, diagonal red light slash",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Product Ad", "Jordan"],
@@ -788,7 +788,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_artistic.png",
     title: "City Lights Double Exposure",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "Shoe silhouette filled with aerial nighttime cityscape",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Artistic", "Jordan"],
@@ -798,7 +798,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_clay.png",
     title: "Clay Render",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "Grey clay sculpture, iconic high-top silhouette",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Clay", "Jordan"],
@@ -808,7 +808,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "White-red gradient holographic wireframe projection",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "Wireframe", "Jordan"],
@@ -818,7 +818,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/mens5_on_model.png",
     title: "Court Presence",
-    subject: "Nike Jordan 1 Mid — Mens",
+    subject: "Nike Jordan 1 Mid - Mens",
     scene: "Standing on the basketball court holding the ball",
     model: "Flux 2 Dev",
     tags: ["Nike", "Mens", "On Model", "Jordan"],
@@ -832,7 +832,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_lifestyle.png",
     title: "Parisian Chic",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Velvet chaise in a Parisian apartment, golden afternoon light",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Lifestyle", "Air Max"],
@@ -842,7 +842,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_product_ad_text.png",
     title: "Marble Elegance",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Carrara marble slab, mauve-to-cream gradient",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Product Ad", "Air Max"],
@@ -852,7 +852,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_artistic.png",
     title: "Lavender Fields",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Endless Provence lavender field at golden hour",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Artistic", "Air Max"],
@@ -862,7 +862,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_clay.png",
     title: "Clay Render",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Ivory clay sculpture, ceramic art gallery lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Clay", "Air Max"],
@@ -872,7 +872,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Rose gold wireframe mesh, warm metallic lines",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Wireframe", "Air Max"],
@@ -882,7 +882,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens1_on_model.png",
     title: "Parisian Stroll",
-    subject: "Nike Air Max Pulse — Womens",
+    subject: "Nike Air Max Pulse - Womens",
     scene: "Walking on sunlit Parisian cobblestones, cafe terrace",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "On Model", "Air Max"],
@@ -893,7 +893,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_lifestyle.png",
     title: "Ballet Studio",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Sunlit ballet studio, hardwood floors, morning light",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Lifestyle", "Court Vision"],
@@ -903,7 +903,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_product_ad_text.png",
     title: "Blush Glow",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Frosted glass, blush pink gradient, ethereal lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Product Ad", "Court Vision"],
@@ -913,7 +913,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_artistic.png",
     title: "Frozen in Ice",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Frozen inside crystal-clear ice with frost patterns",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Artistic", "Court Vision"],
@@ -923,7 +923,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_clay.png",
     title: "Clay Render",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Blush-white clay sculpture, soft overhead lighting",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Clay", "Court Vision"],
@@ -933,7 +933,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Soft pink wireframe on black, perforations as circles",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Wireframe", "Court Vision"],
@@ -943,7 +943,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens2_on_model.png",
     title: "Boardwalk Sunset",
-    subject: "Nike Court Vision — Womens",
+    subject: "Nike Court Vision - Womens",
     scene: "Standing at boardwalk railing, golden sunset, palm shadows",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "On Model", "Court Vision"],
@@ -954,7 +954,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_lifestyle.png",
     title: "European Alley",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "Rain-wet cobblestones at blue hour, cafe light reflections",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Lifestyle", "Air Max"],
@@ -964,7 +964,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_product_ad_text.png",
     title: "Paint Explosion",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "Hot pink paint splash frozen mid-air behind the shoe",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Product Ad", "Air Max"],
@@ -974,7 +974,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_artistic.png",
     title: "Giant Peony",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "Resting on an enormous pink peony, macro dew drops",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Artistic", "Air Max"],
@@ -984,7 +984,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_clay.png",
     title: "Clay Render",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "White porcelain clay, subtle translucency at edges",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Clay", "Air Max"],
@@ -994,7 +994,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "Hot magenta wireframe, pulsing intersection nodes",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Wireframe", "Air Max"],
@@ -1004,7 +1004,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens3_on_model.png",
     title: "Gym Floor",
-    subject: "Nike Air Max — Womens",
+    subject: "Nike Air Max - Womens",
     scene: "Athletic stance on gym floor, kettlebell between feet",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "On Model", "Air Max"],
@@ -1015,7 +1015,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_lifestyle.png",
     title: "Cliff Sunrise",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Yoga mat at a sea cliff edge, pink and gold sunrise",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Lifestyle", "Runner"],
@@ -1025,7 +1025,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_product_ad_text.png",
     title: "Acrylic Dawn",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Clear acrylic block, sunrise gradient background",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Product Ad", "Runner"],
@@ -1035,7 +1035,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_artistic.png",
     title: "Flamingo Flight",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Dissolving into pink flamingos taking flight at sunset",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Artistic", "Runner"],
@@ -1045,7 +1045,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_clay.png",
     title: "Clay Render",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Warm white clay, Scandinavian design exhibit aesthetic",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Clay", "Runner"],
@@ -1055,7 +1055,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Coral-to-white gradient wireframe, measurement annotations",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Wireframe", "Runner"],
@@ -1065,7 +1065,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens4_on_model.png",
     title: "Trailhead Dawn",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Standing at coastal trailhead at sunrise, ready to run",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "On Model", "Runner"],
@@ -1076,7 +1076,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_lifestyle.png",
     title: "Infinity Pool Dusk",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Infinity pool edge at purple dusk, mountain silhouettes",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Lifestyle", "Runner"],
@@ -1086,7 +1086,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_product_ad_text.png",
     title: "Aurora",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Aurora borealis gradient, purple and teal background",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Product Ad", "Runner"],
@@ -1096,7 +1096,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_artistic.png",
     title: "Zero Gravity",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Floating in a space station, Earth visible through window",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Artistic", "Runner"],
@@ -1106,7 +1106,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_clay.png",
     title: "Clay Render",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Lavender-grey clay sculpture, contemporary gallery",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Clay", "Runner"],
@@ -1116,7 +1116,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_nurbs.png",
     title: "NURBS Wireframe",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Purple-to-blue gradient wireframe, holographic projection",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "Wireframe", "Runner"],
@@ -1126,7 +1126,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     src: "/images/portfolio/nike/womens5_on_model.png",
     title: "Mountain Morning",
-    subject: "Nike Runner — Womens",
+    subject: "Nike Runner - Womens",
     scene: "Mountain pose on yoga mat at misty dawn",
     model: "Flux 2 Dev",
     tags: ["Nike", "Womens", "On Model", "Runner"],
@@ -1170,7 +1170,7 @@ export default function Portfolio() {
           <SectionHeading
             label="AI-Generated Portfolio"
             title="Creative Imagery"
-            subtitle="Automotive scene generation, AI product placement, and LoRA-trained style transfer. Every image is AI-generated from reference photos and text prompts — no compositing or manual editing."
+            subtitle="Automotive scene generation, AI product placement, and LoRA-trained style transfer. Every image is AI-generated from reference photos and text prompts. No compositing or manual editing."
           />
 
           {/* Category filter */}
@@ -1233,7 +1233,7 @@ export default function Portfolio() {
                     ) : (
                       <Image
                         src={item.src}
-                        alt={`${item.subject} — ${item.title}`}
+                        alt={`${item.subject} - ${item.title}`}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -1337,7 +1337,7 @@ export default function Portfolio() {
                 ) : (
                   <Image
                     src={lightbox.src}
-                    alt={`${lightbox.subject} — ${lightbox.title}`}
+                    alt={`${lightbox.subject} - ${lightbox.title}`}
                     fill
                     sizes="100vw"
                     className="object-contain rounded-lg"

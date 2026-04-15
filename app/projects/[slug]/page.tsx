@@ -16,7 +16,7 @@ export async function generateMetadata({
   const project = getProject(slug);
   if (!project) return { title: "Project Not Found" };
   return {
-    title: `${project.title} — sleektiki.ai`,
+    title: `${project.title} | sleektiki.ai`,
     description: project.description[0],
   };
 }

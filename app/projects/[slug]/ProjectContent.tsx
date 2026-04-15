@@ -130,7 +130,7 @@ export default function ProjectContent({
           <div className="rounded-xl border border-[var(--surface-border)] overflow-hidden">
             <img
               src={project.architectureDiagram}
-              alt={`${project.title} — System Architecture`}
+              alt={`${project.title} - System Architecture`}
               className="w-full h-auto"
             />
           </div>
@@ -302,7 +302,7 @@ export default function ProjectContent({
                   <div>
                     <img
                       src={pair.sketch}
-                      alt={`Training sketch — ${pair.label}`}
+                      alt={`Training sketch - ${pair.label}`}
                       className="w-full rounded-lg border border-[var(--surface-border)] object-cover aspect-[4/3]"
                     />
                     <p
@@ -315,14 +315,14 @@ export default function ProjectContent({
                   <div>
                     <img
                       src={pair.generated}
-                      alt={`Generated — ${pair.label}`}
+                      alt={`Generated - ${pair.label}`}
                       className="w-full rounded-lg border border-[var(--surface-border)] object-cover aspect-[4/3]"
                     />
                     <p
                       className="text-[10px] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
                       style={{ marginTop: "0.5rem" }}
                     >
-                      GENERATED — {pair.label.toUpperCase()}
+                      GENERATED - {pair.label.toUpperCase()}
                     </p>
                   </div>
                 </div>

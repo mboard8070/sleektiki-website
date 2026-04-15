@@ -7,7 +7,7 @@ const areas = [
   {
     title: "AI-Augmented Art Pipelines",
     description:
-      "Integrating generative AI into traditional 3D workflows — from concept to final asset — without sacrificing artistic intent or quality.",
+      "Integrating generative AI into traditional 3D workflows, from concept to final asset, without sacrificing artistic intent or quality.",
     icon: (
       <svg
         width="24"
@@ -27,7 +27,7 @@ const areas = [
   {
     title: "Local-First AI Systems",
     description:
-      "Building AI infrastructure that runs on local hardware — DGX Spark, consumer GPUs — keeping data private and latency low.",
+      "Building AI infrastructure that runs on local hardware (DGX Spark, consumer GPUs), keeping data private and latency low.",
     icon: (
       <svg
         width="24"
@@ -48,7 +48,7 @@ const areas = [
   {
     title: "Creative AI Education",
     description:
-      "Designing curriculum that equips artists and developers to work alongside AI tools — understanding both the craft and the technology.",
+      "Designing curriculum that equips artists and developers to work alongside AI tools, understanding both the craft and the technology.",
     icon: (
       <svg
         width="24"
@@ -76,7 +76,7 @@ export default function Research() {
       <div className="max-w-5xl mx-auto">
         <SectionHeading
           label="03 / Research"
-          title="How can AI augment — not replace — the creative process?"
+          title="How can AI augment, not replace, the creative process?"
         />
 
         <ScrollReveal delay={0.1}>
@@ -86,8 +86,8 @@ export default function Research() {
           >
             My research sits at the intersection of traditional 3D art pipelines
             and AI-driven content creation. I&apos;m interested in building
-            systems where AI acts as a collaborator — accelerating tedious
-            tasks, generating variations, and handling technical overhead — while
+            systems where AI acts as a collaborator: accelerating tedious
+            tasks, generating variations, and handling technical overhead, while
             the artist retains full creative control. This isn&apos;t about
             replacing artists; it&apos;s about giving them superpowers.
           </p>

@@ -30,8 +30,8 @@ export default function About() {
               and animation pipelines with emerging AI-driven workflows.
             </p>
             <p className="text-[var(--text-muted)]" style={{ lineHeight: 1.8 }}>
-              These cross-disciplinary experiences inform everything I build
-              — preparing the next generation of digital creators to work
+              These cross-disciplinary experiences inform everything I build,
+              preparing the next generation of digital creators to work
               alongside AI tools rather than be displaced by them.
             </p>
           </ScrollReveal>
