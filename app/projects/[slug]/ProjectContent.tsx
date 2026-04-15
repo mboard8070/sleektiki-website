@@ -21,7 +21,7 @@ export default function ProjectContent({
             position: "fixed",
             inset: 0,
             zIndex: 9999,
-            background: "rgba(0, 0, 0, 0.9)",
+            background: "rgba(0, 0, 0, 0.92)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
@@ -42,6 +42,49 @@ export default function ProjectContent({
           />
         </div>
       )}
+
+      {/* Gallery — moved to top */}
+      {project.gallery.length > 1 && (
+        <div style={{ marginBottom: "6rem" }}>
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            {project.splatEmbeds ? "Exhibition Rooms" : "Gallery"}
+          </h2>
+          <div
+            className={`grid gap-5 ${
+              project.splatEmbeds
+                ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+                : "grid-cols-1 sm:grid-cols-2"
+            }`}
+          >
+            {project.gallery.map((img, i) => (
+              <motion.div
+                key={`${img.alt}-${i}`}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.06 }}
+              >
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
+                  style={{ cursor: "zoom-in" }}
+                  onClick={() => setLightboxSrc(img.src)}
+                />
+                <p
+                  className="text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+                  style={{ marginTop: "0.75rem" }}
+                >
+                  {img.alt}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Case Study */}
       {project.caseStudy && project.caseStudy.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>
@@ -94,7 +137,7 @@ export default function ProjectContent({
         </motion.div>
       )}
 
-      {/* Interactive 3D Splat Viewers — top of page */}
+      {/* Interactive 3D Splat Viewers */}
       {project.splatEmbeds && project.splatEmbeds.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>
           <h2
@@ -283,48 +326,6 @@ export default function ProjectContent({
                     </p>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Gallery */}
-      {project.gallery.length > 1 && (
-        <div style={{ marginBottom: "6rem" }}>
-          <h2
-            className="text-2xl font-bold"
-            style={{ marginBottom: "2.5rem" }}
-          >
-            {project.splatEmbeds ? "Exhibition Rooms" : "Gallery"}
-          </h2>
-          <div
-            className={`grid gap-5 ${
-              project.splatEmbeds
-                ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
-                : "grid-cols-1 sm:grid-cols-2"
-            }`}
-          >
-            {project.gallery.map((img, i) => (
-              <motion.div
-                key={`${img.alt}-${i}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.06 }}
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
-                  style={{ cursor: "zoom-in" }}
-                  onClick={() => setLightboxSrc(img.src)}
-                />
-                <p
-                  className="text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
-                  style={{ marginTop: "0.75rem" }}
-                >
-                  {img.alt}
-                </p>
               </motion.div>
             ))}
           </div>
