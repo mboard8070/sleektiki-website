@@ -378,6 +378,61 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
+    slug: "surfaced",
+    title: "Surfaced",
+    subtitle: "AI-Powered PBR Material Generation",
+    description: [
+      "A real-time PBR material generation tool that creates production-ready texture maps from text prompts. Describe a material — weathered copper, polished concrete, rusted steel — and Surfaced generates base color, normal, height, roughness, metallic, emissive, and AO maps in seconds.",
+      "Built around a Three.js viewport with live material preview on sphere, plane, and cube geometries. Full material property controls let you dial in roughness, metalness, displacement, specular, and lighting in real time. Collapsible panels keep the interface clean while giving access to advanced features like layer compositing, per-channel painting, and height map post-processing.",
+      "Surfaced includes a color-to-metallic derivation engine that analyzes the base color map and generates accurate metallic masks — solving a gap in current AI material models that output empty metallic maps for metals. Supports warm metals (copper, brass, gold), cool metals (steel, silver, chrome), and luminance-based detection for mixed surfaces.",
+    ],
+    tags: ["React", "Three.js", "FastAPI", "PBR", "fal.ai", "FLUX", "Python", "DGX Spark"],
+    hero: "/images/projects/surfaced.png",
+    gallery: [
+      { src: "/images/projects/surfaced.png", alt: "Surfaced — Kevlar Fiber Material" },
+      { src: "/images/projects/surfaced-suede.png", alt: "Surfaced — Brown Suede with Metallic Derivation" },
+      { src: "/images/projects/surfaced-library.png", alt: "Surfaced — Material Library" },
+      { src: "/images/projects/surfaced-copper.png", alt: "Surfaced — Oxidized Copper" },
+    ],
+    features: [
+      {
+        title: "Multi-Engine Generation",
+        description: "Two generation backends: PATINA via fal.ai for fast cloud-based generation (~15 seconds, native PBR maps), and a local FLUX + LoRA pipeline running on DGX Spark for free, offline generation. Both produce tileable texture sets ready for game engines and DCC tools."
+      },
+      {
+        title: "Live 3D Material Preview",
+        description: "React Three Fiber viewport with physically-based rendering. Full PBR shader with base color, normal, roughness, metallic, height displacement, emissive, AO, translucency, and subsurface scattering. Adjustable three-point lighting and multiple environment presets."
+      },
+      {
+        title: "Color-Derived Metallic Maps",
+        description: "Current AI material models generate empty metallic maps for metals. Surfaced analyzes the base color and derives accurate metallic masks using color temperature, saturation, and luminance heuristics — with tunable threshold and softness controls for warm metals, cool metals, and mixed surfaces."
+      },
+      {
+        title: "Layer Compositing and Painting",
+        description: "Photoshop-style layer stack with 13 blend modes, per-channel masking with Perlin and Voronoi noise, and a canvas-based painting tool with multiple brush stamps. Compose complex materials from multiple generated layers, then flatten and export."
+      },
+    ],
+    links: [],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Creating PBR materials for game engines and 3D pipelines requires either expensive tools like Substance Designer with steep learning curves, or hunting through free libraries for something close enough. AI texture generators exist but output single images — not the full set of coordinated maps (normal, roughness, metallic, height) that physically-based rendering requires. And the models that do generate multi-map output have a critical blind spot: metallic maps come back empty for metals, making copper look like clay and steel look like plastic."
+      },
+      {
+        heading: "Design Challenge",
+        body: "How do you make PBR material creation accessible to non-technical users while still producing output that passes muster in a production pipeline? The tool needs to hide complexity without sacrificing control — a first-time user should get a usable result from a text prompt, while an experienced artist should have access to layer compositing, per-channel painting, and material property fine-tuning."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The interface uses progressive disclosure: generate mode is a prompt box and a button, but the right panel exposes the full PBR parameter set in collapsible sections. The metallic map problem was solved by building a client-side derivation engine that analyzes color temperature and saturation in the base color map to generate physically plausible metallic masks — something none of the generation models do correctly. Two generation backends give users the choice between speed (cloud) and cost (local), with identical output formats so the rest of the pipeline doesn't care which was used."
+      },
+      {
+        heading: "Outcome",
+        body: "A complete material creation pipeline from text prompt to engine-ready export. Generates 7-channel PBR texture sets, supports Unreal Engine export with automated import scripts, and includes a material library for saving and reusing generated materials. The color-to-metallic derivation feature fills a real gap in current AI material generation models."
+      }
+    ],
+  },
+  {
     slug: "stillion-lora",
     title: "Stillion AI LoRA Trainer",
     subtitle: "FLUX LoRA Training on DGX Spark",

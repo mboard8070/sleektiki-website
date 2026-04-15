@@ -10,9 +10,38 @@ export default function ProjectContent({
   project: ProjectDetail;
 }) {
   const [activeSplat, setActiveSplat] = useState<string | null>(null);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   return (
     <>
+      {/* Lightbox overlay */}
+      {lightboxSrc && (
+        <div
+          style={{
+            position: "fixed",
+            inset: 0,
+            zIndex: 9999,
+            background: "rgba(0, 0, 0, 0.9)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "zoom-out",
+            padding: "2rem",
+          }}
+          onClick={() => setLightboxSrc(null)}
+        >
+          <img
+            src={lightboxSrc}
+            alt=""
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              objectFit: "contain",
+              borderRadius: "8px",
+            }}
+          />
+        </div>
+      )}
       {/* Case Study */}
       {project.caseStudy && project.caseStudy.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>
@@ -287,6 +316,8 @@ export default function ProjectContent({
                   src={img.src}
                   alt={img.alt}
                   className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
+                  style={{ cursor: "zoom-in" }}
+                  onClick={() => setLightboxSrc(img.src)}
                 />
                 <p
                   className="text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
