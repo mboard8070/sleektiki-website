@@ -10,7 +10,7 @@ export interface ProjectDetail {
   description: string[];
   tags: string[];
   hero: string;
-  gallery: { src: string; alt: string }[];
+  gallery: { src: string; alt: string; type?: "image" | "video" }[];
   links: { label: string; url: string }[];
   youtubeIds?: string[];
   features?: { title: string; description: string }[];
@@ -37,6 +37,7 @@ const projects: ProjectDetail[] = [
   tags: ["Nemotron", "Codestral", "Claude", "Mistral", "Devstral", "LLaVA", "Whisper", "Tailscale", "Docker", "Python", "React", "Capacitor"],
   hero: "/images/projects/maude.png",
   gallery: [
+    { src: "/videos/maude-feature-video.mp4", alt: "MAUDE Feature Video", type: "video" },
     { src: "/images/projects/maude.png", alt: "MAUDE Server TUI" },
     { src: "/images/projects/maude-client.png", alt: "MAUDE Client on Mac" }
   ],

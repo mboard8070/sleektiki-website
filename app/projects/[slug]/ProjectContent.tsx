@@ -59,25 +59,37 @@ export default function ProjectContent({
                 : "grid-cols-1 sm:grid-cols-2"
             }`}
           >
-            {project.gallery.map((img, i) => (
+            {project.gallery.map((item, i) => (
               <motion.div
-                key={`${img.alt}-${i}`}
+                key={`${item.alt}-${i}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
+                className={item.type === "video" && !project.splatEmbeds ? "sm:col-span-2" : undefined}
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
-                  style={{ cursor: "zoom-in" }}
-                  onClick={() => setLightboxSrc(img.src)}
-                />
+                {item.type === "video" ? (
+                  <video
+                    src={item.src}
+                    className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
+                    style={{ aspectRatio: "16 / 9", background: "#000" }}
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
+                ) : (
+                  <img
+                    src={item.src}
+                    alt={item.alt}
+                    className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
+                    style={{ cursor: "zoom-in" }}
+                    onClick={() => setLightboxSrc(item.src)}
+                  />
+                )}
                 <p
                   className="text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
                   style={{ marginTop: "0.75rem" }}
                 >
-                  {img.alt}
+                  {item.alt}
                 </p>
               </motion.div>
             ))}
