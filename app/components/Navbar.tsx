@@ -60,6 +60,15 @@ const socials = [
       </svg>
     ),
   },
+  {
+    name: "GitLab",
+    url: "https://gitlab.com/mboard8070",
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M23.955 13.587l-1.342-4.13-2.655-8.172a.456.456 0 00-.867 0l-2.655 8.172H7.563L4.909 1.285a.456.456 0 00-.867 0L1.387 9.457.045 13.587a.913.913 0 00.331 1.021L12 23.054l11.624-8.446a.913.913 0 00.331-1.021z" />
+      </svg>
+    ),
+  },
 ];
 
 const navLinks = [
