@@ -26,6 +26,15 @@ const projects: Project[] = [
     image: "/images/projects/maude.png",
   },
   {
+    title: "Recipe Cost Calculator",
+    slug: "recipe-cost-calculator",
+    description:
+      "A browser-based kitchen prep tool for calculating recipe cost from ingredient quantities, package costs, and package sizes. Built as a static Vite app with localStorage persistence and paired with a Terraform S3 hosting baseline to demonstrate a low-cost AWS deployment path with no backend, database, VPC, NAT Gateway, or load balancer.",
+    tags: ["Vite", "JavaScript", "localStorage", "Terraform", "S3", "AWS"],
+    category: "ai",
+    image: "/images/projects/recipe-cost-calculator-card.png",
+  },
+  {
     title: "MAUDE Mobile",
     slug: "maude-mobile",
     description:

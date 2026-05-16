@@ -144,6 +144,63 @@ const projects: ProjectDetail[] = [
   ]
   },
   {
+    slug: "recipe-cost-calculator",
+    title: "Recipe Cost Calculator",
+    subtitle: "Browser-Based Kitchen Prep Tool",
+    description: [
+      "A lightweight browser app for calculating recipe cost from ingredient quantities, package costs, and package sizes. It updates the total recipe cost, cost per serving, and ingredient row totals as values change.",
+      "The project is intentionally simple and inexpensive to deploy: no backend, no database, no authentication layer, and no server-side storage. Recipes persist locally in the browser with localStorage, making the app a good candidate for static hosting.",
+      "The companion Terraform baseline hosts the built Vite app on S3 as a static website, keeping the AWS surface area limited to one bucket, public read policy, and website hosting configuration."
+    ],
+    tags: ["Vite", "JavaScript", "localStorage", "Terraform", "S3", "AWS"],
+    hero: "/images/projects/recipe-cost-calculator.png",
+    gallery: [
+      { src: "/images/projects/recipe-cost-calculator.png", alt: "Recipe Cost Calculator - Desktop Interface" },
+      { src: "/images/projects/recipe-cost-calculator-mobile.png", alt: "Recipe Cost Calculator - Mobile Interface" },
+      { src: "/images/projects/recipe-cost-calculator-card.png", alt: "Recipe Cost Calculator - Project Card View" }
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Small food businesses, home bakers, and kitchen prep workflows need a fast way to understand what a recipe actually costs per batch and per serving. A spreadsheet can do the math, but it is easy to break formulas, hard to use on mobile, and awkward for repeated ingredient edits."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The app needed to stay focused: quick entry, immediate totals, clear validation, and persistence without creating a backend bill. Because the data belongs to a simple single-user workflow, browser storage is enough for the first version."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The calculator keeps all computation client-side and normalizes stored recipe data before restoring it from localStorage. Ingredient rows remain editable in place, summary cards stay visible at the top, and demo data provides a quick way to verify the calculation flow."
+      },
+      {
+        heading: "Outcome",
+        body: "The result is a static Vite app that can be deployed with almost no cloud infrastructure. The Terraform example demonstrates an S3-only deployment path for learning infrastructure-as-code without introducing EC2, RDS, Lambda, NAT gateways, or load balancers."
+      }
+    ],
+    features: [
+      {
+        title: "Live Recipe Totals",
+        description: "Calculates ingredient row costs, total recipe cost, cost per serving, and valid ingredient counts directly in the browser."
+      },
+      {
+        title: "Local Persistence",
+        description: "Stores the latest recipe in localStorage so a refresh keeps the working data without requiring accounts or a database."
+      },
+      {
+        title: "Validation and Demo Data",
+        description: "Normalizes saved data, rejects invalid entries, and includes demo ingredients for fast smoke testing."
+      },
+      {
+        title: "Static AWS Deployment",
+        description: "The Terraform baseline provisions S3 static website hosting only, keeping cost exposure limited and easy to understand."
+      }
+    ],
+    links: [
+      { label: "GitLab", url: "https://gitlab.com/mboard8070/recipe-cost-calculator" },
+      { label: "Terraform Config", url: "https://gitlab.com/mboard8070/terraform-configs/-/tree/main/recipe-cost-calculator-s3" }
+    ],
+  },
+  {
     slug: "maude-mobile",
   title: "MAUDE Mobile",
   subtitle: "Native iOS & Android Companion App",
