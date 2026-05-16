@@ -262,7 +262,7 @@ const projects: ProjectDetail[] = [
       },
     ],
     links: [
-      { label: "GitHub", url: "https://github.com/mboard8070/code-assistant-lora" }
+      { label: "GitLab", url: "https://gitlab.com/mboard8070/code-assistant-lora" }
     ],
   },
   {
