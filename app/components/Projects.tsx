@@ -17,15 +17,6 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "MAUDE",
-    slug: "maude",
-    description:
-      "Multi-Agent Unified Dispatch Engine \u2014 a local AI assistant running entirely on the NVIDIA DGX Spark. Coordinates multiple specialized models: Nemotron for reasoning, Codestral for code generation, LLaVA for vision, and Mistral for general tasks. Features voice interaction with Whisper transcription, RAG-powered memory via vector database, autonomous sandboxed code execution, Telegram bot integration, and a client/server architecture over Tailscale VPN. Fully private \u2014 all inference on-device.",
-    tags: ["Nemotron", "Codestral", "LLaVA", "Whisper", "Tailscale", "SQLite"],
-    category: "ai",
-    image: "/images/projects/maude.png",
-  },
-  {
     title: "Code Assistant LoRA",
     slug: "code-assistant-lora",
     description:
@@ -33,6 +24,15 @@ const projects: Project[] = [
     tags: ["LoRA", "Gemma", "DGX Spark", "SFT", "Vue", "Python"],
     category: "ai",
     image: "/images/projects/code-assistant-lora-card.png",
+  },
+  {
+    title: "MAUDE",
+    slug: "maude",
+    description:
+      "Multi-Agent Unified Dispatch Engine \u2014 a local AI assistant running entirely on the NVIDIA DGX Spark. Coordinates multiple specialized models: Nemotron for reasoning, Codestral for code generation, LLaVA for vision, and Mistral for general tasks. Features voice interaction with Whisper transcription, RAG-powered memory via vector database, autonomous sandboxed code execution, Telegram bot integration, and a client/server architecture over Tailscale VPN. Fully private \u2014 all inference on-device.",
+    tags: ["Nemotron", "Codestral", "LLaVA", "Whisper", "Tailscale", "SQLite"],
+    category: "ai",
+    image: "/images/projects/maude.png",
   },
   {
     title: "MAUDE Mobile",
