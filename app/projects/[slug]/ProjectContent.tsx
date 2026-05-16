@@ -149,6 +149,128 @@ export default function ProjectContent({
         </motion.div>
       )}
 
+      {/* Training Metrics */}
+      {project.trainingMetrics && (
+        <div style={{ marginBottom: "6rem" }}>
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "1.5rem" }}
+          >
+            {project.trainingMetrics.title}
+          </h2>
+          <p
+            className="text-sm text-[var(--text-secondary)]"
+            style={{ lineHeight: 1.8, marginBottom: "2.5rem", maxWidth: "820px" }}
+          >
+            {project.trainingMetrics.summary}
+          </p>
+
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            {project.trainingMetrics.stats.map((stat, i) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="rounded-lg bg-[var(--surface)] border border-[var(--surface-border)]"
+                style={{ padding: "1.25rem" }}
+              >
+                <p
+                  className="text-[10px] uppercase text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+                  style={{ letterSpacing: "0.12em", marginBottom: "0.75rem" }}
+                >
+                  {stat.label}
+                </p>
+                <p
+                  className="text-3xl font-bold text-[var(--accent)]"
+                  style={{ marginBottom: "0.75rem" }}
+                >
+                  {stat.value}
+                </p>
+                <p
+                  className="text-xs text-[var(--text-secondary)]"
+                  style={{ lineHeight: 1.6 }}
+                >
+                  {stat.detail}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+
+          <div
+            className="rounded-lg bg-[var(--surface)] border border-[var(--surface-border)]"
+            style={{ padding: "1.5rem" }}
+          >
+            {project.trainingMetrics.bars.map((bar, i) => (
+              <div
+                key={bar.label}
+                style={{ marginBottom: i < project.trainingMetrics!.bars.length - 1 ? "1.25rem" : 0 }}
+              >
+                <div className="flex items-baseline justify-between gap-4" style={{ marginBottom: "0.45rem" }}>
+                  <p className="text-sm font-semibold">{bar.label}</p>
+                  <p className="text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
+                    {bar.caption}
+                  </p>
+                </div>
+                <div
+                  className="w-full bg-[var(--surface-light)]"
+                  style={{ height: "10px", borderRadius: "999px", overflow: "hidden" }}
+                >
+                  <div
+                    style={{
+                      width: `${Math.max(0, Math.min(100, bar.value))}%`,
+                      height: "100%",
+                      borderRadius: "999px",
+                      background: "var(--accent)",
+                    }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Role Matrix */}
+      {project.roleMatrix && project.roleMatrix.length > 0 && (
+        <div style={{ marginBottom: "6rem" }}>
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            Codex Role Setup
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            {project.roleMatrix.map((role, i) => (
+              <motion.div
+                key={role.title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                className="rounded-lg bg-[var(--surface)] border border-[var(--surface-border)]"
+                style={{ padding: "1.5rem" }}
+              >
+                <p
+                  className="text-[10px] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
+                  style={{ letterSpacing: "0.12em", marginBottom: "0.75rem" }}
+                >
+                  {role.role}
+                </p>
+                <h3 className="text-lg font-bold" style={{ marginBottom: "0.75rem" }}>
+                  {role.title}
+                </h3>
+                <p className="text-sm text-[var(--text-secondary)]" style={{ lineHeight: 1.8 }}>
+                  {role.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Interactive 3D Splat Viewers */}
       {project.splatEmbeds && project.splatEmbeds.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>

@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820" role="img" aria-labelledby="title desc">
+  <title id="title">Code Assistant LoRA reviewer training overview</title>
+  <desc id="desc">Bar charts showing reviewer adapter pass rates and 31B behavior gate progress.</desc>
+  <rect width="1400" height="820" fill="#0c1014"/>
+  <rect x="36" y="36" width="1328" height="748" rx="18" fill="#111820" stroke="#2a3843"/>
+  <text x="72" y="92" fill="#e4edf3" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="700">Training Outcomes</text>
+  <text x="72" y="126" fill="#8aa0ad" font-family="Inter, Arial, sans-serif" font-size="16">Held-out reviewer evals and 31B behavior-gate progression from the LoRA experiments.</text>
+
+  <text x="72" y="184" fill="#9bd5ef" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">Specialist Reviewer Adapters</text>
+  <text x="72" y="211" fill="#8aa0ad" font-family="Inter, Arial, sans-serif" font-size="14">Best observed checkpoint or final adapter pass rate.</text>
+
+  <g font-family="Inter, Arial, sans-serif" font-size="14">
+    <g transform="translate(72 248)">
+      <text x="0" y="20" fill="#d8e1e8">Python</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 292)">
+      <text x="0" y="20" fill="#d8e1e8">React</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 336)">
+      <text x="0" y="20" fill="#d8e1e8">TypeScript</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 380)">
+      <text x="0" y="20" fill="#d8e1e8">Vue v1</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="600" height="22" rx="5" fill="#f0c36a"/>
+      <text x="900" y="20" fill="#d8e1e8">15/18 · 83.3%</text>
+    </g>
+    <g transform="translate(72 424)">
+      <text x="0" y="20" fill="#d8e1e8">Vue augmented</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">18/18 · 100%</text>
+    </g>
+    <g transform="translate(72 468)">
+      <text x="0" y="20" fill="#d8e1e8">SQL</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 512)">
+      <text x="0" y="20" fill="#d8e1e8">Docker/CI</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 556)">
+      <text x="0" y="20" fill="#d8e1e8">Testing</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+    <g transform="translate(72 600)">
+      <text x="0" y="20" fill="#d8e1e8">Orchestration</text>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#1a2630"/>
+      <rect x="155" y="4" width="720" height="22" rx="5" fill="#9bd5ef"/>
+      <text x="900" y="20" fill="#d8e1e8">24/24 · 100%</text>
+    </g>
+  </g>
+
+  <g transform="translate(72 674)">
+    <text x="0" y="0" fill="#9bd5ef" font-family="Inter, Arial, sans-serif" font-size="18" font-weight="700">31B Code-Style Adapter Progress</text>
+    <text x="0" y="29" fill="#8aa0ad" font-family="Inter, Arial, sans-serif" font-size="14">Run 016 checkpoint 360 became the current controlled-test candidate.</text>
+    <g transform="translate(0 52)" font-family="Inter, Arial, sans-serif" font-size="13">
+      <text x="0" y="16" fill="#d8e1e8">Run 006</text>
+      <rect x="80" y="3" width="180" height="18" rx="4" fill="#1a2630"/><rect x="80" y="3" width="98" height="18" rx="4" fill="#f0c36a"/><text x="272" y="17" fill="#8aa0ad">13/24</text>
+      <text x="365" y="16" fill="#d8e1e8">Run 011</text>
+      <rect x="445" y="3" width="180" height="18" rx="4" fill="#1a2630"/><rect x="445" y="3" width="159" height="18" rx="4" fill="#9bd5ef"/><text x="637" y="17" fill="#8aa0ad">23/26</text>
+      <text x="730" y="16" fill="#d8e1e8">Run 016</text>
+      <rect x="810" y="3" width="180" height="18" rx="4" fill="#1a2630"/><rect x="810" y="3" width="173" height="18" rx="4" fill="#9bd5ef"/><text x="1002" y="17" fill="#8aa0ad">25/26</text>
+      <text x="1095" y="16" fill="#d8e1e8">Run 017</text>
+      <rect x="1175" y="3" width="120" height="18" rx="4" fill="#1a2630"/><rect x="1175" y="3" width="106" height="18" rx="4" fill="#f0c36a"/><text x="1305" y="17" fill="#8aa0ad">23/26</text>
+    </g>
+  </g>
+</svg>

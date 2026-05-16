@@ -21,6 +21,13 @@ export interface ProjectDetail {
   changelog?: { version: string; date: string; notes: string }[];
   caseStudy?: CaseStudySection[];
   architectureDiagram?: string;
+  trainingMetrics?: {
+    title: string;
+    summary: string;
+    stats: { label: string; value: string; detail: string }[];
+    bars: { label: string; value: number; caption: string }[];
+  };
+  roleMatrix?: { title: string; role: string; description: string }[];
 }
 
 const projects: ProjectDetail[] = [
@@ -156,9 +163,15 @@ const projects: ProjectDetail[] = [
     hero: "/images/projects/code-assistant-lora.png",
     gallery: [
       { src: "/images/projects/code-assistant-lora.png", alt: "Code Assistant LoRA - Multi-Agent Console" },
+      { src: "/images/projects/code-assistant-lora-training-overview.svg", alt: "Code Assistant LoRA - Training Outcomes" },
+      { src: "/images/projects/code-assistant-lora-role-map.svg", alt: "Code Assistant LoRA - Codex Role Map" },
+      { src: "/images/projects/code-assistant-lora-python-chart.svg", alt: "Python Reviewer Score Chart" },
+      { src: "/images/projects/code-assistant-lora-react-chart.svg", alt: "React Reviewer Score Chart" },
+      { src: "/images/projects/code-assistant-lora-typescript-chart.svg", alt: "TypeScript Reviewer Score Chart" },
       { src: "/images/projects/code-assistant-lora-card.png", alt: "Code Assistant LoRA - Reviewer Grid" },
       { src: "/images/projects/code-assistant-lora-mobile.png", alt: "Code Assistant LoRA - Mobile View" }
     ],
+    architectureDiagram: "/images/projects/code-assistant-lora-role-map.svg",
     caseStudy: [
       {
         heading: "The Problem",
@@ -194,6 +207,51 @@ const projects: ProjectDetail[] = [
         title: "Evaluation Gates",
         description: "Tracks checkpoint quality with code-style gates, reviewer evals, smoke checks, and score charts so model changes can be compared instead of guessed."
       }
+    ],
+    trainingMetrics: {
+      title: "Training Results",
+      summary: "The most important result was not lower loss by itself; it was structured, role-specific behavior that survived held-out reviewer scenarios and behavior gates. The base E4B reviewer repeatedly failed the JSON contract, while LoRA adapters learned valid approve/revise/block outputs quickly.",
+      stats: [
+        { label: "Current 31B candidate", value: "25/26", detail: "Run 016 checkpoint 360 across the repaired behavior gate." },
+        { label: "Main gate", value: "8/8", detail: "Run 016 preserved the original code-style eval." },
+        { label: "Gate 2", value: "7/8", detail: "Only remaining miss was explicit service-role wording." },
+        { label: "Gate 3", value: "10/10", detail: "Integrated behavior and Markdown-context cases passed." },
+        { label: "Reviewer contract", value: "0% -> 100%", detail: "Base E4B produced invalid JSON; adapters produced structured reviewer output." },
+        { label: "Adapter placement", value: "820 / 0", detail: "31B LoRA tensors landed under language_model, not vision/audio towers." },
+      ],
+      bars: [
+        { label: "Python reviewer", value: 100, caption: "24/24 from checkpoint 20 onward" },
+        { label: "React reviewer", value: 100, caption: "24/24 from checkpoint 20 onward" },
+        { label: "TypeScript reviewer", value: 100, caption: "24/24 from checkpoint 40 onward" },
+        { label: "Vue reviewer v1", value: 83.3, caption: "15/18 before augmented data" },
+        { label: "Vue augmented", value: 100, caption: "18/18 after augmented boundary data" },
+        { label: "SQL reviewer", value: 100, caption: "24/24 across checkpoints" },
+        { label: "Docker/CI reviewer", value: 100, caption: "24/24 across checkpoints" },
+        { label: "Testing reviewer", value: 100, caption: "24/24 across checkpoints" },
+        { label: "Orchestration reviewer", value: 100, caption: "24/24 across checkpoints" },
+      ],
+    },
+    roleMatrix: [
+      {
+        title: "Primary Patch Author",
+        role: "Codex or 31B Gemma",
+        description: "Owns the implementation, applies revisions, and resolves conflicting reviewer feedback instead of letting specialists rewrite the whole task."
+      },
+      {
+        title: "Local LoRA Reviewers",
+        role: "Python, React, TypeScript, Vue, SQL, Docker/CI, Testing, Orchestration",
+        description: "Receive the task, bounded diff, retrieved context, and check output. Return structured JSON with verdict, findings, missing checks, and suggested fix."
+      },
+      {
+        title: "Cloud Codex Reviewers",
+        role: "Frontend, accessibility, testing, deployment, C++, Java",
+        description: "Used for high-accuracy review when a domain needed broader reasoning than the local adapter or when no local LoRA existed yet."
+      },
+      {
+        title: "Codex Synthesis",
+        role: "Final reviewer",
+        description: "Deduplicates reviewer findings, separates blockers from nits, and hands the primary author a short actionable revision plan."
+      },
     ],
     links: [
       { label: "GitHub", url: "https://github.com/mboard8070/code-assistant-lora" }

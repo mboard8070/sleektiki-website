@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520" role="img" aria-labelledby="title desc">
+  <title id="title">Python Reviewer V2 Run 001 Eval Scores</title>
+  <desc id="desc">Bar chart comparing vanilla Gemma 4 E4B against Python reviewer v2 LoRA checkpoints on a 24 item scenario-held-out structured reviewer eval.</desc>
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="54" y="48" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#111827">Python Reviewer V2 Run 001</text>
+  <text x="54" y="76" font-family="Arial, sans-serif" font-size="14" fill="#4b5563">Scenario-held-out structured reviewer eval: passed cases out of 24</text>
+  <line x1="96" y1="410" x2="830" y2="410" stroke="#111827" stroke-width="2"/>
+  <line x1="96" y1="110" x2="96" y2="410" stroke="#111827" stroke-width="2"/>
+  <line x1="96" y1="410" x2="830" y2="410" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="96" y1="335" x2="830" y2="335" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="96" y1="260" x2="830" y2="260" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="96" y1="185" x2="830" y2="185" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="96" y1="110" x2="830" y2="110" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="58" y="415" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">0</text>
+  <text x="58" y="340" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">6</text>
+  <text x="50" y="265" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">12</text>
+  <text x="50" y="190" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">18</text>
+  <text x="50" y="115" font-family="Arial, sans-serif" font-size="12" fill="#6b7280">24</text>
+  <rect x="138" y="410" width="92" height="0" fill="#ef4444"/>
+  <rect x="277" y="110" width="92" height="300" fill="#10b981"/>
+  <rect x="416" y="110" width="92" height="300" fill="#10b981"/>
+  <rect x="555" y="110" width="92" height="300" fill="#10b981"/>
+  <rect x="694" y="110" width="92" height="300" fill="#10b981"/>
+  <text x="184" y="392" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">0/24</text>
+  <text x="323" y="98" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">24/24</text>
+  <text x="462" y="98" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">24/24</text>
+  <text x="601" y="98" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">24/24</text>
+  <text x="740" y="98" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#111827" text-anchor="middle">24/24</text>
+  <text x="184" y="442" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle">Base E4B</text>
+  <text x="323" y="442" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle">ckpt-20</text>
+  <text x="462" y="442" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle">ckpt-40</text>
+  <text x="601" y="442" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle">ckpt-70</text>
+  <text x="740" y="442" font-family="Arial, sans-serif" font-size="13" fill="#111827" text-anchor="middle">ckpt-100</text>
+  <text x="54" y="484" font-family="Arial, sans-serif" font-size="13" fill="#4b5563">Held-out eval scenarios: jsonl-validation and path-handling. Checkpoint 20 is the first perfect candidate.</text>
+</svg>
