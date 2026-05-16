@@ -144,60 +144,59 @@ const projects: ProjectDetail[] = [
   ]
   },
   {
-    slug: "recipe-cost-calculator",
-    title: "Recipe Cost Calculator",
-    subtitle: "Browser-Based Kitchen Prep Tool",
+    slug: "code-assistant-lora",
+    title: "Code Assistant LoRA",
+    subtitle: "Repo-Aware LoRA Code Generation",
     description: [
-      "A lightweight browser app for calculating recipe cost from ingredient quantities, package costs, and package sizes. It updates the total recipe cost, cost per serving, and ingredient row totals as values change.",
-      "The project is intentionally simple and inexpensive to deploy: no backend, no database, no authentication layer, and no server-side storage. Recipes persist locally in the browser with localStorage, making the app a good candidate for static hosting.",
-      "The companion Terraform baseline hosts the built Vite app on S3 as a static website, keeping the AWS surface area limited to one bucket, public read policy, and website hosting configuration."
+      "Code Assistant LoRA is a training and evaluation system for building repo-aware code generation adapters. The goal is not to dump a repository into a model, but to curate task-shaped examples that teach coding conventions, patch behavior, review standards, and verification habits.",
+      "The workflow scans source repositories, converts curated examples into train/eval JSONL, trains Gemma-based LoRA adapters on DGX Spark, and evaluates them against code-style gates and specialist reviewer tasks.",
+      "The console coordinates a larger coding loop: a primary coding agent proposes a patch, language-specific LoRA reviewers inspect bounded slices of the diff, automated checks provide evidence, and a synthesis step turns reviewer output into actionable revisions."
     ],
-    tags: ["Vite", "JavaScript", "localStorage", "Terraform", "S3", "AWS"],
-    hero: "/images/projects/recipe-cost-calculator.png",
+    tags: ["LoRA", "Gemma", "DGX Spark", "SFT", "Vue", "Python", "PEFT", "Reviewers"],
+    hero: "/images/projects/code-assistant-lora.png",
     gallery: [
-      { src: "/images/projects/recipe-cost-calculator.png", alt: "Recipe Cost Calculator - Desktop Interface" },
-      { src: "/images/projects/recipe-cost-calculator-mobile.png", alt: "Recipe Cost Calculator - Mobile Interface" },
-      { src: "/images/projects/recipe-cost-calculator-card.png", alt: "Recipe Cost Calculator - Project Card View" }
+      { src: "/images/projects/code-assistant-lora.png", alt: "Code Assistant LoRA - Multi-Agent Console" },
+      { src: "/images/projects/code-assistant-lora-card.png", alt: "Code Assistant LoRA - Reviewer Grid" },
+      { src: "/images/projects/code-assistant-lora-mobile.png", alt: "Code Assistant LoRA - Mobile View" }
     ],
     caseStudy: [
       {
         heading: "The Problem",
-        body: "Small food businesses, home bakers, and kitchen prep workflows need a fast way to understand what a recipe actually costs per batch and per serving. A spreadsheet can do the math, but it is easy to break formulas, hard to use on mobile, and awkward for repeated ingredient edits."
+        body: "General-purpose coding models can write plausible code while missing the details that matter in a real repository: local naming conventions, provider boundaries, test shape, startup config behavior, deployment assumptions, and the difference between a patch that compiles and a patch that belongs."
       },
       {
         heading: "Design Challenge",
-        body: "The app needed to stay focused: quick entry, immediate totals, clear validation, and persistence without creating a backend bill. Because the data belongs to a simple single-user workflow, browser storage is enough for the first version."
+        body: "Fine-tuning alone is not enough, because repo state changes constantly. The system needed to combine retrieval, tools, tests, curated LoRA behavior, and specialist review without asking one model to carry every language and every convention in one overloaded context window."
       },
       {
         heading: "Key Design Decisions",
-        body: "The calculator keeps all computation client-side and normalizes stored recipe data before restoring it from localStorage. Ingredient rows remain editable in place, summary cards stay visible at the top, and demo data provides a quick way to verify the calculation flow."
+        body: "The architecture keeps the main 31B code model responsible for patch authorship while smaller LoRA adapters act as fast, opinionated reviewers. Python, React, TypeScript, Vue, SQL, Docker/CI, testing, and orchestration reviewers receive narrow context and return findings, missing checks, and suggested fixes. The general model integrates the feedback and resolves conflicts."
       },
       {
         heading: "Outcome",
-        body: "The result is a static Vite app that can be deployed with almost no cloud infrastructure. The Terraform example demonstrates an S3-only deployment path for learning infrastructure-as-code without introducing EC2, RDS, Lambda, NAT gateways, or load balancers."
+        body: "The project produced a repeatable pipeline for curated SFT data, LoRA training, checkpoint evaluation, score tracking, and multi-agent patch review. It turns local convention learning into a measurable workflow instead of a vague prompt-engineering exercise."
       }
     ],
     features: [
       {
-        title: "Live Recipe Totals",
-        description: "Calculates ingredient row costs, total recipe cost, cost per serving, and valid ingredient counts directly in the browser."
+        title: "Curated SFT Pipeline",
+        description: "Scans repositories for context, converts hand-curated task examples into train/eval JSONL, and avoids whole-repo dumps that teach weak or stale behavior."
       },
       {
-        title: "Local Persistence",
-        description: "Stores the latest recipe in localStorage so a refresh keeps the working data without requiring accounts or a database."
+        title: "DGX Spark LoRA Training",
+        description: "Uses Spark-specific setup for Gemma-based adapters with PyTorch, Transformers, PEFT, Accelerate, and optional QLoRA paths."
       },
       {
-        title: "Validation and Demo Data",
-        description: "Normalizes saved data, rejects invalid entries, and includes demo ingredients for fast smoke testing."
+        title: "Specialist Reviewer Adapters",
+        description: "Routes diffs to language and responsibility specialists for Python, React, TypeScript, Vue, SQL, Docker/CI, testing, and orchestration review."
       },
       {
-        title: "Static AWS Deployment",
-        description: "The Terraform baseline provisions S3 static website hosting only, keeping cost exposure limited and easy to understand."
+        title: "Evaluation Gates",
+        description: "Tracks checkpoint quality with code-style gates, reviewer evals, smoke checks, and score charts so model changes can be compared instead of guessed."
       }
     ],
     links: [
-      { label: "GitLab", url: "https://gitlab.com/mboard8070/recipe-cost-calculator" },
-      { label: "Terraform Config", url: "https://gitlab.com/mboard8070/terraform-configs/-/tree/main/recipe-cost-calculator-s3" }
+      { label: "GitHub", url: "https://github.com/mboard8070/code-assistant-lora" }
     ],
   },
   {

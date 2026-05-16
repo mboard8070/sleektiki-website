@@ -26,13 +26,13 @@ const projects: Project[] = [
     image: "/images/projects/maude.png",
   },
   {
-    title: "Recipe Cost Calculator",
-    slug: "recipe-cost-calculator",
+    title: "Code Assistant LoRA",
+    slug: "code-assistant-lora",
     description:
-      "A browser-based kitchen prep tool for calculating recipe cost from ingredient quantities, package costs, and package sizes. Built as a static Vite app with localStorage persistence and paired with a Terraform S3 hosting baseline to demonstrate a low-cost AWS deployment path with no backend, database, VPC, NAT Gateway, or load balancer.",
-    tags: ["Vite", "JavaScript", "localStorage", "Terraform", "S3", "AWS"],
+      "A LoRA training and evaluation system for repo-aware code generation. It prepares curated SFT datasets, trains Gemma-based adapters on DGX Spark, and routes patches through language-specialist reviewers for Python, React, TypeScript, Vue, SQL, Docker/CI, testing, and orchestration.",
+    tags: ["LoRA", "Gemma", "DGX Spark", "SFT", "Vue", "Python"],
     category: "ai",
-    image: "/images/projects/recipe-cost-calculator-card.png",
+    image: "/images/projects/code-assistant-lora-card.png",
   },
   {
     title: "MAUDE Mobile",
