@@ -182,6 +182,10 @@ const projects: ProjectDetail[] = [
         body: "Fine-tuning alone is not enough, because repo state changes constantly. The system needed to combine retrieval, tools, tests, curated LoRA behavior, and specialist review without asking one model to carry every language and every convention in one overloaded context window."
       },
       {
+        heading: "My Role",
+        body: "I built this as an AI-assisted engineering system, not a manual model run. I used Codex and local agents to accelerate implementation, but I owned the training strategy, corpus decisions, evaluation gates, checkpoint comparisons, failure analysis, and promotion calls. The important work was deciding what behavior to teach, how to measure it, when a checkpoint regressed, and how the reviewers fit into a larger coding workflow."
+      },
+      {
         heading: "Key Design Decisions",
         body: "The architecture keeps the main 31B code model responsible for patch authorship while smaller LoRA adapters act as fast, opinionated reviewers. Python, React, TypeScript, Vue, SQL, Docker/CI, testing, and orchestration reviewers receive narrow context and return findings, missing checks, and suggested fixes. The general model integrates the feedback and resolves conflicts."
       },
@@ -206,6 +210,10 @@ const projects: ProjectDetail[] = [
       {
         title: "Evaluation Gates",
         description: "Tracks checkpoint quality with code-style gates, reviewer evals, smoke checks, and score charts so model changes can be compared instead of guessed."
+      },
+      {
+        title: "Agent-Assisted Build Process",
+        description: "Uses Codex as part of the development loop while keeping human ownership over requirements, architecture, generated-code review, eval design, and final promotion decisions."
       }
     ],
     trainingMetrics: {
