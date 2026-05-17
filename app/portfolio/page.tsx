@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Background3DWrapper from "../components/Background3DWrapper";
 import SectionHeading from "../components/SectionHeading";
 import ScrollReveal from "../components/ScrollReveal";
 
@@ -1154,7 +1153,6 @@ export default function Portfolio() {
 
   return (
     <>
-      <Background3DWrapper />
       <main className="relative z-[1]">
         <Navbar />
 

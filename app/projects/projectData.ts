@@ -183,7 +183,7 @@ const projects: ProjectDetail[] = [
       },
       {
         heading: "My Role",
-        body: "I built this as an AI-assisted engineering system, not a manual model run. I used Codex and local agents to accelerate implementation, but I owned the training strategy, corpus decisions, evaluation gates, checkpoint comparisons, failure analysis, and promotion calls. The important work was deciding what behavior to teach, how to measure it, when a checkpoint regressed, and how the reviewers fit into a larger coding workflow."
+        body: "I built this as an agentic software engineering system, not a one-off model experiment. I designed the workflow that lets a primary coding agent propose patches, routes bounded diffs to specialist LoRA reviewers, runs verification gates, and turns reviewer output into actionable revisions. My role covered the full loop: dataset strategy, reviewer contract design, training pipeline, checkpoint evaluation, failure analysis, and promotion decisions. The key engineering challenge was reliability: deciding which parts of code review could be delegated to smaller local adapters, how to constrain their context so they produced useful findings, and how to keep the final patch author responsible for integrating feedback instead of letting multiple agents blindly rewrite code."
       },
       {
         heading: "Key Design Decisions",

@@ -4,7 +4,6 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
-import Background3DWrapper from "./components/Background3DWrapper";
 
 function Divider() {
   return (
@@ -15,7 +14,6 @@ function Divider() {
 export default function Home() {
   return (
     <>
-      <Background3DWrapper />
       <main className="relative z-[1]">
         <Navbar />
         <Hero />

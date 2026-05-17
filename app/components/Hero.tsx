@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import NeuralNetwork from "./NeuralNetwork";
 
 const titles = [
   "Technical Artist",
@@ -26,9 +25,6 @@ export default function Hero() {
       className="relative overflow-hidden"
       style={{ height: "100vh", display: "flex", alignItems: "flex-end" }}
     >
-      {/* Animated neural network background */}
-      <NeuralNetwork />
-
       {/* Radial vignette overlay */}
       <div
         className="fixed inset-0 pointer-events-none"
