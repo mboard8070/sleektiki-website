@@ -907,6 +907,38 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/2266180/Kamodo_Steve_Janitor_on_Fire/" },
     ],
+    features: [
+      {
+        title: "Solo Development",
+        description: "Built as a solo project covering gameplay programming, level design, 3D assets, animation, materials, UI, and publishing."
+      },
+      {
+        title: "Unreal Gameplay Systems",
+        description: "Includes co-op play, custom character behavior, boss encounters, foliage-rich environments, and a full game loop around exploration and combat."
+      },
+      {
+        title: "Hand-Built Art Pipeline",
+        description: "Environment and character assets were modeled, textured, animated, and integrated through a custom Unreal Engine production pipeline."
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "A solo-developed game has to balance scope, story, art direction, gameplay systems, and shipping reality. The challenge was building a complete Unreal Engine game with enough mechanical and visual depth to stand on Steam while keeping the production feasible for one developer."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The project needed to combine a serious environmental premise with a stylized island world, co-op mechanics, custom characters, and a readable action-adventure structure. Every feature had to earn its place because every asset, animation, system, and level pass had to be produced by one person."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I kept the world visually bold and modular, using hand-built tiki architecture, tropical foliage, and a clear island setting to make the game memorable without requiring a huge content team. Gameplay focused on direct interaction, traversal, combat, and co-op support rather than sprawling systemic complexity."
+      },
+      {
+        heading: "Outcome",
+        body: "The result shipped on Steam as a complete solo-developed Unreal Engine game with custom art, animation, environments, boss content, and a published storefront presence."
+      }
+    ],
     youtubeIds: ["isFH9XxmE2o"],
   },
   {
@@ -932,6 +964,38 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "Steam", url: "https://store.steampowered.com/app/1594830/Stories_from_the_Cores/" },
     ],
+    features: [
+      {
+        title: "Educational Game Design",
+        description: "Transforms scientific evidence, drilling data, and geological reasoning into interactive tasks a general audience can understand."
+      },
+      {
+        title: "Museum-Ready Deployment",
+        description: "Published as a desktop/mobile game and adapted for a museum kiosk environment with accessible interaction and replayable content."
+      },
+      {
+        title: "Character and World Art",
+        description: "Includes custom 3D characters, prehistoric creatures, UI, environments, and visualizations designed around real ocean-science concepts."
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Ocean drilling research is important but difficult to communicate. Core samples, sediment layers, and geological inference are abstract for most audiences, especially in a museum or classroom context."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The game needed to turn real scientific reasoning into an approachable interactive experience without flattening the science into trivia. Players had to feel like they were investigating evidence, not just clicking through facts."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "The design centers on a guided expedition structure with a science-bot companion, evidence comparison, and story unlocks. Visual characters and prehistoric scenes give emotional context while the core mechanics keep attention on observation, comparison, and hypothesis-building."
+      },
+      {
+        heading: "Outcome",
+        body: "The project shipped on Steam and was also deployed as a museum kiosk installation, giving the same science communication experience both a public-game and public-exhibit format."
+      }
+    ],
     youtubeIds: ["lwt_ndeOZs4"],
   },
   {
@@ -947,6 +1011,38 @@ const projects: ProjectDetail[] = [
     hero: "/images/projects/necessary-illusions.jpg",
     gallery: [
       { src: "/images/projects/necessary-illusions.jpg", alt: "Necessary Illusions - Installation" },
+    ],
+    features: [
+      {
+        title: "Custom Generative Software",
+        description: "Software manipulated Stillion's imagery through code and algorithm, creating a live digital counterpart to the physical paintings."
+      },
+      {
+        title: "Installation Context",
+        description: "Built for a curated art-show environment where the software, projection, and paintings had to operate as one cohesive installation."
+      },
+      {
+        title: "Artist Collaboration",
+        description: "The project translated a shared visual language between painting and computation rather than treating the software as a separate effect layer."
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "The installation needed to connect physical painting with generative computation in a way that supported the work's themes instead of turning the software into a decorative projection."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The imagery referenced decay, animation, and transformation, so the digital layer had to feel alive while still respecting the handmade qualities of Stillion's paintings."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I built custom software around the source imagery and exhibition context, using algorithmic manipulation to extend the paintings' movement and material logic. The software was designed as part of the installation grammar, not a separate media add-on."
+      },
+      {
+        heading: "Outcome",
+        body: "Necessary Illusions was exhibited at SPRING/BREAK Art Show in Los Angeles, establishing the Stillion & Board collaboration and a recurring bridge between painting, software, and AI-assisted image systems."
+      }
     ],
     links: [],
   },
@@ -971,6 +1067,38 @@ const projects: ProjectDetail[] = [
     links: [
       { label: "ArtStation", url: "https://www.artstation.com/matthewboard" },
     ],
+    features: [
+      {
+        title: "Skin Shading Pipeline",
+        description: "Layered Substance Painter textures, subsurface profiles, eye shaders, cavity detail, and doubled normal detail were combined for real-time skin rendering."
+      },
+      {
+        title: "Hair and Grooming",
+        description: "Hair was authored in XGen with guide-based grooming and prepared for high-fidelity character presentation."
+      },
+      {
+        title: "Full Character Workflow",
+        description: "The suit and head moved through sculpting, retopology, texture painting, material setup, and Unreal Engine rendering."
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Realistic human characters are unforgiving: skin, eyes, hair, fabric, and hard-surface suit details all need to work together or the final render falls apart."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The project had to solve both artistic likeness and technical rendering. Skin needed layered color and subsurface response, hair needed believable grooming, and the suit needed clean form and material separation."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I treated the head as a layered material problem, building texture passes from deeper blood and skin tones through surface makeup and roughness breakup. The suit followed a separate sculpt-retopo-texture workflow so fabric, hard panels, and helmet materials could be controlled independently."
+      },
+      {
+        heading: "Outcome",
+        body: "The result is a complete character-art study showing the pipeline from sculpt and grooming through Substance Painter material work and Unreal Engine presentation."
+      }
+    ],
   },
   {
     slug: "iggy-pop",
@@ -992,6 +1120,38 @@ const projects: ProjectDetail[] = [
     ],
     links: [
       { label: "ArtStation", url: "https://www.artstation.com/matthewboard" },
+    ],
+    features: [
+      {
+        title: "Digital Likeness",
+        description: "A long-running likeness study spanning sculpting, texture work, grooming, rendering, and later real-time presentation."
+      },
+      {
+        title: "Production Use",
+        description: "The model and textures were licensed for a music video connected to the film Good Time, which debuted at Sundance 2017."
+      },
+      {
+        title: "Pipeline Refresh",
+        description: "The project was later reworked for Unreal Engine 5 with updated skin shading, XGen hair, repainted textures, and path-traced rendering."
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "A recognizable digital likeness has to work as both an artistic study and a production asset. It needs character, accuracy, clean textures, and enough technical structure to survive reuse in different rendering contexts."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The project evolved over years, so the work had to remain adaptable as rendering tools changed. The likeness needed to move from personal study to licensed production use and later into a modern UE5 presentation."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I kept improving the asset through multiple pipeline passes: sculpting and likeness work first, then texture refinement, grooming, and later a real-time refresh with UE5 subsurface shading and strand-based hair."
+      },
+      {
+        heading: "Outcome",
+        body: "The character was licensed for the Oneohtrix Point Never and Iggy Pop music video 'The Pure and the Damned' from Good Time, then later reworked as a current-generation character-rendering study."
+      }
     ],
   },
   {
@@ -1020,9 +1180,22 @@ const projects: ProjectDetail[] = [
       { src: "/images/portfolio/12_scale_model_closeup.png", alt: "Scale Model - Detail Close-Up" },
     ],
     caseStudy: [
-      { heading: "Approach", body: "Each scene was generated from a single text prompt using Flux 2 Dev via the Replicate API. Prompts were engineered for architectural photography conventions: specific lens focal lengths, time-of-day lighting conditions, and compositional framing. No post-processing, compositing, or manual editing was applied." },
-      { heading: "Scene Variety", body: "The collection covers the core deliverable types in architectural marketing: exterior hero shots at golden hour and dusk, interior lifestyle renders, aerial masterplan views, night renders with architectural lighting, and presentation-quality scale model photography. Styles range from Mediterranean coastal to contemporary Middle Eastern, demonstrating prompt-driven versatility across regional design languages." },
-      { heading: "Production Use", body: "This workflow targets early-stage architectural marketing where traditional 3D rendering pipelines are too slow or expensive for concept exploration. A developer or agency can generate dozens of scene variations in minutes, select the strongest compositions, and move into full 3D production with a clear creative direction already established." },
+      {
+        heading: "The Problem",
+        body: "Early-stage architectural marketing often needs high-quality visual direction before a full 3D rendering pipeline is justified. Traditional visualization can be too slow or expensive when the goal is rapid concept exploration."
+      },
+      {
+        heading: "Design Challenge",
+        body: "The images needed to read like professional architectural photography, not generic AI environments. That meant controlling lens language, time of day, material finishes, scale, composition, and regional design cues through prompts alone."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "Each scene was generated from a single text prompt using Flux 2 Dev via the Replicate API. Prompts were engineered around real architectural photography conventions: specific lens focal lengths, lighting conditions, camera height, and compositional framing. No post-processing, compositing, or manual editing was applied."
+      },
+      {
+        heading: "Outcome",
+        body: "The collection covers exterior hero shots, interiors, aerial masterplans, night renders, scale model photography, and multiple architectural styles, showing how AI imagery can quickly establish creative direction before full 3D production."
+      },
     ],
     links: [
       { label: "View Full Portfolio", url: "/portfolio" },
