@@ -4,7 +4,7 @@ Portfolio and case-study site for AI tools, Unreal Engine plugins, game projects
 
 ## Case Study
 
-**Problem:** My work spans AI engineering, local LLM infrastructure, Unreal Engine tools, mobile apps, games, and visual production. A standard resume or repo list does not show how those projects connect or what each one proves.
+**Problem:** My work spans AI engineering, local LLM infrastructure, Unreal Engine tools, mobile apps, games, and visual production. A plain repository list does not show how those projects connect or what each one proves.
 
 **What I built:** A Next.js portfolio site with detailed project pages, filtered project cards, image/video galleries, case-study sections, architecture diagrams, training metrics, and dedicated setup/docs pages for MAUDE.
 
