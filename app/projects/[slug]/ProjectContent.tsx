@@ -100,6 +100,12 @@ export default function ProjectContent({
       {/* Case Study */}
       {project.caseStudy && project.caseStudy.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "2.5rem" }}
+          >
+            Case Study
+          </h2>
           {project.caseStudy.map((section, i) => (
             <motion.div
               key={section.heading}
@@ -378,7 +384,7 @@ export default function ProjectContent({
             className="text-2xl font-bold"
             style={{ marginBottom: "2.5rem" }}
           >
-            Architecture
+            Technical Highlights
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {project.features.map((feature, i) => (

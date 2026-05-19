@@ -262,6 +262,7 @@ const projects: ProjectDetail[] = [
       },
     ],
     links: [
+      { label: "GitHub", url: "https://github.com/mboard8070/code-assistant-lora" },
       { label: "GitLab", url: "https://gitlab.com/mboard8070/code-assistant-lora" }
     ],
   },
@@ -802,7 +803,7 @@ const projects: ProjectDetail[] = [
       },
     ],
     links: [
-      { label: "GitHub", url: "https://github.com/mboard8070/InputStreamliner" },
+      { label: "GitHub", url: "https://github.com/mboard8070/UE5_InputStreamliner" },
     ],
     caseStudy: [
       {
@@ -862,7 +863,7 @@ const projects: ProjectDetail[] = [
       },
     ],
     links: [
-      { label: "GitHub", url: "https://github.com/mboard8070/DataTableStreamliner" },
+      { label: "GitHub", url: "https://github.com/mboard8070/UE5_DataTableGenerator" },
     ],
     caseStudy: [
       {
