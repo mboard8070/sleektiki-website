@@ -558,7 +558,8 @@ const projects: ProjectDetail[] = [
     ],
     appStoreBadge: {
       src: "/images/projects/app-store-badge-us-uk-black.svg",
-      alt: "Download on the App Store"
+      alt: "Download on the App Store",
+      url: "https://pixelus.io"
     },
     caseStudy: [
       {
