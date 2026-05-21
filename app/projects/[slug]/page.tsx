@@ -145,13 +145,26 @@ export default async function ProjectPage({
                   href={project.appStoreBadge.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex"
+                  className="inline-block"
                   aria-label={project.appStoreBadge.alt}
+                  style={{
+                    width: "160px",
+                    minHeight: "48px",
+                    position: "relative",
+                    zIndex: 20,
+                    cursor: "pointer",
+                    pointerEvents: "auto",
+                  }}
                 >
                   <img
                     src={project.appStoreBadge.src}
                     alt={project.appStoreBadge.alt}
-                    style={{ width: "160px", height: "auto" }}
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      height: "auto",
+                      pointerEvents: "none",
+                    }}
                   />
                 </a>
               ) : (
