@@ -12,6 +12,7 @@ export interface ProjectDetail {
   hero: string;
   gallery: { src: string; alt: string; type?: "image" | "video" }[];
   links: { label: string; url: string }[];
+  appStoreBadge?: { src: string; alt: string; url?: string };
   youtubeIds?: string[];
   features?: { title: string; description: string }[];
   trainingPairs?: { sketch: string; generated: string; label: string }[];
@@ -555,6 +556,10 @@ const projects: ProjectDetail[] = [
       { label: "Pixelus.io", url: "https://pixelus.io" },
       { label: "Terms of Use", url: "https://pixelus.io/terms" }
     ],
+    appStoreBadge: {
+      src: "/images/projects/app-store-badge-us-uk-black.svg",
+      alt: "Download on the App Store"
+    },
     caseStudy: [
       {
         heading: "The Problem",

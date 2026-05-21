@@ -137,6 +137,32 @@ export default async function ProjectPage({
               ))}
             </div>
           )}
+
+          {project.appStoreBadge && (
+            <div style={{ marginTop: "1.25rem" }}>
+              {project.appStoreBadge.url ? (
+                <a
+                  href={project.appStoreBadge.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex"
+                  aria-label={project.appStoreBadge.alt}
+                >
+                  <img
+                    src={project.appStoreBadge.src}
+                    alt={project.appStoreBadge.alt}
+                    style={{ width: "160px", height: "auto" }}
+                  />
+                </a>
+              ) : (
+                <img
+                  src={project.appStoreBadge.src}
+                  alt={project.appStoreBadge.alt}
+                  style={{ width: "160px", height: "auto" }}
+                />
+              )}
+            </div>
+          )}
         </div>
 
         {/* Description */}
