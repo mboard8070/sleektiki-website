@@ -29,6 +29,11 @@ export interface ProjectDetail {
     bars: { label: string; value: number; caption: string }[];
   };
   roleMatrix?: { title: string; role: string; description: string }[];
+  roadmap?: {
+    title: string;
+    summary: string;
+    items: { phase: string; status: string; title: string; description: string }[];
+  };
 }
 
 const projects: ProjectDetail[] = [
@@ -68,6 +73,55 @@ const projects: ProjectDetail[] = [
       body: "MAUDE is my daily-driver AI system, running 24/7 on a DGX Spark with clients on Mac, iPhone, and Windows. It handles email triage, calendar management, code generation, file operations, web research, image generation, social media posting, and cross-machine task dispatch. The autonomous builder (Forge) can scaffold and deploy complete web applications in Docker sandboxes with zero human intervention."
     }
   ],
+  roadmap: {
+    title: "Development Roadmap",
+    summary:
+      "MAUDE is evolving from a powerful local assistant into a durable agent operating system: one gateway, multiple clients, persistent missions, safer autonomous execution, and clearer observability across the whole stack.",
+    items: [
+      {
+        phase: "Foundation",
+        status: "Shipped",
+        title: "Unified Local AI Gateway",
+        description:
+          "Consolidate local and cloud models behind one OpenAI-compatible gateway with alias routing, streaming responses, context-aware model selection, and a shared tool execution layer for every client."
+      },
+      {
+        phase: "Interface Layer",
+        status: "Shipped",
+        title: "Five Client Surfaces",
+        description:
+          "Run MAUDE from the Spark TUI, desktop CLI, native mobile app, Telegram, and web Command Center while preserving one backend, one model catalog, and one shared operational view."
+      },
+      {
+        phase: "Automation",
+        status: "In Progress",
+        title: "Missions and Recurring Agents",
+        description:
+          "Turn one-off prompts into durable missions with schedules, checkpoints, next actions, artifacts, blockers, and self-healing execution plans for recurring creative and operational workflows."
+      },
+      {
+        phase: "Reliability",
+        status: "Next",
+        title: "Verification and Recovery Loops",
+        description:
+          "Expand automatic verification for generated code, published content, browser actions, social posts, and scheduled tasks, with explicit retry paths and clearer failure summaries."
+      },
+      {
+        phase: "Observability",
+        status: "Next",
+        title: "Command Center Deepening",
+        description:
+          "Expose richer traces for model routing, tool calls, scheduler runs, mission progress, GPU load, memory usage, cross-device presence, and long-running jobs from one operator dashboard."
+      },
+      {
+        phase: "Distribution",
+        status: "Planned",
+        title: "Installable Personal Agent OS",
+        description:
+          "Package setup, skills, OAuth configuration, service management, mobile pairing, and documentation so MAUDE can move from a personal DGX Spark system toward a repeatable local-first AI stack."
+      }
+    ]
+  },
   features: [
     {
       title: "Multi-Model Gateway",
