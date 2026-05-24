@@ -97,6 +97,70 @@ export default function ProjectContent({
         </div>
       )}
 
+      {/* Before / After */}
+      {project.beforeAfterPairs && project.beforeAfterPairs.length > 0 && (
+        <div style={{ marginBottom: "6rem" }}>
+          <h2
+            className="text-2xl font-bold"
+            style={{ marginBottom: "1.5rem" }}
+          >
+            Before / After
+          </h2>
+          <p
+            className="text-sm text-[var(--text-secondary)]"
+            style={{ lineHeight: 1.7, marginBottom: "2.5rem", maxWidth: "760px" }}
+          >
+            Product photos captured on mobile, then transformed into campaign-ready scenes while preserving the package identity.
+          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+            {project.beforeAfterPairs.map((pair, i) => (
+              <motion.div
+                key={pair.label}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+              >
+                <h3 className="text-lg font-bold" style={{ marginBottom: "1rem" }}>
+                  {pair.label}
+                </h3>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <img
+                      src={pair.before}
+                      alt={`${pair.label} before`}
+                      className="w-full rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] object-contain aspect-square"
+                      style={{ cursor: "zoom-in" }}
+                      onClick={() => setLightboxSrc(pair.before)}
+                    />
+                    <p
+                      className="text-[10px] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+                      style={{ marginTop: "0.5rem", letterSpacing: "0.12em" }}
+                    >
+                      BEFORE
+                    </p>
+                  </div>
+                  <div>
+                    <img
+                      src={pair.after}
+                      alt={`${pair.label} after`}
+                      className="w-full rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] object-cover aspect-square"
+                      style={{ cursor: "zoom-in" }}
+                      onClick={() => setLightboxSrc(pair.after)}
+                    />
+                    <p
+                      className="text-[10px] text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]"
+                      style={{ marginTop: "0.5rem", letterSpacing: "0.12em" }}
+                    >
+                      AFTER
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Case Study */}
       {project.caseStudy && project.caseStudy.length > 0 && (
         <div style={{ marginBottom: "6rem" }}>

@@ -15,6 +15,7 @@ export interface ProjectDetail {
   appStoreBadge?: { src: string; alt: string; url?: string };
   youtubeIds?: string[];
   features?: { title: string; description: string }[];
+  beforeAfterPairs?: { before: string; after: string; label: string }[];
   trainingPairs?: { sketch: string; generated: string; label: string }[];
   splatEmbeds?: { name: string; marbleUrl: string; thumbnail: string }[];
   panoramas?: { src: string; alt: string }[];
@@ -579,6 +580,23 @@ const projects: ProjectDetail[] = [
       { src: "/images/projects/pixelus_screenshot_6.png", alt: "Pixelus Mobile - Photo Editor" },
       { src: "/images/projects/pixelus_screenshot_3.png", alt: "Pixelus Mobile - Brand Template" },
       { src: "/images/projects/pixelus_screenshot_4.png", alt: "Pixelus Mobile - Settings" }
+    ],
+    beforeAfterPairs: [
+      {
+        before: "/images/projects/pixelus_mobile_tide_source.jpg",
+        after: "/images/projects/pixelus_mobile_tide_surf.png",
+        label: "Tide Surf Campaign"
+      },
+      {
+        before: "/images/projects/pixelus_mobile_eaglefangs_source.jpg",
+        after: "/images/projects/pixelus_mobile_eaglefangs_nest.png",
+        label: "Eaglefangs Nest Campaign"
+      },
+      {
+        before: "/images/projects/pixelus_mobile_deep_sea_source.jpg",
+        after: "/images/projects/pixelus_mobile_deep_sea_underwater.png",
+        label: "Deep Sea Underwater Campaign"
+      }
     ],
     features: [
       {
