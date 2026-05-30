@@ -7,7 +7,7 @@ export default function BlogPreview() {
   return (
     <section
       id="blog"
-      className="relative border-t border-[var(--surface-border)] px-10 sm:px-12 lg:px-16"
+      className="blog-index-list relative border-t border-[var(--surface-border)]"
       style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -17,20 +17,20 @@ export default function BlogPreview() {
           subtitle="Notes on local AI systems, technical art, visualization, and production workflows."
         />
 
-        <div className="grid auto-rows-fr gap-6 md:grid-cols-3">
+        <div className="grid auto-rows-fr gap-7 md:grid-cols-3">
           {blogPosts.map((post, index) => (
             <ScrollReveal key={post.slug} delay={index * 0.08} className="h-full">
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full min-h-[340px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-10 transition-colors hover:border-[var(--accent)]/40"
+                className="blog-tile group"
               >
-                <p className="mb-6 text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
+                <p className="blog-tile-meta text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                   {post.category}
                 </p>
-                <h3 className="mb-5 text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)]">
+                <h3 className="blog-tile-title text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)]">
                   {post.title}
                 </h3>
-                <p className="mb-8 text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="blog-tile-description text-sm leading-7 text-[var(--text-secondary)]">
                   {post.description}
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-2 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">

@@ -99,21 +99,21 @@ export default async function BlogPostPage({
             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/55 to-[#050508]/20" />
           </div>
 
-          <div className="mx-auto max-w-4xl px-10 pt-12 sm:px-12 lg:px-16">
+          <div className="blog-article-header-copy">
             <Link
               href="/blog"
-              className="mb-8 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
+              className="blog-article-back inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
             >
               <span aria-hidden="true">Back</span>
               Blog
             </Link>
-            <p className="mb-6 text-xs tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
+            <p className="blog-article-kicker text-xs tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
               {post.category}
             </p>
-            <h1 className="mb-8 text-4xl font-bold tracking-tight sm:text-5xl">
+            <h1 className="blog-article-title text-4xl font-bold tracking-tight sm:text-5xl">
               {post.title}
             </h1>
-            <p className="mb-8 text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
+            <p className="blog-article-description text-lg leading-8 text-[var(--text-secondary)] sm:text-xl">
               {post.description}
             </p>
             <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
@@ -130,9 +130,9 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        <div className="mx-auto max-w-4xl px-10 py-14 sm:px-12 lg:px-16">
-          <div className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-10 sm:p-12 md:p-14">
-          <div className="mb-12 flex flex-wrap gap-3">
+        <div className="blog-article-shell">
+          <div className="blog-article-panel">
+          <div className="blog-keywords">
             {post.tags.map((tag) => (
               <span
                 key={tag}
@@ -143,13 +143,13 @@ export default async function BlogPostPage({
             ))}
           </div>
 
-          <div className="space-y-14">
+          <div className="blog-body-sections">
             {post.sections.map((section) => (
-              <section key={section.heading}>
-                <h2 className="mb-6 text-2xl font-semibold tracking-tight">
+              <section key={section.heading} className="blog-body-section">
+                <h2 className="text-2xl font-semibold tracking-tight">
                   {section.heading}
                 </h2>
-                <div className="space-y-6">
+                <div className="blog-body-copy">
                   {section.body.map((paragraph) => (
                     <p
                       key={paragraph}
@@ -164,7 +164,7 @@ export default async function BlogPostPage({
           </div>
 
           {post.relatedProjects && (
-            <aside className="mt-16 rounded-lg border border-[var(--surface-border)] bg-[#050508]/45 p-8 sm:p-10">
+            <aside className="blog-related-work">
               <p className="mb-4 text-xs tracking-[0.24em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                 Related Work
               </p>

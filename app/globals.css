@@ -114,3 +114,154 @@ main > section:not(:first-child) {
   pointer-events: none;
   z-index: 0;
 }
+
+/* Blog layout overrides. These are explicit because the blog pages need
+   predictable gutters independent of the global section rules. */
+.blog-index-hero {
+  padding: 11rem clamp(2rem, 7vw, 6rem) 4rem !important;
+}
+
+.blog-index-list {
+  padding: 0 clamp(2rem, 7vw, 6rem) 7rem !important;
+}
+
+.blog-feature-card {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.blog-feature-card-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.5rem, 5vw, 4.5rem) !important;
+}
+
+.blog-card-grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 1.75rem;
+  margin-top: 2rem;
+}
+
+.blog-tile {
+  display: flex;
+  min-height: 22rem;
+  height: 100%;
+  flex-direction: column;
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: clamp(2.5rem, 4vw, 3.75rem) !important;
+  transition: border-color 200ms ease;
+}
+
+.blog-tile:hover,
+.blog-feature-card:hover {
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.blog-tile-meta,
+.blog-feature-meta {
+  margin-bottom: 1.5rem !important;
+}
+
+.blog-tile-title,
+.blog-feature-title {
+  margin-bottom: 1.5rem !important;
+}
+
+.blog-tile-description,
+.blog-feature-description {
+  margin-bottom: 2rem !important;
+}
+
+.blog-article-header-copy {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 3.75rem clamp(2rem, 7vw, 6rem) 0 !important;
+}
+
+.blog-article-back {
+  margin-bottom: 2rem !important;
+}
+
+.blog-article-kicker {
+  margin-bottom: 1.5rem !important;
+}
+
+.blog-article-title {
+  margin-bottom: 2rem !important;
+}
+
+.blog-article-description {
+  margin-bottom: 2rem !important;
+}
+
+.blog-article-shell {
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 4rem clamp(2rem, 7vw, 6rem) 7rem !important;
+}
+
+.blog-article-panel {
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: clamp(2.5rem, 5vw, 4.5rem) !important;
+}
+
+.blog-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem !important;
+}
+
+.blog-body-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.blog-body-section h2 {
+  margin-bottom: 1.5rem !important;
+}
+
+.blog-body-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.blog-related-work {
+  margin-top: 4rem !important;
+  padding: clamp(2rem, 4vw, 3rem) !important;
+  border: 1px solid var(--surface-border);
+  border-radius: 8px;
+  background: rgba(5, 5, 8, 0.45);
+}
+
+@media (min-width: 768px) {
+  .blog-feature-card {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .blog-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .blog-index-hero {
+    padding-top: 9rem !important;
+  }
+
+  .blog-tile {
+    min-height: auto;
+  }
+}
+

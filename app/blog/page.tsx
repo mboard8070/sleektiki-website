@@ -29,7 +29,7 @@ export default function BlogPage() {
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar />
 
-      <section className="px-10 pt-32 pb-16 sm:px-12 lg:px-16">
+      <section className="blog-index-hero">
         <div className="mx-auto max-w-6xl">
           <p className="text-xs tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-4">
             Blog
@@ -44,11 +44,11 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="px-10 pb-28 sm:px-12 lg:px-16">
+      <section className="blog-index-list">
         <div className="mx-auto max-w-6xl">
           <Link
             href={`/blog/${featured.slug}`}
-            className="group grid gap-0 overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] md:grid-cols-[1.1fr_0.9fr]"
+            className="blog-feature-card group"
           >
             <div className="relative min-h-[280px] md:min-h-[420px]">
               <Image
@@ -61,14 +61,14 @@ export default function BlogPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/70 via-transparent to-transparent" />
             </div>
-            <div className="flex flex-col justify-center p-10 sm:p-12 lg:p-14">
-              <p className="text-xs tracking-[0.24em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-6">
+            <div className="blog-feature-card-copy">
+              <p className="blog-feature-meta text-xs tracking-[0.24em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                 Featured / {featured.category}
               </p>
-              <h2 className="text-3xl font-bold tracking-tight mb-6 transition-colors group-hover:text-[var(--accent)]">
+              <h2 className="blog-feature-title text-3xl font-bold tracking-tight transition-colors group-hover:text-[var(--accent)]">
                 {featured.title}
               </h2>
-              <p className="text-[var(--text-secondary)] leading-7 mb-8">
+              <p className="blog-feature-description text-[var(--text-secondary)] leading-7">
                 {featured.description}
               </p>
               <div className="flex flex-wrap items-center gap-3 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
@@ -85,20 +85,20 @@ export default function BlogPage() {
             </div>
           </Link>
 
-          <div className="mt-8 grid auto-rows-fr gap-6 md:grid-cols-2">
+          <div className="blog-card-grid">
             {rest.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex h-full min-h-[320px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-10 transition-colors hover:border-[var(--accent)]/40 sm:p-12"
+                className="blog-tile group"
               >
-                <p className="text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-6">
+                <p className="blog-tile-meta text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                   {post.category}
                 </p>
-                <h2 className="text-2xl font-semibold tracking-tight mb-5 transition-colors group-hover:text-[var(--accent)]">
+                <h2 className="blog-tile-title text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)]">
                   {post.title}
                 </h2>
-                <p className="text-sm text-[var(--text-secondary)] leading-7 mb-8">
+                <p className="blog-tile-description text-sm text-[var(--text-secondary)] leading-7">
                   {post.description}
                 </p>
                 <div className="mt-auto flex flex-wrap gap-2 pt-2">
