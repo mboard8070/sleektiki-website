@@ -7,7 +7,7 @@ export default function BlogPreview() {
   return (
     <section
       id="blog"
-      className="relative px-6 border-t border-[var(--surface-border)]"
+      className="relative border-t border-[var(--surface-border)] px-6 sm:px-8 lg:px-10"
       style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -17,12 +17,12 @@ export default function BlogPreview() {
           subtitle="Notes on local AI systems, technical art, visualization, and production workflows."
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid auto-rows-fr gap-6 md:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <ScrollReveal key={post.slug} delay={index * 0.08}>
+            <ScrollReveal key={post.slug} delay={index * 0.08} className="h-full">
               <Link
                 href={`/blog/${post.slug}`}
-                className="group block h-full rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--accent)]/40"
+                className="group flex h-full min-h-[320px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)]/40"
               >
                 <p className="mb-4 text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                   {post.category}
@@ -33,7 +33,7 @@ export default function BlogPreview() {
                 <p className="mb-6 text-sm leading-7 text-[var(--text-secondary)]">
                   {post.description}
                 </p>
-                <div className="flex items-center gap-3 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
+                <div className="mt-auto flex items-center gap-3 pt-2 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
                   <time dateTime={post.date}>
                     {new Date(`${post.date}T00:00:00`).toLocaleDateString(
                       "en-US",

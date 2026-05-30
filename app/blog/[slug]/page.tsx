@@ -99,7 +99,7 @@ export default async function BlogPostPage({
             <div className="absolute inset-0 bg-gradient-to-t from-[#050508] via-[#050508]/55 to-[#050508]/20" />
           </div>
 
-          <div className="mx-auto max-w-3xl px-5 pt-10 sm:px-6 lg:px-0">
+          <div className="mx-auto max-w-4xl px-6 pt-10 sm:px-8 lg:px-10">
             <Link
               href="/blog"
               className="mb-6 inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] transition-colors hover:text-[var(--accent)]"
@@ -130,7 +130,8 @@ export default async function BlogPostPage({
           </div>
         </header>
 
-        <div className="mx-auto max-w-3xl px-5 py-12 sm:px-6 lg:px-0">
+        <div className="mx-auto max-w-4xl px-6 py-12 sm:px-8 lg:px-10">
+          <div className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6 sm:p-8 md:p-10">
           <div className="flex flex-wrap gap-2 pb-8">
             {post.tags.map((tag) => (
               <span
@@ -163,7 +164,7 @@ export default async function BlogPostPage({
           </div>
 
           {post.relatedProjects && (
-            <aside className="mt-14 rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6">
+            <aside className="mt-12 rounded-lg border border-[var(--surface-border)] bg-[#050508]/45 p-6 sm:p-8">
               <p className="mb-4 text-xs tracking-[0.24em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                 Related Work
               </p>
@@ -181,6 +182,7 @@ export default async function BlogPostPage({
               </div>
             </aside>
           )}
+          </div>
         </div>
       </article>
 

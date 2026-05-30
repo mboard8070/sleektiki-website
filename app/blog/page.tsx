@@ -29,7 +29,7 @@ export default function BlogPage() {
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar />
 
-      <section className="pt-32 pb-16">
+      <section className="px-6 pt-32 pb-14 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <p className="text-xs tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-4">
             Blog
@@ -44,11 +44,11 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="px-6 pb-24 sm:px-8 lg:px-10">
         <div className="mx-auto max-w-6xl">
           <Link
             href={`/blog/${featured.slug}`}
-            className="group grid gap-8 overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] md:grid-cols-[1.1fr_0.9fr]"
+            className="group grid gap-0 overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] md:grid-cols-[1.1fr_0.9fr]"
           >
             <div className="relative min-h-[280px] md:min-h-[420px]">
               <Image
@@ -61,7 +61,7 @@ export default function BlogPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/70 via-transparent to-transparent" />
             </div>
-            <div className="flex flex-col justify-center p-6 sm:p-8">
+            <div className="flex flex-col justify-center p-8 sm:p-10 lg:p-12">
               <p className="text-xs tracking-[0.24em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-4">
                 Featured / {featured.category}
               </p>
@@ -85,12 +85,12 @@ export default function BlogPage() {
             </div>
           </Link>
 
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <div className="mt-8 grid auto-rows-fr gap-6 md:grid-cols-2">
             {rest.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6 transition-colors hover:border-[var(--accent)]/40"
+                className="group flex h-full min-h-[300px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)]/40 sm:p-10"
               >
                 <p className="text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] mb-4">
                   {post.category}
@@ -101,7 +101,7 @@ export default function BlogPage() {
                 <p className="text-sm text-[var(--text-secondary)] leading-7 mb-5">
                   {post.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="mt-auto flex flex-wrap gap-2 pt-2">
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
