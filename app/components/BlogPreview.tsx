@@ -7,7 +7,7 @@ export default function BlogPreview() {
   return (
     <section
       id="blog"
-      className="relative border-t border-[var(--surface-border)] px-6 sm:px-8 lg:px-10"
+      className="relative border-t border-[var(--surface-border)] px-10 sm:px-12 lg:px-16"
       style={{ paddingTop: "8rem", paddingBottom: "8rem" }}
     >
       <div className="max-w-7xl mx-auto">
@@ -22,15 +22,15 @@ export default function BlogPreview() {
             <ScrollReveal key={post.slug} delay={index * 0.08} className="h-full">
               <Link
                 href={`/blog/${post.slug}`}
-                className="group flex h-full min-h-[320px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-8 transition-colors hover:border-[var(--accent)]/40"
+                className="group flex h-full min-h-[340px] flex-col rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-10 transition-colors hover:border-[var(--accent)]/40"
               >
-                <p className="mb-4 text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
+                <p className="mb-6 text-xs tracking-[0.2em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]">
                   {post.category}
                 </p>
-                <h3 className="mb-4 text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)]">
+                <h3 className="mb-5 text-2xl font-semibold tracking-tight transition-colors group-hover:text-[var(--accent)]">
                   {post.title}
                 </h3>
-                <p className="mb-6 text-sm leading-7 text-[var(--text-secondary)]">
+                <p className="mb-8 text-sm leading-7 text-[var(--text-secondary)]">
                   {post.description}
                 </p>
                 <div className="mt-auto flex items-center gap-3 pt-2 text-xs text-[var(--text-muted)] font-[family-name:var(--font-geist-mono)]">
