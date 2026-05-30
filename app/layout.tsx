@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://sleektiki.ai"),
   title: "Matthew Board | sleektiki.ai",
   description:
     "Technical artist, indie developer, and creative AI researcher exploring the intersection of artificial intelligence and 3D content creation.",
