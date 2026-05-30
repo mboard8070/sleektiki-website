@@ -87,6 +87,10 @@ export default function Footer() {
 
             {/* Legal links */}
             <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
+              <Link href="/blog" className="hover:text-[var(--accent)] transition-colors">
+                Blog
+              </Link>
+              <span>&middot;</span>
               <Link href="/terms" className="hover:text-[var(--accent)] transition-colors">
                 Terms of Service
               </Link>
