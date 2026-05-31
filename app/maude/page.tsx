@@ -46,7 +46,7 @@ export default function MaudePage() {
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar />
 
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-52 md:pt-56 lg:pt-60">
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-64 md:pt-72 lg:pt-72">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <div>
             <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
@@ -74,7 +74,7 @@ export default function MaudePage() {
             </div>
           </div>
 
-          <div className="grid gap-5">
+          <div className="grid gap-5 lg:pt-24">
             <div className="overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)]">
               <video
                 className="aspect-video w-full object-cover"
