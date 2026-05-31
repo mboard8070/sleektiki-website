@@ -21,12 +21,32 @@ const features = [
   "Keeps sensitive actions visible with traces, approval points, and human-readable logs",
 ];
 
+const serverInstall = `git clone https://github.com/mboard8070/terminal-llm.git
+cd terminal-llm
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+playwright install chromium
+./setup_local.sh
+./maude`;
+
+const clientInstall = `pip install --upgrade "git+https://github.com/mboard8070/terminal-llm.git#subdirectory=maude-client"
+maude-client`;
+
+function CodeBlock({ children }: { children: string }) {
+  return (
+    <pre className="overflow-x-auto rounded-lg border border-[var(--surface-border)] bg-[#050508] p-5 text-sm leading-7 text-[var(--text-primary)]">
+      <code>{children}</code>
+    </pre>
+  );
+}
+
 export default function MaudePage() {
   return (
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar />
 
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-32">
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-40 md:pt-44">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <div>
             <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
@@ -40,16 +60,16 @@ export default function MaudePage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/projects/maude"
+                href="#install"
                 className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-90"
               >
-                Read the case study
+                Install MAUDE
               </Link>
               <Link
-                href="/#projects"
+                href="/projects/maude"
                 className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] px-5 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:border-[var(--accent)]/40"
               >
-                Back to projects
+                Read the case study
               </Link>
             </div>
           </div>
@@ -75,6 +95,38 @@ export default function MaudePage() {
               <p className="mt-2 text-sm text-[var(--text-secondary)]">{label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="install" className="scroll-mt-28 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1fr] lg:items-start">
+          <div>
+            <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+              Install
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              Run MAUDE on a Linux workstation with CUDA.
+            </h2>
+            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
+              The server install is intended for Ubuntu 22.04+ or a similar Linux machine with an NVIDIA GPU, CUDA drivers, Python 3.12+, Git, cmake, make, g++, tmux, and curl.
+            </p>
+            <Link href="/projects/maude/setup" className="mt-6 inline-flex text-sm font-semibold text-[var(--accent)] hover:underline">
+              Full setup guide
+            </Link>
+          </div>
+          <div className="grid gap-6">
+            <div>
+              <h3 className="mb-3 text-lg font-semibold">Server install</h3>
+              <CodeBlock>{serverInstall}</CodeBlock>
+            </div>
+            <div>
+              <h3 className="mb-3 text-lg font-semibold">Client CLI</h3>
+              <CodeBlock>{clientInstall}</CodeBlock>
+              <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
+                Use the client after your MAUDE gateway is running and reachable, typically over Tailscale.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
