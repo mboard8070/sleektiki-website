@@ -46,7 +46,7 @@ export default function MaudePage() {
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
       <Navbar />
 
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-40 md:pt-44">
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-52 md:pt-56 lg:pt-60">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1fr] lg:items-center">
           <div>
             <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
@@ -74,15 +74,21 @@ export default function MaudePage() {
             </div>
           </div>
 
-          <div className="overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)]">
-            <video
-              className="aspect-video w-full object-cover"
-              src="/videos/maude-feature-video.mp4"
-              autoPlay
-              muted
-              loop
-              playsInline
-            />
+          <div className="grid gap-5">
+            <div className="overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)]">
+              <video
+                className="aspect-video w-full object-cover"
+                src="/videos/maude-feature-video.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+            </div>
+            <div className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5">
+              <h2 className="mb-3 text-lg font-semibold">Install MAUDE</h2>
+              <CodeBlock>{serverInstall}</CodeBlock>
+            </div>
           </div>
         </div>
       </section>
@@ -98,7 +104,7 @@ export default function MaudePage() {
         </div>
       </section>
 
-      <section id="install" className="scroll-mt-28 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+      <section id="install" className="scroll-mt-40 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1fr] lg:items-start">
           <div>
             <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
