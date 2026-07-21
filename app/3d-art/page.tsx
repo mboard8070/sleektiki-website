@@ -56,6 +56,8 @@ function AssetView({ asset, title }: { asset: ArtAsset; title: string }) {
       width={asset.width || 1920}
       height={asset.height || 1080}
       quality={92}
+      // lossless assets are debanded masters; re-encoding would restore banding
+      unoptimized={asset.lossless}
       sizes="(max-width: 1024px) 100vw, 896px"
       className="w-full h-auto rounded-lg"
     />
