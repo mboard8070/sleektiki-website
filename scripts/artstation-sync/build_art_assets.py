@@ -72,7 +72,7 @@ def clean_desc(h):
     return "\n\n".join(p for p in paras if p)
 
 
-def dl_optimize(url, dest, max_dim=1920, q=82):
+def dl_optimize(url, dest, max_dim=2560, q=88):
     req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
     raw = urllib.request.urlopen(req, timeout=60).read()
     im = Image.open(io.BytesIO(raw))
@@ -112,7 +112,13 @@ for det in DATA["details"]:
             dest = os.path.join(pdir, fn)
             if not os.path.exists(dest):
                 try:
-                    w, h = dl_optimize(a["image_url"], dest)
+                    # prefer the /4k/ variant (full-res original); fall back to /large/
+                    try:
+                        w, h = dl_optimize(
+                            a["image_url"].replace("/large/", "/4k/"), dest
+                        )
+                    except Exception:
+                        w, h = dl_optimize(a["image_url"], dest)
                 except Exception as e:
                     print(f"  FAILED {a['image_url']}: {e}", file=sys.stderr)
                     continue

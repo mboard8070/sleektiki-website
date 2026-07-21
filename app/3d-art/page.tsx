@@ -55,6 +55,7 @@ function AssetView({ asset, title }: { asset: ArtAsset; title: string }) {
       alt={asset.caption || title}
       width={asset.width || 1920}
       height={asset.height || 1080}
+      quality={92}
       sizes="(max-width: 1024px) 100vw, 896px"
       className="w-full h-auto rounded-lg"
     />
@@ -243,6 +244,7 @@ export default function ThreeDArt() {
                       src={project.cover}
                       alt={project.title}
                       fill
+                      quality={90}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                     />
