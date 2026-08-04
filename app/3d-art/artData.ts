@@ -11,7 +11,7 @@ export interface ArtAsset {
 export interface ArtProject {
   slug: string;
   title: string;
-  category: "characters" | "creatures" | "hardsurface" | "gamedev" | "sculpts" | "commercial";
+  category: "characters" | "creatures" | "hardsurface" | "gamedev" | "sculpts";
   description: string;
   software: string[];
   tags: string[];
@@ -21,76 +21,6 @@ export interface ArtProject {
 }
 
 export const artProjects: ArtProject[] = [
-  {
-    slug: "dearfoams-marshmellow",
-    title: "Dearfoams MarshMellow & EasyMellow Animations",
-    category: "commercial",
-    description:
-      "Short-form branded animation for Dearfoams' MarshMellow comfort system and EasyMellow product line. Built the full pre-production package end-to-end: concept frames, locked 22-shot storyboard, logo motion tests, product pop/bounce clips, and a 16:9 animatic. The piece opens on a marshmallow-cloud sky, forms the Dearfoams wordmark with a playful \"MELLOW\" dip, then pops the slipper from a cloud and settles into technical product beats — insole twist, quilted cushion, arch support, and marshmallow comfort callouts — before landing on the sweet-treat end card. Includes the Hannah House motion study for lifestyle timing and performance reference. Pipeline mixed generative look-dev with hand-directed shot design for social-first deliverables.",
-    software: ["Unreal Engine", "Photoshop", "After Effects", "Premiere", "Kling", "Flux"],
-    tags: [
-      "dearfoams",
-      "marshmellow",
-      "easymellow",
-      "commercial",
-      "product animation",
-      "branded content",
-      "storyboard",
-      "animatic",
-      "motion design",
-      "footwear",
-      "social video",
-    ],
-    cover: "/images/artstation/dearfoams-marshmellow/04.webp",
-    coverAspect: 1.7778,
-    assets: [
-      {
-        type: "video",
-        src: "/videos/artstation/dearfoams-marshmellow-animatic.mp4",
-        poster: "/images/artstation/dearfoams-marshmellow/poster_animatic.webp",
-        caption: "MarshMellow 16:9 animatic — full storyboard timing pass",
-      },
-      {
-        type: "video",
-        src: "/videos/artstation/dearfoams-hannah-motion.mp4",
-        poster: "/images/artstation/dearfoams-marshmellow/poster_hannah.webp",
-        caption: "Hannah House motion study — lifestyle timing reference",
-      },
-      {
-        type: "video",
-        src: "/videos/artstation/dearfoams-logo-mellow.mp4",
-        poster: "/images/artstation/dearfoams-marshmellow/poster_logo.webp",
-        caption: "Logo v4 — MELLOW dip & ripple",
-      },
-      {
-        type: "video",
-        src: "/videos/artstation/dearfoams-shoe-pop.mp4",
-        poster: "/images/artstation/dearfoams-marshmellow/poster_shoe_pop.webp",
-        caption: "Shoe pop from marshmallow cloud",
-      },
-      {
-        type: "video",
-        src: "/videos/artstation/dearfoams-bounce-settle.mp4",
-        poster: "/images/artstation/dearfoams-marshmellow/poster_bounce.webp",
-        caption: "Bounce & settle on cloud",
-      },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/01.webp", width: 1920, height: 1080, caption: "Open — marshmallow cloud sky" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/02.webp", width: 1920, height: 1080, caption: "Dearfoams wordmark over master sky" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/03.webp", width: 1920, height: 1080, caption: "Logo MELLOW bulge / dip pose" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/04.webp", width: 1920, height: 1080, caption: "Slipper pops from marshmallow cloud" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/05.webp", width: 1920, height: 1080, caption: "Shoe floating at top of arc" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/06.webp", width: 1920, height: 1080, caption: "Cloud contact — bounce" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/07.webp", width: 1920, height: 1080, caption: "Airborne bounce peak" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/08.webp", width: 1920, height: 1080, caption: "MarshMellow Comfort System — insole hero" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/09.webp", width: 1920, height: 1080, caption: "Insole twist — flexibility" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/10.webp", width: 1920, height: 1080, caption: "Quilted cushion bulge" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/11.webp", width: 1920, height: 1080, caption: "Arch support detail" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/12.webp", width: 1920, height: 1080, caption: "Insole marshmallow comfort beat" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/13.webp", width: 1920, height: 1080, caption: "Undersole marshmallow reveal" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/14.webp", width: 1920, height: 1080, caption: "Marshmallow comfort reveal" },
-      { type: "image", src: "/images/artstation/dearfoams-marshmellow/15.webp", width: 1920, height: 1080, caption: "End card — sweet treat" },
-    ],
-  },
   {
     slug: "batman",
     title: "Batman",
