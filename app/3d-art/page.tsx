@@ -11,6 +11,7 @@ import { artProjects, ArtProject, ArtAsset } from "./artData";
 
 const categories = [
   { key: "All", label: "All" },
+  { key: "commercial", label: "Commercial" },
   { key: "characters", label: "Characters" },
   { key: "creatures", label: "Creatures" },
   { key: "hardsurface", label: "Hard Surface" },

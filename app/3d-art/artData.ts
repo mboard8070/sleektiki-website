@@ -11,7 +11,7 @@ export interface ArtAsset {
 export interface ArtProject {
   slug: string;
   title: string;
-  category: "characters" | "creatures" | "hardsurface" | "gamedev" | "sculpts";
+  category: "characters" | "creatures" | "hardsurface" | "gamedev" | "sculpts" | "commercial";
   description: string;
   software: string[];
   tags: string[];
@@ -21,6 +21,27 @@ export interface ArtProject {
 }
 
 export const artProjects: ArtProject[] = [
+  {
+    slug: "easymellow",
+    title: "EasyMellow Animation",
+    category: "commercial",
+    description:
+      "Product animation for Dearfoams EasyMellow.",
+    software: [],
+    tags: ["commercial", "product", "animation", "dearfoams", "easymellow"],
+    cover: "/images/artstation/easymellow/cover.webp",
+    coverAspect: 1.7778,
+    assets: [
+      {
+        type: "video",
+        src: "/videos/artstation/easymellow-16x9.mp4",
+        poster: "/images/artstation/easymellow/cover.webp",
+        width: 1920,
+        height: 1080,
+        caption: "EasyMellow Animation",
+      },
+    ],
+  },
   {
     slug: "batman",
     title: "Batman",
