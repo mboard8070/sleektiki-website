@@ -17,6 +17,15 @@ export function getPortfolioPassword(): string {
   return password;
 }
 
+/**
+ * True only when both secrets are present. When they are missing the gate fails
+ * open (portfolio stays public) rather than locking everyone out with a password
+ * that cannot possibly match — see middleware.ts.
+ */
+export function isPortfolioAuthConfigured(): boolean {
+  return Boolean(process.env.PORTFOLIO_AUTH_SECRET && process.env.PORTFOLIO_PASSWORD);
+}
+
 function toHex(buffer: ArrayBuffer): string {
   return Array.from(new Uint8Array(buffer))
     .map((b) => b.toString(16).padStart(2, "0"))

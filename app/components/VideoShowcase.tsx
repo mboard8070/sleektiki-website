@@ -217,7 +217,7 @@ export default function VideoShowcase() {
               href="/portfolio"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
             >
-              View Full Portfolio
+              View Full AI Portfolio
               <span>&rarr;</span>
             </Link>
           </div>

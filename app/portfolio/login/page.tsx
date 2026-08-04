@@ -32,9 +32,16 @@ export default function PortfolioLogin() {
         return;
       }
 
-      // Hard navigation so middleware re-evaluates the cookie
+      // Hard navigation so middleware re-evaluates the cookie. The gate rewrites
+      // rather than redirects, so the URL is still the gallery the visitor asked
+      // for — reload it. Only when someone hit /portfolio/login directly (which is
+      // never gated, so reloading would loop) do we pick a destination for them.
       router.refresh();
-      window.location.href = "/portfolio";
+      if (window.location.pathname.startsWith("/portfolio/login")) {
+        window.location.href = "/portfolio";
+      } else {
+        window.location.reload();
+      }
     } catch {
       setError("Something went wrong. Try again.");
       setLoading(false);
@@ -49,6 +56,11 @@ export default function PortfolioLogin() {
         <section
           className="max-w-lg mx-auto flex flex-col items-center justify-center"
           style={{
+            // Explicit auto margins: the unlayered `* { margin: 0 }` reset in
+            // globals.css outranks Tailwind's layered .mx-auto, so the class alone
+            // leaves this 32rem box pinned to the left edge.
+            marginLeft: "auto",
+            marginRight: "auto",
             paddingLeft: "max(1.5rem, 5vw)",
             paddingRight: "max(1.5rem, 5vw)",
             paddingTop: "10rem",
@@ -92,7 +104,7 @@ export default function PortfolioLogin() {
                 Protected
               </p>
               <h1 className="text-2xl font-semibold text-[var(--text-primary)]">
-                Portfolio Access
+                AI Portfolio Access
               </h1>
               <p
                 className="text-sm text-[var(--text-secondary)]"
@@ -134,7 +146,7 @@ export default function PortfolioLogin() {
                 className="w-full rounded-lg bg-[var(--accent)] text-black font-medium transition-opacity disabled:opacity-50 hover:opacity-90"
                 style={{ padding: "0.9rem 1rem", marginTop: "0.25rem" }}
               >
-                {loading ? "Unlocking…" : "Unlock Portfolio"}
+                {loading ? "Unlocking…" : "Unlock AI Portfolio"}
               </button>
             </form>
 
