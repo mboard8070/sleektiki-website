@@ -18,11 +18,34 @@ interface PortfolioItem {
   scene: string;
   model: string;
   tags: string[];
-  category: "automotive" | "product" | "nike" | "archviz";
-  aspect?: "video" | "square";
+  category: "automotive" | "product" | "nike" | "archviz" | "exhibition";
+  aspect?: "video" | "square" | "portrait";
 }
 
 const portfolioItems: PortfolioItem[] = [
+  // ═══════════════════════════════════════════
+  // EXHIBITION — Fine Art / Festival
+  // ═══════════════════════════════════════════
+  {
+    src: "/images/portfolio/dusty_cover.jpg",
+    videoSrc: "/videos/dusty.mp4",
+    title: "Dusty",
+    subject: "Collaboration with Michael Stillion",
+    scene:
+      "Part of the 2026 Exhibit at the Contemporary Arts Center in Cincinnati, Ohio. Also part of the Blink Festival in Cincinnati, Ohio as part of Unfolding Stories, a curated project by Joomi Chung. LoRA fine-tuned a local Flux 1 model on Stillion's artwork and created the animation with Kling 2.0.",
+    model: "Flux 1 LoRA + Kling 2.0",
+    tags: [
+      "Exhibition",
+      "Michael Stillion",
+      "CAC Cincinnati",
+      "Blink Festival",
+      "Unfolding Stories",
+      "LoRA",
+      "Video",
+    ],
+    category: "exhibition",
+    aspect: "portrait",
+  },
   // ═══════════════════════════════════════════
   // ARCH-VIZ — Architectural Visualization
   // ═══════════════════════════════════════════
@@ -1136,6 +1159,7 @@ const portfolioItems: PortfolioItem[] = [
 
 const categories = [
   { key: "All", label: "All" },
+  { key: "exhibition", label: "Exhibition" },
   { key: "archviz", label: "Arch-Viz" },
   { key: "automotive", label: "Automotive" },
   { key: "product", label: "Product" },
@@ -1216,7 +1240,7 @@ export default function Portfolio() {
                     boxShadow: "0 0 30px rgba(0, 212, 255, 0.08)",
                   }}
                 >
-                  <div className={`relative overflow-hidden ${item.aspect === "square" ? "aspect-square" : "aspect-video"}`}>
+                  <div className={`relative overflow-hidden ${item.aspect === "square" ? "aspect-square" : item.aspect === "portrait" ? "aspect-[4/5]" : "aspect-video"}`}>
                     {item.videoSrc ? (
                       <video
                         src={item.videoSrc}
@@ -1319,10 +1343,10 @@ export default function Portfolio() {
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative max-w-6xl w-full max-h-[85vh]"
+              className={`relative w-full max-h-[85vh] ${lightbox.aspect === "portrait" ? "max-w-xl" : "max-w-6xl"}`}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full" style={{ aspectRatio: lightbox.aspect === "square" ? "1/1" : "16/9", maxHeight: "75vh" }}>
+              <div className="relative w-full" style={{ aspectRatio: lightbox.aspect === "square" ? "1/1" : lightbox.aspect === "portrait" ? "4/5" : "16/9", maxHeight: "75vh" }}>
                 {lightbox.videoSrc ? (
                   <video
                     src={lightbox.videoSrc}
