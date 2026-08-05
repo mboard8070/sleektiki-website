@@ -16,6 +16,8 @@ interface PortfolioItem {
   title: string;
   subject: string;
   scene: string;
+  /** Optional long-form write-up shown only in the detail lightbox, not on the card. */
+  description?: string;
   model: string;
   tags: string[];
   category: "automotive" | "product" | "nike" | "archviz" | "exhibition";
@@ -31,8 +33,9 @@ const portfolioItems: PortfolioItem[] = [
     videoSrc: "/videos/dusty.mp4",
     title: "Dusty",
     subject: "Collaboration with Michael Stillion",
-    scene:
-      "Part of the 2026 Exhibit at the Contemporary Arts Center in Cincinnati, Ohio. Also part of the Blink Festival in Cincinnati, Ohio as part of Unfolding Stories, a curated project by Joomi Chung. LoRA fine-tuned a local Flux 1 model on Stillion's artwork and created the animation with Kling 2.0.",
+    scene: "2026 CAC Cincinnati · Blink Festival",
+    description:
+      "Part of the 2026 Exhibit at the Contemporary Arts Center in Cincinnati, Ohio. Also part of the Blink Festival in Cincinnati, Ohio as part of Unfolding Stories, a curated project by Joomi Chung. To make the piece, I LoRA fine-tuned a local Flux 1 model on Stillion's artwork and created the animation with Kling 2.0.",
     model: "Flux 1 LoRA + Kling 2.0",
     tags: [
       "Exhibition",
@@ -1278,7 +1281,8 @@ export default function Portfolio() {
                       className="text-sm text-[var(--text-secondary)]"
                       style={{ marginBottom: "0.75rem", lineHeight: 1.7 }}
                     >
-                      {item.subject} &mdash; {item.scene}
+                      {item.subject}
+                      {item.scene ? <> &mdash; {item.scene}</> : null}
                     </p>
                     <span className="text-xs font-[family-name:var(--font-geist-mono)] text-[var(--text-muted)] bg-[var(--background)] px-2 py-1 rounded">
                       {item.model}
@@ -1372,13 +1376,35 @@ export default function Portfolio() {
                 style={{ marginTop: "1.5rem" }}
               >
                 <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                  {lightbox.subject} &mdash; {lightbox.title}
+                  {lightbox.title}
                 </h3>
                 <p
                   className="text-sm text-[var(--text-secondary)]"
-                  style={{ marginTop: "0.5rem" }}
+                  style={{ marginTop: "0.35rem" }}
                 >
-                  {lightbox.scene} &middot; {lightbox.model}
+                  {lightbox.subject}
+                  {lightbox.scene ? <> &mdash; {lightbox.scene}</> : null}
+                </p>
+                {lightbox.description ? (
+                  <p
+                    className="text-sm text-[var(--text-secondary)]"
+                    style={{ marginTop: "0.75rem", lineHeight: 1.7, maxWidth: "42rem" }}
+                  >
+                    {lightbox.description}
+                  </p>
+                ) : lightbox.scene ? (
+                  <p
+                    className="text-sm text-[var(--text-secondary)]"
+                    style={{ marginTop: "0.5rem" }}
+                  >
+                    {lightbox.scene}
+                  </p>
+                ) : null}
+                <p
+                  className="text-xs font-[family-name:var(--font-geist-mono)] text-[var(--text-muted)]"
+                  style={{ marginTop: "0.75rem" }}
+                >
+                  {lightbox.model}
                 </p>
               </div>
               <button
