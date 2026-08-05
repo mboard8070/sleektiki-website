@@ -46,7 +46,7 @@ export const artProjects: ArtProject[] = [
         poster: "/images/artstation/easymellow/product-2-poster.webp",
         width: 1920,
         height: 1080,
-        caption: "Dearfoams Product Animation",
+        caption: "MarshMellow Animation",
       },
     ],
   },
