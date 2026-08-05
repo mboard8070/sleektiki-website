@@ -26,9 +26,9 @@ export const artProjects: ArtProject[] = [
     title: "Dearfoams 3D product Animations",
     category: "commercial",
     description:
-      "Contract work for Dearfoams. 3D product animations created using Maya for modeling and rigging, Substance 3D Painter for textures, and Unreal Engine for lookdev, rendering, and animation.",
-    software: ["Maya", "Substance 3D Painter", "Unreal Engine"],
-    tags: ["commercial", "product", "animation", "dearfoams", "easymellow", "maya", "substance", "unreal"],
+      "Contract work for Dearfoams. 3D product animations created using Maya for modeling and rigging, Substance 3D Painter for textures, and Unreal Engine for lookdev, rendering, and animation. After Effects was used for callouts and branding, and Premiere was used for edits.",
+    software: ["Maya", "Substance 3D Painter", "Unreal Engine", "After Effects", "Premiere"],
+    tags: ["commercial", "product", "animation", "dearfoams", "easymellow", "maya", "substance", "unreal", "after effects", "premiere"],
     cover: "/images/artstation/easymellow/cover.webp",
     coverAspect: 1.7778,
     assets: [
