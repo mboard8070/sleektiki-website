@@ -47,7 +47,7 @@ const portfolioItems: PortfolioItem[] = [
       "Video",
     ],
     category: "exhibition",
-    aspect: "portrait",
+    aspect: "square",
   },
   // ═══════════════════════════════════════════
   // ARCH-VIZ — Architectural Visualization
