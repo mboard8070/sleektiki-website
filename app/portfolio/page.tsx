@@ -1331,7 +1331,7 @@ export default function Portfolio() {
         <Footer />
       </main>
 
-      {/* Lightbox */}
+{/* Lightbox */}
       <AnimatePresence>
         {lightbox && (
           <motion.div
@@ -1339,80 +1339,92 @@ export default function Portfolio() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setLightbox(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm cursor-zoom-out"
-            style={{ padding: "2rem" }}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 backdrop-blur-sm cursor-zoom-out overflow-y-auto"
+            style={{ padding: "1.5rem" }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className={`relative w-full max-h-[85vh] ${lightbox.aspect === "portrait" ? "max-w-xl" : "max-w-6xl"}`}
+              className={`relative w-full my-auto ${lightbox.aspect === "portrait" ? "max-w-xl" : "max-w-6xl"}`}
+              style={{ maxHeight: "min(92vh, 100%)" }}
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="relative w-full" style={{ aspectRatio: lightbox.aspect === "square" ? "1/1" : lightbox.aspect === "portrait" ? "4/5" : "16/9", maxHeight: "75vh" }}>
-                {lightbox.videoSrc ? (
-                  <video
-                    src={lightbox.videoSrc}
-                    autoPlay
-                    loop
-                    controls
-                    playsInline
-                    className="w-full h-full object-contain rounded-lg"
-                  />
-                ) : (
-                  <Image
-                    src={lightbox.src}
-                    alt={`${lightbox.subject} - ${lightbox.title}`}
-                    fill
-                    sizes="100vw"
-                    className="object-contain rounded-lg"
-                    priority
-                  />
-                )}
-              </div>
               <div
-                className="text-center"
-                style={{ marginTop: "1.5rem" }}
+                className="overflow-y-auto overscroll-contain rounded-lg"
+                style={{ maxHeight: "min(92vh, 100%)", paddingBottom: "1rem" }}
               >
-                <h3 className="text-xl font-semibold text-[var(--text-primary)]">
-                  {lightbox.title}
-                </h3>
-                <p
-                  className="text-sm text-[var(--text-secondary)]"
-                  style={{ marginTop: "0.35rem" }}
+                <div
+                  className="relative w-full mx-auto"
+                  style={{
+                    aspectRatio:
+                      lightbox.aspect === "square"
+                        ? "1/1"
+                        : lightbox.aspect === "portrait"
+                          ? "4/5"
+                          : "16/9",
+                    maxHeight: "min(58vh, 720px)",
+                  }}
                 >
-                  {lightbox.subject}
-                  {lightbox.scene ? <> &mdash; {lightbox.scene}</> : null}
-                </p>
-                {lightbox.description ? (
+                  {lightbox.videoSrc ? (
+                    <video
+                      src={lightbox.videoSrc}
+                      autoPlay
+                      loop
+                      controls
+                      playsInline
+                      className="w-full h-full object-contain rounded-lg"
+                      style={{ maxHeight: "min(58vh, 720px)" }}
+                    />
+                  ) : (
+                    <Image
+                      src={lightbox.src}
+                      alt={`${lightbox.subject} - ${lightbox.title}`}
+                      fill
+                      sizes="100vw"
+                      className="object-contain rounded-lg"
+                      priority
+                    />
+                  )}
+                </div>
+                <div
+                  className="text-center mx-auto"
+                  style={{ marginTop: "1.25rem", maxWidth: "42rem", padding: "0 0.5rem 0.5rem" }}
+                >
+                  <h3 className="text-xl font-semibold text-[var(--text-primary)]">
+                    {lightbox.title}
+                  </h3>
                   <p
                     className="text-sm text-[var(--text-secondary)]"
-                    style={{ marginTop: "0.75rem", lineHeight: 1.7, maxWidth: "42rem" }}
+                    style={{ marginTop: "0.35rem" }}
                   >
-                    {lightbox.description}
+                    {lightbox.subject}
+                    {lightbox.scene ? <> &mdash; {lightbox.scene}</> : null}
                   </p>
-                ) : lightbox.scene ? (
+                  {lightbox.description ? (
+                    <p
+                      className="text-sm text-[var(--text-secondary)]"
+                      style={{ marginTop: "0.75rem", lineHeight: 1.7 }}
+                    >
+                      {lightbox.description}
+                    </p>
+                  ) : lightbox.scene ? (
+                    <p
+                      className="text-sm text-[var(--text-secondary)]"
+                      style={{ marginTop: "0.75rem", lineHeight: 1.7 }}
+                    >
+                      {lightbox.scene}
+                    </p>
+                  ) : null}
                   <p
-                    className="text-sm text-[var(--text-secondary)]"
-                    style={{ marginTop: "0.5rem" }}
+                    className="text-xs text-[var(--text-muted)]"
+                    style={{ marginTop: "0.75rem" }}
                   >
-                    {lightbox.scene}
+                    {lightbox.model}
                   </p>
-                ) : null}
-                <p
-                  className="text-xs font-[family-name:var(--font-geist-mono)] text-[var(--text-muted)]"
-                  style={{ marginTop: "0.75rem" }}
-                >
-                  {lightbox.model}
-                </p>
+</div>
               </div>
-              <button
-                onClick={() => setLightbox(null)}
-                className="absolute -top-2 -right-2 w-10 h-10 rounded-full bg-[var(--surface)] border border-[var(--surface-border)] text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors flex items-center justify-center text-lg"
-              >
-                &times;
-              </button>
             </motion.div>
           </motion.div>
         )}
