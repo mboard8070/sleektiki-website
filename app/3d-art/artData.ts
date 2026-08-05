@@ -21,12 +21,12 @@ export interface ArtProject {
 }
 
 export const artProjects: ArtProject[] = [
-  {
-    slug: "easymellow",
-    title: "EasyMellow Animation",
+{
+    slug: "dearfoams-3d-product-animations",
+    title: "Dearfoams 3D product Animations",
     category: "commercial",
     description:
-      "Product animation for Dearfoams EasyMellow.",
+      "3D product animations for Dearfoams.",
     software: [],
     tags: ["commercial", "product", "animation", "dearfoams", "easymellow"],
     cover: "/images/artstation/easymellow/cover.webp",
@@ -39,6 +39,14 @@ export const artProjects: ArtProject[] = [
         width: 1920,
         height: 1080,
         caption: "EasyMellow Animation",
+      },
+      {
+        type: "video",
+        src: "/videos/artstation/dearfoams-product-2.mp4",
+        poster: "/images/artstation/easymellow/product-2-poster.webp",
+        width: 1920,
+        height: 1080,
+        caption: "Dearfoams Product Animation",
       },
     ],
   },
