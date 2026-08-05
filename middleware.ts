@@ -15,12 +15,24 @@ function isGated(pathname: string): boolean {
   );
 }
 
+function withNoStore(response: NextResponse): NextResponse {
+  // Gallery HTML must not stick in CDN/browser caches for a year — portfolio
+  // entries change often and stale pages hide new work after deploy.
+  response.headers.set(
+    "Cache-Control",
+    "private, no-store, no-cache, must-revalidate, max-age=0"
+  );
+  response.headers.set("CDN-Cache-Control", "no-store");
+  response.headers.set("Cloudflare-CDN-Cache-Control", "no-store");
+  return response;
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // Login page must stay reachable without a cookie
   if (pathname === "/portfolio/login" || pathname.startsWith("/portfolio/login/")) {
-    return NextResponse.next();
+    return withNoStore(NextResponse.next());
   }
 
   if (!isGated(pathname)) {
@@ -30,21 +42,21 @@ export async function middleware(request: NextRequest) {
   // Fail open. Without both secrets no password can ever match, so gating here
   // would make the gallery permanently unreachable instead of merely public.
   if (!isPortfolioAuthConfigured()) {
-    return NextResponse.next();
+    return withNoStore(NextResponse.next());
   }
 
   const token = request.cookies.get(PORTFOLIO_COOKIE)?.value;
   const authed = await verifyAuthToken(token);
 
   if (authed) {
-    return NextResponse.next();
+    return withNoStore(NextResponse.next());
   }
 
   // Rewrite (not redirect) so the URL stays on the gallery the visitor asked for;
   // unlocking then reloads that same URL.
   const loginUrl = request.nextUrl.clone();
   loginUrl.pathname = "/portfolio/login";
-  return NextResponse.rewrite(loginUrl);
+  return withNoStore(NextResponse.rewrite(loginUrl));
 }
 
 export const config = {
