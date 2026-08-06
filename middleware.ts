@@ -5,9 +5,16 @@ import {
   verifyAuthToken,
 } from "./lib/portfolio-auth";
 
-// Galleries behind the shared password. Teaser images under /images/* stay public
-// so the homepage and project cards keep rendering.
+// Galleries that the shared password covers when the gate is on. Teaser images
+// under /images/* stay public so the homepage and project cards keep rendering.
 const GATED_ROOTS = ["/portfolio", "/3d-art"];
+
+// Master switch for the password gate. Off by default — /portfolio and /3d-art
+// are public. To put them back behind the password, set the env var
+// PORTFOLIO_GATE_ENABLED=true (alongside PORTFOLIO_AUTH_SECRET and
+// PORTFOLIO_PASSWORD, which must both still be set) and redeploy. The login
+// page, auth route and token helpers are all left intact for that.
+const GATE_ENABLED = process.env.PORTFOLIO_GATE_ENABLED === "true";
 
 function isGated(pathname: string): boolean {
   return GATED_ROOTS.some(
@@ -32,11 +39,24 @@ export async function middleware(request: NextRequest) {
 
   // Login page must stay reachable without a cookie
   if (pathname === "/portfolio/login" || pathname.startsWith("/portfolio/login/")) {
+    // With the gate off there is nothing to unlock — don't show a password form
+    // for a gallery anyone can already read.
+    if (!GATE_ENABLED) {
+      const portfolioUrl = request.nextUrl.clone();
+      portfolioUrl.pathname = "/portfolio";
+      return withNoStore(NextResponse.redirect(portfolioUrl));
+    }
     return withNoStore(NextResponse.next());
   }
 
   if (!isGated(pathname)) {
     return NextResponse.next();
+  }
+
+  // Gate switched off — galleries are public, but still skip the caches so new
+  // work shows up right after deploy.
+  if (!GATE_ENABLED) {
+    return withNoStore(NextResponse.next());
   }
 
   // Fail open. Without both secrets no password can ever match, so gating here
