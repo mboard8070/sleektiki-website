@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const facts = [
-  ["189", "server tools"],
+  ["170", "server tools"],
   ["5", "client surfaces"],
   ["local-first", "gateway design"],
 ];

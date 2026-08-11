@@ -20,7 +20,7 @@ export default function Docs() {
             Documentation
           </h1>
           <p className="text-sm text-[var(--text-muted)]">
-            Last updated: March 21, 2026
+            Last updated: August 11, 2026
           </p>
         </header>
 
@@ -51,7 +51,7 @@ Gateway (port 30000 HTTPS / 30080 HTTP)
    │
    ├── Local models (llama-server, port 30010)
    ├── Cloud models (Mistral API, Anthropic API, OpenRouter)
-   ├── Tool execution (100+ tools)
+   ├── Tool execution (170 tools)
    ├── Browser automation (Playwright)
    ├── Google Workspace (OAuth 2.0)
    └── File server (port 30002)`}</Pre>
@@ -118,17 +118,16 @@ Gateway (port 30000 HTTPS / 30080 HTTP)
               <ToolCard title="Google Contacts" tools="list, get, create, update, delete, search" />
               <ToolCard title="YouTube" tools="search, get video/channel, playlists, comments" />
               <ToolCard title="GitHub" tools="PRs, issues, repos, branches, commits, CI/CD, releases" />
-              <ToolCard title="Browser Automation" tools="open, navigate, click, type, fill forms, screenshot, extract" />
-              <ToolCard title="Social Media" tools="post to X, LinkedIn, Facebook, Instagram (browser-based)" />
+              <ToolCard title="Browser Automation" tools="12 tools: open, navigate, click, type, fill forms, select, screenshot, extract, snapshot, login, check session, close" />
+              <ToolCard title="Social Media" tools="post to X, LinkedIn, Bluesky; X video post" />
               <ToolCard title="Image Generation" tools="FLUX with LoRA support via ComfyUI" />
-              <ToolCard title="Substack" tools="create/edit drafts, publish, list posts, stats" />
+              <ToolCard title="Substack" tools="create/edit/delete drafts, list drafts/posts, get post, stats" />
               <ToolCard title="Memory" tools="save, recall, list, forget (persistent across sessions)" />
               <ToolCard title="Collaboration" tools="mesh status, dispatch tasks, project management" />
               <ToolCard title="Scheduling" tools="cron-based task scheduling with natural language" />
               <ToolCard title="System Monitor" tools="CPU, GPU, RAM, disk, processes, sessions, activity" />
-              <ToolCard title="Sandbox" tools="Docker container for autonomous builds (exec, read, write)" />
-              <ToolCard title="Forge" tools="Autonomous builder: plan, execute, verify, fix loop" />
-              <ToolCard title="AI Delegation" tools="ask_frontier (escalate to Claude/Gemini)" />
+              <ToolCard title="Skills" tools="16 plugins: weather, calc, stocks, clipboard, hyperframes, 3D, and more" />
+              <ToolCard title="AI Delegation" tools="ask_frontier, run_agent(s), execute_plan, send_to_claude" />
             </div>
             <div className="text-[var(--text-secondary)]" style={{ lineHeight: 1.8, marginTop: "1rem" }}>
               <p>
@@ -238,7 +237,7 @@ data/conversations/        Conversation history (JSON)`}</Pre>
             </h2>
             <div className="text-[var(--text-secondary)]" style={{ lineHeight: 1.8, display: "flex", flexDirection: "column", gap: "1rem" }}>
               <p>
-                MAUDE includes 10 markdown-based reference guides that are
+                MAUDE includes 11 markdown-based reference guides that are
                 automatically injected into the system prompt when the
                 user&rsquo;s message matches relevant keywords. This gives the
                 model domain expertise on demand without permanently bloating
@@ -256,6 +255,7 @@ data/conversations/        Conversation history (JSON)`}</Pre>
               <ToolCard title="Prompt Engineering" tools="System prompts, few-shot, chain-of-thought, tool descriptions, image prompts" />
               <ToolCard title="Image Generation" tools="Prompt structure, composition, lighting, styles, quality modifiers, aspect ratios" />
               <ToolCard title="Cybersecurity" tools="Authentication, injection prevention, secrets, network hardening, containers" />
+              <ToolCard title="Marketing" tools="Positioning, messaging, campaigns, content strategy, channel mix" />
             </div>
           </section>
 

@@ -45,7 +45,7 @@ const projects: ProjectDetail[] = [
   heroPosition: "left top",
   description: [
     "MAUDE is a full-stack AI operating environment running on the NVIDIA DGX Spark. It coordinates 10+ specialized models through a unified gateway, routing between local inference (Nemotron), cloud code generation (Codestral, Devstral), vision analysis (LLaVA), and frontier reasoning (Claude, Mistral) based on task requirements.",
-    "Over 100 tools span file operations, web browsing, Google Workspace (Gmail, Drive, Sheets, Calendar, Slides, Contacts, YouTube), GitHub (PRs, issues, CI/CD, releases), browser automation, image generation, social media posting, and system monitoring. Tools are dynamically filtered per message to minimize token usage.",
+    "170 server tools span file operations, web browsing, Google Workspace (Gmail, Drive, Sheets, Calendar, Slides, Contacts, YouTube), GitHub (PRs, issues, CI/CD, releases), browser automation, image generation, social media posting, and system monitoring. Tools are dynamically filtered per message to minimize token usage.",
     "The system runs across five client interfaces: a server TUI on the Spark, a pip-installable Mac/PC/Linux CLI, a native iOS & Android app, a Telegram bot, and a web dashboard. All connected over Tailscale VPN through a single gateway that handles SSE streaming, WebSocket terminal/voice proxying, file transfers, and tool execution loops."
   ],
   tags: ["Nemotron", "Codestral", "Claude", "Mistral", "Devstral", "LLaVA", "Whisper", "Tailscale", "Docker", "Python", "React", "Capacitor"],
@@ -63,15 +63,15 @@ const projects: ProjectDetail[] = [
     },
     {
       heading: "Design Challenge",
-      body: "How do you build a single AI interface that spans 10+ models, 100+ tools, five client surfaces (desktop TUI, CLI, mobile app, Telegram bot, web dashboard), and multiple physical machines without the complexity leaking through to the user? The user should say what they want and the system should figure out which model, which tools, and which machine to use."
+      body: "How do you build a single AI interface that spans 10+ models, 170 tools, five client surfaces (desktop TUI, CLI, mobile app, Telegram bot, web dashboard), and multiple physical machines without the complexity leaking through to the user? The user should say what they want and the system should figure out which model, which tools, and which machine to use."
     },
     {
       heading: "Key Design Decisions",
-      body: "The central architectural choice was a unified gateway that absorbs all complexity. Every client connects to one endpoint. The gateway resolves model aliases, translates between API formats (OpenAI vs. Anthropic), executes tools server-side, manages context windows, and streams results back with optional trace visibility. Tool selection is dynamic: keyword filtering on each message activates only relevant tools, keeping token usage 30-40% lower than sending the full 100+ tool catalog. For the mobile app, I designed collapsible tool execution traces. Power users can see exactly what the AI is doing (which tools it called, what it found, how long it took), while casual users see only the final response."
+      body: "The central architectural choice was a unified gateway that absorbs all complexity. Every client connects to one endpoint. The gateway resolves model aliases, translates between API formats (OpenAI vs. Anthropic), executes tools server-side, manages context windows, and streams results back with optional trace visibility. Tool selection is dynamic: keyword filtering on each message activates only relevant tools, keeping token usage 30-40% lower than sending the full 170-tool catalog. For the mobile app, I designed collapsible tool execution traces. Power users can see exactly what the AI is doing (which tools it called, what it found, how long it took), while casual users see only the final response."
     },
     {
       heading: "Outcome",
-      body: "MAUDE is my daily-driver AI system, running 24/7 on a DGX Spark with clients on Mac, iPhone, and Windows. It handles email triage, calendar management, code generation, file operations, web research, image generation, social media posting, and cross-machine task dispatch. The autonomous builder (Forge) can scaffold and deploy complete web applications in Docker sandboxes with zero human intervention."
+      body: "MAUDE is my daily-driver AI system, running 24/7 on a DGX Spark with clients on Mac, iPhone, and Windows. It handles email triage, calendar management, code generation, file operations, web research, image generation, social media posting, and cross-machine task dispatch. Subagents and execute_plan can run multi-step work with tool inheritance, while Docker isolation and budget caps keep long jobs bounded."
     }
   ],
   roadmap: {
@@ -129,20 +129,20 @@ const projects: ProjectDetail[] = [
       description: "A Python gateway on port 30000 routes all traffic: 10+ LLM models (Mistral, Codestral, Devstral, Nemotron, Claude Opus, Claude Sonnet, LLaVA), WebSocket proxying for SSH terminal and voice, file transfers, tool execution loops, and SSE streaming with real-time pipeline traces. Models are resolved via short aliases with per-model context window awareness."
     },
     {
-      title: "100+ LLM-Callable Tools",
+      title: "170 LLM-Callable Tools",
       description: "File operations, shell execution, web search & browsing, image generation (FLUX + LoRA), vision analysis, browser automation (Playwright), and AI delegation to frontier models. Dynamic keyword-based tool filtering reduces context window usage by 30-40% per request."
     },
     {
       title: "Google Workspace Integration",
-      description: "30+ tools for Gmail (read, compose, send), Drive (search, upload, create docs/sheets/folders), Sheets (read, write, append), Calendar (events, search), Slides (create, edit), Contacts (CRUD, search), and YouTube (search, playlists, comments). Full OAuth 2.0 with verified domain"
+      description: "46 tools for Gmail (read, compose, send), Drive (search, upload, create docs/sheets/folders), Sheets (read, write, append), Calendar (events, search), Slides (create, edit), Contacts (CRUD, search), and YouTube (search, playlists, comments). Full OAuth 2.0 with verified domain"
     },
     {
       title: "GitHub Integration",
-      description: "25+ tools for pull requests (create, review, merge, diff, comment), issues (create, close, comment), repositories, branches, commits, CI/CD workflow runs (view, re-run), releases, code search, and notifications."
+      description: "24 tools for pull requests (create, review, merge, diff, comment), issues (create, close, comment), repositories, branches, commits, CI/CD workflow runs (view, re-run), releases, code search, and notifications."
     },
     {
-      title: "Forge \u2014 Autonomous Builder",
-      description: "Plan \u2192 Execute \u2192 Verify \u2192 Fix loop with mandatory verification. Builds software autonomously in a Docker sandbox (Ubuntu 24.04, Python 3.12, Node 22, Go 1.22). Automatic model escalation from free local Nemotron to Codestral to Mistral. Budget-capped token tracking with blueprint templates for web apps, APIs, AI tools, and SaaS MVPs."
+      title: "Agents & Planned Execution",
+      description: "Dispatch specialized subagents (code, research, writer, reasoning, search) in parallel with tool inheritance and result aggregation. execute_plan runs multi-step work with schedule_task for recurring jobs. Docker resource limits and client allowlists bound autonomous execution; model routing can escalate from local Nemotron to Codestral or Mistral when the task needs it."
     },
     {
       title: "Cross-Machine Collaboration",
@@ -169,16 +169,16 @@ const projects: ProjectDetail[] = [
       description: "Cron-based task scheduler with natural language parsing, persistent storage, and automatic execution. Specialized subagents (code, research, writer, reasoning, search) can be dispatched in parallel with tool inheritance and result aggregation."
     },
     {
-      title: "Security & Sandbox Isolation",
-      description: "Docker containerization for autonomous builds with resource limits (8GB RAM, 4 CPUs, 256 PID max). Client allowlist via authorized.json. Tailscale VPN for encrypted mesh networking. Local-first inference keeps data on-device. Optional cloud escalation with explicit delegation."
+      title: "Security & Isolation",
+      description: "Client allowlist via authorized.json. Tailscale VPN for encrypted mesh networking. Local-first inference keeps data on-device. Optional cloud escalation with explicit delegation. Docker resource limits available for bounded agent work when sandboxed execution is enabled."
     },
     {
       title: "Browser Automation",
-      description: "Playwright-based headless browser with 9 tools: open, navigate, click, type, fill forms, select dropdowns, screenshot, extract content, and close. Persistent session data with 5-minute inactivity timeout."
+      description: "Playwright-based headless browser with 12 tools: open, navigate, click, type, fill forms, select dropdowns, screenshot, extract content, snapshot, login, check session, and close. Persistent session data with 5-minute inactivity timeout."
     },
     {
       title: "Social Media & Publishing",
-      description: "Post to Twitter/X, LinkedIn, and Bluesky with image attachments and platform-specific formatting. Substack integration for draft creation, editing, publishing, and statistics tracking. Rate limit enforcement per platform."
+      description: "Post to Twitter/X, LinkedIn, and Bluesky with image attachments and platform-specific formatting. Substack integration for draft creation, editing, listing posts, and statistics tracking. Rate limit enforcement per platform."
     },
     {
       title: "Image Generation",
@@ -186,7 +186,7 @@ const projects: ProjectDetail[] = [
     },
     {
       title: "Best Practice Guides",
-      description: "10 markdown reference guides (coding, website design, graphic design, color theory, writing, API design, prompt engineering, image generation, cybersecurity, web UI/UX patterns) automatically injected into the system prompt based on keyword triggers in the user\u2019s message. Max 2 guides per turn to keep context focused. Gives the model domain expertise on demand without permanent context bloat."
+      description: "11 markdown reference guides (coding, website design, graphic design, color theory, writing, API design, prompt engineering, image generation, cybersecurity, web UI/UX patterns, marketing) automatically injected into the system prompt based on keyword triggers in the user\u2019s message. Max 2 guides per turn to keep context focused. Gives the model domain expertise on demand without permanent context bloat."
     },
     {
       title: "Skills Plugin System",
