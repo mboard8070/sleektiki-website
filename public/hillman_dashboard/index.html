@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HLMN Financial Brief — Independent Analysis</title>
+  <meta name="description" content="Independent Hillman (HLMN) financial brief: 5-year turnaround, customer concentration and China tariff sensitivity tools from public FY2025 filings." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://sleektiki.ai/hillman_dashboard" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-elev: #121a2b;
+      --bg-card: #162033;
+      --border: #243049;
+      --text: #e8eef9;
+      --muted: #93a0b8;
+      --accent: #3d9b6e;
+      --accent-2: #5bb98a;
+      --warn: #e0a54a;
+      --danger: #e05a5a;
+      --blue: #4c8dff;
+      --purple: #9b7bff;
+      --cyan: #3ecfcf;
+      --shadow: 0 10px 40px rgba(0,0,0,.35);
+      --radius: 14px;
+      --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      --mono: "SF Mono", "Cascadia Code", ui-monospace, monospace;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--font);
+      background:
+        radial-gradient(1200px 600px at 10% -10%, rgba(61,155,110,.18), transparent 50%),
+        radial-gradient(900px 500px at 90% 0%, rgba(76,141,255,.12), transparent 45%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: var(--accent-2); }
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 20px 80px; }
+    header.hero {
+      display: grid;
+      gap: 18px;
+      margin-bottom: 28px;
+      padding: 28px;
+      background: linear-gradient(145deg, rgba(22,32,51,.95), rgba(18,26,43,.9));
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) + 4px);
+      box-shadow: var(--shadow);
+    }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .badge {
+      font-size: 11px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+    .badge.live { color: var(--accent-2); border-color: rgba(91,185,138,.4); background: rgba(61,155,110,.12); }
+    .badge.warn { color: var(--warn); border-color: rgba(224,165,74,.35); background: rgba(224,165,74,.1); }
+    h1 {
+      margin: 0;
+      font-size: clamp(1.55rem, 2.5vw, 2.15rem);
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .sub {
+      margin: 0;
+      color: var(--muted);
+      max-width: 72ch;
+      font-size: .98rem;
+    }
+    .disclaimer {
+      font-size: .82rem;
+      color: var(--muted);
+      border-left: 3px solid var(--warn);
+      padding: 8px 12px;
+      background: rgba(224,165,74,.08);
+      border-radius: 0 8px 8px 0;
+    }
+    nav.toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 4px 0 8px;
+    }
+    nav.toc a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: .85rem;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.03);
+    }
+    nav.toc a:hover { border-color: var(--accent); color: var(--accent-2); }
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+    .kpi {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .kpi .label { font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+    .kpi .value { font-size: 1.45rem; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .kpi .delta { font-size: .8rem; margin-top: 4px; color: var(--accent-2); }
+    .kpi .delta.flat { color: var(--muted); }
+    .kpi .delta.neg { color: var(--danger); }
+    section.card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow);
+    }
+    section.card h2 {
+      margin: 0 0 6px;
+      font-size: 1.2rem;
+    }
+    section.card .lede {
+      margin: 0 0 18px;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 20px;
+    }
+    .grid-2-eq {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    @media (max-width: 900px) {
+      .grid-2, .grid-2-eq { grid-template-columns: 1fr; }
+    }
+    .chart-box {
+      position: relative;
+      height: 280px;
+    }
+    .chart-box.tall { height: 320px; }
+    .insight {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      font-size: .9rem;
+    }
+    .insight h3 {
+      margin: 0 0 8px;
+      font-size: .85rem;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--accent-2);
+    }
+    .insight ul { margin: 0; padding-left: 1.1rem; color: var(--muted); }
+    .insight li { margin-bottom: 6px; }
+    .insight li strong { color: var(--text); }
+    .tool {
+      display: grid;
+      gap: 16px;
+    }
+    .sliders {
+      display: grid;
+      gap: 14px;
+      background: rgba(0,0,0,.18);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .slider-row label {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: .88rem;
+      margin-bottom: 6px;
+    }
+    .slider-row label span.val {
+      font-family: var(--mono);
+      color: var(--cyan);
+      font-size: .85rem;
+    }
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+      cursor: pointer;
+    }
+    .outputs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .out {
+      background: rgba(255,255,255,.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+    }
+    .out .k { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+    .out .v { font-size: 1.15rem; font-weight: 700; margin-top: 4px; font-variant-numeric: tabular-nums; }
+    .out .v.pos { color: var(--accent-2); }
+    .out .v.neg { color: var(--danger); }
+    .out .v.neu { color: var(--warn); }
+    .method {
+      font-size: .8rem;
+      color: var(--muted);
+      border-top: 1px dashed var(--border);
+      padding-top: 12px;
+      margin-top: 4px;
+    }
+    .method code {
+      font-family: var(--mono);
+      font-size: .78rem;
+      color: #b8c6e0;
+      background: rgba(0,0,0,.25);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+    table.fin {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: .88rem;
+      font-variant-numeric: tabular-nums;
+    }
+    table.fin th, table.fin td {
+      text-align: right;
+      padding: 8px 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    table.fin th:first-child, table.fin td:first-child { text-align: left; }
+    table.fin th { color: var(--muted); font-weight: 600; font-size: .75rem; text-transform: uppercase; letter-spacing: .04em; }
+    table.fin tr:last-child td { border-bottom: none; }
+    table.fin .pos { color: var(--accent-2); }
+    table.fin .neg { color: var(--danger); }
+    .bars {
+      display: grid;
+      gap: 10px;
+    }
+    .bar-row { display: grid; grid-template-columns: 140px 1fr 70px; gap: 10px; align-items: center; font-size: .88rem; }
+    .bar-track {
+      height: 12px;
+      background: rgba(255,255,255,.06);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--cyan));
+    }
+    .bar-fill.hd { background: linear-gradient(90deg, #e05a5a, #e0a54a); }
+    .bar-fill.low { background: linear-gradient(90deg, #4c8dff, #3ecfcf); }
+    .bar-fill.oth { background: linear-gradient(90deg, #6b7c93, #93a0b8); }
+    .bar-fill.seg1 { background: linear-gradient(90deg, #3d9b6e, #5bb98a); }
+    .bar-fill.seg2 { background: linear-gradient(90deg, #4c8dff, #9b7bff); }
+    .bar-fill.seg3 { background: linear-gradient(90deg, #e0a54a, #e05a5a); }
+    footer {
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .8rem;
+    }
+    .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+    .pill {
+      font-size: .78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(76,141,255,.12);
+      border: 1px solid rgba(76,141,255,.3);
+      color: #a8c6ff;
+    }
+    .status-ok { color: var(--accent-2); }
+    .status-fail { color: var(--danger); }
+    #audit-panel {
+      font-family: var(--mono);
+      font-size: .78rem;
+      white-space: pre-wrap;
+      background: rgba(0,0,0,.3);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px;
+      max-height: 220px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero">
+      <div class="badge-row">
+        <span class="badge live">HLMN · Public financials</span>
+        <span class="badge">FY ended Dec 27, 2025</span>
+        <span class="badge warn">Independent analysis — not Hillman-affiliated</span>
+      </div>
+      <h1>Hillman Solutions — Financial Brief</h1>
+      <p class="sub">
+        Five-year turnaround snapshot plus interactive stress tools for the two risks that dominate the 10-K:
+        <strong>customer concentration</strong> (Home Depot + Lowe’s ≈ 43%) and
+        <strong>China tariff exposure</strong> (~33% product sourcing).
+      </p>
+      <p class="disclaimer">
+        Built from Hillman Solutions Corp. FY2025 Form 10-K and FY2025 earnings release.
+        Scenario tools are illustrative sensitivity models, not forecasts or investment advice.
+        Not an official Hillman document.
+      </p>
+      <nav class="toc" aria-label="Sections">
+        <a href="#kpis">KPIs</a>
+        <a href="#turnaround">5-yr turnaround</a>
+        <a href="#segments">Segments</a>
+        <a href="#concentration">Concentration tool</a>
+        <a href="#tariff">Tariff tool</a>
+        <a href="#sources">Sources</a>
+        <a href="#audit">Self-audit</a>
+      </nav>
+    </header>
+
+    <!-- KPI strip -->
+    <div class="kpis" id="kpis">
+      <div class="kpi">
+        <div class="label">Net sales FY25</div>
+        <div class="value">$1.55B</div>
+        <div class="delta">+5.4% YoY · record</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Adj. EBITDA</div>
+        <div class="value">$275M</div>
+        <div class="delta">+13.9% · 17.7% margin</div>
+      </div>
+      <div class="kpi">
+        <div class="label">GAAP net income</div>
+        <div class="value">$40.3M</div>
+        <div class="delta">vs $17.3M FY24</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Net debt / Adj. EBITDA</div>
+        <div class="value">2.4×</div>
+        <div class="delta">from 2.8× YE24</div>
+      </div>
+      <div class="kpi">
+        <div class="label">Top-2 customers</div>
+        <div class="value">43%</div>
+        <div class="delta flat">HD 22.5% · LOW 20.9%</div>
+      </div>
+      <div class="kpi">
+        <div class="label">China sourcing</div>
+        <div class="value">~33%</div>
+        <div class="delta flat">of products (10-K est.)</div>
+      </div>
+    </div>
+
+    <!-- Turnaround -->
+    <section class="card" id="turnaround">
+      <h2>Five-year turnaround trajectory</h2>
+      <p class="lede">
+        Revenue was flat-to-soft through the post-SPAC home-improvement cool-down; profitability and leverage
+        did the heavy lifting. GAAP swung from a 2023 loss to $40M profit in 2025; Adj. EBITDA margin expanded
+        ~280 bps from 2023 to 2025.
+      </p>
+      <div class="grid-2">
+        <div class="chart-box tall">
+          <canvas id="chartTurnaround" aria-label="Revenue and Adj EBITDA chart"></canvas>
+        </div>
+        <div class="insight">
+          <h3>What the numbers say</h3>
+          <ul>
+            <li><strong>Sales:</strong> $1.43B → $1.55B (2021–2025). Growth re-accelerated in 2025 after flat 2022–24.</li>
+            <li><strong>Adj. EBITDA:</strong> $210M (2022) → $275M (2025), margin 14.9% → 17.7% (2023–25).</li>
+            <li><strong>GAAP NI:</strong> $(9.6)M (2023) → $17.3M (2024) → $40.3M (2025).</li>
+            <li><strong>Leverage:</strong> Net debt / Adj. EBITDA improved to <strong>2.4×</strong> (from 2.8× YE24; company previously cited 4.2× YE22).</li>
+            <li><strong>COGS (ex-D&amp;A):</strong> 56.1% of sales (2023) → 51.3% (2025) — pricing/mix/tariff recovery timing.</li>
+          </ul>
+          <div class="pill-row">
+            <span class="pill">2026 guide: sales $1.60–1.70B</span>
+            <span class="pill">Adj. EBITDA $275–285M</span>
+            <span class="pill">FCF $100–120M</span>
+          </div>
+        </div>
+      </div>
+      <div style="overflow-x:auto; margin-top:18px;">
+        <table class="fin" id="tableHistory">
+          <thead>
+            <tr>
+              <th>Metric</th>
+              <th>2021</th>
+              <th>2022</th>
+              <th>2023</th>
+              <th>2024</th>
+              <th>2025</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Net sales ($M)</td>
+              <td>1,426</td>
+              <td>1,486</td>
+              <td>1,476</td>
+              <td>1,473</td>
+              <td>1,552</td>
+            </tr>
+            <tr>
+              <td>Adj. EBITDA ($M)</td>
+              <td>—</td>
+              <td>210</td>
+              <td>219</td>
+              <td>242</td>
+              <td>275</td>
+            </tr>
+            <tr>
+              <td>Adj. EBITDA margin</td>
+              <td>—</td>
+              <td>14.1%</td>
+              <td>14.9%</td>
+              <td>16.4%</td>
+              <td>17.7%</td>
+            </tr>
+            <tr>
+              <td>GAAP net income ($M)</td>
+              <td>—</td>
+              <td>—</td>
+              <td class="neg">(9.6)</td>
+              <td class="pos">17.3</td>
+              <td class="pos">40.3</td>
+            </tr>
+            <tr>
+              <td>COGS ex-D&amp;A % sales</td>
+              <td>—</td>
+              <td>—</td>
+              <td>56.1%</td>
+              <td>51.9%</td>
+              <td>51.3%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Segments -->
+    <section class="card" id="segments">
+      <h2>Segment mix — FY2025</h2>
+      <p class="lede">Hardware &amp; Protective is the engine; Robotics &amp; Digital is the sticky automation franchise (MinuteKey); Canada is the remaining ~9%.</p>
+      <div class="grid-2-eq">
+        <div class="bars" id="segmentBars"></div>
+        <div class="chart-box">
+          <canvas id="chartSegments" aria-label="Segment mix pie"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- Concentration tool -->
+    <section class="card" id="concentration">
+      <h2>Customer concentration stress tool</h2>
+      <p class="lede">
+        FY2025: Home Depot <strong>$349.9M (22.5%)</strong>, Lowe’s <strong>$324.4M (20.9%)</strong>, top-two
+        <strong>$674.3M (~43%)</strong>. Model a shared volume shock at big-box without assuming replacement wins.
+      </p>
+      <div class="tool">
+        <div class="grid-2">
+          <div class="sliders">
+            <div class="slider-row">
+              <label>
+                <span>Home Depot volume change</span>
+                <span class="val" id="hdVolLabel">0%</span>
+              </label>
+              <input type="range" id="hdVol" min="-40" max="20" value="0" step="1" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>Lowe’s volume change</span>
+                <span class="val" id="lowVolLabel">0%</span>
+              </label>
+              <input type="range" id="lowVol" min="-40" max="20" value="0" step="1" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>Contribution margin on lost/gained sales</span>
+                <span class="val" id="cmLabel">35%</span>
+              </label>
+              <input type="range" id="cm" min="15" max="55" value="35" step="1" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>Other-customer offset (win rate on lost $)</span>
+                <span class="val" id="offsetLabel">10%</span>
+              </label>
+              <input type="range" id="offset" min="0" max="80" value="10" step="5" />
+            </div>
+            <p class="method">
+              Baseline sales <code>$1,552.2M</code>. Adj. EBITDA base <code>$275.3M</code>.
+              ΔEBITDA ≈ (net sales impact) × contribution margin. Offset only applies to lost big-box volume.
+              CM is a modeling assumption (not disclosed) — default 35% sits between gross margin ex-D&amp;A (~48.7%) and Adj. EBITDA margin (17.7%).
+            </p>
+          </div>
+          <div>
+            <div class="outputs" id="concOutputs"></div>
+            <div class="bars" style="margin-top:16px;" id="concBars"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tariff tool -->
+    <section class="card" id="tariff">
+      <h2>China tariff sensitivity tool</h2>
+      <p class="lede">
+        10-K: ~<strong>33% China / 33% North America / 33% other</strong> product sourcing. Tariffs raise COGS
+        and working capital; management says prices have been raised to offset, with possible demand impact.
+      </p>
+      <div class="tool">
+        <div class="grid-2">
+          <div class="sliders">
+            <div class="slider-row">
+              <label>
+                <span>Incremental tariff rate on China-sourced COGS</span>
+                <span class="val" id="tariffRateLabel">25%</span>
+              </label>
+              <input type="range" id="tariffRate" min="0" max="100" value="25" step="1" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>China share of product COGS</span>
+                <span class="val" id="chinaShareLabel">33%</span>
+              </label>
+              <input type="range" id="chinaShare" min="10" max="60" value="33" step="1" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>Price pass-through of tariff cost</span>
+                <span class="val" id="passLabel">80%</span>
+              </label>
+              <input type="range" id="pass" min="0" max="100" value="80" step="5" />
+            </div>
+            <div class="slider-row">
+              <label>
+                <span>Volume elasticity (sales % drop per 1% price up)</span>
+                <span class="val" id="elastLabel">0.40</span>
+              </label>
+              <input type="range" id="elast" min="0" max="150" value="40" step="5" />
+            </div>
+            <p class="method">
+              Base COGS ex-D&amp;A <code>$795.9M</code> (51.3% of sales). China COGS ≈ share × base COGS.
+              Gross tariff cost = China COGS × tariff rate. Net cost after pass-through = cost × (1 − pass-through).
+              Price uplift on total sales ≈ (gross tariff × pass-through) / base sales.
+              Volume loss ≈ price uplift % × elasticity. Lost contribution uses CM from concentration tool.
+            </p>
+          </div>
+          <div>
+            <div class="outputs" id="tariffOutputs"></div>
+            <div class="chart-box" style="margin-top:14px; height:220px;">
+              <canvas id="chartTariff" aria-label="Tariff impact waterfalls"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Combined scenario -->
+    <section class="card" id="combined">
+      <h2>Combined scenario snapshot</h2>
+      <p class="lede">Live sum of the two tools above against FY2025 Adj. EBITDA baseline. Useful for “what breaks the 2026 guide midpoint?” questions.</p>
+      <div class="outputs" id="combinedOutputs"></div>
+    </section>
+
+    <!-- Sources -->
+    <section class="card" id="sources">
+      <h2>Sources &amp; notes</h2>
+      <ul style="color:var(--muted); font-size:.9rem; margin:0; padding-left:1.2rem;">
+        <li>Hillman Solutions Corp. Form 10-K for fiscal year ended Dec 27, 2025 (customer %, segments, China 33/33/33, P&amp;L).</li>
+        <li>Hillman FY2025 earnings release (Feb 17, 2026): Adj. EBITDA, free cash flow, net debt, 2026 guidance.</li>
+        <li>Historical Adj. EBITDA 2022–2023 from company earnings releases; revenue 2021–2024 from public series.</li>
+        <li>Sensitivity models are original; contribution margin and elasticity are user-tunable assumptions.</li>
+      </ul>
+    </section>
+
+    <!-- Audit -->
+    <section class="card" id="audit">
+      <h2>Runtime self-audit</h2>
+      <p class="lede">Validates arithmetic invariants and control wiring on load and after every slider change.</p>
+      <div id="audit-panel">Running…</div>
+    </section>
+
+    <footer>
+      Local rebuild of the HLMN financial leave-behind · Spark host ·
+      Independent analysis from public filings · Not affiliated with The Hillman Group / Hillman Solutions Corp.
+    </footer>
+  </div>
+
+  <script>
+  (function () {
+    "use strict";
+
+    // ─── Canonical FY2025 base (USD millions) ───────────────────────────
+    const BASE = {
+      sales: 1552.224,
+      cogs: 795.875,
+      adjEbitda: 275.317,
+      netIncome: 40.305,
+      hdSales: 349.9,
+      lowSales: 324.4,
+      top2: 674.3,
+      hdPct: 0.225,
+      lowPct: 0.209,
+      chinaShare: 0.33,
+      segments: [
+        { name: "Hardware & Protective", sales: 1194.0, cls: "seg1" },
+        { name: "Robotics & Digital", sales: 220.2, cls: "seg2" },
+        { name: "Canada", sales: 138.1, cls: "seg3" },
+      ],
+      history: {
+        years: ["2021", "2022", "2023", "2024", "2025"],
+        sales: [1426, 1486, 1476, 1473, 1552],
+        ebitda: [null, 210.2, 219.4, 241.8, 275.3],
+      },
+    };
+
+    const fmtM = (n, digits = 1) => {
+      if (!Number.isFinite(n)) return "—";
+      const sign = n < 0 ? "−" : "";
+      const a = Math.abs(n);
+      if (a >= 1000) return sign + "$" + (a / 1000).toFixed(2) + "B";
+      return sign + "$" + a.toFixed(digits) + "M";
+    };
+    const fmtPct = (n, digits = 1) => {
+      if (!Number.isFinite(n)) return "—";
+      const sign = n < 0 ? "−" : "";
+      return sign + Math.abs(n).toFixed(digits) + "%";
+    };
+    const fmtSignedM = (n) => {
+      if (!Number.isFinite(n)) return "—";
+      if (Math.abs(n) < 0.05) return "$0.0M";
+      return (n > 0 ? "+" : "") + fmtM(n).replace("$", "$");
+    };
+
+    // ─── Segment bars ───────────────────────────────────────────────────
+    function renderSegments() {
+      const total = BASE.segments.reduce((s, x) => s + x.sales, 0);
+      const el = document.getElementById("segmentBars");
+      el.innerHTML = BASE.segments.map((s) => {
+        const pct = (s.sales / total) * 100;
+        return `<div class="bar-row">
+          <div>${s.name}</div>
+          <div class="bar-track"><div class="bar-fill ${s.cls}" style="width:${pct}%"></div></div>
+          <div style="text-align:right;font-variant-numeric:tabular-nums">${pct.toFixed(1)}%</div>
+        </div>
+        <div style="font-size:.78rem;color:var(--muted);margin:-4px 0 6px 0">${fmtM(s.sales, 1)} sales</div>`;
+      }).join("");
+    }
+
+    // ─── Charts ─────────────────────────────────────────────────────────
+    let chartTurnaround, chartSegments, chartTariff;
+
+    function initCharts() {
+      const ctxT = document.getElementById("chartTurnaround");
+      chartTurnaround = new Chart(ctxT, {
+        type: "bar",
+        data: {
+          labels: BASE.history.years,
+          datasets: [
+            {
+              type: "bar",
+              label: "Net sales ($M)",
+              data: BASE.history.sales,
+              backgroundColor: "rgba(76,141,255,0.45)",
+              borderColor: "rgba(76,141,255,0.9)",
+              borderWidth: 1,
+              borderRadius: 6,
+              yAxisID: "y",
+              order: 2,
+            },
+            {
+              type: "line",
+              label: "Adj. EBITDA ($M)",
+              data: BASE.history.ebitda,
+              borderColor: "#5bb98a",
+              backgroundColor: "rgba(91,185,138,0.15)",
+              tension: 0.25,
+              pointRadius: 5,
+              pointBackgroundColor: "#5bb98a",
+              yAxisID: "y1",
+              order: 1,
+              spanGaps: false,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: { labels: { color: "#93a0b8" } },
+            tooltip: {
+              callbacks: {
+                label: (c) => {
+                  const v = c.parsed.y;
+                  if (v == null) return c.dataset.label + ": n/a";
+                  return c.dataset.label + ": $" + v.toFixed(1) + "M";
+                },
+              },
+            },
+          },
+          scales: {
+            x: { ticks: { color: "#93a0b8" }, grid: { color: "rgba(255,255,255,0.04)" } },
+            y: {
+              position: "left",
+              title: { display: true, text: "Sales $M", color: "#93a0b8" },
+              ticks: { color: "#93a0b8" },
+              grid: { color: "rgba(255,255,255,0.05)" },
+              min: 1200,
+            },
+            y1: {
+              position: "right",
+              title: { display: true, text: "Adj. EBITDA $M", color: "#93a0b8" },
+              ticks: { color: "#93a0b8" },
+              grid: { drawOnChartArea: false },
+              min: 0,
+            },
+          },
+        },
+      });
+
+      chartSegments = new Chart(document.getElementById("chartSegments"), {
+        type: "doughnut",
+        data: {
+          labels: BASE.segments.map((s) => s.name),
+          datasets: [{
+            data: BASE.segments.map((s) => s.sales),
+            backgroundColor: ["#3d9b6e", "#4c8dff", "#e0a54a"],
+            borderColor: "#121a2b",
+            borderWidth: 3,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "bottom", labels: { color: "#93a0b8", boxWidth: 12 } },
+            tooltip: {
+              callbacks: {
+                label: (c) => {
+                  const v = c.parsed;
+                  const pct = (v / BASE.sales) * 100;
+                  return ` ${c.label}: $${v.toFixed(1)}M (${pct.toFixed(1)}%)`;
+                },
+              },
+            },
+          },
+        },
+      });
+
+      chartTariff = new Chart(document.getElementById("chartTariff"), {
+        type: "bar",
+        data: {
+          labels: ["Gross tariff cost", "Recovered via price", "Net cost (unrecovered)", "Volume CM impact", "Net EBITDA impact"],
+          datasets: [{
+            label: "$M",
+            data: [0, 0, 0, 0, 0],
+            backgroundColor: [
+              "rgba(224,90,90,0.7)",
+              "rgba(91,185,138,0.7)",
+              "rgba(224,165,74,0.75)",
+              "rgba(155,123,255,0.7)",
+              "rgba(76,141,255,0.8)",
+            ],
+            borderRadius: 6,
+          }],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (c) => " $" + c.parsed.x.toFixed(1) + "M",
+              },
+            },
+          },
+          scales: {
+            x: {
+              ticks: { color: "#93a0b8", callback: (v) => "$" + v + "M" },
+              grid: { color: "rgba(255,255,255,0.05)" },
+            },
+            y: { ticks: { color: "#c5d0e4", font: { size: 11 } }, grid: { display: false } },
+          },
+        },
+      });
+    }
+
+    // ─── Concentration model ────────────────────────────────────────────
+    function concentrationModel() {
+      const hdDelta = +document.getElementById("hdVol").value / 100;
+      const lowDelta = +document.getElementById("lowVol").value / 100;
+      const cm = +document.getElementById("cm").value / 100;
+      const offset = +document.getElementById("offset").value / 100;
+
+      document.getElementById("hdVolLabel").textContent = fmtPct(hdDelta * 100, 0);
+      document.getElementById("lowVolLabel").textContent = fmtPct(lowDelta * 100, 0);
+      document.getElementById("cmLabel").textContent = fmtPct(cm * 100, 0);
+      document.getElementById("offsetLabel").textContent = fmtPct(offset * 100, 0);
+
+      const hdNew = BASE.hdSales * (1 + hdDelta);
+      const lowNew = BASE.lowSales * (1 + lowDelta);
+      const hdChange = hdNew - BASE.hdSales;
+      const lowChange = lowNew - BASE.lowSales;
+      const grossBigBoxChange = hdChange + lowChange;
+
+      // Offset only recovers a share of *losses* (not gains)
+      const losses = Math.min(0, hdChange) + Math.min(0, lowChange);
+      const recovered = -losses * offset;
+      const netSalesImpact = grossBigBoxChange + recovered;
+      const ebitdaImpact = netSalesImpact * cm;
+      const salesNew = BASE.sales + netSalesImpact;
+      const ebitdaNew = BASE.adjEbitda + ebitdaImpact;
+      const top2New = hdNew + lowNew;
+      const top2Pct = top2New / salesNew;
+
+      return {
+        hdNew, lowNew, hdChange, lowChange, recovered, netSalesImpact,
+        ebitdaImpact, salesNew, ebitdaNew, top2New, top2Pct, cm, offset,
+      };
+    }
+
+    function renderConcentration() {
+      const m = concentrationModel();
+      const cls = (n) => (Math.abs(n) < 0.05 ? "neu" : n > 0 ? "pos" : "neg");
+      document.getElementById("concOutputs").innerHTML = `
+        <div class="out"><div class="k">Net sales impact</div><div class="v ${cls(m.netSalesImpact)}">${fmtSignedM(m.netSalesImpact)}</div></div>
+        <div class="out"><div class="k">Adj. EBITDA impact</div><div class="v ${cls(m.ebitdaImpact)}">${fmtSignedM(m.ebitdaImpact)}</div></div>
+        <div class="out"><div class="k">Scenario sales</div><div class="v">${fmtM(m.salesNew)}</div></div>
+        <div class="out"><div class="k">Scenario Adj. EBITDA</div><div class="v">${fmtM(m.ebitdaNew)}</div></div>
+        <div class="out"><div class="k">Top-2 $</div><div class="v">${fmtM(m.top2New)}</div></div>
+        <div class="out"><div class="k">Top-2 % of sales</div><div class="v">${fmtPct(m.top2Pct * 100)}</div></div>
+      `;
+      const other = m.salesNew - m.top2New;
+      const rows = [
+        { name: "Home Depot", v: m.hdNew, pct: (m.hdNew / m.salesNew) * 100, cls: "hd" },
+        { name: "Lowe's", v: m.lowNew, pct: (m.lowNew / m.salesNew) * 100, cls: "low" },
+        { name: "All other", v: other, pct: (other / m.salesNew) * 100, cls: "oth" },
+      ];
+      document.getElementById("concBars").innerHTML = rows.map((r) => `
+        <div class="bar-row">
+          <div>${r.name}</div>
+          <div class="bar-track"><div class="bar-fill ${r.cls}" style="width:${Math.max(0, Math.min(100, r.pct))}%"></div></div>
+          <div style="text-align:right">${r.pct.toFixed(1)}%</div>
+        </div>`).join("");
+      return m;
+    }
+
+    // ─── Tariff model ───────────────────────────────────────────────────
+    function tariffModel(cm) {
+      const rate = +document.getElementById("tariffRate").value / 100;
+      const china = +document.getElementById("chinaShare").value / 100;
+      const pass = +document.getElementById("pass").value / 100;
+      const elast = +document.getElementById("elast").value / 100; // sales % drop per 1% price
+
+      document.getElementById("tariffRateLabel").textContent = fmtPct(rate * 100, 0);
+      document.getElementById("chinaShareLabel").textContent = fmtPct(china * 100, 0);
+      document.getElementById("passLabel").textContent = fmtPct(pass * 100, 0);
+      document.getElementById("elastLabel").textContent = elast.toFixed(2);
+
+      const chinaCogs = BASE.cogs * china;
+      const grossTariff = chinaCogs * rate;
+      const recovered = grossTariff * pass;
+      const netCost = grossTariff - recovered; // unrecovered COGS hit
+      const priceUpliftPct = recovered / BASE.sales; // as fraction of sales
+      const volumeLossPct = priceUpliftPct * elast; // fraction of sales lost
+      const volumeLossSales = BASE.sales * volumeLossPct;
+      const volumeCmHit = volumeLossSales * cm;
+      // Net EBITDA: -netCost - volumeCmHit  (price recovery already netted in netCost)
+      // Note: recovered via price restores revenue and gross profit; netCost is the margin leak.
+      const ebitdaImpact = -netCost - volumeCmHit;
+
+      return {
+        rate, china, pass, elast, chinaCogs, grossTariff, recovered, netCost,
+        priceUpliftPct, volumeLossPct, volumeLossSales, volumeCmHit, ebitdaImpact,
+      };
+    }
+
+    function renderTariff(cm) {
+      const t = tariffModel(cm);
+      const cls = (n) => (Math.abs(n) < 0.05 ? "neu" : n > 0 ? "pos" : "neg");
+      document.getElementById("tariffOutputs").innerHTML = `
+        <div class="out"><div class="k">China COGS base</div><div class="v">${fmtM(t.chinaCogs)}</div></div>
+        <div class="out"><div class="k">Gross tariff cost</div><div class="v neg">${fmtM(t.grossTariff)}</div></div>
+        <div class="out"><div class="k">Price recovery</div><div class="v pos">${fmtM(t.recovered)}</div></div>
+        <div class="out"><div class="k">Unrecovered cost</div><div class="v neg">${fmtM(t.netCost)}</div></div>
+        <div class="out"><div class="k">Implied price uplift</div><div class="v neu">${fmtPct(t.priceUpliftPct * 100)}</div></div>
+        <div class="out"><div class="k">Volume loss (sales)</div><div class="v neg">${fmtM(t.volumeLossSales)}</div></div>
+        <div class="out"><div class="k">Volume CM hit</div><div class="v neg">${fmtM(t.volumeCmHit)}</div></div>
+        <div class="out"><div class="k">Net Adj. EBITDA impact</div><div class="v ${cls(t.ebitdaImpact)}">${fmtSignedM(t.ebitdaImpact)}</div></div>
+      `;
+      if (chartTariff) {
+        chartTariff.data.datasets[0].data = [
+          t.grossTariff,
+          t.recovered,
+          t.netCost,
+          t.volumeCmHit,
+          t.ebitdaImpact,
+        ];
+        chartTariff.update("none");
+      }
+      return t;
+    }
+
+    // ─── Combined ───────────────────────────────────────────────────────
+    function renderCombined(c, t) {
+      const totalE = c.ebitdaImpact + t.ebitdaImpact;
+      const totalS = c.netSalesImpact - t.volumeLossSales; // tariff volume is sales loss
+      const ebitdaNew = BASE.adjEbitda + totalE;
+      const guideMid = 280; // midpoint of 275-285
+      const vsGuide = ebitdaNew - guideMid;
+      const cls = (n) => (Math.abs(n) < 0.05 ? "neu" : n > 0 ? "pos" : "neg");
+      document.getElementById("combinedOutputs").innerHTML = `
+        <div class="out"><div class="k">Concentration ΔEBITDA</div><div class="v ${cls(c.ebitdaImpact)}">${fmtSignedM(c.ebitdaImpact)}</div></div>
+        <div class="out"><div class="k">Tariff ΔEBITDA</div><div class="v ${cls(t.ebitdaImpact)}">${fmtSignedM(t.ebitdaImpact)}</div></div>
+        <div class="out"><div class="k">Combined ΔEBITDA</div><div class="v ${cls(totalE)}">${fmtSignedM(totalE)}</div></div>
+        <div class="out"><div class="k">Scenario Adj. EBITDA</div><div class="v">${fmtM(ebitdaNew)}</div></div>
+        <div class="out"><div class="k">vs 2026 guide mid ($280M)</div><div class="v ${cls(vsGuide)}">${fmtSignedM(vsGuide)}</div></div>
+        <div class="out"><div class="k">Approx. net sales Δ</div><div class="v ${cls(totalS)}">${fmtSignedM(totalS)}</div></div>
+      `;
+      return { totalE, ebitdaNew, totalS };
+    }
+
+    // ─── Audit ──────────────────────────────────────────────────────────
+    const auditLog = [];
+    function assert(name, cond, detail) {
+      auditLog.push({ name, ok: !!cond, detail: detail || "" });
+    }
+
+    function runAudit(c, t) {
+      auditLog.length = 0;
+
+      // Segment sum
+      const segSum = BASE.segments.reduce((s, x) => s + x.sales, 0);
+      assert("Segments sum to ~FY25 sales", Math.abs(segSum - BASE.sales) < 1.0, `${segSum.toFixed(1)} vs ${BASE.sales}`);
+
+      // Top-2
+      assert("HD+LOW = top2 dollars", Math.abs(BASE.hdSales + BASE.lowSales - BASE.top2) < 0.2, `${BASE.hdSales}+${BASE.lowSales}`);
+      assert("HD pct ≈ 22.5%", Math.abs(BASE.hdSales / BASE.sales - 0.225) < 0.002, (BASE.hdSales / BASE.sales).toFixed(4));
+      assert("LOW pct ≈ 20.9%", Math.abs(BASE.lowSales / BASE.sales - 0.209) < 0.002, (BASE.lowSales / BASE.sales).toFixed(4));
+
+      // COGS ratio
+      assert("COGS/sales ≈ 51.3%", Math.abs(BASE.cogs / BASE.sales - 0.513) < 0.002, (BASE.cogs / BASE.sales).toFixed(4));
+
+      // Chart.js present
+      assert("Chart.js loaded", typeof Chart !== "undefined", typeof Chart);
+
+      // Slider wiring
+      const ids = ["hdVol", "lowVol", "cm", "offset", "tariffRate", "chinaShare", "pass", "elast"];
+      ids.forEach((id) => assert("Control #" + id, !!document.getElementById(id), id));
+
+      // Concentration math identity
+      const hdD = +document.getElementById("hdVol").value / 100;
+      const expectedHd = BASE.hdSales * (1 + hdD);
+      assert("HD new = base*(1+d)", Math.abs(c.hdNew - expectedHd) < 1e-9, `${c.hdNew} vs ${expectedHd}`);
+
+      // Tariff identity
+      const rate = +document.getElementById("tariffRate").value / 100;
+      const china = +document.getElementById("chinaShare").value / 100;
+      const pass = +document.getElementById("pass").value / 100;
+      const expectedGross = BASE.cogs * china * rate;
+      assert("Gross tariff = COGS*china*rate", Math.abs(t.grossTariff - expectedGross) < 1e-6, `${t.grossTariff} vs ${expectedGross}`);
+      assert("Recovered + net = gross", Math.abs(t.recovered + t.netCost - t.grossTariff) < 1e-6);
+      assert("EBITDA impact = -(netCost+volCM)", Math.abs(t.ebitdaImpact - (-t.netCost - t.volumeCmHit)) < 1e-6);
+
+      // Zero-shock baselines
+      if (hdD === 0 && +document.getElementById("lowVol").value === 0) {
+        assert("Zero volume shock → ~0 conc. impact", Math.abs(c.netSalesImpact) < 0.01 && Math.abs(c.ebitdaImpact) < 0.01);
+      }
+      if (rate === 0) {
+        assert("Zero tariff → 0 tariff impact", Math.abs(t.ebitdaImpact) < 1e-9);
+      }
+
+      // Bounds
+      assert("Scenario sales positive", c.salesNew > 0);
+      assert("Top-2 pct in (0,1)", c.top2Pct > 0 && c.top2Pct < 1);
+
+      // Full pass-through + zero elast ⇒ only volume zero; net cost 0
+      // (not forcing sliders — just document invariant when applicable)
+      if (pass === 1 && rate > 0) {
+        assert("100% pass-through ⇒ netCost≈0", Math.abs(t.netCost) < 1e-6, String(t.netCost));
+      }
+
+      const fails = auditLog.filter((x) => !x.ok);
+      const lines = auditLog.map((x) =>
+        (x.ok ? "✓ " : "✗ ") + x.name + (x.detail ? "  [" + x.detail + "]" : "")
+      );
+      lines.push("");
+      lines.push(fails.length === 0
+        ? `PASS — ${auditLog.length} checks clean`
+        : `FAIL — ${fails.length}/${auditLog.length} checks failed`);
+      const panel = document.getElementById("audit-panel");
+      panel.textContent = lines.join("\n");
+      panel.className = fails.length ? "status-fail" : "status-ok";
+      // keep id for style reset
+      panel.id = "audit-panel";
+      return fails.length === 0;
+    }
+
+    // ─── Refresh all ────────────────────────────────────────────────────
+    function refresh() {
+      const c = renderConcentration();
+      const t = renderTariff(c.cm);
+      renderCombined(c, t);
+      runAudit(c, t);
+    }
+
+    function bind() {
+      ["hdVol", "lowVol", "cm", "offset", "tariffRate", "chinaShare", "pass", "elast"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", refresh);
+      });
+    }
+
+    // Boot
+    renderSegments();
+    initCharts();
+    bind();
+    refresh();
+
+    // Expose for manual console audit
+    window.HLMN_BRIEF = { BASE, refresh, concentrationModel, tariffModel };
+  })();
+  </script>
+</body>
+</html>
