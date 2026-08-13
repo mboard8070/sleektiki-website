@@ -4,6 +4,7 @@ import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 
 const tags = [
+  "Motion Graphics",
   "Creative AI",
   "Game Dev",
   "Tech Art",
@@ -23,11 +24,11 @@ export default function About() {
               className="text-lg text-[var(--text-secondary)]"
               style={{ lineHeight: 1.8, marginBottom: "2rem" }}
             >
-              Indie game developer, technical artist, and creative AI researcher
-              exploring the intersection of artificial intelligence and 3D
-              content creation. From shipping games on Steam to building local AI
-              systems on NVIDIA hardware, my work bridges traditional modeling
-              and animation pipelines with emerging AI-driven workflows.
+              Motion director, technical artist, and creative AI researcher.
+              Fifteen years of 3D, animation, and motion graphics, plus shipped
+              client work, exhibition pieces, and production AI systems. The work
+              bridges traditional modeling and animation pipelines with the
+              models and tools that generate the pictures.
             </p>
             <p className="text-[var(--text-muted)]" style={{ lineHeight: 1.8 }}>
               These cross-disciplinary experiences inform everything I build,

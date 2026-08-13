@@ -1,11 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 
 const titles = [
+  "Motion Director",
   "Technical Artist",
-  "Indie Developer",
   "Creative AI Researcher",
   "Educator",
 ];
@@ -107,13 +108,19 @@ export default function Hero() {
               style={{ marginTop: "2rem", boxShadow: "0 0 12px rgba(0, 212, 255, 0.4)" }}
             />
 
-            {/* Scroll indicator */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.2 }}
-              style={{ marginTop: "2.5rem" }}
+              transition={{ duration: 0.8, delay: 1.1 }}
+              className="flex flex-wrap items-center gap-3"
+              style={{ marginTop: "2rem" }}
             >
+              <Link
+                href="/reel"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
+              >
+                Watch the reel
+              </Link>
               <a
                 href="#projects"
                 className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors font-[family-name:var(--font-geist-mono)]"
@@ -154,7 +161,7 @@ export default function Hero() {
           >
             <div className="rounded-xl overflow-hidden border border-[var(--surface-border)]/30" style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}>
               <video
-                src="/videos/homepage_montage_web.mp4"
+                src="/videos/matthew_board_reel_2026_web.mp4"
                 autoPlay
                 muted
                 loop

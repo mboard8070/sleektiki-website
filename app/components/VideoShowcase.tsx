@@ -162,8 +162,8 @@ export default function VideoShowcase() {
       >
         <SectionHeading
           label="01 / Showcase"
-          title="AI-Generated Media"
-          subtitle="Automotive scene generation, product placement, character lighting, and LoRA-driven architectural visualization. Hover to play."
+          title="Motion + Creative AI"
+          subtitle="Exhibition animation, automotive cinematography, product placement, character lighting, and production systems. Hover to play."
         />
 
         {/* Montage hero video */}
@@ -173,7 +173,7 @@ export default function VideoShowcase() {
             style={{ marginBottom: "2.5rem" }}
           >
             <video
-              src="/videos/homepage_montage_web.mp4"
+              src="/videos/matthew_board_reel_2026_web.mp4"
               autoPlay
               muted
               loop
@@ -214,10 +214,10 @@ export default function VideoShowcase() {
         <ScrollReveal delay={0.3}>
           <div className="text-center" style={{ marginTop: "3rem" }}>
             <Link
-              href="/portfolio"
+              href="/reel"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
             >
-              View Full AI Portfolio
+              Watch the Reel
               <span>&rarr;</span>
             </Link>
           </div>

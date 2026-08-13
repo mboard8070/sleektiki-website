@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sleektiki.ai"),
   title: "Matthew Board | sleektiki.ai",
   description:
-    "Technical artist, indie developer, and creative AI researcher exploring the intersection of artificial intelligence and 3D content creation.",
+    "Motion director, technical artist, and creative AI researcher. Showreel, exhibition work, product motion, and production AI systems.",
   keywords: [
     "Matthew Board",
     "sleektiki",

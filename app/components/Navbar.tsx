@@ -72,6 +72,7 @@ const socials = [
 ];
 
 const navLinks = [
+  { href: "/reel", label: "Reel" },
   { href: "#about", label: "About" },
   { href: "#projects", label: "Projects" },
   { href: "/portfolio", label: "AI Portfolio" },
