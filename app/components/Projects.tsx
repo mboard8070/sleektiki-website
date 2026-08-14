@@ -116,6 +116,15 @@ const projects: Project[] = [
     image: "/images/projects/datatable-streamliner-assets.png",
   },
   {
+    title: "UE5 Configurator Demo",
+    slug: "ue5-configurator",
+    description:
+      "An Unreal Engine 5 product configurator built as a teaching demo for a student working on a trade-show production app. Mesh switching, color and material states, upgrade meshes, and vehicle rotation from mouse hover or Common UI focus plus the right thumbstick. Marketplace art, custom configurator systems.",
+    tags: ["UE5", "Common UI", "UMG", "Gamepad", "Materials", "Configurator"],
+    category: "creative",
+    image: "/images/projects/ue5-configurator-card.jpg",
+  },
+  {
     title: "Kamodo Steve: Janitor on Fire!",
     slug: "kamodo-steve",
     description:

@@ -963,6 +963,73 @@ const projects: ProjectDetail[] = [
     ],
   },
   {
+    slug: "ue5-configurator",
+    title: "UE5 Configurator Demo",
+    subtitle: "Mesh Switching, Materials, and Common UI",
+    description: [
+      "An Unreal Engine 5 product configurator built as a teaching demo for a student who was hitting the same problems in a trade-show production application. The goal was not a shipping product. It was a working reference for the interaction patterns that make a floor demo feel finished: swap the vehicle, change the finish, add upgrades, and inspect the result with mouse or gamepad.",
+      "Selecting a model swaps the displayed mesh. Color and material themes update the active look without leaving the inspect view. Upgrade choices spawn additional meshes onto the vehicle. Rotation is driven by mouse hover or by Common UI focus plus the right thumbstick, so the same inspect loop works on a kiosk with a mouse and on a controller.",
+      "The drone meshes and industrial hangar environment were sourced from the Unreal Marketplace. The custom work is the configurator itself: Common UI menus, mesh and material state, upgrade attachment, and the dual mouse/gamepad inspect path.",
+    ],
+    tags: ["UE5", "Common UI", "UMG", "Gamepad", "Materials", "Configurator"],
+    hero: "/images/projects/ue5-configurator.jpg",
+    gallery: [
+      { src: "/videos/ue5-configurator-demo.mp4", alt: "UE5 Configurator Demo", type: "video" },
+      { src: "/images/projects/ue5-configurator-menu.jpg", alt: "Main Menu — Common UI" },
+      { src: "/images/projects/ue5-configurator-buzz-flyer.jpg", alt: "Buzz Flyer — Mesh Switch" },
+      { src: "/images/projects/ue5-configurator-jet-streamline.jpg", alt: "Jet Streamline — Mesh Switch" },
+      { src: "/images/projects/ue5-configurator-luna-lift.jpg", alt: "Luna Lift — Yellow Theme" },
+      { src: "/images/projects/ue5-configurator-cirrus-metallic.jpg", alt: "Cirrus Circuit — Metallic Theme" },
+      { src: "/images/projects/ue5-configurator-upgrades.jpg", alt: "Upgrade Selection" },
+      { src: "/images/projects/ue5-configurator-signal.jpg", alt: "Signal Upgrade — Added Mesh" },
+    ],
+    features: [
+      {
+        title: "Mesh Switching",
+        description: "A left-rail model list swaps the displayed vehicle immediately. Each selection loads its mesh into the hangar inspect slot and updates the data card so the player always sees the active configuration.",
+      },
+      {
+        title: "Hover and Gamepad Orbit",
+        description: "The vehicle rotates from mouse hover or from Common UI focus plus the right thumbstick. The same inspect path works for a mouse kiosk and for a gamepad without a separate camera mode.",
+      },
+      {
+        title: "Upgrade Meshes",
+        description: "Upgrade picks such as Signal, Optics, and Speed attach extra meshes to the active vehicle. The added parts stay with the current model so the configuration reads as one assembled product, not a disconnected UI choice.",
+      },
+      {
+        title: "Color and Material States",
+        description: "White, yellow, black, and metallic themes swap material states on the current mesh. Finish changes do not reset the selected model, the orbit, or any attached upgrades.",
+      },
+      {
+        title: "Common UI",
+        description: "Menus, focus navigation, and widget state run through Common UI so mouse hover and gamepad focus stay aligned. That is the layer a trade-show build needs if the floor hardware might be a mouse, a controller, or both.",
+      },
+      {
+        title: "Marketplace Art, Custom Systems",
+        description: "Drone meshes and the industrial hangar came from the asset store so the demo could spend its time on interaction instead of content production. The reusable piece is the configurator logic, not the kit art.",
+      },
+    ],
+    links: [],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "A student was building a production configurator for a trade show and was stuck on the same cluster of Unreal problems that look simple on a feature list: swap meshes cleanly, keep material states coherent, add upgrade geometry when an option is selected, and let the player inspect the result with either a mouse or a gamepad. Those systems have to feel like one product, not four disconnected prototypes.",
+      },
+      {
+        heading: "Design Challenge",
+        body: "A floor demo fails if the inspect loop breaks when the input device changes. Hover-to-rotate is natural on a mouse. Gamepad users need focus plus the right stick. Common UI has to keep those paths on the same widgets. Upgrade meshes also have to attach to whichever vehicle is currently displayed without fighting the material state or the orbit.",
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I built a small, complete configurator instead of a slide deck of isolated examples. Marketplace drones and a hangar environment stood in for the student's product art so the lesson stayed on systems. Model buttons switch the displayed mesh. Theme buttons change color and material states. Upgrade buttons spawn additional meshes. Rotation is bound to mouse hover and to Common UI focus with the right thumbstick so the inspect behavior stays the same on both devices.",
+      },
+      {
+        heading: "Outcome",
+        body: "The demo is a working reference for the interaction layer a trade-show configurator needs: mesh switching, material states, upgrade attachment, and a shared mouse/gamepad inspect loop built on Common UI. The student could take those patterns into the production application instead of reverse-engineering them from a finished booth build.",
+      },
+    ],
+  },
+  {
     slug: "kamodo-steve",
     title: "Kamodo Steve: Janitor on Fire!",
     subtitle: "Solo-Developed Indie Game on Steam",
