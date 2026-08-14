@@ -10,7 +10,7 @@ export default function Contact() {
 
       <div className="max-w-2xl mx-auto">
         <SectionHeading
-          label="04 / Contact"
+          label="03 / Contact"
           title="Get in Touch"
           subtitle="Have a project in mind, want to collaborate, or just want to say hello?"
         />

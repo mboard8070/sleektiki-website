@@ -207,7 +207,7 @@ export default function Projects() {
     <section id="projects" className="relative px-6 border-t border-[var(--surface-border)]" style={{ paddingTop: "8rem", paddingBottom: "8rem" }}>
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          label="02 / Projects"
+          label="01 / Projects"
           title="Selected Work"
           subtitle="A selection of games, art, installations, and AI tools."
         />
