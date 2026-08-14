@@ -6,6 +6,9 @@ import BlogPreview from "./components/BlogPreview";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 function Divider() {
   return (
     <div style={{ height: "120px", width: "100%" }} aria-hidden="true" />
