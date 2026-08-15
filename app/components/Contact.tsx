@@ -10,9 +10,9 @@ export default function Contact() {
 
       <div className="max-w-2xl mx-auto">
         <SectionHeading
-          label="03 / Contact"
+          label="04 / Contact"
           title="Get in Touch"
-          subtitle="Have a project in mind, want to collaborate, or just want to say hello?"
+          subtitle="Roles in AI enablement, product visualization, and Unreal pipelines. I will relocate."
         />
 
         <ScrollReveal delay={0.1}>

@@ -1,6 +1,8 @@
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import WorkLanes from "./components/WorkLanes";
+import FeaturedWork from "./components/FeaturedWork";
 import Projects from "./components/Projects";
 import BlogPreview from "./components/BlogPreview";
 import Contact from "./components/Contact";
@@ -21,6 +23,8 @@ export default function Home() {
       <main className="relative z-[1]">
         <Navbar />
         <Hero />
+        <WorkLanes />
+        <FeaturedWork />
         <Projects />
         <BlogPreview />
         <Divider />

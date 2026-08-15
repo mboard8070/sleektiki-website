@@ -14,23 +14,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://sleektiki.ai"),
-  title: "Matthew Board | sleektiki.ai",
+  title: "Matthew Board — Creative Technologist | sleektiki.ai",
   description:
-    "Motion director, technical artist, and creative AI researcher. Showreel, exhibition work, product motion, and production AI systems.",
+    "Creative technologist. AI enablement, product visualization, Unreal pipelines, and the tools that make them repeatable.",
   keywords: [
     "Matthew Board",
     "sleektiki",
+    "creative technologist",
+    "AI enablement",
     "technical artist",
-    "game developer",
-    "creative AI",
-    "3D artist",
-    "NVIDIA",
+    "product visualization",
     "Unreal Engine",
+    "NVIDIA",
   ],
   openGraph: {
-    title: "Matthew Board | sleektiki.ai",
+    title: "Matthew Board — Creative Technologist | sleektiki.ai",
     description:
-      "Technical artist, indie developer, and creative AI researcher.",
+      "AI enablement, product visualization, and Unreal production pipelines.",
     url: "https://sleektiki.ai",
     siteName: "sleektiki.ai",
     type: "website",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matthew Board | sleektiki.ai",
+    title: "Matthew Board — Creative Technologist | sleektiki.ai",
     description:
-      "Technical artist, indie developer, and creative AI researcher.",
+      "AI enablement, product visualization, and Unreal production pipelines.",
     images: ["https://sleektiki.ai/images/sleektiki_banner.jpeg"],
   },
 };

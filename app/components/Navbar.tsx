@@ -72,13 +72,12 @@ const socials = [
 ];
 
 const navLinks = [
+  { href: "#work", label: "Work" },
   { href: "/reel", label: "Reel" },
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "/portfolio", label: "AI Portfolio" },
-  { href: "/3d-art", label: "3D Art" },
-  { href: "/maude", label: "MAUDE" },
+  { href: "/3d-art", label: "3D" },
+  { href: "/maude", label: "Systems" },
   { href: "/blog", label: "Blog" },
+  { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -139,7 +138,7 @@ export default function Navbar() {
           ))}
 
           {/* Social icons */}
-          <div className="flex items-center gap-3 ml-4 pl-4 border-l border-[var(--surface-border)]">
+          <div className="hidden lg:flex items-center gap-3 ml-4 pl-4 border-l border-[var(--surface-border)]">
             {socials.map((s) => (
               <a
                 key={s.name}

@@ -91,6 +91,10 @@ export default function Footer() {
                 Reel
               </Link>
               <span>&middot;</span>
+              <Link href="/portfolio" className="hover:text-[var(--accent)] transition-colors">
+                AI stills
+              </Link>
+              <span>&middot;</span>
               <Link href="/blog" className="hover:text-[var(--accent)] transition-colors">
                 Blog
               </Link>

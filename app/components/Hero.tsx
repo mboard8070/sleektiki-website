@@ -1,32 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
-
-const titles = [
-  "Motion Director",
-  "Technical Artist",
-  "Creative AI Researcher",
-  "Educator",
-];
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [titleIndex, setTitleIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % titles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <section
       className="relative overflow-hidden"
-      style={{ height: "100vh", display: "flex", alignItems: "flex-end" }}
+      style={{ minHeight: "100vh", display: "flex", alignItems: "flex-end" }}
     >
-      {/* Radial vignette overlay */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
@@ -36,10 +18,11 @@ export default function Hero() {
         }}
       />
 
-      {/* Bottom fade to page background */}
-      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#050508] to-transparent" style={{ height: "12rem", zIndex: 2 }} />
+      <div
+        className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#050508] to-transparent"
+        style={{ height: "12rem", zIndex: 2 }}
+      />
 
-      {/* Content — two-column: text left, video right */}
       <div
         className="relative w-full"
         style={{
@@ -50,116 +33,93 @@ export default function Hero() {
         }}
       >
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-end gap-8 lg:gap-12">
-          {/* Left — text */}
-          <div className="flex-shrink-0">
-            {/* Logo / brand */}
-            <motion.div
+          <div className="flex-shrink-0 lg:max-w-[42%]">
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="text-sm tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
+              style={{ marginBottom: "1rem" }}
             >
-              <p
-                className="text-sm tracking-[0.3em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
-                style={{ marginBottom: "1rem" }}
-              >
-                sleektiki.ai
-              </p>
-            </motion.div>
+              sleektiki.ai
+            </motion.p>
 
-            {/* Name */}
             <motion.h1
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
               className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight"
-              style={{ marginBottom: "1.25rem" }}
+              style={{ marginBottom: "0.75rem" }}
             >
               Matthew Board
             </motion.h1>
 
-            {/* Rotating titles */}
-            <motion.div
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="text-lg sm:text-xl text-[var(--text-primary)]"
+              style={{ marginBottom: "1rem" }}
+            >
+              Creative technologist
+            </motion.p>
+
+            <motion.p
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex items-center"
-              style={{ height: "2.5rem" }}
+              className="text-base text-[var(--text-secondary)] max-w-md"
+              style={{ lineHeight: 1.7 }}
             >
-              <AnimatePresence mode="wait">
-                <motion.span
-                  key={titleIndex}
-                  initial={{ opacity: 0, y: 16, filter: "blur(4px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  exit={{ opacity: 0, y: -16, filter: "blur(4px)" }}
-                  transition={{ duration: 0.5 }}
-                  className="text-base sm:text-lg text-[var(--text-secondary)] font-[family-name:var(--font-geist-mono)]"
-                >
-                  {titles[titleIndex]}
-                </motion.span>
-              </AnimatePresence>
-            </motion.div>
+              I build AI and Unreal production pipelines, then teach teams how
+              to ship with them. Product pictures, motion, and tools that
+              non-specialists can actually run.
+            </motion.p>
 
-            {/* Accent line */}
             <motion.div
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
               transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
               className="h-[2px] w-24 bg-[var(--accent)] origin-left"
-              style={{ marginTop: "2rem", boxShadow: "0 0 12px rgba(0, 212, 255, 0.4)" }}
+              style={{
+                marginTop: "2rem",
+                boxShadow: "0 0 12px rgba(0, 212, 255, 0.4)",
+              }}
             />
 
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
               className="flex flex-wrap items-center gap-3"
               style={{ marginTop: "2rem" }}
             >
+              <a
+                href="#work"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
+              >
+                See the work
+              </a>
               <Link
                 href="/reel"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--surface-border)] text-sm text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--accent)] transition-colors"
               >
                 Watch the reel
               </Link>
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 text-xs tracking-widest uppercase text-[var(--text-muted)] hover:text-[var(--accent)] transition-colors font-[family-name:var(--font-geist-mono)]"
-              >
-                Scroll
-                <motion.span
-                  animate={{ y: [0, 4, 0] }}
-                  transition={{
-                    repeat: Infinity,
-                    duration: 2,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <path d="m6 9 6 6 6-6" />
-                  </svg>
-                </motion.span>
-              </a>
             </motion.div>
           </div>
 
-          {/* Right — montage video (offset upward for asymmetry) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
+            transition={{ duration: 1, delay: 0.55 }}
             className="w-full lg:max-w-[55%] flex-shrink"
-            style={{ marginBottom: "8rem" }}
+            style={{ marginBottom: "2rem" }}
           >
-            <div className="rounded-xl overflow-hidden border border-[var(--surface-border)]/30" style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}>
+            <div
+              className="rounded-xl overflow-hidden border border-[var(--surface-border)]/30"
+              style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}
+            >
               <video
                 src="/videos/matthew_board_reel_2026_web.mp4"
                 autoPlay
@@ -172,7 +132,6 @@ export default function Hero() {
           </motion.div>
         </div>
       </div>
-
     </section>
   );
 }

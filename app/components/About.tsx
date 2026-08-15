@@ -4,12 +4,12 @@ import SectionHeading from "./SectionHeading";
 import ScrollReveal from "./ScrollReveal";
 
 const tags = [
-  "Motion Graphics",
-  "Creative AI",
-  "Game Dev",
-  "Tech Art",
-  "3D Modeling",
-  "Animation",
+  "AI Enablement",
+  "Product Viz",
+  "Unreal",
+  "Technical Art",
+  "Generative Video",
+  "Teaching",
 ];
 
 export default function About() {
@@ -24,16 +24,16 @@ export default function About() {
               className="text-lg text-[var(--text-secondary)]"
               style={{ lineHeight: 1.8, marginBottom: "2rem" }}
             >
-              Motion director, technical artist, and creative AI researcher.
-              Fifteen years of 3D, animation, and motion graphics, plus shipped
-              client work, exhibition pieces, and production AI systems. The work
-              bridges traditional modeling and animation pipelines with the
-              models and tools that generate the pictures.
+              Creative technologist. I build the pipeline, then enable the team
+              that has to run it. Fifteen years of 3D, motion, and Unreal,
+              plus shipped client work, a Sundance-licensed likeness, and
+              production AI systems on NVIDIA DGX Spark.
             </p>
             <p className="text-[var(--text-muted)]" style={{ lineHeight: 1.8 }}>
-              These cross-disciplinary experiences inform everything I build,
-              preparing the next generation of digital creators to work
-              alongside AI tools rather than be displaced by them.
+              Unreal Authorized Instructor. Trained 50+ working professionals,
+              including NASA and U.S. Army engineers. Former faculty at Miami
+              University and Columbia College Chicago. The point is not more
+              tools. It is a workflow a non-specialist can repeat on Monday.
             </p>
           </ScrollReveal>
 

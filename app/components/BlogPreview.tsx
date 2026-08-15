@@ -12,7 +12,7 @@ export default function BlogPreview() {
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          label="02 / Blog"
+          label="03 / Blog"
           title="Blog"
           subtitle="Notes on local AI systems, technical art, visualization, and production workflows."
         />
