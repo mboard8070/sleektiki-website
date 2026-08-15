@@ -250,6 +250,7 @@ export default function ThreeDArt() {
                       quality={90}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      style={{ objectPosition: project.coverPosition || "center" }}
                     />
                     <div className="absolute top-3 right-3 bg-black/70 backdrop-blur-sm text-white text-xs font-medium px-2.5 py-1 rounded-full border border-white/20">
                       {project.assets.length}{" "}

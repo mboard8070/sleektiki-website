@@ -17,6 +17,8 @@ export interface ArtProject {
   tags: string[];
   cover: string;
   coverAspect: number;
+  /** CSS object-position for the 4:3 card crop. Defaults to center. */
+  coverPosition?: string;
   assets: ArtAsset[];
 }
 
@@ -451,6 +453,8 @@ export const artProjects: ArtProject[] = [
     tags: [],
     cover: "/images/artstation/perseus/01.webp",
     coverAspect: 0.6211,
+    // Tall full-figure render: bias the 4:3 card crop to Perseus's head, torso, and Medusa's head
+    coverPosition: "center 12%",
     assets: [
       { type: "image", src: "/images/artstation/perseus/01.webp", width: 1590, height: 2560 },
       { type: "image", src: "/images/artstation/perseus/02.webp", width: 1327, height: 2560 },
