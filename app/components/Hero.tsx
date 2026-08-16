@@ -97,7 +97,7 @@ export default function Hero() {
               <a href="#work" className="btn">
                 See the work
               </a>
-              <Link href="/reel" className="btn-secondary">
+              <Link href="/showreel" className="btn-secondary">
                 Watch the reel
               </Link>
             </motion.div>

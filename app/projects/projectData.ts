@@ -10,7 +10,7 @@ export interface ProjectDetail {
   description: string[];
   tags: string[];
   hero: string;
-  gallery: { src: string; alt: string; type?: "image" | "video" }[];
+  gallery: { src: string; alt: string; type?: "image" | "video"; aspect?: string }[];
   links: { label: string; url: string }[];
   appStoreBadge?: { src: string; alt: string; url?: string };
   youtubeIds?: string[];
@@ -569,9 +569,9 @@ const projects: ProjectDetail[] = [
     tags: ["SwiftUI", "iOS", "Cloud API", "Batch Processing", "Photo Editor", "Push Notifications"],
     hero: "/images/projects/pixelus_screenshot_1.png",
     gallery: [
-      { src: "/videos/pixelus/tide_surf_10s.mp4", alt: "Tide Surf — 10s product motion", type: "video" },
-      { src: "/videos/pixelus/deep_sea_10s.mp4", alt: "Old Spice Deep Sea — 10s product motion", type: "video" },
-      { src: "/videos/pixelus/eaglefangs_10s.mp4", alt: "Old Spice Eaglefangs — 10s product motion", type: "video" },
+      { src: "/videos/pixelus/tide_surf_10s.mp4?v=lock1", alt: "Tide Surf — locked product motion", type: "video", aspect: "1 / 1" },
+      { src: "/videos/pixelus/deep_sea_10s.mp4?v=lock1", alt: "Old Spice Deep Sea — locked product motion", type: "video", aspect: "1 / 1" },
+      { src: "/videos/pixelus/eaglefangs_10s.mp4?v=lock1", alt: "Old Spice Eaglefangs — locked product motion", type: "video", aspect: "1 / 1" },
       { src: "/images/projects/pixelus_screenshot_1.png", alt: "Pixelus Mobile - Home Screen" },
       { src: "/images/projects/pixelus_screenshot_9.png", alt: "Pixelus Mobile - Style Selection" },
       { src: "/images/projects/pixelus_screenshot_10.png", alt: "Pixelus Mobile - Platform Selection" },

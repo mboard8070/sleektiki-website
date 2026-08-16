@@ -70,11 +70,16 @@ export default function ProjectContent({
                 {item.type === "video" ? (
                   <video
                     src={item.src}
-                    className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
-                    style={{ aspectRatio: "16 / 9", background: "#000" }}
+                    className="w-full rounded-lg border border-[var(--surface-border)] object-contain"
+                    style={{
+                      aspectRatio: item.aspect || "16 / 9",
+                      background: "#000",
+                    }}
                     controls
                     playsInline
                     preload="metadata"
+                    loop
+                    muted
                   />
                 ) : (
                   <img

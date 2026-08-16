@@ -9,67 +9,21 @@ import ScrollReveal from "../components/ScrollReveal";
 import SectionHeading from "../components/SectionHeading";
 import { reelCases, reelClips, stills } from "./reelData";
 
-function formatTime(seconds: number) {
-  if (!Number.isFinite(seconds) || seconds < 0) return "0:00";
-  const m = Math.floor(seconds / 60);
-  const s = Math.floor(seconds % 60);
-  return `${m}:${s.toString().padStart(2, "0")}`;
-}
-
-const REEL_WEB = "/videos/matthew_board_reel_2026_web.mp4?v=20260815-c";
-const REEL_MASTER = "/videos/matthew_board_reel_2026.mp4?v=20260815-c";
+const REEL_WEB = "/videos/matthew_board_reel_2026_web.mp4?v=20260816-a";
+const REEL_MASTER = "/videos/matthew_board_reel_2026.mp4?v=20260816-a";
 
 function HeroPlayer() {
-  const wrapRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
-  const [muted, setMuted] = useState(true);
-  const [progress, setProgress] = useState(0);
-  const [duration, setDuration] = useState(0);
-  const [showBar, setShowBar] = useState(false);
-  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  const scheduleHide = () => {
-    if (hideTimer.current) clearTimeout(hideTimer.current);
-    hideTimer.current = setTimeout(() => {
-      const v = videoRef.current;
-      if (v && !v.paused) setShowBar(false);
-    }, 1400);
-  };
-
-  const revealBar = () => {
-    setShowBar(true);
-    scheduleHide();
-  };
-
-  useEffect(() => {
-    return () => {
-      if (hideTimer.current) clearTimeout(hideTimer.current);
-    };
-  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
-    const onTime = () => {
-      setProgress(video.currentTime);
-      setDuration(video.duration || 0);
-    };
-    const onPlay = () => {
-      setPlaying(true);
-      scheduleHide();
-    };
-    const onPause = () => {
-      setPlaying(false);
-      setShowBar(true);
-    };
-    video.addEventListener("timeupdate", onTime);
-    video.addEventListener("loadedmetadata", onTime);
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
     video.addEventListener("play", onPlay);
     video.addEventListener("pause", onPause);
     return () => {
-      video.removeEventListener("timeupdate", onTime);
-      video.removeEventListener("loadedmetadata", onTime);
       video.removeEventListener("play", onPlay);
       video.removeEventListener("pause", onPause);
     };
@@ -82,20 +36,6 @@ function HeroPlayer() {
     else video.pause();
   };
 
-  const seek = (value: number) => {
-    const video = videoRef.current;
-    if (!video) return;
-    video.currentTime = value;
-    setProgress(value);
-  };
-
-  const toggleFullscreen = () => {
-    const el = wrapRef.current;
-    if (!el) return;
-    if (document.fullscreenElement) void document.exitFullscreen();
-    else void el.requestFullscreen();
-  };
-
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       const tag = (e.target as HTMLElement | null)?.tagName;
@@ -103,33 +43,19 @@ function HeroPlayer() {
       if (e.code === "Space" || e.key === "k" || e.key === "K") {
         e.preventDefault();
         togglePlay();
-      } else if (e.key === "m" || e.key === "M") {
-        setMuted((m) => !m);
-      } else if (e.key === "f" || e.key === "F") {
-        toggleFullscreen();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
-  const barVisible = !playing || showBar;
-
   return (
-    <div
-      ref={wrapRef}
-      className="relative bg-black"
-      style={{ height: "100svh" }}
-      onMouseMove={revealBar}
-      onMouseLeave={() => {
-        if (videoRef.current && !videoRef.current.paused) setShowBar(false);
-      }}
-    >
+    <div className="relative bg-black" style={{ height: "100svh" }}>
       <video
         ref={videoRef}
         src={REEL_WEB}
         poster="/images/portfolio/reel_poster.jpg"
-        muted={muted}
+        muted
         playsInline
         autoPlay
         loop
@@ -137,87 +63,30 @@ function HeroPlayer() {
         onClick={togglePlay}
         className="absolute inset-0 w-full h-full object-contain cursor-pointer"
       />
-
-      <button
-        type="button"
-        onClick={togglePlay}
-        aria-label="Play reel"
-        className="absolute z-10 transition-opacity duration-300"
-        style={{
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "4.5rem",
-          height: "4.5rem",
-          borderRadius: "999px",
-          background: "rgba(5,5,8,0.55)",
-          border: "1px solid rgba(255,255,255,0.35)",
-          display: "grid",
-          placeItems: "center",
-          opacity: playing ? 0 : 1,
-          pointerEvents: playing ? "none" : "auto",
-        }}
-      >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
-          <path d="M8 5.5v13l11-6.5-11-6.5z" />
-        </svg>
-      </button>
-
-      <div
-        className="absolute left-0 right-0 bottom-0 z-10 transition-opacity duration-300"
-        style={{
-          opacity: barVisible ? 1 : 0,
-          pointerEvents: barVisible ? "auto" : "none",
-          padding: "2.4rem 1.25rem 1rem",
-          background:
-            "linear-gradient(180deg, transparent 0%, rgba(5,5,8,0.78) 100%)",
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="max-w-7xl mx-auto flex items-center gap-3">
-          <button
-            type="button"
-            onClick={togglePlay}
-            aria-label={playing ? "Pause" : "Play"}
-            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
-            style={{ minWidth: "3.25rem", textAlign: "left" }}
-          >
-            {playing ? "Pause" : "Play"}
-          </button>
-          <span className="text-xs font-[family-name:var(--font-geist-mono)] text-white/55 w-10">
-            {formatTime(progress)}
-          </span>
-          <input
-            type="range"
-            min={0}
-            max={duration || 0}
-            step={0.1}
-            value={progress}
-            onChange={(e) => seek(Number(e.target.value))}
-            aria-label="Reel progress"
-            className="flex-1 accent-[var(--accent)] h-1 bg-white/20"
-          />
-          <span className="text-xs font-[family-name:var(--font-geist-mono)] text-white/55 w-10 text-right">
-            {formatTime(duration)}
-          </span>
-          <button
-            type="button"
-            onClick={() => setMuted((m) => !m)}
-            aria-label={muted ? "Unmute" : "Mute"}
-            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
-          >
-            {muted ? "Unmute" : "Mute"}
-          </button>
-          <button
-            type="button"
-            onClick={toggleFullscreen}
-            aria-label="Fullscreen"
-            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
-          >
-            Full
-          </button>
-        </div>
-      </div>
+      {!playing && (
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label="Play reel"
+          className="absolute z-10"
+          style={{
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            width: "4.25rem",
+            height: "4.25rem",
+            borderRadius: "999px",
+            background: "rgba(5,5,8,0.45)",
+            border: "1px solid rgba(255,255,255,0.3)",
+            display: "grid",
+            placeItems: "center",
+          }}
+        >
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
+            <path d="M8 5.5v13l11-6.5-11-6.5z" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }

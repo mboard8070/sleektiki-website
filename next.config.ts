@@ -25,6 +25,17 @@ const nextConfig: NextConfig = {
           { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
         ],
       },
+      {
+        source: "/showreel",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "private, no-store, no-cache, must-revalidate, max-age=0",
+          },
+          { key: "CDN-Cache-Control", value: "no-store" },
+          { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
+        ],
+      },
     ];
   },
 };
