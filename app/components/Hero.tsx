@@ -115,7 +115,7 @@ export default function Hero() {
               style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}
             >
               <video
-                src="/videos/matthew_board_reel_2026_web.mp4"
+                src="/videos/matthew_board_reel_2026_web.mp4?v=20260815-c"
                 autoPlay
                 muted
                 loop

@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollReveal from "../components/ScrollReveal";
@@ -17,12 +16,37 @@ function formatTime(seconds: number) {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
+const REEL_WEB = "/videos/matthew_board_reel_2026_web.mp4?v=20260815-c";
+const REEL_MASTER = "/videos/matthew_board_reel_2026.mp4?v=20260815-c";
+
 function HeroPlayer() {
+  const wrapRef = useRef<HTMLSectionElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [showBar, setShowBar] = useState(true);
+  const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scheduleHide = () => {
+    if (hideTimer.current) clearTimeout(hideTimer.current);
+    hideTimer.current = setTimeout(() => {
+      const v = videoRef.current;
+      if (v && !v.paused) setShowBar(false);
+    }, 1600);
+  };
+
+  const revealBar = () => {
+    setShowBar(true);
+    scheduleHide();
+  };
+
+  useEffect(() => {
+    return () => {
+      if (hideTimer.current) clearTimeout(hideTimer.current);
+    };
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -31,8 +55,14 @@ function HeroPlayer() {
       setProgress(video.currentTime);
       setDuration(video.duration || 0);
     };
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
+    const onPlay = () => {
+      setPlaying(true);
+      scheduleHide();
+    };
+    const onPause = () => {
+      setPlaying(false);
+      setShowBar(true);
+    };
     video.addEventListener("timeupdate", onTime);
     video.addEventListener("loadedmetadata", onTime);
     video.addEventListener("play", onPlay);
@@ -59,119 +89,133 @@ function HeroPlayer() {
     setProgress(value);
   };
 
+  const toggleFullscreen = () => {
+    const el = wrapRef.current;
+    if (!el) return;
+    if (document.fullscreenElement) void document.exitFullscreen();
+    else void el.requestFullscreen();
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      const tag = (e.target as HTMLElement | null)?.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA") return;
+      if (e.code === "Space" || e.key === "k" || e.key === "K") {
+        e.preventDefault();
+        togglePlay();
+      } else if (e.key === "m" || e.key === "M") {
+        setMuted((m) => !m);
+      } else if (e.key === "f" || e.key === "F") {
+        toggleFullscreen();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const barVisible = !playing || showBar;
+
   return (
-    <section className="relative" style={{ minHeight: "100vh" }}>
+    <section
+      ref={wrapRef}
+      className="relative bg-black"
+      style={{ height: "100vh" }}
+      onMouseMove={revealBar}
+      onMouseLeave={() => {
+        if (videoRef.current && !videoRef.current.paused) setShowBar(false);
+      }}
+    >
       <video
         ref={videoRef}
-        src="/videos/matthew_board_reel_2026_web.mp4"
+        src={REEL_WEB}
         poster="/images/portfolio/reel_poster.jpg"
         muted={muted}
         playsInline
         autoPlay
         loop
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover"
-      />
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "linear-gradient(180deg, rgba(5,5,8,0.18) 0%, rgba(5,5,8,0.05) 38%, rgba(5,5,8,0.62) 100%)",
-        }}
+        onClick={togglePlay}
+        className="absolute inset-0 w-full h-full object-contain cursor-pointer"
       />
 
-      <div
-        className="relative z-10 flex flex-col justify-end"
+      <button
+        type="button"
+        onClick={togglePlay}
+        aria-label="Play reel"
+        className="absolute z-10 transition-opacity duration-300"
         style={{
-          minHeight: "100vh",
-          paddingLeft: "max(1.5rem, 5vw)",
-          paddingRight: "max(1.5rem, 5vw)",
-          paddingBottom: "2.5rem",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "4.5rem",
+          height: "4.5rem",
+          borderRadius: "999px",
+          background: "rgba(5,5,8,0.55)",
+          border: "1px solid rgba(255,255,255,0.35)",
+          display: "grid",
+          placeItems: "center",
+          opacity: playing ? 0 : 1,
+          pointerEvents: playing ? "none" : "auto",
         }}
       >
-        <div className="max-w-7xl mx-auto w-full">
-          <motion.p
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-xs tracking-[0.35em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
-            style={{ marginBottom: "1rem" }}
-          >
-            Showreel 2026
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.35 }}
-            className="text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight"
-            style={{ maxWidth: "16ch", lineHeight: 0.95, marginBottom: "1.25rem" }}
-          >
-            Motion Graphics + Creative AI
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-base sm:text-lg text-[var(--text-secondary)] max-w-2xl"
-            style={{ lineHeight: 1.7, marginBottom: "2rem" }}
-          >
-            Exhibition animation, product motion, cinematic AI, and the
-            systems that make the work. Directed, generated, and cut by
-            Matthew Board.
-          </motion.p>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white" aria-hidden>
+          <path d="M8 5.5v13l11-6.5-11-6.5z" />
+        </svg>
+      </button>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.65 }}
-            className="flex flex-wrap items-center gap-3"
-            style={{ marginBottom: "1.75rem" }}
+      <div
+        className="absolute left-0 right-0 bottom-0 z-10 transition-opacity duration-300"
+        style={{
+          opacity: barVisible ? 1 : 0,
+          pointerEvents: barVisible ? "auto" : "none",
+          padding: "2.4rem 1.25rem 1rem",
+          background:
+            "linear-gradient(180deg, transparent 0%, rgba(5,5,8,0.78) 100%)",
+        }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="max-w-7xl mx-auto flex items-center gap-3">
+          <button
+            type="button"
+            onClick={togglePlay}
+            aria-label={playing ? "Pause" : "Play"}
+            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
+            style={{ minWidth: "3.25rem", textAlign: "left" }}
           >
-            <button
-              onClick={togglePlay}
-              className="btn"
-            >
-              {playing ? "Pause reel" : "Play reel"}
-            </button>
-            <button
-              onClick={() => setMuted((m) => !m)}
-              className="btn-secondary"
-            >
-              {muted ? "Unmute" : "Mute"}
-            </button>
-            <a
-              href="/videos/matthew_board_reel_2026.mp4"
-              download
-              className="btn-secondary"
-            >
-              Download MP4
-            </a>
-            <Link
-              href="mailto:matt@sleektiki.ai"
-              className="btn-secondary"
-            >
-              Email Matt
-            </Link>
-          </motion.div>
-
-          <div className="flex items-center gap-4">
-            <span className="text-xs font-[family-name:var(--font-geist-mono)] text-[var(--text-muted)] w-10">
-              {formatTime(progress)}
-            </span>
-            <input
-              type="range"
-              min={0}
-              max={duration || 0}
-              step={0.1}
-              value={progress}
-              onChange={(e) => seek(Number(e.target.value))}
-              aria-label="Reel progress"
-              className="flex-1 accent-[var(--accent)] h-1 bg-[var(--surface-border)]"
-            />
-            <span className="text-xs font-[family-name:var(--font-geist-mono)] text-[var(--text-muted)] w-10 text-right">
-              {formatTime(duration)}
-            </span>
-          </div>
+            {playing ? "Pause" : "Play"}
+          </button>
+          <span className="text-xs font-[family-name:var(--font-geist-mono)] text-white/55 w-10">
+            {formatTime(progress)}
+          </span>
+          <input
+            type="range"
+            min={0}
+            max={duration || 0}
+            step={0.1}
+            value={progress}
+            onChange={(e) => seek(Number(e.target.value))}
+            aria-label="Reel progress"
+            className="flex-1 accent-[var(--accent)] h-1 bg-white/20"
+          />
+          <span className="text-xs font-[family-name:var(--font-geist-mono)] text-white/55 w-10 text-right">
+            {formatTime(duration)}
+          </span>
+          <button
+            type="button"
+            onClick={() => setMuted((m) => !m)}
+            aria-label={muted ? "Unmute" : "Mute"}
+            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
+          >
+            {muted ? "Unmute" : "Mute"}
+          </button>
+          <button
+            type="button"
+            onClick={toggleFullscreen}
+            aria-label="Fullscreen"
+            className="text-white/90 hover:text-white text-sm font-[family-name:var(--font-geist-mono)]"
+          >
+            Full
+          </button>
         </div>
       </div>
     </section>
@@ -234,6 +278,50 @@ export default function ReelExperience() {
         <HeroPlayer />
 
         <section
+          className="relative bg-black border-t border-[var(--surface-border)]"
+          style={{ paddingTop: "2.5rem", paddingBottom: "2.5rem" }}
+        >
+          <div
+            className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+            style={{
+              paddingLeft: "max(1.5rem, 5vw)",
+              paddingRight: "max(1.5rem, 5vw)",
+            }}
+          >
+            <div>
+              <p
+                className="text-xs tracking-[0.35em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)]"
+                style={{ marginBottom: "0.75rem" }}
+              >
+                Showreel 2026
+              </p>
+              <h1
+                className="text-3xl sm:text-5xl font-bold tracking-tight"
+                style={{ lineHeight: 0.98, marginBottom: "0.85rem" }}
+              >
+                Motion Graphics + Creative AI
+              </h1>
+              <p
+                className="text-base text-[var(--text-secondary)] max-w-2xl"
+                style={{ lineHeight: 1.7 }}
+              >
+                Exhibition animation, product motion, cinematic AI, and the
+                systems that make the work. Directed, generated, and cut by
+                Matthew Board.
+              </p>
+            </div>
+            <div className="flex flex-wrap items-center gap-3">
+              <a href={REEL_MASTER} download className="btn">
+                Download MP4
+              </a>
+              <Link href="mailto:matt@sleektiki.ai" className="btn-secondary">
+                Email Matt
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section
           className="relative border-t border-[var(--surface-border)]"
           style={{ paddingTop: "6rem", paddingBottom: "4rem" }}
         >
@@ -280,7 +368,7 @@ export default function ReelExperience() {
             <SectionHeading
               label="01 / Selected"
               title="Case studies"
-              subtitle="Six pieces that cover exhibition, advertising, product, character, and systems."
+              subtitle="Four pieces that cover exhibition, advertising, product, and character."
             />
 
             <div className="grid md:grid-cols-2 gap-8">

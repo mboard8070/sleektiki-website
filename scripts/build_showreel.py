@@ -289,7 +289,7 @@ def mix_score(src: Path, dest: Path, crf: int = 20) -> None:
             "-filter_complex",
             (
                 "[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,"
-                "volume=0.58,afade=t=in:st=0:d=0.8,afade=t=out:st=58:d=3.5[a]"
+                "volume=0.58,afade=t=in:st=0:d=0.8,afade=t=out:st=38:d=3.2[a]"
             ),
             "-map",
             "0:v:0",
@@ -376,51 +376,34 @@ def main() -> int:
     lt02 = lower_third("02", "CINEMATIC AI", "Cadillac Escalade  ·  Red Carpet")
     lt03 = lower_third("03", "CINEMATIC AI", "Chevrolet Blazer  ·  World Transitions")
     lt04 = lower_third("04", "MOTION", "Dearfoams  ·  EasyMellow")
-    lt05 = lower_third("05", "MOTION", "Dearfoams  ·  Comfort System")
-    lt06 = lower_third("06", "PRODUCT", "Tide  ·  Surf")
-    lt07 = lower_third("07", "PRODUCT", "Old Spice  ·  Deep Sea")
-    lt08 = lower_third("08", "PRODUCT", "Old Spice  ·  Eaglefangs")
-    lt09 = lower_third("09", "CHARACTER", "Astronaut  ·  UE5 Path Tracing")
-    lt10 = lower_third("10", "EXHIBITION", "Dusty  ·  CAC  ·  Blink 2026")
+    lt05 = lower_third("05", "CHARACTER", "Astronaut  ·  UE5 Path Tracing")
+    lt06 = lower_third("06", "EXHIBITION", "Dusty  ·  CAC  ·  Blink 2026")
 
     title_v = CLIPS / "00_title.mp4"
     bison_v = CLIPS / "01_bison.mp4"
     escalade_v = CLIPS / "02_escalade.mp4"
     blazer_v = CLIPS / "03_blazer.mp4"
-    easy_v = CLIPS / "04_easymellow.mp4"
-    dear_v = CLIPS / "05_dearfoams.mp4"
-    tide_v = CLIPS / "06_tide.mp4"
-    deep_v = CLIPS / "07_deep_sea.mp4"
-    eagle_v = CLIPS / "08_eaglefangs.mp4"
-    astro_v = CLIPS / "09_astronaut.mp4"
-    dusty_v = CLIPS / "10_dusty.mp4"
-    end_v = CLIPS / "11_end.mp4"
+    dear_v = CLIPS / "04_dearfoams.mp4"
+    astro_v = CLIPS / "05_astronaut.mp4"
+    dusty_v = CLIPS / "06_dusty.mp4"
+    end_v = CLIPS / "07_end.mp4"
 
-    # Smash into picture. Do not sit on a black card.
-    card_to_video(title_png, 1.3, title_v)
-    # Square plates: fill-crop so the frame is the shot, not a postage stamp.
+    card_to_video(title_png, 1.2, title_v)
     clip(VID / "colorado_bison_stampede_v3_kling3.mp4", bison_v, 0.0, 5.0, overlay=lt01)
     clip(VID / "escalade_red_carpet_kling3.mp4", escalade_v, 0.0, 5.0, overlay=lt02)
     clip(VID / "blazer_transition_moving_kling3.mp4", blazer_v, 1.0, 6.0, overlay=lt03)
-    clip(VID / "artstation" / "easymellow-16x9.mp4", easy_v, 0.4, 7.0, overlay=lt04)
-    clip(VID / "artstation" / "dearfoams-product-2.mp4", dear_v, 8.0, 6.0, overlay=lt05)
-    clip(VID / "pixelus" / "tide_surf_10s.mp4", tide_v, 0.0, 7.0, overlay=lt06)
-    clip(VID / "pixelus" / "deep_sea_10s.mp4", deep_v, 0.0, 7.0, overlay=lt07)
-    clip(VID / "pixelus" / "eaglefangs_10s.mp4", eagle_v, 0.0, 7.0, overlay=lt08)
-    clip(VID / "astronaut_light_sweep.mp4", astro_v, 0.0, 5.0, overlay=lt09)
-    clip(VID / "dusty.mp4", dusty_v, 108.0, 3.2, overlay=lt10, letterbox=True)
-    card_to_video(end_png, 2.6, end_v)
+    # One continuous Dearfoams take. Do not split the animation.
+    clip(VID / "artstation" / "easymellow-16x9.mp4", dear_v, 0.4, 14.0, overlay=lt04)
+    clip(VID / "astronaut_light_sweep.mp4", astro_v, 0.0, 5.0, overlay=lt05)
+    clip(VID / "dusty.mp4", dusty_v, 108.0, 3.2, overlay=lt06, letterbox=True)
+    card_to_video(end_png, 2.4, end_v)
 
     pieces = [
         title_v,
         bison_v,
         escalade_v,
         blazer_v,
-        easy_v,
         dear_v,
-        tide_v,
-        deep_v,
-        eagle_v,
         astro_v,
         dusty_v,
         end_v,
