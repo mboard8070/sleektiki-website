@@ -52,23 +52,8 @@ export const reelCases: ReelCase[] = [
     videoSrc: "/videos/artstation/easymellow-16x9.mp4",
   },
   {
-    slug: "pixelus",
-    index: "03",
-    chapter: "Product",
-    title: "Pixelus",
-    year: "2026",
-    role: "Product · pipeline · brand systems",
-    tools: ["FLUX", "Inpainting", "Next.js"],
-    summary:
-      "A product-placement system that turns a single pack shot into lifestyle, editorial, and campaign frames. The reel uses the same wipe language as the live tool.",
-    href: "/projects/pixelus",
-    poster: "/images/portfolio/pixelus_sneaker.png",
-    videoSrc: "/videos/pixelus_reveal_sneaker.mp4",
-    aspect: "portrait",
-  },
-  {
     slug: "astronaut",
-    index: "04",
+    index: "03",
     chapter: "Character",
     title: "Astronaut",
     year: "2024",
@@ -82,7 +67,7 @@ export const reelCases: ReelCase[] = [
   },
   {
     slug: "dusty",
-    index: "05",
+    index: "04",
     chapter: "Exhibition",
     title: "Dusty",
     year: "2026",
@@ -125,14 +110,6 @@ export const reelClips: ReelClip[] = [
     poster: "/images/portfolio/astronaut_helmet34.jpg",
     videoSrc: "/videos/astronaut_light_sweep.mp4",
     href: "/projects/astronaut",
-  },
-  {
-    title: "STRATOS X9",
-    subtitle: "Pixelus product placement",
-    poster: "/images/portfolio/pixelus_sneaker.png",
-    videoSrc: "/videos/pixelus_reveal_sneaker.mp4",
-    href: "/projects/pixelus",
-    aspect: "portrait",
   },
   {
     title: "DUSK by Obsidian",

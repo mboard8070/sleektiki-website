@@ -289,7 +289,7 @@ def mix_score(src: Path, dest: Path, crf: int = 20) -> None:
             "-filter_complex",
             (
                 "[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,"
-                "volume=0.58,afade=t=in:st=0:d=0.8,afade=t=out:st=43:d=3.5[a]"
+                "volume=0.58,afade=t=in:st=0:d=0.8,afade=t=out:st=37:d=3.2[a]"
             ),
             "-map",
             "0:v:0",
@@ -377,9 +377,8 @@ def main() -> int:
     lt03 = lower_third("03", "CINEMATIC AI", "Chevrolet Blazer  ·  World Transitions")
     lt04 = lower_third("04", "MOTION", "Dearfoams  ·  EasyMellow")
     lt05 = lower_third("05", "MOTION", "Dearfoams  ·  Comfort System")
-    lt06 = lower_third("06", "PRODUCT", "Pixelus  ·  Brand Placement")
-    lt07 = lower_third("07", "CHARACTER", "Astronaut  ·  UE5 Path Tracing")
-    lt08 = lower_third("08", "EXHIBITION", "Dusty  ·  CAC  ·  Blink 2026")
+    lt06 = lower_third("06", "CHARACTER", "Astronaut  ·  UE5 Path Tracing")
+    lt07 = lower_third("07", "EXHIBITION", "Dusty  ·  CAC  ·  Blink 2026")
 
     title_v = CLIPS / "00_title.mp4"
     bison_v = CLIPS / "01_bison.mp4"
@@ -387,10 +386,9 @@ def main() -> int:
     blazer_v = CLIPS / "03_blazer.mp4"
     easy_v = CLIPS / "04_easymellow.mp4"
     dear_v = CLIPS / "05_dearfoams.mp4"
-    pixelus_v = CLIPS / "06_pixelus.mp4"
-    astro_v = CLIPS / "07_astronaut.mp4"
-    dusty_v = CLIPS / "08_dusty.mp4"
-    end_v = CLIPS / "09_end.mp4"
+    astro_v = CLIPS / "06_astronaut.mp4"
+    dusty_v = CLIPS / "07_dusty.mp4"
+    end_v = CLIPS / "08_end.mp4"
 
     # Smash into picture. Do not sit on a black card.
     card_to_video(title_png, 1.3, title_v)
@@ -400,9 +398,8 @@ def main() -> int:
     clip(VID / "blazer_transition_moving_kling3.mp4", blazer_v, 1.0, 6.0, overlay=lt03)
     clip(VID / "artstation" / "easymellow-16x9.mp4", easy_v, 0.4, 7.0, overlay=lt04)
     clip(VID / "artstation" / "dearfoams-product-2.mp4", dear_v, 8.0, 6.0, overlay=lt05)
-    clip(VID / "pixelus_reveal_sneaker.mp4", pixelus_v, 0.0, 5.0, overlay=lt06, letterbox=True)
-    clip(VID / "astronaut_light_sweep.mp4", astro_v, 0.0, 5.0, overlay=lt07)
-    clip(VID / "dusty.mp4", dusty_v, 108.0, 3.2, overlay=lt08, letterbox=True)
+    clip(VID / "astronaut_light_sweep.mp4", astro_v, 0.0, 5.0, overlay=lt06)
+    clip(VID / "dusty.mp4", dusty_v, 108.0, 3.2, overlay=lt07, letterbox=True)
     card_to_video(end_png, 2.6, end_v)
 
     pieces = [
@@ -412,7 +409,6 @@ def main() -> int:
         blazer_v,
         easy_v,
         dear_v,
-        pixelus_v,
         astro_v,
         dusty_v,
         end_v,
