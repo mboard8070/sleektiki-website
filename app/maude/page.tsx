@@ -61,13 +61,13 @@ export default function MaudePage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#install"
-                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--accent)] px-5 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-90"
+                className="btn"
               >
                 Install MAUDE
               </Link>
               <Link
                 href="/projects/maude"
-                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] px-5 text-sm font-semibold text-[var(--text-primary)] transition-colors hover:border-[var(--accent)]/40"
+                className="btn-secondary"
               >
                 Read the case study
               </Link>

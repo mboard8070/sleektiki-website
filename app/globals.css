@@ -12,10 +12,97 @@
   --text-muted: #555566;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+  }
+}
+
+/* Unlayered so these beat the old global padding reset and stay clickable. */
+.btn,
+.btn-secondary,
+.btn-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  border-style: solid;
+  transition:
+    opacity 200ms ease,
+    color 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+.btn,
+.btn-secondary {
+  min-height: 3rem;
+  padding: 0.9rem 1.45rem;
+  border-radius: 0.75rem;
+  border-width: 1px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.btn {
+  background: var(--accent);
+  color: var(--background);
+  border-color: transparent;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-secondary);
+  border-color: var(--surface-border);
+}
+
+.btn-secondary:hover {
+  color: var(--accent);
+  border-color: rgba(0, 212, 255, 0.4);
+}
+
+.btn-chip {
+  min-height: 2.5rem;
+  padding: 0.65rem 1.15rem;
+  border-radius: 9999px;
+  border-width: 1px;
+  border-color: var(--surface-border);
+  background: var(--surface);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  letter-spacing: 0.04em;
+}
+
+.btn-chip:hover {
+  border-color: rgba(0, 212, 255, 0.35);
+  color: var(--text-primary);
+}
+
+.btn-chip-active {
+  background: var(--accent);
+  color: var(--background);
+  border-color: transparent;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.btn-chip-active:hover {
+  color: var(--background);
+  border-color: transparent;
+}
+
+span.btn-chip {
+  cursor: default;
 }
 
 html {

@@ -94,16 +94,10 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-3"
               style={{ marginTop: "2rem" }}
             >
-              <a
-                href="#work"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
-              >
+              <a href="#work" className="btn">
                 See the work
               </a>
-              <Link
-                href="/reel"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-[var(--surface-border)] text-sm text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--accent)] transition-colors"
-              >
+              <Link href="/reel" className="btn-secondary">
                 Watch the reel
               </Link>
             </motion.div>

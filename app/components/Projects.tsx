@@ -249,11 +249,7 @@ export default function Projects() {
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className={`px-5 py-2.5 text-xs rounded-full font-[family-name:var(--font-geist-mono)] tracking-wide transition-all duration-200 ${
-                  filter === f.key
-                    ? "bg-[var(--accent)] text-[var(--background)] shadow-[0_0_20px_rgba(0,212,255,0.3)]"
-                    : "bg-[var(--surface)] text-[var(--text-secondary)] border border-[var(--surface-border)] hover:border-[var(--accent)]/30"
-                }`}
+                className={`btn-chip ${filter === f.key ? "btn-chip-active" : ""}`}
               >
                 {f.label}
               </button>

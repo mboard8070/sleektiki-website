@@ -1208,10 +1208,8 @@ export default function Portfolio() {
                 <button
                   key={c.key}
                   onClick={() => setFilter(c.key)}
-                  className={`px-4 py-2 rounded-lg text-sm transition-all duration-200 border ${
-                    filter === c.key
-                      ? "bg-[var(--accent)]/10 border-[var(--accent)] text-[var(--accent)]"
-                      : "bg-[var(--surface)] border-[var(--surface-border)] text-[var(--text-secondary)] hover:border-[var(--accent)]/40 hover:text-[var(--text-primary)]"
+                  className={`btn-chip ${
+                    filter === c.key ? "btn-chip-active" : ""
                   }`}
                 >
                   {c.label}

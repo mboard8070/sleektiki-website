@@ -52,7 +52,7 @@ export default function BlogPreview() {
           <div className="mt-10">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-3 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-90"
+              className="btn"
             >
               Blog
             </Link>

@@ -50,7 +50,7 @@ export default async function ProjectPage({
         >
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] transition-colors bg-[#050508]/60 backdrop-blur-sm rounded-full px-4 py-2"
+            className="btn-chip bg-[#050508]/60 backdrop-blur-sm hover:text-[var(--accent)]"
           >
             <svg
               width="16"
@@ -102,7 +102,7 @@ export default async function ProjectPage({
             {project.tags.map((tag) => (
               <span
                 key={tag}
-                className="px-4 py-2 text-xs rounded-full border border-[var(--surface-border)] text-[var(--text-secondary)] bg-[var(--surface)] font-[family-name:var(--font-geist-mono)]"
+                className="btn-chip"
               >
                 {tag}
               </span>
@@ -118,7 +118,7 @@ export default async function ProjectPage({
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold hover:opacity-90 transition-opacity"
+                  className="btn"
                 >
                   {link.label}
                   <svg

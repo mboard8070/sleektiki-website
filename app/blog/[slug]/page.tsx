@@ -136,7 +136,7 @@ export default async function BlogPostPage({
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[var(--surface-border)] bg-[var(--surface)] px-4 py-2 text-xs text-[var(--text-secondary)]"
+                className="btn-chip"
               >
                 {tag}
               </span>
@@ -173,7 +173,7 @@ export default async function BlogPostPage({
                   <Link
                     key={project.href}
                     href={project.href}
-                    className="inline-flex items-center gap-2 rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-semibold text-[var(--background)] transition-opacity hover:opacity-90"
+                    className="btn"
                   >
                     {project.label}
                     <span aria-hidden="true">Open</span>

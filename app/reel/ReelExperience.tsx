@@ -127,26 +127,26 @@ function HeroPlayer() {
           >
             <button
               onClick={togglePlay}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
+              className="btn"
             >
               {playing ? "Pause reel" : "Play reel"}
             </button>
             <button
               onClick={() => setMuted((m) => !m)}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+              className="btn-secondary"
             >
               {muted ? "Unmute" : "Mute"}
             </button>
             <a
               href="/videos/matthew_board_reel_2026.mp4"
               download
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-[var(--surface-border)] text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+              className="btn-secondary"
             >
               Download MP4
             </a>
             <Link
               href="mailto:matt@sleektiki.ai"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-[var(--surface-border)] text-sm text-[var(--text-secondary)] hover:text-[var(--accent)] hover:border-[var(--accent)]/30 transition-colors"
+              className="btn-secondary"
             >
               Email Matt
             </Link>
@@ -429,19 +429,19 @@ export default function ReelExperience() {
               <div className="flex flex-wrap justify-center gap-3">
                 <a
                   href="mailto:matt@sleektiki.ai"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[var(--accent)] text-[var(--background)] font-semibold text-sm hover:opacity-90 transition-opacity"
+                  className="btn"
                 >
                   matt@sleektiki.ai
                 </a>
                 <Link
                   href="/portfolio"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--surface-border)] text-sm hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-colors"
+                  className="btn-secondary"
                 >
                   Full AI gallery
                 </Link>
                 <Link
                   href="/3d-art"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-[var(--surface-border)] text-sm hover:border-[var(--accent)]/30 hover:text-[var(--accent)] transition-colors"
+                  className="btn-secondary"
                 >
                   3D art
                 </Link>

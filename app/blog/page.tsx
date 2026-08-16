@@ -105,7 +105,7 @@ export default function BlogPage() {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[var(--surface-border)] px-3 py-1 text-xs text-[var(--text-muted)]"
+                      className="btn-chip"
                     >
                       {tag}
                     </span>
