@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import ReelExperience from "./ReelExperience";
 
+// Do not let Railway / Next cache this HTML for a year. The last reel
+// deploy looked like it "failed" because /reel kept serving the old overlay.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 export const metadata: Metadata = {
   title: "Motion + AI Reel | Matthew Board",
   description:

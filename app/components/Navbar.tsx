@@ -93,6 +93,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const onReel = pathname === "/reel";
 
   useEffect(() => {
     const handleScroll = () => {
@@ -110,7 +111,9 @@ export default function Navbar() {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#050508]/95 backdrop-blur-xl border-b border-[#252530]"
-          : "bg-[#050508]/70 backdrop-blur-md"
+          : onReel
+            ? "bg-transparent"
+            : "bg-[#050508]/70 backdrop-blur-md"
       }`}
     >
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-between" style={{ paddingLeft: "max(1.5rem, 5vw)", paddingRight: "max(1.5rem, 5vw)" }}>

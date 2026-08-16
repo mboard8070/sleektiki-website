@@ -52,7 +52,7 @@ export async function middleware(request: NextRequest) {
   if (!isGated(pathname)) {
     // Homepage HTML was being served with a 1-year Next/Railway cache, so
     // Showcase removals never appeared after deploy. Do not cache `/`.
-    if (pathname === "/") {
+    if (pathname === "/" || pathname === "/reel" || pathname.startsWith("/reel/")) {
       return withNoStore(NextResponse.next());
     }
     return NextResponse.next();
@@ -85,5 +85,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/portfolio", "/portfolio/:path*", "/3d-art", "/3d-art/:path*"],
+  matcher: ["/", "/reel", "/reel/:path*", "/portfolio", "/portfolio/:path*", "/3d-art", "/3d-art/:path*"],
 };

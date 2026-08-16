@@ -20,13 +20,13 @@ const REEL_WEB = "/videos/matthew_board_reel_2026_web.mp4?v=20260815-c";
 const REEL_MASTER = "/videos/matthew_board_reel_2026.mp4?v=20260815-c";
 
 function HeroPlayer() {
-  const wrapRef = useRef<HTMLSectionElement>(null);
+  const wrapRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
-  const [showBar, setShowBar] = useState(true);
+  const [showBar, setShowBar] = useState(false);
   const hideTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const scheduleHide = () => {
@@ -34,7 +34,7 @@ function HeroPlayer() {
     hideTimer.current = setTimeout(() => {
       const v = videoRef.current;
       if (v && !v.paused) setShowBar(false);
-    }, 1600);
+    }, 1400);
   };
 
   const revealBar = () => {
@@ -116,10 +116,10 @@ function HeroPlayer() {
   const barVisible = !playing || showBar;
 
   return (
-    <section
+    <div
       ref={wrapRef}
       className="relative bg-black"
-      style={{ height: "100vh" }}
+      style={{ height: "100svh" }}
       onMouseMove={revealBar}
       onMouseLeave={() => {
         if (videoRef.current && !videoRef.current.paused) setShowBar(false);
@@ -218,7 +218,7 @@ function HeroPlayer() {
           </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
