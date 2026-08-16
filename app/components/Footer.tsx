@@ -87,10 +87,6 @@ export default function Footer() {
 
             {/* Legal links */}
             <div className="flex items-center gap-4 text-xs text-[var(--text-muted)]">
-              <Link href="/showreel" className="hover:text-[var(--accent)] transition-colors">
-                Reel
-              </Link>
-              <span>&middot;</span>
               <Link href="/portfolio" className="hover:text-[var(--accent)] transition-colors">
                 AI stills
               </Link>

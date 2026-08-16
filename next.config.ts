@@ -12,30 +12,12 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  async headers() {
+  async redirects() {
     return [
-      {
-        source: "/reel",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "private, no-store, no-cache, must-revalidate, max-age=0",
-          },
-          { key: "CDN-Cache-Control", value: "no-store" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
-        ],
-      },
-      {
-        source: "/showreel",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "private, no-store, no-cache, must-revalidate, max-age=0",
-          },
-          { key: "CDN-Cache-Control", value: "no-store" },
-          { key: "Cloudflare-CDN-Cache-Control", value: "no-store" },
-        ],
-      },
+      { source: "/reel", destination: "/", permanent: false },
+      { source: "/reel/:path*", destination: "/", permanent: false },
+      { source: "/showreel", destination: "/", permanent: false },
+      { source: "/showreel/:path*", destination: "/", permanent: false },
     ];
   },
 };

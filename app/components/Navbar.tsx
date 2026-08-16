@@ -73,7 +73,6 @@ const socials = [
 
 const navLinks = [
   { href: "#work", label: "Work" },
-  { href: "/showreel", label: "Reel" },
   { href: "/3d-art", label: "3D" },
   { href: "/maude", label: "Systems" },
   { href: "/blog", label: "Blog" },
@@ -93,41 +92,24 @@ export default function Navbar() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const onReel = pathname === "/reel" || pathname === "/showreel";
-  const [reelNavOpen, setReelNavOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      if (onReel) setReelNavOpen(window.scrollY > window.innerHeight * 0.8);
     };
-    const handleMove = (e: MouseEvent) => {
-      if (onReel && e.clientY < 64) setReelNavOpen(true);
-    };
-    handleScroll();
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", handleMove);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", handleMove);
-    };
-  }, [onReel]);
-
-  const hideOverVideo = onReel && !scrolled && !reelNavOpen && !mobileOpen;
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
       initial={{ y: -100 }}
-      animate={{ y: hideOverVideo ? -100 : 0, opacity: hideOverVideo ? 0 : 1 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#050508]/95 backdrop-blur-xl border-b border-[#252530]"
-          : onReel
-            ? "bg-transparent"
-            : "bg-[#050508]/70 backdrop-blur-md"
+          : "bg-[#050508]/70 backdrop-blur-md"
       }`}
-      style={{ pointerEvents: hideOverVideo ? "none" : "auto" }}
     >
       <div className="max-w-7xl mx-auto h-16 flex items-center justify-between" style={{ paddingLeft: "max(1.5rem, 5vw)", paddingRight: "max(1.5rem, 5vw)" }}>
         <Link

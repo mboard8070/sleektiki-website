@@ -97,33 +97,11 @@ export default function Hero() {
               <a href="#work" className="btn">
                 See the work
               </a>
-              <Link href="/showreel" className="btn-secondary">
-                Watch the reel
+              <Link href="/portfolio" className="btn-secondary">
+                AI stills
               </Link>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.55 }}
-            className="w-full lg:max-w-[55%] flex-shrink"
-            style={{ marginBottom: "2rem" }}
-          >
-            <div
-              className="rounded-xl overflow-hidden border border-[var(--surface-border)]/30"
-              style={{ boxShadow: "0 0 40px rgba(0, 212, 255, 0.06)" }}
-            >
-              <video
-                src="/videos/matthew_board_reel_2026_web.mp4?v=20260815-c"
-                autoPlay
-                muted
-                loop
-                playsInline
-                className="w-full aspect-video object-cover"
-              />
-            </div>
-          </motion.div>
         </div>
       </div>
     </section>
