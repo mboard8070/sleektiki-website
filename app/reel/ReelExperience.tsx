@@ -19,7 +19,7 @@ function formatTime(seconds: number) {
 
 function HeroPlayer() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [playing, setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(true);
   const [muted, setMuted] = useState(true);
   const [progress, setProgress] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -67,14 +67,16 @@ function HeroPlayer() {
         poster="/images/portfolio/reel_poster.jpg"
         muted={muted}
         playsInline
-        preload="metadata"
+        autoPlay
+        loop
+        preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(180deg, rgba(5,5,8,0.35) 0%, rgba(5,5,8,0.15) 40%, rgba(5,5,8,0.92) 100%)",
+            "linear-gradient(180deg, rgba(5,5,8,0.18) 0%, rgba(5,5,8,0.05) 38%, rgba(5,5,8,0.62) 100%)",
         }}
       />
 

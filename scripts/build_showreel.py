@@ -145,17 +145,20 @@ def fit_filter() -> str:
         f"crop={W}:{H},"
         "setsar=1,"
         f"fps={FPS},"
+        "eq=brightness=0.04:contrast=1.06:saturation=1.08,"
         "format=yuv420p"
     )
 
 
 def letterbox_blur_filter() -> str:
+    # Keep the sides alive. Do not crush the picture into a cave.
     return (
         f"split[bg][fg];"
         f"[bg]scale={W}:{H}:force_original_aspect_ratio=increase,"
-        f"crop={W}:{H},gblur=sigma=22,eq=brightness=-0.18:saturation=0.75[b];"
+        f"crop={W}:{H},gblur=sigma=14,eq=brightness=0.06:saturation=1.05:contrast=1.04[b];"
         f"[fg]scale={W}:{H}:force_original_aspect_ratio=decrease[f];"
-        f"[b][f]overlay=(W-w)/2:(H-h)/2,setsar=1,fps={FPS},format=yuv420p"
+        f"[b][f]overlay=(W-w)/2:(H-h)/2,setsar=1,fps={FPS},"
+        f"eq=brightness=0.03:contrast=1.05:saturation=1.06,format=yuv420p"
     )
 
 
@@ -286,7 +289,7 @@ def mix_score(src: Path, dest: Path, crf: int = 20) -> None:
             "-filter_complex",
             (
                 "[1:a]loudnorm=I=-16:TP=-1.5:LRA=11,"
-                "volume=0.55,afade=t=in:st=0:d=1.4,afade=t=out:st=54:d=4[a]"
+                "volume=0.58,afade=t=in:st=0:d=0.8,afade=t=out:st=43:d=3.5[a]"
             ),
             "-map",
             "0:v:0",
@@ -369,53 +372,49 @@ def main() -> int:
 
     title_png = title_card()
     end_png = end_card()
-    lt01 = lower_third("01", "EXHIBITION", "Dusty  ·  CAC Cincinnati  ·  Blink 2026")
-    lt02 = lower_third("02", "CINEMATIC AI", "Chevrolet Colorado  ·  Bison Stampede")
-    lt03 = lower_third("03", "CINEMATIC AI", "Cadillac Escalade  ·  Red Carpet")
-    lt04 = lower_third("04", "CINEMATIC AI", "Chevrolet Blazer  ·  World Transitions")
-    lt05 = lower_third("05", "PRODUCT", "Pixelus  ·  Brand Placement System")
-    lt06 = lower_third("06", "MOTION", "Dearfoams  ·  Product Animation")
+    lt01 = lower_third("01", "CINEMATIC AI", "Chevrolet Colorado  ·  Bison Stampede")
+    lt02 = lower_third("02", "CINEMATIC AI", "Cadillac Escalade  ·  Red Carpet")
+    lt03 = lower_third("03", "CINEMATIC AI", "Chevrolet Blazer  ·  World Transitions")
+    lt04 = lower_third("04", "MOTION", "Dearfoams  ·  EasyMellow")
+    lt05 = lower_third("05", "MOTION", "Dearfoams  ·  Comfort System")
+    lt06 = lower_third("06", "PRODUCT", "Pixelus  ·  Brand Placement")
     lt07 = lower_third("07", "CHARACTER", "Astronaut  ·  UE5 Path Tracing")
-    lt08 = lower_third("08", "SYSTEMS", "MAUDE  ·  Local AI Operating Environment")
+    lt08 = lower_third("08", "EXHIBITION", "Dusty  ·  CAC  ·  Blink 2026")
 
     title_v = CLIPS / "00_title.mp4"
-    dusty_v = CLIPS / "01_dusty.mp4"
-    bison_v = CLIPS / "02_bison.mp4"
-    escalade_v = CLIPS / "03_escalade.mp4"
-    blazer_v = CLIPS / "04_blazer.mp4"
-    pixelus_v = CLIPS / "05_pixelus.mp4"
-    dear_v = CLIPS / "06_dearfoams.mp4"
+    bison_v = CLIPS / "01_bison.mp4"
+    escalade_v = CLIPS / "02_escalade.mp4"
+    blazer_v = CLIPS / "03_blazer.mp4"
+    easy_v = CLIPS / "04_easymellow.mp4"
+    dear_v = CLIPS / "05_dearfoams.mp4"
+    pixelus_v = CLIPS / "06_pixelus.mp4"
     astro_v = CLIPS / "07_astronaut.mp4"
-    maude_v = CLIPS / "08_maude.mp4"
+    dusty_v = CLIPS / "08_dusty.mp4"
     end_v = CLIPS / "09_end.mp4"
 
-    card_to_video(title_png, 2.8, title_v)
-    clip(VID / "dusty.mp4", dusty_v, 108.0, 8.0, overlay=lt01, letterbox=True)
-    clip(VID / "colorado_bison_stampede_v3_kling3.mp4", bison_v, 0.0, 5.0, overlay=lt02, letterbox=True)
-    clip(VID / "escalade_red_carpet_kling3.mp4", escalade_v, 0.0, 5.0, overlay=lt03)
-    clip(VID / "blazer_transition_moving_kling3.mp4", blazer_v, 1.0, 8.0, overlay=lt04, letterbox=True)
-    clip(VID / "pixelus_reveal_sneaker.mp4", pixelus_v, 0.0, 6.0, overlay=lt05, letterbox=True)
-    clip(
-        VID / "artstation" / "dearfoams-product-2.mp4",
-        dear_v,
-        8.0,
-        8.0,
-        overlay=lt06,
-    )
+    # Smash into picture. Do not sit on a black card.
+    card_to_video(title_png, 1.3, title_v)
+    # Square auto plates: fill-crop so the frame is the shot, not a postage stamp.
+    clip(VID / "colorado_bison_stampede_v3_kling3.mp4", bison_v, 0.0, 5.0, overlay=lt01)
+    clip(VID / "escalade_red_carpet_kling3.mp4", escalade_v, 0.0, 5.0, overlay=lt02)
+    clip(VID / "blazer_transition_moving_kling3.mp4", blazer_v, 1.0, 6.0, overlay=lt03)
+    clip(VID / "artstation" / "easymellow-16x9.mp4", easy_v, 0.4, 7.0, overlay=lt04)
+    clip(VID / "artstation" / "dearfoams-product-2.mp4", dear_v, 8.0, 6.0, overlay=lt05)
+    clip(VID / "pixelus_reveal_sneaker.mp4", pixelus_v, 0.0, 5.0, overlay=lt06, letterbox=True)
     clip(VID / "astronaut_light_sweep.mp4", astro_v, 0.0, 5.0, overlay=lt07)
-    clip(VID / "maude-feature-video.mp4", maude_v, 6.0, 7.0, overlay=lt08)
-    card_to_video(end_png, 3.5, end_v)
+    clip(VID / "dusty.mp4", dusty_v, 108.0, 3.2, overlay=lt08, letterbox=True)
+    card_to_video(end_png, 2.6, end_v)
 
     pieces = [
         title_v,
-        dusty_v,
         bison_v,
         escalade_v,
         blazer_v,
-        pixelus_v,
+        easy_v,
         dear_v,
+        pixelus_v,
         astro_v,
-        maude_v,
+        dusty_v,
         end_v,
     ]
 
@@ -427,7 +426,7 @@ def main() -> int:
     concat(pieces, silent, crf=18)
     mix_score(silent, master, crf=18)
     mix_score(silent, web, crf=23)
-    poster(VID / "colorado_bison_stampede_v3_kling3.mp4", poster_path, 2.0)
+    poster(bison_v, poster_path, 1.6)
 
     for p in (master, web):
         size_mb = p.stat().st_size / (1024 * 1024)
