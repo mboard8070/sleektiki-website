@@ -4,118 +4,96 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Workshops and Curriculum | sleektiki.ai",
+  title: "Introduction to AI for Business | sleektiki.ai",
   description:
-    "Workshops and internal curriculum so marketing, engineering, and production teams can run AI and Unreal workflows without a research group. Playbooks, critique, and working artifacts they keep.",
+    "A practical Introduction to AI for Business workshop. Managers, marketers, analysts, and ops teams learn what these tools can do, where they fail, and how to put them into real work with a review process.",
 };
 
-const problems = [
-  {
-    title: "The tools arrived. The process did not.",
-    body: "Copilot, image models, Unreal, an internal GPT. People poke at them. A few power users get lucky. Everyone else ships the old way and hopes the license renews itself.",
-  },
-  {
-    title: "Marketing cannot risk a hallucinated pack.",
-    body: "A generated still that redraws the logo is not a draft. It is a brand incident. Teams need a quality gate, not a mood board.",
-  },
-  {
-    title: "L&D has slides. The floor needs a studio.",
-    body: "A lunch-and-learn does not change Monday. People need a brief, a constraint, a critique, and a playbook they can run when the instructor is gone.",
-  },
+const who = [
+  "Managers who need a clear picture before they set policy",
+  "Marketing, ops, HR, finance, and customer teams that already have ChatGPT, Copilot, or an internal assistant",
+  "People who are not engineers and do not need to become engineers",
+  "L&D leads who want a class the floor can finish, then repeat",
 ];
 
-const modules = [
+const outline = [
   {
     code: "01",
-    title: "Product imagery that keeps the pack",
-    who: "Marketing, brand, e-commerce, creative production",
-    job: "Turn approved product photography into campaign and social stills without inventing silhouette, materials, logos, or color.",
-    leave: "A repeatable stills workflow, a review checklist, and shots made from your SKUs.",
-    from: "Pixelus",
-    href: "/projects/pixelus",
+    title: "What this is",
+    time: "morning",
+    points: [
+      "Generative AI, automation, and analytics are different jobs. Most teams blur them.",
+      "What a language model is doing when it writes, summarizes, or answers.",
+      "What it cannot know: your unpublished numbers, your real policy, last week's customer unless you put that in.",
+      "A short map of the tools businesses already pay for, without a vendor bake-off.",
+    ],
   },
   {
     code: "02",
-    title: "Generative AI judgment",
-    who: "Any mixed room: marketing, product, legal-adjacent reviewers, producers",
-    job: "Decide when generation helps, when it lies, and who is allowed to approve the output.",
-    leave: "A critique rubric, failure cases from live tools, and a written rule set for your team.",
-    from: "Stillion AI / Pixelus review gates",
-    href: "/projects/stillion-lora",
+    title: "Doing real work with it",
+    time: "late morning",
+    points: [
+      "Start from a brief, not a blank chat. Role, audience, constraints, source material.",
+      "Iterate in public: first pass, what is wrong, what to feed it next.",
+      "Hands-on with each person's actual work: email, agenda, report, brief, FAQ, job aid.",
+      "When to start a new thread. When to paste a document. When to stop and do it yourself.",
+    ],
   },
   {
     code: "03",
-    title: "Unreal for working professionals",
-    who: "Engineers, technical artists, visualization and simulation teams",
-    job: "Get from a feature list to a scene someone else can operate: input, data, materials, inspect loop.",
-    leave: "A working Unreal exercise on your stack, plus habits for versioning and handoff.",
-    from: "UE5 Configurator",
-    href: "/projects/ue5-configurator",
+    title: "Where it helps, and where it fails",
+    time: "afternoon",
+    points: [
+      "Good first uses: first drafts, meeting notes, rewriting for an audience, turning a long doc into a checklist.",
+      "Bad first uses: legal advice, customer-facing numbers, anything that must be true and is not in the source.",
+      "Hallucinations, confident wrong answers, and invented citations.",
+      "Live failure cases. People should see a model get something wrong on purpose.",
+    ],
   },
   {
     code: "04",
-    title: "Inspectable agent workflows",
-    who: "Ops, IT, power users, small production teams",
-    job: "Put models on real files, mail, and tools without a black box. Traces on. Approval points where it matters.",
-    leave: "A mapped workflow, what to automate, what to keep human, and how to read a tool trace.",
-    from: "MAUDE",
-    href: "/projects/maude",
+    title: "Risk, data, and who signs off",
+    time: "afternoon",
+    points: [
+      "What not to paste: customer PII, unreleased financials, credentials, anything under NDA you have not cleared.",
+      "Brand voice and claims. A polished paragraph can still be a problem.",
+      "A simple review rule: human owns the send. The model does not.",
+      "Draft a team rule of use you can actually enforce.",
+    ],
   },
   {
     code: "05",
-    title: "Train the trainer",
-    who: "L&D, team leads, internal instructors",
-    job: "Keep the program alive after the workshop week. Next cohort should not need me in the room.",
-    leave: "Exercises, a critique structure, a playbook, and a plan for the next two sessions.",
-    from: "the studio method below",
-    href: "#how",
+    title: "A week that looks different",
+    time: "close",
+    points: [
+      "Each person leaves with three workflows they ran in the room, written down.",
+      "A one-page personal playbook: tools, prompts they will reuse, review steps.",
+      "A team version: what we will try for 30 days, what we will not, who checks the work.",
+      "How to tell if it is saving time, not just producing more text.",
+    ],
   },
 ];
 
 const formats = [
   {
-    title: "Discovery",
-    time: "1 to 2 calls",
-    body: "Your actual jobs, the tools you already pay for, who has to run them, and what a failure looks like. I do not show up with a generic deck.",
+    title: "Half day",
+    body: "Orientation plus one hands-on block. For a leadership group that needs shared language before they buy more tools or write a policy.",
   },
   {
-    title: "Workshop",
-    time: "1 to 3 days",
-    body: "Constrained exercises, then your briefs. Mixed technical levels in one room. Critique is part of the work, not a wrap-up slide.",
+    title: "Full day",
+    body: "The full outline. Mixed room. Their files, not stock examples. This is the default.",
   },
   {
-    title: "Internal curriculum",
-    time: "multi-week",
-    body: "A sequence L&D can own: modules, assignments, review checkpoints, portfolio-quality artifacts. Built the way I built a major and a professional training program.",
-  },
-  {
-    title: "Leave-behind",
-    time: "included",
-    body: "Playbook, exercise files, critique rubric, and a short recorded demo if you want one. The point is Monday without me.",
+    title: "Two days",
+    body: "Day one as above. Day two is their work: bring live briefs, run them, critique, rewrite the playbook with what broke.",
   },
 ];
 
-const how = [
-  {
-    n: "1",
-    title: "Intake on the real work",
-    body: "Send the SKU, the Unreal project, the current prompt dump, the failed stills. I design the room around that, not a vendor demo.",
-  },
-  {
-    n: "2",
-    title: "Teach the constraint first",
-    body: "Small working systems before open briefs. If the pack cannot move, the pack cannot move. If the mesh swap has to survive a gamepad, we test it on a gamepad.",
-  },
-  {
-    n: "3",
-    title: "Critique like production",
-    body: "What was the intended result. What evidence shows it worked. Who is the audience. What would make this safer for the next person.",
-  },
-  {
-    n: "4",
-    title: "Hand off a process",
-    body: "Written steps, named owners, and artifacts the team already made. If it only works while I am driving, it failed.",
-  },
+const leave = [
+  "A written personal playbook",
+  "Three workflows they already ran on their own work",
+  "A draft team rule of use",
+  "A 30-day try list with owners",
 ];
 
 export default function EnablementPage() {
@@ -126,22 +104,22 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-64 md:pt-72">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Workshops and curriculum
+            AI enablement
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Your team already has the tools. They do not have a class they can finish.
+            Introduction to AI for Business
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-            I design workshops and internal curriculum so marketing, engineering,
-            and production people can run AI and Unreal workflows on Monday.
-            Playbook, critique, working artifacts. Not another license.
+            A practical class for people who have to use these tools at work.
+            What they are, what they invent, and how to put them into a real
+            week with a human still on the send button.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="#curriculum" className="btn">
-              See the curriculum
+            <Link href="#outline" className="btn">
+              Course outline
             </Link>
             <Link href="#contact" className="btn-secondary">
-              Book a discovery call
+              Ask about a session
             </Link>
           </div>
         </div>
@@ -150,86 +128,67 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            The gap
+            Who it is for
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            This is the conversation I keep walking into.
+            Working adults. Not a computer science course.
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {problems.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
-                style={{ padding: "1.75rem" }}
+          <ul className="mt-10 max-w-3xl space-y-4">
+            {who.map((item) => (
+              <li
+                key={item}
+                className="border-l-2 border-[var(--accent)] pl-5 text-base leading-7 text-[var(--text-secondary)]"
               >
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p
-                  className="mt-3 text-sm text-[var(--text-secondary)]"
-                  style={{ lineHeight: 1.7 }}
-                >
-                  {item.body}
-                </p>
-              </article>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
       <section
-        id="curriculum"
+        id="outline"
         className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
       >
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Curriculum
+            Outline
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Five modules. Pick the jobs your team actually has.
+            Five blocks. One working day.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Each module is a workshop block that can stand alone or stack into
-            an internal course. Built from work I already ship and already
-            teach. Your files, your tools, your failure modes.
+            Bring the tools you already have and the work sitting on your
+            desk. The class uses that. It does not demo a stack you would have
+            to buy.
           </p>
           <div className="mt-12 grid gap-4">
-            {modules.map((mod) => (
+            {outline.map((block) => (
               <article
-                key={mod.code}
+                key={block.code}
                 className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
                 style={{ padding: "1.75rem" }}
               >
-                <div className="grid gap-6 lg:grid-cols-[7rem_1fr_16rem] lg:items-start">
+                <div className="flex flex-wrap items-baseline justify-between gap-3">
                   <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-                    {mod.code}
+                    {block.code}
                   </p>
-                  <div>
-                    <h3 className="text-xl font-semibold">{mod.title}</h3>
-                    <p className="mt-2 text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">
-                      {mod.who}
-                    </p>
-                    <p
-                      className="mt-4 text-sm text-[var(--text-secondary)]"
-                      style={{ lineHeight: 1.7 }}
-                    >
-                      {mod.job}
-                    </p>
-                    <p
-                      className="mt-3 text-sm text-[var(--text-primary)]"
-                      style={{ lineHeight: 1.7 }}
-                    >
-                      They leave with: {mod.leave}
-                    </p>
-                  </div>
-                  <p className="text-sm text-[var(--text-muted)]">
-                    Built from{" "}
-                    <Link
-                      href={mod.href}
-                      className="text-[var(--accent)] hover:underline"
-                    >
-                      {mod.from}
-                    </Link>
+                  <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.16em] text-[var(--text-muted)]">
+                    {block.time}
                   </p>
                 </div>
+                <h3 className="mt-3 text-xl font-semibold">{block.title}</h3>
+                <ul className="mt-4 space-y-2">
+                  {block.points.map((point) => (
+                    <li
+                      key={point}
+                      className="text-sm text-[var(--text-secondary)]"
+                      style={{ lineHeight: 1.7 }}
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -239,24 +198,19 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Formats
+            Format
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            A class, not a vendor demo.
+            Half day, full day, or two days on live work.
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
             {formats.map((item) => (
               <article
                 key={item.title}
                 className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
                 style={{ padding: "1.75rem" }}
               >
-                <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                  <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.16em] text-[var(--accent)]">
-                    {item.time}
-                  </p>
-                </div>
+                <h3 className="text-xl font-semibold">{item.title}</h3>
                 <p
                   className="mt-3 text-sm text-[var(--text-secondary)]"
                   style={{ lineHeight: 1.7 }}
@@ -269,37 +223,25 @@ export default function EnablementPage() {
         </div>
       </section>
 
-      <section
-        id="how"
-        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
-      >
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            How a room runs
+            They leave with
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Intake, constraint, critique, handoff.
+            Paper they can use on Monday.
           </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {how.map((step) => (
-              <article
-                key={step.n}
-                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
-                style={{ padding: "1.75rem" }}
+          <ul className="mt-10 grid gap-4 md:grid-cols-2">
+            {leave.map((item) => (
+              <li
+                key={item}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-base text-[var(--text-secondary)]"
+                style={{ padding: "1.5rem", lineHeight: 1.7 }}
               >
-                <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-                  {step.n}
-                </p>
-                <h3 className="mt-3 text-xl font-semibold">{step.title}</h3>
-                <p
-                  className="mt-3 text-sm text-[var(--text-secondary)]"
-                  style={{ lineHeight: 1.7 }}
-                >
-                  {step.body}
-                </p>
-              </article>
+                {item}
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
@@ -312,11 +254,11 @@ export default function EnablementPage() {
             Next
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            If this is the gap on your team, write.
+            If your team needs this class, write.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Tell me who has to run the tools, what they have already tried, and
-            what a good week would look like after the workshop. Email matt at
+            Say who would be in the room, which tools they already have, and
+            whether you want a half day, a full day, or two. Email matt at
             sleektiki dot ai.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -324,7 +266,7 @@ export default function EnablementPage() {
               Email Matthew
             </a>
             <Link href="/" className="btn-secondary">
-              See the work
+              Back to the site
             </Link>
           </div>
         </div>

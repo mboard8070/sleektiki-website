@@ -83,10 +83,10 @@ export default function FeaturedWork() {
         </div>
         <p className="mt-8 text-sm text-[var(--text-muted)]">
           <Link href="/enablement" className="text-[var(--accent)] hover:underline">
-            Workshops and curriculum
+            Introduction to AI for Business
           </Link>
           {" — "}
-          modules a marketing or engineering team can finish, then run on Monday.
+          a workshop for people who have to use these tools at work.
         </p>
       </div>
     </section>

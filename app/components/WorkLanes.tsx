@@ -10,8 +10,8 @@ const lanes = [
     href: "/enablement",
     label: "01",
     title: "AI enablement",
-    body: "Workshops and internal curriculum so a marketing, engineering, or production team can run AI and Unreal without a research group. Playbook, critique, artifacts they keep.",
-    proof: "Vertex · NASA / Army Unreal · 12 years faculty",
+    body: "Introduction to AI for Business. A practical class for managers, marketers, analysts, and ops: what the tools can do, where they fail, and how to put them into real work.",
+    proof: "Workshops · internal cohorts",
   },
   {
     id: "production",
