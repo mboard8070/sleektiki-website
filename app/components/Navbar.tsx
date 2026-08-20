@@ -73,7 +73,7 @@ const socials = [
 
 const navLinks = [
   { href: "#work", label: "Work" },
-  { href: "/enablement", label: "Workshops" },
+  { href: "/enablement", label: "Enablement" },
   { href: "/3d-art", label: "3D" },
   { href: "/maude", label: "Systems" },
   { href: "/blog", label: "Blog" },
