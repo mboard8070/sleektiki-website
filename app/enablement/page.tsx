@@ -4,82 +4,123 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "AI Enablement | sleektiki.ai",
+  title: "AI Workshops and Curriculum | sleektiki.ai",
   description:
-    "Matthew Board stands up AI and Unreal workflows, writes the playbook, and trains the people who have to run them. Vertex curriculum, NASA and U.S. Army engineers, and tools a non-specialist can repeat on Monday.",
+    "Workshops and internal curriculum so marketing, engineering, and production teams can run AI and Unreal workflows without a research group. Playbooks, critique, and working artifacts they keep.",
 };
 
 const facts = [
-  ["50+", "professionals trained"],
-  ["12 yrs", "full-time faculty"],
-  ["UAI", "Epic instructor"],
+  ["50+", "working professionals trained"],
+  ["NASA / Army", "Unreal workshops"],
+  ["12 yrs", "college curriculum"],
 ];
 
-const loop = [
+const problems = [
   {
-    n: "01",
-    title: "Name the job",
-    body: "What has to ship, who has to run it, and what counts as a failure. A marketing still, a floor demo, a museum kiosk, and a LoRA for a painter are different jobs.",
+    title: "The tools arrived. The process did not.",
+    body: "Copilot, image models, Unreal, an internal GPT. People poke at them. A few power users get lucky. Everyone else ships the old way and hopes the license renews itself.",
   },
   {
-    n: "02",
-    title: "Make a toolchain they can hold",
-    body: "Cutouts, quality gates, English-to-Unreal plugins, optional traces. The operator should not need a research group to get a usable result.",
+    title: "Marketing cannot risk a hallucinated pack.",
+    body: "A generated still that redraws the logo is not a draft. It is a brand incident. Teams need a quality gate, not a mood board.",
   },
   {
-    n: "03",
-    title: "Write the playbook",
-    body: "Constraints, review steps, and what to do when the model invents a logo or the mesh swap breaks the inspect loop. Judgment is the product.",
-  },
-  {
-    n: "04",
-    title: "Teach it, then leave proof",
-    body: "Studio, workshop, or one-to-one. Students and engineers leave with a working artifact and a process they can run again without me in the room.",
+    title: "L&D has slides. The floor needs a studio.",
+    body: "A lunch-and-learn does not change Monday. People need a brief, a constraint, a critique, and a playbook they can run when the instructor is gone.",
   },
 ];
 
-const cases = [
+const modules = [
   {
-    slug: "pixelus",
-    title: "Pixelus",
-    lane: "Product teams",
-    image: "/images/projects/pixelus.png",
-    body: "Campaign stills that keep the pack. The product pixels stay. Background, light, and contact shadows generate around a cutout. A quality gate refuses to invent the bottle. Built so a marketer does not have to learn a node graph.",
+    code: "01",
+    title: "Product imagery that keeps the pack",
+    who: "Marketing, brand, e-commerce, creative production",
+    job: "Turn approved product photography into campaign and social stills without inventing silhouette, materials, logos, or color.",
+    leave: "A repeatable stills workflow, a review checklist, and shots made from your SKUs.",
+    from: "Pixelus",
+    href: "/projects/pixelus",
   },
   {
-    slug: "stillion-lora",
-    title: "Stillion AI",
-    lane: "Non-technical collaborators",
-    image: "/images/projects/stillion-lora.png",
-    body: "A painter directed FLUX LoRA training without becoming an ML engineer: data, checkpoints, taste. The output went to a Contemporary Arts Center installation. Authorship stays with the person who can tell when it looks like their work.",
+    code: "02",
+    title: "Generative AI judgment",
+    who: "Any mixed room: marketing, product, legal-adjacent reviewers, producers",
+    job: "Decide when generation helps, when it lies, and who is allowed to approve the output.",
+    leave: "A critique rubric, failure cases from live tools, and a written rule set for your team.",
+    from: "Stillion AI / Pixelus review gates",
+    href: "/projects/stillion-lora",
   },
   {
-    slug: "ue5-configurator",
-    title: "Unreal configurator",
-    lane: "Teaching Unreal",
-    image: "/images/projects/ue5-configurator-card.jpg",
-    body: "A working reference for a student stuck on a trade-show production app: mesh swaps, material states, upgrade parts, mouse and gamepad inspect. Marketplace art so the lesson stayed on systems.",
+    code: "03",
+    title: "Unreal for working professionals",
+    who: "Engineers, technical artists, visualization and simulation teams",
+    job: "Get from a feature list to a scene someone else can operate: input, data, materials, inspect loop.",
+    leave: "A working Unreal exercise on your stack, plus habits for versioning and handoff.",
+    from: "Vertex / Epic UAI / NASA and Army training",
+    href: "/projects/ue5-configurator",
   },
   {
-    slug: "input-streamliner",
-    title: "Input Streamliner",
-    lane: "English to Unreal",
-    image: "/images/projects/input-streamliner-output.jpg",
-    body: "Describe controls in English. Get Enhanced Input for keyboard, pad, and touch. Local Ollama. The point is a technical artist who should not have to wire every mapping by hand.",
+    code: "04",
+    title: "Inspectable agent workflows",
+    who: "Ops, IT, power users, small production teams",
+    job: "Put models on real files, mail, and tools without a black box. Traces on. Approval points where it matters.",
+    leave: "A mapped workflow, what to automate, what to keep human, and how to read a tool trace.",
+    from: "MAUDE",
+    href: "/projects/maude",
   },
   {
-    slug: "tessera",
-    title: "Tessera",
-    lane: "Research without the stack",
-    image: "/images/projects/tessera.png",
-    body: "Literature review across academic databases for people who are not ML engineers. Search, summaries, citation views. The interface is the enablement.",
+    code: "05",
+    title: "Train the trainer",
+    who: "L&D, team leads, internal instructors",
+    job: "Keep the program alive after the workshop week. Next cohort should not need me in the room.",
+    leave: "Exercises, a critique structure, a playbook, and a plan for the next two sessions.",
+    from: "Vertex curriculum / 12 years of studio teaching",
+    href: "#how",
+  },
+];
+
+const formats = [
+  {
+    title: "Discovery",
+    time: "1 to 2 calls",
+    body: "Your actual jobs, the tools you already pay for, who has to run them, and what a failure looks like. I do not show up with a generic deck.",
   },
   {
-    slug: "maude",
-    title: "MAUDE",
-    lane: "Inspectable AI",
-    image: "/images/projects/maude.png",
-    body: "One gateway, many models, optional traces. Power users can see which tool ran. Casual users can ignore them. That split is how mixed rooms actually adopt a system.",
+    title: "Workshop",
+    time: "1 to 3 days",
+    body: "Constrained exercises, then your briefs. Mixed technical levels in one room. Critique is part of the work, not a wrap-up slide.",
+  },
+  {
+    title: "Internal curriculum",
+    time: "multi-week",
+    body: "A sequence L&D can own: modules, assignments, review checkpoints, portfolio-quality artifacts. Built the way I built a major and a professional training program.",
+  },
+  {
+    title: "Leave-behind",
+    time: "included",
+    body: "Playbook, exercise files, critique rubric, and a short recorded demo if you want one. The point is Monday without me.",
+  },
+];
+
+const how = [
+  {
+    n: "1",
+    title: "Intake on the real work",
+    body: "Send the SKU, the Unreal project, the current prompt dump, the failed stills. I design the room around that, not a vendor demo.",
+  },
+  {
+    n: "2",
+    title: "Teach the constraint first",
+    body: "Small working systems before open briefs. If the pack cannot move, the pack cannot move. If the mesh swap has to survive a gamepad, we test it on a gamepad.",
+  },
+  {
+    n: "3",
+    title: "Critique like production",
+    body: "What was the intended result. What evidence shows it worked. Who is the audience. What would make this safer for the next person.",
+  },
+  {
+    n: "4",
+    title: "Hand off a process",
+    body: "Written steps, named owners, and artifacts the team already made. If it only works while I am driving, it failed.",
   },
 ];
 
@@ -87,22 +128,22 @@ const record = [
   {
     title: "Vertex School",
     detail:
-      "Chief Administrative Officer, 2022 to 2024. Curriculum, operations, and Unreal Authorized Training Center status. Taught game development and real-time production. Unreal Engine 5 training for NASA and U.S. Army engineers on behalf of Epic Games.",
+      "Chief Administrative Officer, 2022 to 2024. Directed curriculum and professional training. Helped secure Unreal Authorized Training Center status. Taught Unreal, production workflows, and applied AI to working adults.",
+  },
+  {
+    title: "NASA and U.S. Army engineers",
+    detail:
+      "Unreal Engine 5 training engagements on behalf of Epic Games. Mixed technical rooms. The job was fluency they could take back to simulation and production, not a conference talk.",
   },
   {
     title: "Unreal Authorized Instructor",
     detail:
-      "Epic Games partner, 2022 to 2024. Written exam plus a live teaching evaluation from introductory through advanced levels. The credential is for teaching Unreal, not for a demo reel.",
+      "Epic Games partner, 2022 to 2024. Written exam and a live teaching evaluation from introductory through advanced levels.",
   },
   {
-    title: "College teaching",
+    title: "College curriculum",
     detail:
-      "Twelve-plus years full time. Associate Professor of Emerging Technologies at Miami University. Assistant Professor of Game Design at Columbia College Chicago, tenure awarded. Co-developed a Games and Simulation major serving more than 200 students a year. GDC Education Summit, 2020: Five Steps Toward Production Ready Game Art Students.",
-  },
-  {
-    title: "Labs and production",
-    detail:
-      "$255,000 in technology grants for a production lab and motion-capture equipment. NSF museum games that had to run on a kiosk in public. The classroom and the floor share the same test: does a stranger get a result.",
+      "Twelve-plus years full time. Miami University Associate Professor. Columbia College Chicago, tenure awarded. Co-developed a Games and Simulation major serving more than 200 students a year. GDC Education Summit, 2020: production-ready student work.",
   },
 ];
 
@@ -114,22 +155,22 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-64 md:pt-72">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            AI enablement
+            Workshops and curriculum
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Stand up the workflow. Train the people who have to live in it.
+            Your team already has the tools. They do not have a class they can finish.
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-            I build AI and Unreal pipelines, then teach teams how to ship with
-            them. The test is Monday: a marketer, an engineer, or a student
-            can run the process without a research group in the room.
+            I design workshops and internal curriculum so marketing, engineering,
+            and production people can run AI and Unreal workflows on Monday.
+            Playbook, critique, working artifacts. Not another license.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="#cases" className="btn">
-              See the cases
+            <Link href="#curriculum" className="btn">
+              See the curriculum
             </Link>
-            <Link href="#record" className="btn-secondary">
-              Teaching record
+            <Link href="#contact" className="btn-secondary">
+              Book a discovery call
             </Link>
           </div>
         </div>
@@ -154,18 +195,138 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Method
+            The gap
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            A production cycle, not a tool tour.
+            This is the conversation I keep walking into.
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-3">
+            {problems.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
+                style={{ padding: "1.75rem" }}
+              >
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p
+                  className="mt-3 text-sm text-[var(--text-secondary)]"
+                  style={{ lineHeight: 1.7 }}
+                >
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="curriculum"
+        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            Curriculum
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            Five modules. Pick the jobs your team actually has.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Tools move. The loop does not. This is the same cycle I used in
-            Unreal workshops, in a games major, and in the AI products I ship
-            now.
+            Each module is a workshop block that can stand alone or stack into
+            an internal course. Built from work I already ship and already
+            teach. Your files, your tools, your failure modes.
           </p>
+          <div className="mt-12 grid gap-4">
+            {modules.map((mod) => (
+              <article
+                key={mod.code}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
+                style={{ padding: "1.75rem" }}
+              >
+                <div className="grid gap-6 lg:grid-cols-[7rem_1fr_16rem] lg:items-start">
+                  <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
+                    {mod.code}
+                  </p>
+                  <div>
+                    <h3 className="text-xl font-semibold">{mod.title}</h3>
+                    <p className="mt-2 text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                      {mod.who}
+                    </p>
+                    <p
+                      className="mt-4 text-sm text-[var(--text-secondary)]"
+                      style={{ lineHeight: 1.7 }}
+                    >
+                      {mod.job}
+                    </p>
+                    <p
+                      className="mt-3 text-sm text-[var(--text-primary)]"
+                      style={{ lineHeight: 1.7 }}
+                    >
+                      They leave with: {mod.leave}
+                    </p>
+                  </div>
+                  <p className="text-sm text-[var(--text-muted)]">
+                    Built from{" "}
+                    <Link
+                      href={mod.href}
+                      className="text-[var(--accent)] hover:underline"
+                    >
+                      {mod.from}
+                    </Link>
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            Formats
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            A class, not a vendor demo.
+          </h2>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
-            {loop.map((step) => (
+            {formats.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
+                style={{ padding: "1.75rem" }}
+              >
+                <div className="flex items-baseline justify-between gap-4">
+                  <h3 className="text-xl font-semibold">{item.title}</h3>
+                  <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.16em] text-[var(--accent)]">
+                    {item.time}
+                  </p>
+                </div>
+                <p
+                  className="mt-3 text-sm text-[var(--text-secondary)]"
+                  style={{ lineHeight: 1.7 }}
+                >
+                  {item.body}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="how"
+        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            How a room runs
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            Intake, constraint, critique, handoff.
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {how.map((step) => (
               <article
                 key={step.n}
                 className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
@@ -187,66 +348,13 @@ export default function EnablementPage() {
         </div>
       </section>
 
-      <section
-        id="cases"
-        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
-      >
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Cases
-          </p>
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Tools a non-specialist can actually run.
-          </h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Each of these is a product or a teaching demo. The enablement
-            claim is the same: someone else can operate it, judge the output,
-            and ship.
-          </p>
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {cases.map((item) => (
-              <Link
-                key={item.slug}
-                href={`/projects/${item.slug}`}
-                className="group overflow-hidden rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] hover:border-[var(--accent)]/30 transition-colors"
-              >
-                <div className="h-52 overflow-hidden bg-[var(--surface-light)]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                  />
-                </div>
-                <div style={{ padding: "1.5rem" }}>
-                  <p className="font-[family-name:var(--font-geist-mono)] text-[10px] uppercase tracking-[0.2em] text-[var(--accent)]">
-                    {item.lane}
-                  </p>
-                  <h3 className="mt-2 text-xl font-semibold group-hover:text-[var(--accent)] transition-colors">
-                    {item.title}
-                  </h3>
-                  <p
-                    className="mt-3 text-sm text-[var(--text-secondary)]"
-                    style={{ lineHeight: 1.7 }}
-                  >
-                    {item.body}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="record"
-        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
-      >
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
             Record
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Curriculum, workshops, and a lab that had to work.
+            I have already taught this kind of room.
           </h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {record.map((item) => (
@@ -268,23 +376,28 @@ export default function EnablementPage() {
         </div>
       </section>
 
-      <section className="px-[max(1.5rem,5vw)] py-20">
+      <section
+        id="contact"
+        className="scroll-mt-24 px-[max(1.5rem,5vw)] py-20"
+      >
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Contact
+            Next
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Roles in AI enablement, product visualization, and Unreal pipelines.
+            If this is the gap on your team, write.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Email matt at sleektiki dot ai. I will relocate.
+            Tell me who has to run the tools, what they have already tried, and
+            what a good week would look like after the workshop. Email matt at
+            sleektiki dot ai.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="/#contact" className="btn">
-              Get in touch
-            </Link>
+            <a href="mailto:matt@sleektiki.ai" className="btn">
+              Email Matthew
+            </a>
             <Link href="/" className="btn-secondary">
-              All work
+              See the work
             </Link>
           </div>
         </div>

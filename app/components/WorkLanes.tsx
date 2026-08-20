@@ -10,8 +10,8 @@ const lanes = [
     href: "/enablement",
     label: "01",
     title: "AI enablement",
-    body: "Stand up the workflow, write the playbook, and train the people who have to live in it. NASA and U.S. Army engineers in Unreal. Vertex curriculum. Tools that a marketing or production team can run without a research group.",
-    proof: "Unreal Authorized Instructor · Vertex CAO · 12 years faculty",
+    body: "Workshops and internal curriculum so a marketing, engineering, or production team can run AI and Unreal without a research group. Playbook, critique, artifacts they keep.",
+    proof: "Vertex · NASA / Army Unreal · 12 years faculty",
   },
   {
     id: "production",

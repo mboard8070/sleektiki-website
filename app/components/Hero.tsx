@@ -98,7 +98,7 @@ export default function Hero() {
                 See the work
               </a>
               <Link href="/enablement" className="btn-secondary">
-                AI enablement
+                Workshops
               </Link>
             </motion.div>
           </div>
