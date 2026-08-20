@@ -4,96 +4,160 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "Introduction to AI for Business | sleektiki.ai",
+  title: "Introduction to AI | sleektiki.ai",
   description:
-    "A practical Introduction to AI for Business workshop. Managers, marketers, analysts, and ops teams learn what these tools can do, where they fail, and how to put them into real work with a review process.",
+    "A single-day Introduction to AI workshop. Five objectives, five topics. How models work, the systems you already meet at work, how to brief them, how to revise the output, and one workflow you take back.",
 };
 
-const who = [
-  "Managers who need a clear picture before they set policy",
-  "Marketing, ops, HR, finance, and customer teams that already have ChatGPT, Copilot, or an internal assistant",
-  "People who are not engineers and do not need to become engineers",
-  "L&D leads who want a class the floor can finish, then repeat",
+const objectives = [
+  "Explain, in your own words, how a model produces an answer and why two runs of the same request can differ.",
+  "Tell apart the AI systems you already sit next to at work: predictive models, generative models, and assistants that use tools.",
+  "Put a real piece of your work in front of a model and get a usable first pass from a written brief.",
+  "Revise that output the way you would edit a colleague: against the brief, then with a pointed second request.",
+  "Leave with one weekly workflow, written down, that you have already run twice in the room.",
 ];
 
-const outline = [
+const topics = [
   {
     code: "01",
-    title: "What this is",
-    time: "morning",
-    points: [
-      "Generative AI, automation, and analytics are different jobs. Most teams blur them.",
-      "What a language model is doing when it writes, summarizes, or answers.",
-      "What it cannot know: your unpublished numbers, your real policy, last week's customer unless you put that in.",
-      "A short map of the tools businesses already pay for, without a vendor bake-off.",
+    title: "How a model produces an answer",
+    objective: "Objective 1",
+    subtopics: [
+      {
+        title: "What a model is",
+        points: [
+          "A model is a function trained on examples. It is not a filing cabinet of facts you can query by name.",
+          "Given your input, it predicts the next piece of a pattern: the next word, pixel, or token that fits what came before.",
+        ],
+      },
+      {
+        title: "Training and use",
+        points: [
+          "Training is the expensive, mostly one-time pass over large datasets that sets the model's weights.",
+          "Everyday use is inference: your request in, an output out, no new learning unless a separate system is built for that.",
+        ],
+      },
+      {
+        title: "Why two drafts differ",
+        points: [
+          "The system samples among likely next pieces. It is not looking up a single stored paragraph.",
+          "A small change in the brief, the order of notes, or the length you asked for will pull a different pattern forward.",
+        ],
+      },
     ],
   },
   {
     code: "02",
-    title: "Doing real work with it",
-    time: "late morning",
-    points: [
-      "Start from a brief, not a blank chat. Role, audience, constraints, source material.",
-      "Iterate in public: first pass, what is wrong, what to feed it next.",
-      "Hands-on with each person's actual work: email, agenda, report, brief, FAQ, job aid.",
-      "When to start a new thread. When to paste a document. When to stop and do it yourself.",
+    title: "The systems you already meet at work",
+    objective: "Objective 2",
+    subtopics: [
+      {
+        title: "Predictive AI",
+        points: [
+          "Scores, forecasts, rankings, and labels: likely to renew, likely to need follow-up, likely demand next quarter.",
+          "It is often already running inside a CRM, ERP, ad platform, or fraud tool, without a chat box.",
+        ],
+      },
+      {
+        title: "Generative AI",
+        points: [
+          "Text, images, code, and slides drafted from a request. This is what most people mean when they say AI this year.",
+          "It is a drafting partner. The quality of the draft tracks the quality of the brief and the source you attach.",
+        ],
+      },
+      {
+        title: "Assistants that use tools",
+        points: [
+          "A model that can search, open a file, or call a calculator is taking steps, not only writing a paragraph.",
+          "Multi-step work needs a trail you can follow: what it looked up, what it used, what it wrote.",
+        ],
+      },
     ],
   },
   {
     code: "03",
-    title: "Where it helps, and where it fails",
-    time: "afternoon",
-    points: [
-      "Good first uses: first drafts, meeting notes, rewriting for an audience, turning a long doc into a checklist.",
-      "Bad first uses: legal advice, customer-facing numbers, anything that must be true and is not in the source.",
-      "Hallucinations, confident wrong answers, and invented citations.",
-      "Live failure cases. People should see a model get something wrong on purpose.",
+    title: "Briefing a model on your work",
+    objective: "Objective 3",
+    subtopics: [
+      {
+        title: "The brief",
+        points: [
+          "Name the task, the reader, the length, and the tone before you paste source material.",
+          "Write what done looks like: a one-page brief for a VP, a 150-word customer reply, a three-bullet agenda.",
+        ],
+      },
+      {
+        title: "Context",
+        points: [
+          "Give it the source it needs: notes, a product sheet, last week's email, the outline you already have.",
+          "If a fact is not in the window, the model cannot use it. It will fill the gap with a fluent pattern instead.",
+        ],
+      },
+      {
+        title: "The first pass",
+        points: [
+          "Ask for a draft. Do not ask it to finish the job in one shot.",
+          "Run the same brief twice and set the two drafts side by side before you edit either one.",
+        ],
+      },
     ],
   },
   {
     code: "04",
-    title: "Risk, data, and who signs off",
-    time: "afternoon",
-    points: [
-      "What not to paste: customer PII, unreleased financials, credentials, anything under NDA you have not cleared.",
-      "Brand voice and claims. A polished paragraph can still be a problem.",
-      "A simple review rule: human owns the send. The model does not.",
-      "Draft a team rule of use you can actually enforce.",
+    title: "Revising the output",
+    objective: "Objective 4",
+    subtopics: [
+      {
+        title: "Read against the assignment",
+        points: [
+          "Check whether the draft matches the brief you wrote, or a generic version of the topic.",
+          "Read structure first: order, headings, what is missing. Then read sentences.",
+        ],
+      },
+      {
+        title: "Send a pointed revision",
+        points: [
+          "Mark the weak part in plain language: too long, wrong reader, skipped the constraint, buried the ask.",
+          "Return the marked draft. Do not open a new blank chat and hope for a cleaner start.",
+        ],
+      },
+      {
+        title: "Keep the substance yours",
+        points: [
+          "Names, figures, and claims come from your material. The model is there to phrase and arrange.",
+          "If a line is useful, keep it. If a line is filler, cut it in the open so the next pass stays tight.",
+        ],
+      },
     ],
   },
   {
     code: "05",
-    title: "A week that looks different",
-    time: "close",
-    points: [
-      "Each person leaves with three workflows they ran in the room, written down.",
-      "A one-page personal playbook: tools, prompts they will reuse, review steps.",
-      "A team version: what we will try for 30 days, what we will not, who checks the work.",
-      "How to tell if it is saving time, not just producing more text.",
+    title: "One workflow you take back",
+    objective: "Objective 5",
+    subtopics: [
+      {
+        title: "Pick the job",
+        points: [
+          "Choose a task you already do at least weekly: agenda, summary, first draft, rewrite for a new audience.",
+          "Write the reusable brief for that job, not a one-off prompt you will forget.",
+        ],
+      },
+      {
+        title: "Capture the method",
+        points: [
+          "Save the brief, the source you attach, and the two revision notes that actually moved the draft.",
+          "Name the output so a teammate could follow the same steps without you in the room.",
+        ],
+      },
+      {
+        title: "Run it a second time",
+        points: [
+          "Repeat the same job on a second example before the day ends.",
+          "Write down how long it took next to how you usually do that task, while the comparison is still honest.",
+        ],
+      },
     ],
   },
-];
-
-const formats = [
-  {
-    title: "Half day",
-    body: "Orientation plus one hands-on block. For a leadership group that needs shared language before they buy more tools or write a policy.",
-  },
-  {
-    title: "Full day",
-    body: "The full outline. Mixed room. Their files, not stock examples. This is the default.",
-  },
-  {
-    title: "Two days",
-    body: "Day one as above. Day two is their work: bring live briefs, run them, critique, rewrite the playbook with what broke.",
-  },
-];
-
-const leave = [
-  "A written personal playbook",
-  "Three workflows they already ran on their own work",
-  "A draft team rule of use",
-  "A 30-day try list with owners",
 ];
 
 export default function EnablementPage() {
@@ -104,23 +168,41 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-64 md:pt-72">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            AI enablement
+            Single-day workshop
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Introduction to AI for Business
+            Introduction to AI
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-            A practical class for people who have to use these tools at work.
-            What they are, what they invent, and how to put them into a real
-            week with a human still on the send button.
+            How these systems work, how to brief them on your own material,
+            and how to revise what comes back. One day. Five objectives.
+            Your work on the table.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link href="#outline" className="btn">
-              Course outline
-            </Link>
-            <Link href="#contact" className="btn-secondary">
-              Ask about a session
-            </Link>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            The day
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            An introduction, then practice.
+          </h2>
+          <div className="mt-8 max-w-3xl space-y-6 text-base leading-8 text-[var(--text-secondary)]">
+            <p>
+              Most people meet AI as a chat box. Underneath that box is a
+              trained model predicting the next piece of a pattern. That is
+              enough to start, and it is the right place to start. The morning
+              builds that picture. The rest of the day puts a live piece of
+              each person&apos;s work in front of a model and treats the
+              output like a draft from a colleague.
+            </p>
+            <p>
+              Bring the tools you already have and a task you actually owe
+              this week. The room uses that. There is no software to install
+              and no stack to buy.
+            </p>
           </div>
         </div>
       </section>
@@ -128,120 +210,77 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Who it is for
+            Objectives
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Working adults. Not a computer science course.
+            By the end of the day you will be able to:
           </h2>
-          <ul className="mt-10 max-w-3xl space-y-4">
-            {who.map((item) => (
-              <li
-                key={item}
-                className="border-l-2 border-[var(--accent)] pl-5 text-base leading-7 text-[var(--text-secondary)]"
-              >
-                {item}
+          <ol className="mt-12 max-w-3xl space-y-6">
+            {objectives.map((item, i) => (
+              <li key={item} className="flex gap-5">
+                <span className="font-[family-name:var(--font-geist-mono)] text-sm text-[var(--accent)] pt-1">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <p className="text-base leading-8 text-[var(--text-secondary)]">
+                  {item}
+                </p>
               </li>
             ))}
-          </ul>
+          </ol>
         </div>
       </section>
 
-      <section
-        id="outline"
-        className="scroll-mt-24 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20"
-      >
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Outline
+            Topics
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Five blocks. One working day.
+            Five topics from those five objectives.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Bring the tools you already have and the work sitting on your
-            desk. The class uses that. It does not demo a stack you would have
-            to buy.
+            Each topic has three parts. Each part has two points we will
+            actually cover in the room.
           </p>
-          <div className="mt-12 grid gap-4">
-            {outline.map((block) => (
+          <div className="mt-12 grid gap-8">
+            {topics.map((topic) => (
               <article
-                key={block.code}
+                key={topic.code}
                 className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
-                style={{ padding: "1.75rem" }}
+                style={{ padding: "2rem" }}
               >
                 <div className="flex flex-wrap items-baseline justify-between gap-3">
                   <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-                    {block.code}
+                    Topic {topic.code}
                   </p>
                   <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                    {block.time}
+                    {topic.objective}
                   </p>
                 </div>
-                <h3 className="mt-3 text-xl font-semibold">{block.title}</h3>
-                <ul className="mt-4 space-y-2">
-                  {block.points.map((point) => (
-                    <li
-                      key={point}
-                      className="text-sm text-[var(--text-secondary)]"
-                      style={{ lineHeight: 1.7 }}
-                    >
-                      {point}
-                    </li>
+                <h3 className="mt-3 text-2xl font-semibold">{topic.title}</h3>
+                <div className="mt-8 grid gap-8 md:grid-cols-3">
+                  {topic.subtopics.map((sub) => (
+                    <div key={sub.title}>
+                      <h4 className="text-sm font-semibold tracking-wide">
+                        {sub.title}
+                      </h4>
+                      <ul className="mt-3 space-y-3">
+                        {sub.points.map((point) => (
+                          <li
+                            key={point}
+                            className="text-sm text-[var(--text-secondary)]"
+                            style={{ lineHeight: 1.7 }}
+                          >
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   ))}
-                </ul>
+                </div>
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Format
-          </p>
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Half day, full day, or two days on live work.
-          </h2>
-          <div className="mt-12 grid gap-4 md:grid-cols-3">
-            {formats.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
-                style={{ padding: "1.75rem" }}
-              >
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p
-                  className="mt-3 text-sm text-[var(--text-secondary)]"
-                  style={{ lineHeight: 1.7 }}
-                >
-                  {item.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            They leave with
-          </p>
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Paper they can use on Monday.
-          </h2>
-          <ul className="mt-10 grid gap-4 md:grid-cols-2">
-            {leave.map((item) => (
-              <li
-                key={item}
-                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] text-base text-[var(--text-secondary)]"
-                style={{ padding: "1.5rem", lineHeight: 1.7 }}
-              >
-                {item}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -254,12 +293,11 @@ export default function EnablementPage() {
             Next
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            If your team needs this class, write.
+            If you want this day for your team, write.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Say who would be in the room, which tools they already have, and
-            whether you want a half day, a full day, or two. Email matt at
-            sleektiki dot ai.
+            Email matt at sleektiki dot ai. Say who would be in the room and
+            which tools they already use.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="mailto:matt@sleektiki.ai" className="btn">

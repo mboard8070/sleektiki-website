@@ -10,8 +10,8 @@ const lanes = [
     href: "/enablement",
     label: "01",
     title: "AI enablement",
-    body: "Introduction to AI for Business. A practical class for managers, marketers, analysts, and ops: what the tools can do, where they fail, and how to put them into real work.",
-    proof: "Workshops · internal cohorts",
+    body: "Introduction to AI. A single-day workshop: how models work, how to brief them on your material, and how to revise what comes back.",
+    proof: "One day · five objectives",
   },
   {
     id: "production",
