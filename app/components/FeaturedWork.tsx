@@ -81,6 +81,13 @@ export default function FeaturedWork() {
             </ScrollReveal>
           ))}
         </div>
+        <p className="mt-8 text-sm text-[var(--text-muted)]">
+          <Link href="/enablement" className="text-[var(--accent)] hover:underline">
+            AI enablement
+          </Link>
+          {" — "}
+          playbook, teaching record, and the tools a non-specialist can run.
+        </p>
       </div>
     </section>
   );

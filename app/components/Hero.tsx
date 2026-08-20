@@ -97,8 +97,8 @@ export default function Hero() {
               <a href="#work" className="btn">
                 See the work
               </a>
-              <Link href="/portfolio" className="btn-secondary">
-                AI stills
+              <Link href="/enablement" className="btn-secondary">
+                AI enablement
               </Link>
             </motion.div>
           </div>
