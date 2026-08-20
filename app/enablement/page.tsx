@@ -9,12 +9,6 @@ export const metadata: Metadata = {
     "Workshops and internal curriculum so marketing, engineering, and production teams can run AI and Unreal workflows without a research group. Playbooks, critique, and working artifacts they keep.",
 };
 
-const facts = [
-  ["50+", "working professionals trained"],
-  ["NASA / Army", "Unreal workshops"],
-  ["12 yrs", "college curriculum"],
-];
-
 const problems = [
   {
     title: "The tools arrived. The process did not.",
@@ -55,7 +49,7 @@ const modules = [
     who: "Engineers, technical artists, visualization and simulation teams",
     job: "Get from a feature list to a scene someone else can operate: input, data, materials, inspect loop.",
     leave: "A working Unreal exercise on your stack, plus habits for versioning and handoff.",
-    from: "Vertex / Epic UAI / NASA and Army training",
+    from: "UE5 Configurator",
     href: "/projects/ue5-configurator",
   },
   {
@@ -73,7 +67,7 @@ const modules = [
     who: "L&D, team leads, internal instructors",
     job: "Keep the program alive after the workshop week. Next cohort should not need me in the room.",
     leave: "Exercises, a critique structure, a playbook, and a plan for the next two sessions.",
-    from: "Vertex curriculum / 12 years of studio teaching",
+    from: "the studio method below",
     href: "#how",
   },
 ];
@@ -124,29 +118,6 @@ const how = [
   },
 ];
 
-const record = [
-  {
-    title: "Vertex School",
-    detail:
-      "Chief Administrative Officer, 2022 to 2024. Directed curriculum and professional training. Helped secure Unreal Authorized Training Center status. Taught Unreal, production workflows, and applied AI to working adults.",
-  },
-  {
-    title: "NASA and U.S. Army engineers",
-    detail:
-      "Unreal Engine 5 training engagements on behalf of Epic Games. Mixed technical rooms. The job was fluency they could take back to simulation and production, not a conference talk.",
-  },
-  {
-    title: "Unreal Authorized Instructor",
-    detail:
-      "Epic Games partner, 2022 to 2024. Written exam and a live teaching evaluation from introductory through advanced levels.",
-  },
-  {
-    title: "College curriculum",
-    detail:
-      "Twelve-plus years full time. Miami University Associate Professor. Columbia College Chicago, tenure awarded. Co-developed a Games and Simulation major serving more than 200 students a year. GDC Education Summit, 2020: production-ready student work.",
-  },
-];
-
 export default function EnablementPage() {
   return (
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
@@ -173,22 +144,6 @@ export default function EnablementPage() {
               Book a discovery call
             </Link>
           </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-16">
-        <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-3">
-          {facts.map(([value, label]) => (
-            <div
-              key={label}
-              className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6"
-            >
-              <strong className="font-[family-name:var(--font-geist-mono)] text-2xl text-[var(--accent)]">
-                {value}
-              </strong>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">{label}</p>
-            </div>
-          ))}
         </div>
       </section>
 
@@ -341,34 +296,6 @@ export default function EnablementPage() {
                   style={{ lineHeight: 1.7 }}
                 >
                   {step.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Record
-          </p>
-          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            I have already taught this kind of room.
-          </h2>
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            {record.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
-                style={{ padding: "1.75rem" }}
-              >
-                <h3 className="text-xl font-semibold">{item.title}</h3>
-                <p
-                  className="mt-3 text-sm text-[var(--text-secondary)]"
-                  style={{ lineHeight: 1.7 }}
-                >
-                  {item.detail}
                 </p>
               </article>
             ))}
