@@ -86,7 +86,7 @@ export default function FeaturedWork() {
             Introduction to AI
           </Link>
           {" — "}
-          a single-day workshop. Five objectives.
+          for people who have not used AI at work yet.
         </p>
       </div>
     </section>

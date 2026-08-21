@@ -10,7 +10,7 @@ const lanes = [
     href: "/enablement",
     label: "01",
     title: "AI enablement",
-    body: "Introduction to AI. A single-day workshop: how models work, how to brief them on your material, and how to revise what comes back.",
+    body: "Introduction to AI for people who have not used it at work yet, plus technical rooms already taught: OpenAI in Unreal, and AI-assisted Python.",
     proof: "One day · five objectives",
   },
   {

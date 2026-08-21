@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Introduction to AI | sleektiki.ai",
   description:
-    "A single-day Introduction to AI workshop. Five objectives, five topics. How models work, the systems you already meet at work, how to brief them, how to revise the output, and one workflow you take back.",
+    "A single-day Introduction to AI for people who have not used AI in a professional capacity yet. How models work, how to brief them, how to revise the output, and one workflow to take back.",
 };
 
 const objectives = [
@@ -272,9 +272,9 @@ export default function EnablementPage() {
             Introduction to AI
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-            How these systems work, how to brief them on your own material,
-            and how to revise what comes back. One day. Five objectives.
-            Your work on the table.
+            For people who have not used AI in a professional capacity yet.
+            One day. Five objectives. How these systems work, how to brief
+            them on a real task, and how to revise what comes back.
           </p>
         </div>
       </section>
@@ -289,17 +289,17 @@ export default function EnablementPage() {
           </h2>
           <div className="mt-8 max-w-3xl space-y-6 text-base leading-8 text-[var(--text-secondary)]">
             <p>
-              Most people meet AI as a chat box. Underneath that box is a
-              trained model predicting the next piece of a pattern. That is
-              enough to start, and it is the right place to start. The morning
-              builds that picture. The rest of the day puts a live piece of
-              each person&apos;s work in front of a model and treats the
-              output like a draft from a colleague.
+              This day is for people who have not used AI at work yet. They
+              may have tried a chat box at home. They have not put it on a
+              brief, a report, or a deadline. The morning builds a picture of
+              what a model is doing. The rest of the day puts one live task
+              from their job in front of a model and treats the output like a
+              draft from a colleague.
             </p>
             <p>
-              Bring the tools you already have and a task you actually owe
-              this week. The room uses that. There is no software to install
-              and no stack to buy.
+              No software to install and no stack to buy. A standard chat
+              tool is enough. People who already ship with models in Unreal
+              or Python belong in the technical rooms below, not this one.
             </p>
           </div>
         </div>
@@ -435,9 +435,9 @@ export default function EnablementPage() {
             Technical rooms
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Introduction to AI is the mixed-room day. These are classes already
-            taught to working professionals who had to ship in Unreal or in
-            Python.
+            For teams already in production. Introduction to AI is the first
+            room, for people who have not used AI at work yet. These two were
+            taught to professionals who had to ship in Unreal or in Python.
           </p>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {taught.map((item) => (
@@ -485,9 +485,9 @@ export default function EnablementPage() {
             If you want a room for your team, write.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Introduction to AI, OpenAI in Unreal, or AI-assisted Python. Say
-            who would be in the room and which tools they already use. Email
-            matt at sleektiki dot ai.
+            Introduction to AI if the room has not used it at work yet.
+            OpenAI in Unreal or AI-assisted Python if they already ship.
+            Email matt at sleektiki dot ai.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="mailto:matt@sleektiki.ai" className="btn">
