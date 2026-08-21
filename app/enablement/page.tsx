@@ -301,15 +301,11 @@ export default function EnablementPage() {
       <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-            Topics
+            Agenda
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Five topics from those five objectives.
+            Agenda
           </h2>
-          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Each topic has three parts. Each part has two points we will
-            actually cover in the room.
-          </p>
           <div className="mt-12 grid gap-8">
             {topics.map((topic) => (
               <article
