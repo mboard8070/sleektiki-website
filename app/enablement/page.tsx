@@ -220,6 +220,31 @@ const topics = [
   },
 ];
 
+const taught = [
+  {
+    title: "OpenAI API in Unreal Engine",
+    who: "Unreal engineers, technical artists, simulation and visualization teams",
+    description:
+      "How to call a language model from inside Unreal: request, response, and where that output lands in a running scene or editor tool. Taught as a working class, not a slide deck. The same problem as a C++ wrapper plus Blueprint so people who do not live in native code can still fire the call.",
+    points: [
+      "API key, request shape, and streaming versus a full response",
+      "A C++ wrapper other systems can call, with Blueprint exposure for designers",
+      "Putting the result on an actor, a widget, or an editor action they already use",
+    ],
+  },
+  {
+    title: "AI-assisted coding with Python",
+    who: "Developers, TAs, and anyone writing scripts who will use a model on real code",
+    description:
+      "Using a model as a coding partner in Python: write a brief for the function, generate, read the diff, run it, send a pointed revision. The room works on scripts they brought, not toy katas.",
+    points: [
+      "A brief that names inputs, outputs, and the failure you will test",
+      "Reading generated Python before you run it: imports, edge cases, what it invented",
+      "A revision loop: mark the break, send it back, keep the tests in your hands",
+    ],
+  },
+];
+
 const assessments = [
   {
     title: "Multiple choice quiz",
@@ -401,6 +426,53 @@ export default function EnablementPage() {
         </div>
       </section>
 
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            Also taught
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            Technical rooms
+          </h2>
+          <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
+            Introduction to AI is the mixed-room day. These are classes already
+            taught to working professionals who had to ship in Unreal or in
+            Python.
+          </p>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {taught.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
+                style={{ padding: "1.75rem" }}
+              >
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p className="mt-2 text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">
+                  {item.who}
+                </p>
+                <p
+                  className="mt-4 text-sm text-[var(--text-secondary)]"
+                  style={{ lineHeight: 1.7 }}
+                >
+                  {item.description}
+                </p>
+                <ul className="mt-4 space-y-2">
+                  {item.points.map((point) => (
+                    <li
+                      key={point}
+                      className="text-sm text-[var(--text-secondary)]"
+                      style={{ lineHeight: 1.7 }}
+                    >
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         id="contact"
         className="scroll-mt-24 px-[max(1.5rem,5vw)] py-20"
@@ -410,11 +482,12 @@ export default function EnablementPage() {
             Next
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            If you want this day for your team, write.
+            If you want a room for your team, write.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Email matt at sleektiki dot ai. Say who would be in the room and
-            which tools they already use.
+            Introduction to AI, OpenAI in Unreal, or AI-assisted Python. Say
+            who would be in the room and which tools they already use. Email
+            matt at sleektiki dot ai.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="mailto:matt@sleektiki.ai" className="btn">
