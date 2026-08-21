@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -97,9 +96,6 @@ export default function Hero() {
               <a href="#work" className="btn">
                 See the work
               </a>
-              <Link href="/enablement" className="btn-secondary">
-                Enablement
-              </Link>
             </motion.div>
           </div>
         </div>
