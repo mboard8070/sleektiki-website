@@ -220,6 +220,19 @@ const topics = [
   },
 ];
 
+const assessments = [
+  {
+    title: "Explain it back",
+    description:
+      "Each person states, in their own words, how a model produces an answer, why two drafts can differ, and which kind of system they are looking at: predictive, generative, or an assistant that uses tools. Done in the room, out loud or in a short written note, before the practice blocks start.",
+  },
+  {
+    title: "Work sample",
+    description:
+      "Each person turns in one packet from their own job: the brief, two first-pass drafts, one marked revision sent back to the model, and the weekly workflow written down and run on a second example. The packet is the evidence they met the last three objectives.",
+  },
+];
+
 export default function EnablementPage() {
   return (
     <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
@@ -354,6 +367,34 @@ export default function EnablementPage() {
                     </div>
                   ))}
                 </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
+        <div className="mx-auto max-w-7xl">
+          <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
+            Assessment
+          </p>
+          <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
+            Assessment
+          </h2>
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+            {assessments.map((item) => (
+              <article
+                key={item.title}
+                className="rounded-xl border border-[var(--surface-border)] bg-[var(--surface)]"
+                style={{ padding: "1.75rem" }}
+              >
+                <h3 className="text-xl font-semibold">{item.title}</h3>
+                <p
+                  className="mt-3 text-sm text-[var(--text-secondary)]"
+                  style={{ lineHeight: 1.7 }}
+                >
+                  {item.description}
+                </p>
               </article>
             ))}
           </div>
