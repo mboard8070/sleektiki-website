@@ -94,7 +94,7 @@ export default function Hero() {
               style={{ marginTop: "2rem" }}
             >
               <a href="#work" className="btn">
-                See the work
+                Let&apos;s dig in!
               </a>
             </motion.div>
           </div>
