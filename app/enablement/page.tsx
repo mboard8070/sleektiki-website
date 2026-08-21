@@ -222,9 +222,9 @@ const topics = [
 
 const assessments = [
   {
-    title: "Explain it back",
+    title: "Multiple choice quiz",
     description:
-      "Each person states, in their own words, how a model produces an answer, why two drafts can differ, and which kind of system they are looking at: predictive, generative, or an assistant that uses tools. Done in the room, out loud or in a short written note, before the practice blocks start.",
+      "A short quiz after the morning blocks. Items cover how a model produces an answer, why two drafts can differ, and how to tell predictive systems, generative systems, and assistants that use tools apart.",
   },
   {
     title: "Work sample",
