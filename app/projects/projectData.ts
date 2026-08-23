@@ -11,6 +11,7 @@ export interface ProjectDetail {
   tags: string[];
   hero: string;
   gallery: { src: string; alt: string; type?: "image" | "video"; aspect?: string; wide?: boolean }[];
+  compactGallery?: boolean;
   links: { label: string; url: string }[];
   appStoreBadge?: { src: string; alt: string; url?: string };
   youtubeIds?: string[];
@@ -1043,6 +1044,7 @@ const projects: ProjectDetail[] = [
     ],
     tags: ["iOS", "SpriteKit", "Swift", "Game Center", "StoreKit"],
     hero: "/images/projects/cyte.jpg",
+    compactGallery: true,
     gallery: [
       { src: "/images/projects/cyte-as-01-title.jpg", alt: "Cyte Play — boss" },
       { src: "/images/projects/cyte-as-02-match.jpg", alt: "Cyte Match" },

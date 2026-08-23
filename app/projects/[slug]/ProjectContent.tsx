@@ -54,7 +54,7 @@ export default function ProjectContent({
           </h2>
           <div
             className={`grid gap-5 ${
-              project.splatEmbeds
+              project.splatEmbeds || project.compactGallery
                 ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
                 : "grid-cols-1 sm:grid-cols-2"
             }`}
@@ -91,7 +91,9 @@ export default function ProjectContent({
                   <img
                     src={item.src}
                     alt={item.alt}
-                    className="w-full rounded-lg border border-[var(--surface-border)] object-cover"
+                    className={`w-full rounded-lg border border-[var(--surface-border)] ${
+                      project.compactGallery ? "object-contain" : "object-cover"
+                    }`}
                     style={{ cursor: "zoom-in" }}
                     onClick={() => setLightboxSrc(item.src)}
                   />
