@@ -65,7 +65,13 @@ export default function ProjectContent({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.06 }}
-                className={item.type === "video" && !project.splatEmbeds ? "sm:col-span-2" : undefined}
+                className={
+                  item.type === "video" &&
+                  !project.splatEmbeds &&
+                  item.wide !== false
+                    ? "sm:col-span-2"
+                    : undefined
+                }
               >
                 {item.type === "video" ? (
                   <video

@@ -10,7 +10,7 @@ export interface ProjectDetail {
   description: string[];
   tags: string[];
   hero: string;
-  gallery: { src: string; alt: string; type?: "image" | "video"; aspect?: string }[];
+  gallery: { src: string; alt: string; type?: "image" | "video"; aspect?: string; wide?: boolean }[];
   links: { label: string; url: string }[];
   appStoreBadge?: { src: string; alt: string; url?: string };
   youtubeIds?: string[];
@@ -1029,6 +1029,73 @@ const projects: ProjectDetail[] = [
       {
         heading: "Outcome",
         body: "The demo is a working reference for the interaction layer a trade-show configurator needs: mesh switching, material states, upgrade attachment, and a shared mouse/gamepad inspect loop built on Common UI. The student could take those patterns into the production application instead of reverse-engineering them from a finished booth build.",
+      },
+    ],
+  },
+  {
+    slug: "cyte",
+    title: "Cyte",
+    subtitle: "iOS Cell Game",
+    description: [
+      "Cyte is a one-thumb iOS cell game in the Osmos and 1v1 Agar energy family. You draw a current through a dusk broth. Motes dock. Rivals eat. Phages nick. The climb is endless.",
+      "Play is a solo climb through dusk after dusk, with bosses every few levels. Match is 1v1 through Apple Game Center. Lab is the power-up board you earn as you go.",
+      "Native Swift and SpriteKit. Publisher: Sleek Tiki. Bundle identifier: ai.sleektiki.Silt.",
+    ],
+    tags: ["iOS", "SpriteKit", "Swift", "Game Center", "StoreKit"],
+    hero: "/images/projects/cyte.jpg",
+    gallery: [
+      { src: "/videos/cyte/play.mp4", alt: "Cyte Play — solo climb", type: "video", aspect: "9 / 19.5", wide: false },
+      { src: "/videos/cyte/match.mp4", alt: "Cyte Match — 1v1 practice", type: "video", aspect: "9 / 19.5", wide: false },
+      { src: "/images/projects/cyte-title.jpg", alt: "Cyte title screen" },
+      { src: "/images/projects/cyte-play.jpg", alt: "Cyte Play — drawing a current" },
+      { src: "/images/projects/cyte-match.jpg", alt: "Cyte Match — 1v1" },
+      { src: "/images/projects/cyte-lab.jpg", alt: "Cyte Lab — power-up board" },
+      { src: "/images/projects/cyte-lab-icons.jpg", alt: "Cyte Lab — power-up icons" },
+      { src: "/images/projects/cyte-scores.jpg", alt: "Cyte Scores" },
+      { src: "/images/projects/cyte-icon.png", alt: "Cyte app icon" },
+    ],
+    links: [
+      { label: "Privacy Policy", url: "/cyte/privacy" },
+      { label: "Terms of Service", url: "/cyte/terms" },
+    ],
+    features: [
+      {
+        title: "One Thumb",
+        description: "Draw a current with one finger. The field stays readable. No dual-stick, no on-screen analog clutter.",
+      },
+      {
+        title: "Play",
+        description: "A solo climb through dusk after dusk. Motes dock on lock-and-key hues. Rivals eat. Phages nick. Bosses arrive on a regular cadence: spitters, splitters, pulsers, siphons, burrowers, twins, and a crown.",
+      },
+      {
+        title: "Match",
+        description: "1v1 through Apple Game Center. Same current, same broth, a rival on the other side of the field.",
+      },
+      {
+        title: "Lab",
+        description: "A power-up board you earn as you go, not a dump of shop items on day one.",
+      },
+      {
+        title: "Native iOS",
+        description: "Swift, SpriteKit, Game Center, and StoreKit. Lives, power-ups, and remove-ads stay on-device. No Cyte server.",
+      },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Most mobile cell games either sprawl into menus or hide the field behind two thumbs. I wanted a shipped iOS game that reads in one glance: draw a current, eat, climb. Playable with the phone in one hand.",
+      },
+      {
+        heading: "Design Challenge",
+        body: "The current has to be precise without covering the organisms. Play, Match, and Lab have to share the same world so the player is not learning three games. The cells, bosses, and barriers have to stay painted and readable at dusk, not generic blobs.",
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "I kept input to one thumb and built the world in SpriteKit with painted cytes, motes, phages, and bosses instead of a UI kit of circles. Solo Play is an endless dusk climb. Match is a real 1v1 over Game Center, not a leaderboard with a bot. Lab is an earned board. StoreKit handles lives, power-ups, and remove-ads without a Sleek Tiki server.",
+      },
+      {
+        heading: "Outcome",
+        body: "A native iOS game with Play, Match, and Lab on one device. Privacy and terms live at sleektiki.ai/cyte for App Store Connect. The work listing is here, under 3D and games.",
       },
     ],
   },

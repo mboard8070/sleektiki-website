@@ -145,6 +145,15 @@ const projects: Project[] = [
     image: "/images/projects/article-gen.png",
   },
   {
+    title: "Cyte",
+    slug: "cyte",
+    description:
+      "iOS cell game. One thumb. Draw a current. Play is a solo climb. Match is 1v1.",
+    tags: ["iOS", "SpriteKit", "Game Center"],
+    category: "craft",
+    image: "/images/projects/cyte.jpg",
+  },
+  {
     title: "Kamodo Steve",
     slug: "kamodo-steve",
     description:
