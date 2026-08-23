@@ -34,20 +34,57 @@ export default function CytePage() {
             you go.
           </p>
           <p>
-            Publisher: Sleek Tiki. Bundle identifier: ai.sleektiki.Silt.
+            Publisher: Sleek Tiki. Bundle identifier:{" "}
+            <code className="text-[var(--text-primary)]">ai.sleektiki.Silt</code>.
           </p>
-          <p>
-            <Link href="/cyte/privacy" className="text-[var(--accent)] hover:underline">
-              Privacy
-            </Link>
-            {" · "}
-            <Link href="/cyte/terms" className="text-[var(--accent)] hover:underline">
-              Terms
-            </Link>
-          </p>
+
+          <section className="pt-4">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+              Privacy Policy and Terms of Service
+            </h2>
+            <p className="mb-4">
+              Use these URLs in App Store Connect. They are Cyte-specific.
+              Do not use the site-wide /privacy and /terms links; those are
+              for Maude.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Link
+                href="/cyte/privacy"
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]/40 transition-colors"
+              >
+                <p className="text-sm font-[family-name:var(--font-geist-mono)] uppercase tracking-[0.16em] text-[var(--accent)]">
+                  Privacy Policy
+                </p>
+                <p className="mt-2 text-[var(--text-primary)] font-semibold">
+                  What Cyte stores and who it talks to
+                </p>
+                <p className="mt-2 text-sm break-all text-[var(--text-muted)]">
+                  https://sleektiki.ai/cyte/privacy
+                </p>
+              </Link>
+              <Link
+                href="/cyte/terms"
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]/40 transition-colors"
+              >
+                <p className="text-sm font-[family-name:var(--font-geist-mono)] uppercase tracking-[0.16em] text-[var(--accent)]">
+                  Terms of Service
+                </p>
+                <p className="mt-2 text-[var(--text-primary)] font-semibold">
+                  Play, purchases, and Game Center
+                </p>
+                <p className="mt-2 text-sm break-all text-[var(--text-muted)]">
+                  https://sleektiki.ai/cyte/terms
+                </p>
+              </Link>
+            </div>
+          </section>
+
           <p>
             Contact: Matthew Board,{" "}
-            <a href="mailto:matt@sleektiki.ai" className="text-[var(--accent)] hover:underline">
+            <a
+              href="mailto:matt@sleektiki.ai"
+              className="text-[var(--accent)] hover:underline"
+            >
               matt@sleektiki.ai
             </a>
           </p>
