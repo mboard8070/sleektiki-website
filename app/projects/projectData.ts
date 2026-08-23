@@ -1044,12 +1044,14 @@ const projects: ProjectDetail[] = [
     tags: ["iOS", "SpriteKit", "Swift", "Game Center", "StoreKit"],
     hero: "/images/projects/cyte.jpg",
     gallery: [
+      { src: "/images/projects/cyte-as-01-title.jpg", alt: "Cyte Play — boss" },
+      { src: "/images/projects/cyte-as-02-match.jpg", alt: "Cyte Match" },
+      { src: "/images/projects/cyte-as-03-match-play.jpg", alt: "Cyte Match in play" },
+      { src: "/images/projects/cyte-as-04-scores.jpg", alt: "Cyte Play — twin boss" },
+      { src: "/images/projects/cyte-as-05-play.jpg", alt: "Cyte — you won" },
       { src: "/images/projects/cyte-title.jpg", alt: "Cyte title screen" },
-      { src: "/images/projects/cyte-play.jpg", alt: "Cyte Play — drawing a current" },
-      { src: "/images/projects/cyte-match.jpg", alt: "Cyte Match — 1v1" },
       { src: "/images/projects/cyte-lab.jpg", alt: "Cyte Lab — power-up board" },
       { src: "/images/projects/cyte-lab-icons.jpg", alt: "Cyte Lab — power-up icons" },
-      { src: "/images/projects/cyte-scores.jpg", alt: "Cyte Scores" },
       { src: "/images/projects/cyte-icon.png", alt: "Cyte app icon" },
     ],
     links: [
