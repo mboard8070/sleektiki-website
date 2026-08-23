@@ -21,8 +21,22 @@ export default function CytePage() {
           <p className="mt-3 text-lg text-[var(--text-secondary)]">
             iOS. One thumb. Draw a current through a broth of cells.
           </p>
+          <p className="mt-3 text-sm">
+            <Link href="/projects/cyte" className="text-[var(--accent)] hover:underline">
+              Case study
+            </Link>
+            {" · "}
+            <Link href="/#craft" className="text-[var(--accent)] hover:underline">
+              Work · 3D &amp; games
+            </Link>
+          </p>
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
+          <img
+            src="/images/projects/cyte.jpg"
+            alt="Cyte title screen"
+            className="w-full rounded-lg border border-[var(--surface-border)]"
+          />
           <p>
             Cyte is a cell game in the Osmos and 1v1 Agar energy family. You
             draw a current. Motes dock. Rivals eat. Phages nick. The climb is
