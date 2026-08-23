@@ -92,7 +92,9 @@ export default function ProjectContent({
                     src={item.src}
                     alt={item.alt}
                     className={`w-full rounded-lg border border-[var(--surface-border)] ${
-                      project.compactGallery ? "object-contain" : "object-cover"
+                      project.compactGallery
+                        ? "aspect-square object-cover"
+                        : "object-cover"
                     }`}
                     style={{ cursor: "zoom-in" }}
                     onClick={() => setLightboxSrc(item.src)}
