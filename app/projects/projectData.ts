@@ -1044,8 +1044,6 @@ const projects: ProjectDetail[] = [
     tags: ["iOS", "SpriteKit", "Swift", "Game Center", "StoreKit"],
     hero: "/images/projects/cyte.jpg",
     gallery: [
-      { src: "/videos/cyte/play.mp4", alt: "Cyte Play — solo climb", type: "video", aspect: "9 / 19.5", wide: false },
-      { src: "/videos/cyte/match.mp4", alt: "Cyte Match — 1v1 practice", type: "video", aspect: "9 / 19.5", wide: false },
       { src: "/images/projects/cyte-title.jpg", alt: "Cyte title screen" },
       { src: "/images/projects/cyte-play.jpg", alt: "Cyte Play — drawing a current" },
       { src: "/images/projects/cyte-match.jpg", alt: "Cyte Match — 1v1" },
