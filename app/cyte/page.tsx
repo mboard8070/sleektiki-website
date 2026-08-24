@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Cyte — sleektiki.ai",
   description:
     "Cyte is an iOS cell game. One thumb. Draw a current. Play is a solo climb. Match is 1v1.",
+  other: {
+    "apple-itunes-app":
+      "app-id=6804433245, app-clip-bundle-id=ai.sleektiki.Silt.Clip",
+  },
 };
 
 export default function CytePage() {
