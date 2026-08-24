@@ -34,8 +34,41 @@ function withNoStore(response: NextResponse): NextResponse {
   return response;
 }
 
+const AASA = JSON.stringify({
+  applinks: {
+    details: [
+      {
+        appIDs: ["B4KM44DC6D.ai.sleektiki.Silt"],
+        components: [{ "/": "/cyte" }, { "/": "/cyte/*" }],
+      },
+    ],
+  },
+  appclips: {
+    apps: ["B4KM44DC6D.ai.sleektiki.Silt.Clip"],
+  },
+});
+
+function aasaResponse(): NextResponse {
+  const bytes = new TextEncoder().encode(AASA);
+  return new NextResponse(AASA, {
+    status: 200,
+    headers: {
+      "Content-Type": "application/json",
+      "Content-Length": String(bytes.length),
+      "Cache-Control": "public, max-age=300, no-transform",
+    },
+  });
+}
+
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  if (
+    pathname === "/.well-known/apple-app-site-association" ||
+    pathname === "/apple-app-site-association"
+  ) {
+    return aasaResponse();
+  }
 
   // Login page must stay reachable without a cookie
   if (pathname === "/portfolio/login" || pathname.startsWith("/portfolio/login/")) {
@@ -85,5 +118,13 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/portfolio", "/portfolio/:path*", "/3d-art", "/3d-art/:path*"],
+  matcher: [
+    "/",
+    "/portfolio",
+    "/portfolio/:path*",
+    "/3d-art",
+    "/3d-art/:path*",
+    "/.well-known/apple-app-site-association",
+    "/apple-app-site-association",
+  ],
 };

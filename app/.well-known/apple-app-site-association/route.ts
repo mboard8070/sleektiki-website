@@ -4,12 +4,7 @@ export const dynamic = "force-static";
 
 const body = {
   applinks: {
-    apps: [] as string[],
     details: [
-      {
-        appID: "B4KM44DC6D.ai.sleektiki.Silt",
-        paths: ["/cyte", "/cyte/*"],
-      },
       {
         appIDs: ["B4KM44DC6D.ai.sleektiki.Silt"],
         components: [{ "/": "/cyte" }, { "/": "/cyte/*" }],
@@ -22,11 +17,13 @@ const body = {
 };
 
 export async function GET() {
-  return new NextResponse(JSON.stringify(body), {
+  const json = JSON.stringify(body);
+  return new NextResponse(json, {
     status: 200,
     headers: {
       "Content-Type": "application/json",
-      "Cache-Control": "public, max-age=3600",
+      "Content-Length": String(new TextEncoder().encode(json).length),
+      "Cache-Control": "public, max-age=300, no-transform",
     },
   });
 }
