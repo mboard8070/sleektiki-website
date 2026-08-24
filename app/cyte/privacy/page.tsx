@@ -51,10 +51,11 @@ export default function CytePrivacy() {
               Sleek Tiki does not run a Cyte server. The game does not create
               a Sleek Tiki account. We do not collect your name, email, or
               location. We do not sell personal data. We do not include an
-              analytics SDK or an advertising SDK in the current build. The
-              only third-party services Cyte talks to are Apple services you
-              already use on the device: StoreKit for optional purchases, and
-              Game Center if you turn Match or leaderboards on.
+              analytics SDK. Solo play may show Google AdMob interstitial ads
+              unless you own Remove Ads. The other third-party services Cyte
+              talks to are Apple services you already use on the device:
+              StoreKit for optional purchases, and Game Center if you turn
+              Match or leaderboards on.
             </p>
           </section>
 
@@ -113,11 +114,23 @@ export default function CytePrivacy() {
               Advertising and tracking
             </h2>
             <p>
-              The current Cyte build does not show ads and does not include a
-              third-party ads SDK. It does not use the App Tracking
-              Transparency prompt. The shop includes a Remove Ads purchase so
-              that if ads are added later, that purchase still applies. If ads
-              are added, this policy will be updated before they ship.
+              Solo play may show full-screen interstitial ads from Google
+              AdMob after a dusk win or on game over. The shop also lets you
+              watch a rewarded ad for an extra life or a Lab charge. Match
+              (1v1) does not show ads. Buying Remove Ads, or restoring that
+              purchase, turns interstitial ads off on that Apple ID. Rewarded
+              ads stay available because you choose to watch them. Cyte does
+              not currently show Apple&apos;s App Tracking Transparency
+              prompt, so ads are requested without tracking permission. Google
+              may still receive device and advertising identifiers, IP address,
+              and coarse location under{" "}
+              <a
+                href="https://policies.google.com/privacy"
+                className="text-[var(--accent)] hover:underline"
+              >
+                Google&apos;s privacy policy
+              </a>
+              . Sleek Tiki does not sell that data.
             </p>
           </section>
 
@@ -140,8 +153,8 @@ export default function CytePrivacy() {
               Cyte does not ask for a name, email, or age. It does not
               knowingly collect personal information from children. Match and
               leaderboards, if used, go through Apple Game Center. Parents
-              can restrict Game Center and in-app purchases in iOS Screen
-              Time.
+              can restrict Game Center, in-app purchases, and ads in iOS
+              Screen Time.
             </p>
           </section>
 
@@ -151,8 +164,10 @@ export default function CytePrivacy() {
             </h2>
             <p>
               Sleek Tiki does not sell, rent, or trade Cyte player data. We
-              do not share Cyte save data with advertisers. Apple may process
-              StoreKit and Game Center data as the platform provider.
+              do not share Cyte save data with advertisers. Google AdMob may
+              receive the advertising data described above in order to fill
+              ads. Apple may process StoreKit and Game Center data as the
+              platform provider.
             </p>
           </section>
 
@@ -161,10 +176,14 @@ export default function CytePrivacy() {
               Your choices
             </h2>
             <p>
-              You can play without Game Center. You can decline in-app
-              purchases. You can delete the app to clear local Cyte data on
-              that device. For Apple ID, purchases, or Game Center account
-              questions, use Apple Support.
+              You can play without Game Center. You can buy Remove Ads to
+              stop interstitial ads. You can decline other in-app purchases.
+              Cyte may send local notifications on this device when lives
+              refill and as a play reminder. Those stay on the device. Turn
+              them off in iOS Settings. You can delete the app to clear local
+              Cyte data on that device.
+              For Apple ID, purchases, or Game Center account questions, use
+              Apple Support.
             </p>
           </section>
 

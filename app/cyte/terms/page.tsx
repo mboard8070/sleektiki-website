@@ -88,6 +88,20 @@ export default function CyteTerms() {
 
           <section>
             <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
+              Advertising
+            </h2>
+            <p>
+              Solo play may show Google AdMob interstitial ads between dusks
+              and on game over. The shop can offer a rewarded ad for an extra
+              life or a Lab charge. Match does not show ads. Remove Ads is an
+              optional purchase that turns interstitial ads off. Rewarded ads
+              stay opt-in. Ads are provided by Google; Sleek Tiki does not
+              control every ad that appears.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
               Game Center
             </h2>
             <p>
