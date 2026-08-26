@@ -6,6 +6,7 @@ type Slide =
   | { kind: "image"; src: string; hold: number }
   | { kind: "video"; src: string };
 
+// Gameplay videos stay 5–10 seconds.
 const SLIDES: Slide[] = [
   { kind: "image", src: "/images/projects/cyte-title.jpg", hold: 2800 },
   { kind: "video", src: "/videos/cyte/play.mp4" },
