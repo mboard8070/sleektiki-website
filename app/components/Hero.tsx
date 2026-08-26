@@ -73,24 +73,9 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.35 }}
               className="text-lg sm:text-xl text-[var(--text-primary)]"
-              style={{ marginBottom: "0.9rem" }}
             >
               Creative technologist
             </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.42 }}
-            >
-              <Link
-                href="/cyte"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/55 bg-[var(--accent)]/12 px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors"
-              >
-                <AppleMark />
-                Releasing soon for iOS
-              </Link>
-            </motion.div>
           </div>
 
           <motion.div
@@ -99,14 +84,22 @@ export default function Hero() {
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
             className="w-full min-w-0 flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2"
           >
-            <div
-              className="mx-auto lg:mx-0 lg:ml-auto lg:-translate-x-[250px]"
-              style={{
-                height: "min(70vh, 640px)",
-                aspectRatio: "9 / 19.5",
-              }}
-            >
-              <HeroSlideshow />
+            <div className="mx-auto lg:mx-0 lg:ml-auto lg:-translate-x-[250px] flex flex-col items-center gap-3">
+              <div
+                style={{
+                  height: "min(70vh, 640px)",
+                  aspectRatio: "9 / 19.5",
+                }}
+              >
+                <HeroSlideshow />
+              </div>
+              <Link
+                href="/cyte"
+                className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/55 bg-[var(--accent)]/12 px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors"
+              >
+                <AppleMark />
+                Releasing soon for iOS
+              </Link>
             </div>
           </motion.div>
 
