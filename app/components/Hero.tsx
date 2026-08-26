@@ -88,7 +88,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 rounded-full border border-[var(--accent)]/55 bg-[var(--accent)]/12 px-4 py-2 text-[13px] font-semibold tracking-[0.08em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] hover:border-[var(--accent)] hover:bg-[var(--accent)]/20 transition-colors"
               >
                 <AppleMark />
-                Releasing soon on iOS
+                Releasing soon for iOS
               </Link>
             </motion.div>
           </div>
@@ -97,9 +97,17 @@ export default function Hero() {
             initial={{ opacity: 0, x: 24 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-            className="w-full min-w-0 lg:col-start-2 lg:row-start-1 lg:row-span-2"
+            className="w-full min-w-0 flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2"
           >
-            <HeroSlideshow />
+            <div
+              className="mx-auto lg:mx-0 lg:ml-auto"
+              style={{
+                height: "min(70vh, 640px)",
+                aspectRatio: "9 / 19.5",
+              }}
+            >
+              <HeroSlideshow />
+            </div>
           </motion.div>
 
           <div className="min-w-0">

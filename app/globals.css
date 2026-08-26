@@ -159,6 +159,19 @@ body {
   outline-offset: 2px;
 }
 
+@keyframes hero-kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+
+.hero-kenburns {
+  animation: hero-kenburns 3.6s linear forwards;
+}
+
 /* Utility classes */
 .glow-text {
   text-shadow: 0 0 40px rgba(0, 212, 255, 0.3), 0 0 80px rgba(0, 212, 255, 0.1);

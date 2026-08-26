@@ -2,40 +2,86 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 
-const CLIPS = [
-  "/videos/artstation/space-explorer-lightpan.mp4",
-  "/videos/astronaut_light_sweep.mp4",
-  "/videos/pixelus/tide_surf_10s.mp4",
-  "/videos/pixelus_sneaker_wipe.mp4",
-  "/videos/pixelus/deep_sea_10s.mp4",
-  "/videos/pixelus_watch_wipe.mp4",
-  "/videos/pixelus/eaglefangs_10s.mp4",
-  "/videos/pixelus_cologne_wipe.mp4",
-] as const;
+type Slide =
+  | { kind: "image"; src: string; hold: number }
+  | { kind: "video"; src: string };
 
-const POSTER = "/images/artstation/space-explorer/lightpan_poster.webp";
-const FADE_MS = 500;
+const SLIDES: Slide[] = [
+  { kind: "image", src: "/images/projects/cyte-title.jpg", hold: 3400 },
+  { kind: "image", src: "/images/projects/cyte-as-01-title.jpg", hold: 3400 },
+  { kind: "video", src: "/videos/cyte/play.mp4" },
+  { kind: "image", src: "/images/projects/cyte-as-04-scores.jpg", hold: 3200 },
+  { kind: "image", src: "/images/projects/cyte-as-05-play.jpg", hold: 3200 },
+  { kind: "image", src: "/images/projects/cyte-as-02-match.jpg", hold: 3200 },
+  { kind: "image", src: "/images/projects/cyte-as-03-match-play.jpg", hold: 3200 },
+  { kind: "video", src: "/videos/cyte/match.mp4" },
+  { kind: "image", src: "/images/projects/cyte-lab.jpg", hold: 3400 },
+];
 
-function clipPath(el: HTMLVideoElement) {
-  const src = el.currentSrc || el.src;
-  if (!src) return "";
-  try {
-    return new URL(src, window.location.origin).pathname;
-  } catch {
-    return src;
+const FADE_MS = 480;
+
+function Media({
+  slide,
+  active,
+  onEnded,
+}: {
+  slide: Slide;
+  active: boolean;
+  onEnded: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (!active || slide.kind !== "image") return;
+    const t = window.setTimeout(onEnded, slide.hold);
+    return () => window.clearTimeout(t);
+  }, [active, slide, onEnded]);
+
+  useEffect(() => {
+    const el = videoRef.current;
+    if (!el || slide.kind !== "video") return;
+    if (active) {
+      el.currentTime = 0;
+      el.play().catch(() => {});
+    } else {
+      el.pause();
+    }
+  }, [active, slide]);
+
+  if (slide.kind === "image") {
+    return (
+      <img
+        src={slide.src}
+        alt=""
+        className={`absolute inset-0 h-full w-full object-cover ${
+          active ? "hero-kenburns" : ""
+        }`}
+      />
+    );
   }
+
+  return (
+    <video
+      ref={videoRef}
+      src={slide.src}
+      muted
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      disableRemotePlayback
+      onEnded={onEnded}
+      className="absolute inset-0 h-full w-full object-cover"
+    />
+  );
 }
 
 export default function HeroSlideshow() {
-  const aRef = useRef<HTMLVideoElement>(null);
-  const bRef = useRef<HTMLVideoElement>(null);
   const layerRef = useRef<0 | 1>(0);
   const indexRef = useRef(0);
   const busyRef = useRef(false);
   const [front, setFront] = useState<0 | 1>(0);
+  const [slots, setSlots] = useState<[number, number]>([0, 1 % SLIDES.length]);
   const [reduced, setReduced] = useState(false);
-
-  const layers = [aRef, bRef] as const;
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -46,132 +92,71 @@ export default function HeroSlideshow() {
   }, []);
 
   const advance = useCallback(() => {
-    if (busyRef.current) return;
-    const nextIndex = (indexRef.current + 1) % CLIPS.length;
-    const nextLayer: 0 | 1 = layerRef.current === 0 ? 1 : 0;
-    const incoming = layers[nextLayer].current;
-    if (!incoming) return;
+    if (busyRef.current || reduced) return;
     busyRef.current = true;
-
-    const start = () => {
-      incoming.currentTime = 0;
-      incoming.play().catch(() => {});
+    const nextIndex = (indexRef.current + 1) % SLIDES.length;
+    const nextLayer: 0 | 1 = layerRef.current === 0 ? 1 : 0;
+    setSlots((prev) => {
+      const next: [number, number] = [...prev];
+      next[nextLayer] = nextIndex;
+      return next;
+    });
+    window.requestAnimationFrame(() => {
       layerRef.current = nextLayer;
       indexRef.current = nextIndex;
       setFront(nextLayer);
       window.setTimeout(() => {
-        const outgoing = layers[nextLayer === 0 ? 1 : 0].current;
-        outgoing?.pause();
-        const lookahead = CLIPS[(nextIndex + 1) % CLIPS.length];
-        if (outgoing && clipPath(outgoing) !== lookahead) {
-          outgoing.src = lookahead;
-          outgoing.load();
-        }
         busyRef.current = false;
       }, FADE_MS);
-    };
-
-    if (clipPath(incoming) !== CLIPS[nextIndex]) {
-      incoming.src = CLIPS[nextIndex];
-      incoming.load();
-    }
-
-    if (incoming.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-      start();
-    } else {
-      const onReady = () => {
-        incoming.removeEventListener("canplay", onReady);
-        incoming.removeEventListener("error", onError);
-        start();
-      };
-      const onError = () => {
-        incoming.removeEventListener("canplay", onReady);
-        incoming.removeEventListener("error", onError);
-        busyRef.current = false;
-        indexRef.current = nextIndex;
-        advance();
-      };
-      incoming.addEventListener("canplay", onReady);
-      incoming.addEventListener("error", onError);
-    }
-  }, []);
-
-  useEffect(() => {
-    if (reduced) return;
-    const el = aRef.current;
-    if (!el) return;
-    el.play().catch(() => {});
+    });
   }, [reduced]);
-
-  useEffect(() => {
-    const onVis = () => {
-      const el = layers[layerRef.current].current;
-      if (!el) return;
-      if (document.hidden) el.pause();
-      else el.play().catch(() => {});
-    };
-    document.addEventListener("visibilitychange", onVis);
-    return () => document.removeEventListener("visibilitychange", onVis);
-  }, []);
 
   return (
     <div
-      className="relative w-full overflow-hidden rounded-2xl border border-[var(--surface-border)] bg-[var(--surface)]"
+      className="relative h-full w-full overflow-hidden rounded-[1.75rem] border border-[var(--surface-border)] bg-black"
       style={{
-        aspectRatio: "16 / 9",
         boxShadow: "0 0 40px rgba(0, 212, 255, 0.08)",
       }}
-      aria-label="Animation clips playing as a continuous showreel"
+      aria-label="Cyte iOS game screenshots and gameplay"
     >
       {reduced ? (
         <img
-          src={POSTER}
-          alt=""
+          src={SLIDES[0].src}
+          alt="Cyte"
           className="absolute inset-0 h-full w-full object-cover"
         />
       ) : (
         <>
-          <video
-            ref={aRef}
-            src={CLIPS[0]}
-            poster={POSTER}
-            autoPlay
-            muted
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-            onEnded={advance}
-            className="absolute inset-0 h-full w-full object-cover"
+          <div
+            className="absolute inset-0"
             style={{
               opacity: front === 0 ? 1 : 0,
               transition: `opacity ${FADE_MS}ms ease`,
             }}
-          />
-          <video
-            ref={bRef}
-            src={CLIPS[1]}
-            muted
-            playsInline
-            preload="auto"
-            disablePictureInPicture
-            disableRemotePlayback
-            onEnded={advance}
-            className="absolute inset-0 h-full w-full object-cover"
+          >
+            <Media
+              key={`a-${slots[0]}-${SLIDES[slots[0]].src}`}
+              slide={SLIDES[slots[0]]}
+              active={front === 0}
+              onEnded={advance}
+            />
+          </div>
+          <div
+            className="absolute inset-0"
             style={{
               opacity: front === 1 ? 1 : 0,
               transition: `opacity ${FADE_MS}ms ease`,
             }}
-          />
+          >
+            <Media
+              key={`b-${slots[1]}-${SLIDES[slots[1]].src}`}
+              slide={SLIDES[slots[1]]}
+              active={front === 1}
+              onEnded={advance}
+            />
+          </div>
         </>
       )}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(180deg, transparent 70%, rgba(5,5,8,0.35) 100%)",
-        }}
-      />
     </div>
   );
 }
