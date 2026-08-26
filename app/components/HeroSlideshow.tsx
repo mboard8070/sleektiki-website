@@ -7,15 +7,14 @@ type Slide =
   | { kind: "video"; src: string };
 
 const SLIDES: Slide[] = [
-  { kind: "image", src: "/images/projects/cyte-title.jpg", hold: 3400 },
-  { kind: "image", src: "/images/projects/cyte-as-01-title.jpg", hold: 3400 },
+  { kind: "image", src: "/images/projects/cyte-title.jpg", hold: 2800 },
   { kind: "video", src: "/videos/cyte/play.mp4" },
-  { kind: "image", src: "/images/projects/cyte-as-04-scores.jpg", hold: 3200 },
-  { kind: "image", src: "/images/projects/cyte-as-05-play.jpg", hold: 3200 },
-  { kind: "image", src: "/images/projects/cyte-as-02-match.jpg", hold: 3200 },
-  { kind: "image", src: "/images/projects/cyte-as-03-match-play.jpg", hold: 3200 },
+  { kind: "video", src: "/videos/cyte/spitter.mp4" },
+  { kind: "video", src: "/videos/cyte/siphon.mp4" },
+  { kind: "video", src: "/videos/cyte/twin.mp4" },
+  { kind: "image", src: "/images/projects/cyte-as-05-play.jpg", hold: 2800 },
   { kind: "video", src: "/videos/cyte/match.mp4" },
-  { kind: "image", src: "/images/projects/cyte-lab.jpg", hold: 3400 },
+  { kind: "image", src: "/images/projects/cyte-lab.jpg", hold: 2800 },
 ];
 
 const FADE_MS = 480;
