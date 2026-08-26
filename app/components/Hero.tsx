@@ -21,7 +21,7 @@ function AppleMark() {
 export default function Hero() {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-visible"
       style={{ minHeight: "100vh", display: "flex", alignItems: "center" }}
     >
       <div
@@ -100,7 +100,7 @@ export default function Hero() {
             className="w-full min-w-0 flex justify-center lg:justify-end lg:col-start-2 lg:row-start-1 lg:row-span-2"
           >
             <div
-              className="mx-auto lg:mx-0 lg:ml-auto"
+              className="mx-auto lg:mx-0 lg:ml-auto lg:-translate-x-[1000px]"
               style={{
                 height: "min(70vh, 640px)",
                 aspectRatio: "9 / 19.5",
