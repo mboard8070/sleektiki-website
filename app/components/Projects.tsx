@@ -15,6 +15,7 @@ interface Project {
   tags: string[];
   category: Lane;
   image: string;
+  href?: string;
 }
 
 const projects: Project[] = [
@@ -143,6 +144,16 @@ const projects: Project[] = [
     tags: ["Gemma", "Flux", "Substack"],
     category: "systems",
     image: "/images/projects/article-gen.png",
+  },
+  {
+    title: "Student work",
+    slug: "student-work",
+    description:
+      "Selected games, sculpts, and environments from students I have taught.",
+    tags: ["Teaching", "Unreal", "Sculpting"],
+    category: "craft",
+    image: "/images/student-work/ataxia/cover.webp",
+    href: "/student-work",
   },
   {
     title: "Cyte",
@@ -296,7 +307,7 @@ function ProjectCard({
 }) {
   return (
     <ScrollReveal delay={Math.min(index * 0.04, 0.2)}>
-      <Link href={`/projects/${project.slug}`} className="block h-full">
+      <Link href={project.href || `/projects/${project.slug}`} className="block h-full">
         <div
           className="group relative h-full rounded-xl bg-[var(--surface)] border border-[var(--surface-border)] transition-all duration-300 hover:border-[var(--accent)]/20 card-glow gradient-border cursor-pointer"
           style={{ padding: "1.5rem" }}

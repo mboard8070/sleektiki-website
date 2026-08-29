@@ -88,6 +88,13 @@ export default function FeaturedWork() {
           {" — "}
           for people who have not used AI at work yet.
         </p>
+        <p className="mt-3 text-sm text-[var(--text-muted)]">
+          <Link href="/student-work" className="text-[var(--accent)] hover:underline">
+            Student work
+          </Link>
+          {" — "}
+          selected work from students I have taught.
+        </p>
       </div>
     </section>
   );
