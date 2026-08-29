@@ -349,7 +349,6 @@ export const studentProjects: StudentWorkProject[] = [
   {
     slug: "props-environment",
     title: "Props and Environment",
-    course: "Digital Sculpting",
     description: "",
     software: [],
     cover: "/images/student-work/props-environment/cover.webp",
