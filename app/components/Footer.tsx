@@ -91,6 +91,10 @@ export default function Footer() {
                 Enablement
               </Link>
               <span>&middot;</span>
+              <Link href="/student-work" className="hover:text-[var(--accent)] transition-colors">
+                Student work
+              </Link>
+              <span>&middot;</span>
               <Link href="/portfolio" className="hover:text-[var(--accent)] transition-colors">
                 AI stills
               </Link>
