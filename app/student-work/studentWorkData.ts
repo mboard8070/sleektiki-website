@@ -353,8 +353,36 @@ export const studentProjects: StudentWorkProject[] = [
     description: "",
     software: [],
     cover: "/images/student-work/characters/cover.webp",
-    coverAspect: 0.9834,
+    coverAspect: 1,
     assets: [
+      {
+        type: "image",
+        src: "/images/student-work/characters/evan-sweeney-01.webp",
+        width: 1920,
+        height: 1920,
+        caption: "Evan Sweeney. Roy",
+      },
+      {
+        type: "image",
+        src: "/images/student-work/characters/evan-sweeney-02.webp",
+        width: 1920,
+        height: 1920,
+        caption: "Evan Sweeney. Roy",
+      },
+      {
+        type: "image",
+        src: "/images/student-work/characters/evan-sweeney-concept.webp",
+        width: 1920,
+        height: 1059,
+        caption: "Evan Sweeney. Concept art",
+      },
+      {
+        type: "image",
+        src: "/images/student-work/characters/evan-sweeney-final-vs-concept.webp",
+        width: 1920,
+        height: 1080,
+        caption: "Evan Sweeney. Final vs concept",
+      },
       {
         type: "image",
         src: "/images/student-work/characters/lauren-mckenzie.webp",
