@@ -82,11 +82,24 @@ export default function FeaturedWork() {
           ))}
         </div>
         <p className="mt-8 text-sm text-[var(--text-muted)]">
-          <Link href="/enablement" className="text-[var(--accent)] hover:underline">
+          <Link
+            href="/enablement/introduction-to-ai"
+            className="text-[var(--accent)] hover:underline"
+          >
             Introduction to AI
           </Link>
           {" — "}
           for people who have not used AI at work yet.
+        </p>
+        <p className="mt-3 text-sm text-[var(--text-muted)]">
+          <Link
+            href="/enablement/anatomy-of-a-harness"
+            className="text-[var(--accent)] hover:underline"
+          >
+            The Anatomy of a Harness
+          </Link>
+          {" — "}
+          the frame around a model so a named job can run more than once.
         </p>
         <p className="mt-3 text-sm text-[var(--text-muted)]">
           <Link href="/student-work" className="text-[var(--accent)] hover:underline">

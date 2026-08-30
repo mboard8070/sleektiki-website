@@ -88,7 +88,9 @@ export async function middleware(request: NextRequest) {
     if (
       pathname === "/" ||
       pathname === "/student-work" ||
-      pathname.startsWith("/student-work/")
+      pathname.startsWith("/student-work/") ||
+      pathname === "/enablement" ||
+      pathname.startsWith("/enablement/")
     ) {
       return withNoStore(NextResponse.next());
     }
@@ -130,6 +132,8 @@ export const config = {
     "/3d-art/:path*",
     "/student-work",
     "/student-work/:path*",
+    "/enablement",
+    "/enablement/:path*",
     "/.well-known/apple-app-site-association",
     "/apple-app-site-association",
   ],
