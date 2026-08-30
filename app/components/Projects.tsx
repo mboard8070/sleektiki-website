@@ -258,9 +258,9 @@ export default function Projects() {
         <span id="systems" className="block scroll-mt-24" />
         <span id="craft" className="block scroll-mt-24" />
         <SectionHeading
-          label="02 / Archive"
+          label="02 / Projects"
           title="Selected projects"
-          subtitle="Production first, then enablement, then the local systems, then shipped 3D and games. Use the filters if you only need one lane."
+          subtitle="Production first, then enablement, then local systems, then shipped 3D and games. Use the filters if you only need one kind of work."
         />
 
         <ScrollReveal delay={0.05} style={{ marginBottom: "3rem" }}>
