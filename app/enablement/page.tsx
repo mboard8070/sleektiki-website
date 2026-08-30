@@ -6,10 +6,10 @@ import Footer from "../components/Footer";
 export const metadata: Metadata = {
   title: "Enablement | sleektiki.ai",
   description:
-    "Two rooms: Introduction to AI for people who have not used it at work yet, and The Anatomy of a Harness for turning a model into a repeatable job.",
+    "Introduction to AI for people who have not used it at work yet, and The Anatomy of a Harness for turning a model into a repeatable job.",
 };
 
-const rooms = [
+const offerings = [
   {
     href: "/enablement/introduction-to-ai",
     label: "Single-day workshop",
@@ -19,9 +19,9 @@ const rooms = [
   },
   {
     href: "/enablement/anatomy-of-a-harness",
-    label: "Working method",
+    label: "Lesson",
     title: "The Anatomy of a Harness",
-    body: "What a harness is, why chat is not a process, what the frame around a model actually does, and how to build one you can run again next week.",
+    body: "What a harness is, why chat is not a process, and how to build one. MAUDE is the working example: a model, tools, a loop, a log, and a stop condition.",
     proof: "Definition · parts · build",
   },
 ];
@@ -37,11 +37,11 @@ export default function EnablementIndex() {
             Enablement
           </p>
           <h1 className="max-w-4xl text-5xl font-bold leading-[0.95] tracking-tight sm:text-6xl md:text-7xl">
-            Two rooms.
+            Enablement
           </h1>
           <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-            First, how to sit a model on a live task. Then, how to put a
-            frame around it so the same job can run more than once.
+            How to put a model on a live task, and how to wrap it so the
+            same job can run more than once.
           </p>
         </div>
       </section>
@@ -49,27 +49,27 @@ export default function EnablementIndex() {
       <section className="px-[max(1.5rem,5vw)] py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-6 md:grid-cols-2">
-            {rooms.map((room) => (
+            {offerings.map((item) => (
               <Link
-                key={room.href}
-                href={room.href}
+                key={item.href}
+                href={item.href}
                 className="group flex h-full flex-col rounded-xl border border-[var(--surface-border)] bg-[var(--surface)] transition-colors hover:border-[var(--accent)]/30"
                 style={{ padding: "2rem" }}
               >
                 <p className="font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.25em] text-[var(--accent)]">
-                  {room.label}
+                  {item.label}
                 </p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight group-hover:text-[var(--accent)] transition-colors">
-                  {room.title}
+                  {item.title}
                 </h2>
                 <p
                   className="mt-4 flex-1 text-base text-[var(--text-secondary)]"
                   style={{ lineHeight: 1.7 }}
                 >
-                  {room.body}
+                  {item.body}
                 </p>
                 <p className="mt-8 font-[family-name:var(--font-geist-mono)] text-[11px] text-[var(--text-muted)]">
-                  {room.proof}
+                  {item.proof}
                 </p>
               </Link>
             ))}

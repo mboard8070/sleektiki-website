@@ -259,7 +259,7 @@ export default function Projects() {
         <span id="craft" className="block scroll-mt-24" />
         <SectionHeading
           label="02 / Archive"
-          title="The rest of the book"
+          title="Selected projects"
           subtitle="Production first, then enablement, then the local systems, then shipped 3D and games. Use the filters if you only need one lane."
         />
 

@@ -10,7 +10,7 @@ const lanes = [
     href: "/enablement",
     label: "01",
     title: "AI enablement",
-    body: "Introduction to AI for people who have not used it at work yet, and The Anatomy of a Harness for turning a model into a repeatable job. Technical rooms already taught: OpenAI in Unreal, and AI-assisted Python.",
+    body: "Introduction to AI for people who have not used it at work yet, and The Anatomy of a Harness for turning a model into a repeatable job. Also taught: OpenAI in Unreal, and AI-assisted Python.",
     proof: "One day · five objectives",
   },
   {
@@ -41,7 +41,7 @@ export default function WorkLanes() {
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           label="How I work"
-          title="One practice, three rooms"
+          title="Enablement, production, and tools"
           subtitle="Recruiters should not have to guess. Enablement, production pictures, and the tools underneath are the same person — shown in the order a hiring manager can use."
         />
 

@@ -18,7 +18,7 @@ const objectives = [
   {
     text: "Tell apart the AI systems you already sit next to at work: predictive models, generative models, and assistants that use tools.",
     description:
-      "So AI stops meaning only the chat box. The room should be able to name which kind of system they are looking at in the software they already use.",
+      "So AI stops meaning only the chat box. People should be able to name which kind of system they are looking at in the software they already use.",
   },
   {
     text: "Put a real piece of your work in front of a model and get a usable first pass from a written brief.",
@@ -31,7 +31,7 @@ const objectives = [
       "The draft is the starting point. The skill is reading it, marking it, and sending it back without throwing the thread away.",
   },
   {
-    text: "Leave with one weekly workflow, written down, that you have already run twice in the room.",
+    text: "Leave with one weekly workflow, written down, that you have already run twice in class.",
     description:
       "One job they will still have next week, captured as a method, tested on a second example before they walk out.",
   },
@@ -204,13 +204,13 @@ const topics = [
           "The brief, the source, and the revision notes that actually moved the draft, written so someone else could follow.",
         points: [
           "Save the brief, the source you attach, and the two revision notes that actually moved the draft.",
-          "Name the output so a teammate could follow the same steps without you in the room.",
+          "Name the output so a teammate could follow the same steps without you there.",
         ],
       },
       {
         title: "Run it a second time",
         description:
-          "The same method on a new example, so it is tested in the room, not only described.",
+          "The same method on a new example, so it is tested in class, not only described.",
         points: [
           "Repeat the same job on a second example before the day ends.",
           "Write down how long it took next to how you usually do that task, while the comparison is still honest.",
@@ -236,7 +236,7 @@ const taught = [
     title: "AI-assisted coding with Python",
     who: "Developers, TAs, and anyone writing scripts who will use a model on real code",
     description:
-      "Using a model as a coding partner in Python: write a brief for the function, generate, read the diff, run it, send a pointed revision. The room works on scripts they brought, not toy katas.",
+      "Using a model as a coding partner in Python: write a brief for the function, generate, read the diff, run it, send a pointed revision. People work on scripts they brought, not toy katas.",
     points: [
       "A brief that names inputs, outputs, and the failure you will test",
       "Reading generated Python before you run it: imports, edge cases, what it invented",
@@ -303,7 +303,7 @@ export default function EnablementPage() {
             <p>
               No software to install and no stack to buy. A standard chat
               tool is enough. People who already ship with models in Unreal
-              or Python belong in the technical rooms below, not this one.
+              or Python belong in the technical workshops below, not this one.
             </p>
           </div>
         </div>
@@ -436,12 +436,12 @@ export default function EnablementPage() {
             Also taught
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            Technical rooms
+            Unreal and Python
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            For teams already in production. Introduction to AI is the first
-            room, for people who have not used AI at work yet. These two were
-            taught to professionals who had to ship in Unreal or in Python.
+            For teams already in production. Introduction to AI is for people
+            who have not used AI at work yet. These two were taught to
+            professionals who had to ship in Unreal or in Python.
           </p>
           <div className="mt-12 grid gap-4 md:grid-cols-2">
             {taught.map((item) => (
@@ -486,10 +486,10 @@ export default function EnablementPage() {
             Next
           </p>
           <h2 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl">
-            If you want a room for your team, write.
+            If you want this for your team, email me.
           </h2>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--text-secondary)]">
-            Introduction to AI if the room has not used it at work yet.
+            Introduction to AI if they have not used it at work yet.
             The Anatomy of a Harness if they need a repeatable job around a
             model. OpenAI in Unreal or AI-assisted Python if they already
             ship. Email matt at sleektiki dot ai.
