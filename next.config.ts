@@ -47,6 +47,8 @@ const nextConfig: NextConfig = {
       { source: "/reel/:path*", destination: "/", permanent: false },
       { source: "/showreel", destination: "/", permanent: false },
       { source: "/showreel/:path*", destination: "/", permanent: false },
+      { source: "/privacy", destination: "/maude/privacy", permanent: false },
+      { source: "/terms", destination: "/maude/terms", permanent: false },
     ];
   },
 };

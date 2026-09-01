@@ -1,162 +1,104 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
-  title: "MAUDE | sleektiki.ai",
+  title: "MAUDE — sleektiki.ai",
   description:
-    "MAUDE is Matthew Board's local-first AI assistant system for model routing, tools, mobile access, and scheduled agent work.",
+    "MAUDE is a Mac and iOS studio app. Chat and stills with a monthly cap. Video is extra. Optional Google Workspace.",
 };
-
-const facts = [
-  ["170", "server tools"],
-  ["5", "client surfaces"],
-  ["local-first", "gateway design"],
-];
-
-const features = [
-  "Routes local and cloud models through one private gateway",
-  "Connects chat to files, shell, browser automation, GitHub, Google Workspace, media tools, and scheduled missions",
-  "Keeps sensitive actions visible with traces, approval points, and human-readable logs",
-];
-
-const serverInstall = `git clone https://github.com/mboard8070/terminal-llm.git
-cd terminal-llm
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-playwright install chromium
-./setup_local.sh
-./maude`;
-
-const clientInstall = `pip install --upgrade "git+https://github.com/mboard8070/terminal-llm.git#subdirectory=maude-client"
-maude-client`;
-
-function CodeBlock({ children }: { children: string }) {
-  return (
-    <pre className="overflow-x-auto rounded-lg border border-[var(--surface-border)] bg-[#050508] p-5 text-sm leading-7 text-[var(--text-primary)]">
-      <code>{children}</code>
-    </pre>
-  );
-}
 
 export default function MaudePage() {
   return (
-    <main className="relative z-[1] min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
-      <Navbar />
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] pb-20 pt-64 md:pt-72 lg:pt-72">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.95fr_1fr] lg:items-center">
-          <div>
-            <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-              Local-first AI system
-            </p>
-            <h1 className="text-6xl font-bold leading-[0.9] tracking-tight sm:text-7xl md:text-8xl">
-              MAUDE
-            </h1>
-            <p className="mt-8 max-w-2xl text-xl leading-8 text-[var(--text-secondary)] sm:text-2xl sm:leading-10">
-              A private AI command layer running on the DGX Spark, built to connect models with real tools while keeping work inspectable.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="#install"
-                className="btn"
-              >
-                Install MAUDE
-              </Link>
-              <Link
-                href="/projects/maude"
-                className="btn-secondary"
-              >
-                Read the case study
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid gap-5 lg:pt-24">
-            <div className="overflow-hidden rounded-lg border border-[var(--surface-border)] bg-[var(--surface)]">
-              <video
-                className="aspect-video w-full object-cover"
-                src="/videos/maude-feature-video.mp4"
-                autoPlay
-                muted
-                loop
-                playsInline
-              />
-            </div>
-            <div className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5">
-              <h2 className="mb-3 text-lg font-semibold">Install MAUDE</h2>
-              <CodeBlock>{serverInstall}</CodeBlock>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-16">
-        <div className="mx-auto grid max-w-7xl gap-4 sm:grid-cols-3">
-          {facts.map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6">
-              <strong className="font-[family-name:var(--font-geist-mono)] text-2xl text-[var(--accent)]">{value}</strong>
-              <p className="mt-2 text-sm text-[var(--text-secondary)]">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="install" className="scroll-mt-40 border-b border-[var(--surface-border)] px-[max(1.5rem,5vw)] py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1fr] lg:items-start">
-          <div>
-            <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-              Install
-            </p>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              Run MAUDE on a Linux workstation with CUDA.
-            </h2>
-            <p className="mt-6 text-base leading-8 text-[var(--text-secondary)]">
-              The server install is intended for Ubuntu 22.04+ or a similar Linux machine with an NVIDIA GPU, CUDA drivers, Python 3.12+, Git, cmake, make, g++, tmux, and curl.
-            </p>
-            <Link href="/projects/maude/setup" className="mt-6 inline-flex text-sm font-semibold text-[var(--accent)] hover:underline">
-              Full setup guide
+    <div className="min-h-screen bg-[var(--background)] text-[var(--text-primary)]">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <header className="pb-6 mb-8 border-b border-[var(--surface-border)]">
+          <p className="text-sm mb-2">
+            <Link href="/" className="text-[var(--accent)] hover:underline">
+              &larr; Back to sleektiki.ai
             </Link>
-          </div>
-          <div className="grid gap-6">
-            <div>
-              <h3 className="mb-3 text-lg font-semibold">Server install</h3>
-              <CodeBlock>{serverInstall}</CodeBlock>
-            </div>
-            <div>
-              <h3 className="mb-3 text-lg font-semibold">Client CLI</h3>
-              <CodeBlock>{clientInstall}</CodeBlock>
-              <p className="mt-3 text-sm leading-7 text-[var(--text-secondary)]">
-                Use the client after your MAUDE gateway is running and reachable, typically over Tailscale.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+          </p>
+          <h1 className="text-4xl font-bold">MAUDE</h1>
+          <p className="mt-3 text-lg text-[var(--text-secondary)]">
+            Mac and iOS. A studio for chat, stills, and video.
+          </p>
+          <p className="mt-3 text-sm">
+            <Link
+              href="/projects/maude"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Case study
+            </Link>
+          </p>
+        </header>
+        <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
+          <img
+            src="/images/projects/maude-mobile.png"
+            alt="MAUDE on iPhone"
+            className="w-full rounded-lg border border-[var(--surface-border)]"
+          />
+          <p>
+            MAUDE is a Mac and iOS studio app from Sleek Tiki. Chat and stills
+            ship with a monthly cap. Video is a separate subscription. Optional
+            Google Sign-In lets it work with Gmail, Drive, Docs, Sheets,
+            Slides, and Calendar when you ask.
+          </p>
+          <p>
+            Publisher: Sleek Tiki. Bundle identifier:{" "}
+            <code className="text-[var(--text-primary)]">com.maude.app</code>.
+            Platforms: macOS 14 and later, iOS 17 and later.
+          </p>
 
-      <section className="px-[max(1.5rem,5vw)] py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1fr] lg:items-start">
-          <div>
-            <p className="mb-5 font-[family-name:var(--font-geist-mono)] text-xs uppercase tracking-[0.2em] text-[var(--accent)]">
-              What it does
-            </p>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              A practical assistant stack, not a chatbot demo.
+          <section className="pt-4">
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-3">
+              Privacy Policy and Terms of Service
             </h2>
-          </div>
-          <div className="grid gap-4">
-            {features.map((feature) => (
-              <div key={feature} className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-6 text-[var(--text-secondary)]">
-                {feature}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+            <p className="mb-4">
+              Use these URLs in App Store Connect. They are for the MAUDE Mac
+              and iOS app. Cyte has its own pages under /cyte.
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Link
+                href="/maude/privacy"
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]/40 transition-colors"
+              >
+                <p className="text-sm font-[family-name:var(--font-geist-mono)] uppercase tracking-[0.16em] text-[var(--accent)]">
+                  Privacy Policy
+                </p>
+                <p className="mt-2 text-[var(--text-primary)] font-semibold">
+                  What MAUDE stores and who it talks to
+                </p>
+                <p className="mt-2 text-sm break-all text-[var(--text-muted)]">
+                  https://sleektiki.ai/maude/privacy
+                </p>
+              </Link>
+              <Link
+                href="/maude/terms"
+                className="rounded-lg border border-[var(--surface-border)] bg-[var(--surface)] p-5 hover:border-[var(--accent)]/40 transition-colors"
+              >
+                <p className="text-sm font-[family-name:var(--font-geist-mono)] uppercase tracking-[0.16em] text-[var(--accent)]">
+                  Terms of Service
+                </p>
+                <p className="mt-2 text-[var(--text-primary)] font-semibold">
+                  Chat, media, subscriptions, Google
+                </p>
+                <p className="mt-2 text-sm break-all text-[var(--text-muted)]">
+                  https://sleektiki.ai/maude/terms
+                </p>
+              </Link>
+            </div>
+          </section>
 
-      <Footer />
-    </main>
+          <p>
+            Contact: Matthew Board,{" "}
+            <a
+              href="mailto:matt@sleektiki.ai"
+              className="text-[var(--accent)] hover:underline"
+            >
+              matt@sleektiki.ai
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 }
