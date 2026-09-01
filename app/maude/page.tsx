@@ -53,8 +53,8 @@ export default function MaudePage() {
               Privacy Policy and Terms of Service
             </h2>
             <p className="mb-4">
-              Use these URLs in App Store Connect. They are for the MAUDE Mac
-              and iOS app. Cyte has its own pages under /cyte.
+              How MAUDE handles data, subscriptions, and Google Sign-In. Cyte
+              has its own pages under /cyte.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <Link
