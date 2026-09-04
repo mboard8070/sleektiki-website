@@ -44,7 +44,7 @@ export default function MaudePage() {
           </p>
           <p>
             Publisher: Sleek Tiki. Bundle identifier:{" "}
-            <code className="text-[var(--text-primary)]">com.maude.app</code>.
+            <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>.
             Platforms: macOS 14 and later, iOS 17 and later.
           </p>
 
