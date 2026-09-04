@@ -43,11 +43,9 @@ export default function MaudePage() {
             Slides, and Calendar when you ask.
           </p>
           <p>
-            Publisher: Sleek Tiki. Bundle identifiers:{" "}
-            <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>{" "}
-            (iOS) and{" "}
-            <code className="text-[var(--text-primary)]">com.maude.app</code>{" "}
-            (macOS). Platforms: macOS 14 and later, iOS 17 and later.
+            Publisher: Sleek Tiki. Bundle identifier:{" "}
+            <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>.
+            Platforms: macOS 14 and later, iOS 17 and later.
           </p>
 
           <section className="pt-4">
@@ -55,8 +53,7 @@ export default function MaudePage() {
               Privacy Policy and Terms of Service
             </h2>
             <p className="mb-4">
-              How MAUDE handles data, subscriptions, and Google Sign-In. Cyte
-              has its own pages under /cyte.
+              How MAUDE handles data, subscriptions, and Google Sign-In.
             </p>
             <div className="grid gap-4 sm:grid-cols-2">
               <Link
