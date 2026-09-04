@@ -19,7 +19,7 @@ export default function MaudePrivacy() {
           </p>
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            MAUDE for macOS and iOS. Last updated: September 1, 2026
+            MAUDE for macOS and iOS. Last updated: September 4, 2026
           </p>
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
@@ -30,7 +30,7 @@ export default function MaudePrivacy() {
             <p>
               MAUDE is a Mac and iOS studio app published by Sleek Tiki,
               operated by Matthew Board. Bundle identifier:{" "}
-              <code className="text-[var(--text-primary)]">com.maude.app</code>.
+              <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>.
               This policy covers the MAUDE Mac and iOS app. It does not cover
               Cyte or the rest of sleektiki.ai. Contact:{" "}
               <a
@@ -137,6 +137,14 @@ export default function MaudePrivacy() {
               train Sleek Tiki models. Sign out deletes the Google tokens from
               this device. You can also revoke MAUDE in your Google Account
               permissions.
+            </p>
+            <p className="mt-3">
+              The use of raw or derived user data received from Workspace APIs
+              will adhere to the Google User Data Policy, including the Limited
+              Use requirements. When you ask MAUDE to run an AI model on Google
+              content, that content is sent only to complete that request.
+              Sleek Tiki does not transfer Workspace user data to third-party
+              AI services for their model training.
             </p>
             <p className="mt-3">
               Google&apos;s own rules also apply:{" "}
