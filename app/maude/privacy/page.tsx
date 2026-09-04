@@ -29,9 +29,11 @@ export default function MaudePrivacy() {
             </h2>
             <p>
               MAUDE is a Mac and iOS studio app published by Sleek Tiki,
-              operated by Matthew Board. Bundle identifier:{" "}
-              <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>.
-              This policy covers the MAUDE Mac and iOS app. It does not cover
+              operated by Matthew Board. Bundle identifiers:{" "}
+              <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>{" "}
+              (iOS) and{" "}
+              <code className="text-[var(--text-primary)]">com.maude.app</code>{" "}
+              (macOS). This policy covers the MAUDE Mac and iOS app. It does not cover
               Cyte or the rest of sleektiki.ai. Contact:{" "}
               <a
                 href="mailto:matt@sleektiki.ai"

@@ -43,9 +43,11 @@ export default function MaudePage() {
             Slides, and Calendar when you ask.
           </p>
           <p>
-            Publisher: Sleek Tiki. Bundle identifier:{" "}
-            <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>.
-            Platforms: macOS 14 and later, iOS 17 and later.
+            Publisher: Sleek Tiki. Bundle identifiers:{" "}
+            <code className="text-[var(--text-primary)]">ai.sleektiki.maude</code>{" "}
+            (iOS) and{" "}
+            <code className="text-[var(--text-primary)]">com.maude.app</code>{" "}
+            (macOS). Platforms: macOS 14 and later, iOS 17 and later.
           </p>
 
           <section className="pt-4">
