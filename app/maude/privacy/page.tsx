@@ -146,6 +146,19 @@ export default function MaudePrivacy() {
               AI services for their model training.
             </p>
             <p className="mt-3">
+              How we protect Google user data: Google Sign-In tokens and refresh
+              tokens are stored only in the device Keychain and are never written
+              to Sleek Tiki servers. MAUDE does not keep a copy of your Gmail,
+              Drive, Docs, Sheets, Slides, or Calendar content on our systems.
+              That content is requested from Google over encrypted HTTPS only
+              when you ask for a task, used on the device to complete that task,
+              and sent to an AI provider over encrypted HTTPS only when that
+              request needs a model. Access is limited to the signed-in Google
+              account on that device. Sign out removes the tokens from the
+              Keychain. You can also revoke MAUDE in your Google Account
+              permissions.
+            </p>
+            <p className="mt-3">
               Google&apos;s own rules also apply:{" "}
               <a
                 href="https://policies.google.com/privacy"
