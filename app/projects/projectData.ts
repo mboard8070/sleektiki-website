@@ -1133,6 +1133,11 @@ const projects: ProjectDetail[] = [
       { label: "Privacy Policy", url: "/cyte/privacy" },
       { label: "Terms of Service", url: "/cyte/terms" },
     ],
+    appStoreBadge: {
+      src: "/images/projects/app-store-badge-us-uk-black.svg",
+      alt: "Download on the App Store",
+      url: "https://apps.apple.com/us/app/cyte/id6804433245",
+    },
     features: [
       {
         title: "One Thumb",

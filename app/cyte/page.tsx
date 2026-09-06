@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AppStoreBadge from "../components/AppStoreBadge";
 
 export const metadata: Metadata = {
   title: "Cyte — sleektiki.ai",
@@ -25,6 +26,7 @@ export default function CytePage() {
           <p className="mt-3 text-lg text-[var(--text-secondary)]">
             iOS. One thumb. Draw a current through a broth of cells.
           </p>
+          <AppStoreBadge className="mt-6" />
           <p className="mt-3 text-sm">
             <Link href="/projects/cyte" className="text-[var(--accent)] hover:underline">
               Case study
