@@ -19,7 +19,7 @@ export default function MaudePrivacy() {
           </p>
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            MAUDE for macOS and iOS. Last updated: September 4, 2026
+            MAUDE for macOS and iOS. Last updated: September 5, 2026
           </p>
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
@@ -49,11 +49,16 @@ export default function MaudePrivacy() {
             <p>
               Sleek Tiki does not create a MAUDE account for you. The app does
               not include an analytics SDK. We do not sell personal data. Chat,
-              stills, and video you ask MAUDE to make are sent to third-party
-              AI providers so the app can do that work. Optional Google Sign-In
-              lets MAUDE use Gmail, Drive, Docs, Sheets, Slides, and Calendar
-              when you ask. Tokens and keys stay in the device Keychain.
-              Purchases go through Apple StoreKit.
+              stills, and video you ask MAUDE to make are sent through Sleek
+              Tiki&apos;s studio service to Replicate, using
+              Sleek Tiki&apos;s provider account. The app does not ship a
+              provider key and does not ask you to paste one. Optional Google Sign-In lets MAUDE use Gmail,
+              Drive, Docs, Sheets, Slides, and Calendar when you ask. Google
+              tokens stay in the device Keychain on that device (not iCloud
+              Keychain). Studio chats and schedules can
+              sync across your Apple devices via iCloud Documents when you
+              are signed into the same iCloud account. Purchases go through
+              Apple StoreKit.
             </p>
           </section>
 
@@ -62,15 +67,19 @@ export default function MaudePrivacy() {
               Data stored on the device
             </h2>
             <p>
-              MAUDE stores settings, consent, conversation history, and similar
-              studio state locally with Apple app storage (including
-              UserDefaults) and files on the device. API keys, the Google
-              Sign-In tokens, and related secrets are stored in the device
-              Keychain. This data stays on the device unless you ask MAUDE to
-              send it to a provider (for example, by sending a chat, generating
-              media, or asking it to read a Google file). Deleting the app
-              removes local data, unless an Apple backup still holds a copy
-              under Apple&apos;s backup rules.
+              MAUDE stores settings, consent, and similar studio state locally
+              with Apple app storage (including UserDefaults) and files on the
+              device. Conversation history, scheduled tasks, and heartbeat
+              settings are stored in the app container and, when iCloud is
+              available, in the MAUDE iCloud Documents container so your Mac
+              and iPhone stay in sync even if one app is closed. Google
+              Sign-In tokens and related secrets are stored only in the
+              device Keychain (this device, not synced). Chat and generate
+              requests leave the device through Sleek Tiki&apos;s studio
+              service to Replicate, or when iCloud syncs the
+              studio file to your other devices.
+              Deleting the app removes local data, unless an Apple backup or
+              iCloud copy still holds it under Apple&apos;s rules.
             </p>
           </section>
 
@@ -81,14 +90,14 @@ export default function MaudePrivacy() {
             <p>
               When you send a message or ask MAUDE to generate an image or a
               video, the prompt and any files, photos, or other content you
-              attach for that request are sent to the AI provider currently
-              configured. By default that is the provider Sleek Tiki uses to
-              run the studio. If you add your own provider key in Settings,
-              that provider is used instead. Those providers process the
-              request in order to return a reply or a generated file. Sleek
-              Tiki does not use that content to train its own models. Provider
-              retention follows that provider&apos;s policy. MAUDE refuses
-              some generate requests before they are sent, including sexual
+              attach for that request go to Sleek Tiki&apos;s studio service,
+              which calls Replicate on Sleek Tiki&apos;s
+              account. The provider key never leaves that server and is not
+              in the app. Those providers process the request in order to
+              return a reply or a generated file. Sleek Tiki does not use
+              that content to train its own models. Provider retention
+              follows that provider&apos;s policy. MAUDE refuses some
+              generate requests before they are sent, including sexual
               content involving minors.
             </p>
           </section>
@@ -130,8 +139,8 @@ export default function MaudePrivacy() {
               data is fetched only in response to a request you make in the
               app. If that request needs an AI model (for example, summarize
               this mail, or draft from this Drive file), the relevant Google
-              content is sent to the AI provider currently configured so it
-              can complete the request. Sleek Tiki does not sell Google user
+              content is sent through Sleek Tiki&apos;s studio service to
+              Replicate so it can complete the request. Sleek Tiki does not sell Google user
               data, does not use it for advertising, and does not use it to
               train Sleek Tiki models. Sign out deletes the Google tokens from
               this device. You can also revoke MAUDE in your Google Account
@@ -152,8 +161,8 @@ export default function MaudePrivacy() {
               Drive, Docs, Sheets, Slides, or Calendar content on our systems.
               That content is requested from Google over encrypted HTTPS only
               when you ask for a task, used on the device to complete that task,
-              and sent to an AI provider over encrypted HTTPS only when that
-              request needs a model. Access is limited to the signed-in Google
+              and sent through Sleek Tiki&apos;s studio service to Replicate
+              over encrypted HTTPS only when that request needs a model. Access is limited to the signed-in Google
               account on that device. Sign out removes the tokens from the
               Keychain. You can also revoke MAUDE in your Google Account
               permissions.
@@ -178,7 +187,8 @@ export default function MaudePrivacy() {
               On Mac, optional tools can control apps on this machine (for
               example Notes, Calendar, Mail, and Office apps) using Apple
               Events. That work runs locally. Content you then ask MAUDE to
-              process may still be sent to an AI provider as described above.
+              process may still go through Sleek Tiki&apos;s studio service to
+              Replicate as described above.
             </p>
           </section>
 
@@ -189,8 +199,8 @@ export default function MaudePrivacy() {
             <p>
               If you attach photos, video, or files from the device, those
               items stay local until you send a request that includes them.
-              Then they are sent to the AI provider for that request, the same
-              as chat attachments.
+              Then they are sent through Sleek Tiki&apos;s studio service to
+              Replicate for that request, the same as chat attachments.
             </p>
           </section>
 
@@ -199,12 +209,13 @@ export default function MaudePrivacy() {
               In-app purchases
             </h2>
             <p>
-              Optional subscriptions (Chat and Video) are sold through Apple
-              StoreKit. Apple processes payment. Sleek Tiki does not receive
-              your card number, Apple ID password, or billing address. Apple
-              may keep purchase records under Apple&apos;s privacy policy.
-              Restore Purchases asks Apple whether those items are already
-              owned on this Apple ID.
+              Optional Pro monthly and yearly subscriptions, and a one-time
+              Token top-off, are sold through Apple StoreKit. Apple processes
+              payment. Sleek Tiki does not receive your card number, Apple ID
+              password, or billing address. Apple may keep purchase records
+              under Apple&apos;s privacy policy. Restore Purchases asks Apple
+              whether Pro is already owned on this Apple ID. It does not
+              restore consumed top-off packs.
             </p>
           </section>
 
@@ -237,8 +248,9 @@ export default function MaudePrivacy() {
             <p>
               Sleek Tiki does not sell, rent, or trade MAUDE user data. We
               share data with third parties only as needed to run the request
-              you made: AI providers for chat and generation, Google if you
-              signed in and asked for Google work, and Apple for purchases.
+              you made: Replicate (via Sleek Tiki&apos;s studio service) for
+              chat and generation, Google if you signed in and asked for
+              Google work, and Apple for purchases.
               Each of those parties has its own privacy policy.
             </p>
           </section>
@@ -249,10 +261,9 @@ export default function MaudePrivacy() {
             </h2>
             <p>
               You can use MAUDE without Google Sign-In. You can decline
-              subscriptions. You can add or remove a provider key in Settings.
-              You can Sign out of Google. You can delete the app to clear
-              local MAUDE data on that device. For Apple ID or purchase
-              questions, use Apple Support.
+              subscriptions. You can Sign out of Google. You can delete the
+              app to clear local MAUDE data on that device. For Apple ID or
+              purchase questions, use Apple Support.
             </p>
           </section>
 

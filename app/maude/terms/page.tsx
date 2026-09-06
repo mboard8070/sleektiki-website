@@ -19,7 +19,7 @@ export default function MaudeTerms() {
           </p>
           <h1 className="text-4xl font-bold">Terms of Service</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            MAUDE for macOS and iOS. Last updated: September 1, 2026
+            MAUDE for macOS and iOS. Last updated: September 5, 2026
           </p>
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
@@ -57,11 +57,14 @@ export default function MaudeTerms() {
             </h2>
             <p>
               MAUDE is a studio app for macOS and iOS. It chats, generates
-              stills with a monthly cap, and can generate video as a separate
-              subscription. Optional Google Sign-In lets it work with Gmail,
-              Drive, Docs, Sheets, Slides, and Calendar when you ask. On Mac,
-              optional tools can control apps on this machine. Features can
-              change with updates. The app is for personal, non-commercial use
+              stills, and can generate video, subject to a monthly token cap.
+              Inference runs on Sleek Tiki&apos;s provider account. You do
+              not paste a Replicate key. The subscription and
+              token meter pay for that usage.
+              Optional Google Sign-In lets it work with Gmail, Drive, Docs,
+              Sheets, Slides, and Calendar when you ask. On Mac, optional
+              tools can control apps on this machine. Features can change
+              with updates. The app is for personal, non-commercial use
               unless Sleek Tiki agrees otherwise in writing.
             </p>
           </section>
@@ -85,14 +88,21 @@ export default function MaudeTerms() {
               Subscriptions
             </h2>
             <p>
-              Chat and Video are optional auto-renewing subscriptions sold
-              through Apple. Prices are shown by Apple at checkout. Payment,
-              taxes, cancellation, and refunds follow Apple&apos;s App Store
-              rules. Sleek Tiki does not process cards and does not issue
-              refunds outside Apple. Chat covers chat and stills with a
-              monthly usage cap. Video is extra and also has a cap. Neither
-              plan is unlimited. Restore Purchases restores entitlements on
-              Apple IDs that already bought them. Unused cap does not roll
+              MAUDE includes a free plan with 1,000 tokens each month for
+              chat and tools, plus one complimentary still. Additional
+              stills and all video require Pro. Pro is an optional
+              auto-renewing subscription sold through Apple as monthly or
+              yearly. Pro includes 1,000,000 tokens each month. Prices are
+              shown by Apple at checkout. Payment, taxes, cancellation, and
+              refunds follow Apple&apos;s App Store rules. Sleek Tiki does
+              not process cards and does not issue refunds outside Apple.
+              On Pro, stills and video use more tokens than chat (a still
+              uses 40,000; a 4-second video uses 200,000). Neither plan is
+              unlimited. A one-time Token top-off adds 250,000 tokens. It
+              is a consumable in-app purchase, not a subscription, and
+              unused extra tokens carry forward. Restore Purchases restores
+              Pro on Apple IDs that already bought it. It does not restore
+              consumed top-off packs. Unused monthly tokens do not roll
               over unless Apple or an in-app notice says otherwise.
             </p>
           </section>
@@ -128,8 +138,8 @@ export default function MaudeTerms() {
               Your device and keys
             </h2>
             <p>
-              You are responsible for the device, your Apple ID, Screen Time
-              settings, and any provider key you add in Settings. Keep the
+              You are responsible for the device, your Apple ID, and Screen
+              Time settings. You do not add a Replicate key. Keep the
               system and the app updated. Lost chats or files from deleting
               the app, changing devices, or a failed backup are not a refund
               on their own.
