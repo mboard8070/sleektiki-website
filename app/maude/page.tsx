@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "MAUDE — sleektiki.ai",
   description:
-    "MAUDE is a Mac and iOS studio app. Chat and stills with a monthly cap. Video is extra. Optional Google Workspace.",
+    "MAUDE is a Mac and iPhone studio. Chat, stills, and video, plus calendar, Maps, files, and optional Google Workspace. Make it happen with MAUDE.",
 };
 
 export default function MaudePage() {
@@ -19,7 +19,8 @@ export default function MaudePage() {
           </p>
           <h1 className="text-4xl font-bold">MAUDE</h1>
           <p className="mt-3 text-lg text-[var(--text-secondary)]">
-            Mac and iOS. A studio for chat, stills, and video.
+            Make it happen with MAUDE. A studio for chat, stills, video, and
+            tools — on Mac and iPhone.
           </p>
           <p className="mt-3 text-sm">
             <Link
@@ -37,10 +38,18 @@ export default function MaudePage() {
             className="w-full rounded-lg border border-[var(--surface-border)]"
           />
           <p>
-            MAUDE is a Mac and iOS studio app from Sleek Tiki. Chat and stills
-            ship with a monthly cap. Video is a separate subscription. Optional
-            Google Sign-In lets it work with Gmail, Drive, Docs, Sheets,
-            Slides, and Calendar when you ask.
+            MAUDE is a Mac and iPhone studio from Sleek Tiki. You ask. It does
+            the work — chat, stills, video, calendar, Maps, files, and optional
+            Google Sign-In for Gmail, Drive, Docs, Sheets, Slides, and Calendar.
+            You do not paste an API key. Chat, stills, and video run on Sleek
+            Tiki&apos;s studio service. iCloud keeps Mac and iPhone in sync.
+          </p>
+          <p>
+            Free includes 1,000 tokens each month and one complimentary still.
+            Video is Pro. Pro is $9.99 a month or $79.99 a year for 1,000,000
+            tokens each month. A still uses 40,000 tokens. A 4-second video
+            uses 200,000. A $4.99 token top-off adds 250,000 extra tokens.
+            Extra stills and video still need Pro.
           </p>
           <p>
             Publisher: Sleek Tiki. Bundle identifier:{" "}
