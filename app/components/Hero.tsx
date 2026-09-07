@@ -85,7 +85,7 @@ export default function Hero() {
                 href="/cyte"
                 className="text-[13px] font-semibold tracking-[0.08em] uppercase text-[var(--accent)] font-[family-name:var(--font-geist-mono)] hover:underline"
               >
-                Cyte
+                Now released
               </Link>
             </div>
           </motion.div>
