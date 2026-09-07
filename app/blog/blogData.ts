@@ -29,7 +29,7 @@ export const blogPosts: BlogPost[] = [
     tags: ["DGX Spark", "Local AI", "Agents", "Creative Tools"],
     hero: "/images/projects/maude.png",
     heroAlt: "MAUDE running as a local AI operating environment",
-    relatedProjects: [{ label: "View MAUDE", href: "/projects/maude" }],
+    relatedProjects: [{ label: "View MAUDE TUI", href: "/projects/maude" }],
     sections: [
       {
         heading: "The short version",

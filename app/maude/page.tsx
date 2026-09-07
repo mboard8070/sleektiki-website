@@ -24,7 +24,7 @@ export default function MaudePage() {
           </p>
           <p className="mt-3 text-sm">
             <Link
-              href="/projects/maude"
+              href="/projects/maude-mac"
               className="text-[var(--accent)] hover:underline"
             >
               Case study
@@ -33,8 +33,8 @@ export default function MaudePage() {
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
           <img
-            src="/images/projects/maude-mobile.png"
-            alt="MAUDE on iPhone"
+            src="/images/projects/maude-mac-chat.jpg"
+            alt="MAUDE on Mac"
             className="w-full rounded-lg border border-[var(--surface-border)]"
           />
           <p>

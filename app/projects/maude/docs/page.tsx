@@ -13,7 +13,7 @@ export default function Docs() {
         <header style={{ paddingBottom: "1.5rem", marginBottom: "2rem", borderBottom: "1px solid var(--surface-border)" }}>
           <p className="text-sm" style={{ marginBottom: "0.5rem" }}>
             <Link href="/projects/maude" className="text-[var(--accent)] hover:underline">
-              &larr; Back to MAUDE
+              &larr; Back to MAUDE TUI
             </Link>
           </p>
           <h1 className="text-4xl font-bold" style={{ marginBottom: "0.25rem" }}>

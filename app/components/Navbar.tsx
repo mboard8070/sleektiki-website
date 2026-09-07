@@ -76,7 +76,7 @@ const navLinks = [
   { href: "/enablement", label: "Enablement" },
   { href: "/3d-art", label: "3D" },
   { href: "/student-work", label: "Students" },
-  { href: "/projects/maude", label: "MAUDE" },
+  { href: "/projects/maude-mac", label: "MAUDE" },
   { href: "/blog", label: "Blog" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },

@@ -41,7 +41,7 @@ export interface ProjectDetail {
 const projects: ProjectDetail[] = [
   {
     slug: "maude",
-  title: "MAUDE",
+  title: "MAUDE TUI",
   subtitle: "Multi-Agent Unified Dispatch Engine",
   heroPosition: "left top",
   description: [
@@ -198,8 +198,7 @@ const projects: ProjectDetail[] = [
     { label: "Setup Guide", url: "/projects/maude/setup" },
     { label: "Documentation", url: "/projects/maude/docs" },
     { label: "GitHub", url: "https://github.com/mboard8070/terminal-llm" },
-    { label: "Privacy Policy", url: "/privacy" },
-    { label: "Terms of Service", url: "/terms" }
+    { label: "MAUDE Mac/iOS", url: "/projects/maude-mac" }
   ],
   changelog: [
     { version: "v0.5.0", date: "2026-01-15", notes: "Added support for Nemotron 3 VoiceChat NIM; improved voice latency; added new tools for Google Workspace and GitHub." },
@@ -382,6 +381,81 @@ const projects: ProjectDetail[] = [
     { version: "v1.1.0", date: "2025-11-20", notes: "Introduced three selectable themes (Amber CRT, Matrix Green, Classic Black); added background voice service; improved file upload reliability." },
     { version: "v1.0.0", date: "2025-09-15", notes: "Initial release with core modules: AI chat, voice calls, SSH terminal, file manager, web browser proxy, Telegram viewer, and settings." }
   ]
+  },
+  {
+    slug: "maude-mac",
+    title: "MAUDE Mac/iOS",
+    subtitle: "Studio on Mac and iPhone",
+    compactGallery: true,
+    description: [
+      "MAUDE is a studio on your Mac and iPhone. You ask. It does the work — chat, stills, video, calendar, Maps, files, and optional Google Sign-In for Gmail, Drive, Docs, Sheets, Slides, and Calendar.",
+      "You do not paste an API key. Chat, stills, and video run on Sleek Tiki's studio service. You pay Apple. Usage is a monthly token meter. Mac and iPhone stay in sync over iCloud.",
+      "Native SwiftUI. Bundle identifier ai.sleektiki.maude. macOS 14 and later, iOS 17 and later. Publisher: Sleek Tiki."
+    ],
+    tags: ["SwiftUI", "macOS", "iOS", "StoreKit", "iCloud"],
+    hero: "/images/projects/maude-mac-chat.jpg",
+    heroPosition: "center",
+    gallery: [
+      { src: "/images/projects/maude-mac-chat.jpg", alt: "MAUDE on Mac — chat", wide: true },
+      { src: "/images/projects/maude-mac-tools.jpg", alt: "MAUDE on Mac — tools", wide: true },
+      { src: "/images/projects/maude-mac-plan.jpg", alt: "MAUDE on Mac — plan", wide: true },
+      { src: "/images/projects/maude-mac-memory.jpg", alt: "MAUDE on Mac — memory", wide: true },
+      { src: "/images/projects/maude-mac-models.jpg", alt: "MAUDE on Mac — models", wide: true },
+      { src: "/images/projects/maude-ios-chat.jpg", alt: "MAUDE on iPhone — chat" },
+      { src: "/images/projects/maude-ios-tools.jpg", alt: "MAUDE on iPhone — tools" },
+      { src: "/images/projects/maude-ios-studio.jpg", alt: "MAUDE on iPhone — studio" },
+      { src: "/images/projects/maude-ios-memory.jpg", alt: "MAUDE on iPhone — memory" },
+      { src: "/images/projects/maude-ios-rules.jpg", alt: "MAUDE on iPhone — memory rules" },
+    ],
+    caseStudy: [
+      {
+        heading: "The Problem",
+        body: "Most assistants only talk. I needed a studio that could put an event on the calendar, open directions, write a doc, make a still, and — on Pro — make video, without pasting a provider key into the app."
+      },
+      {
+        heading: "Design Challenge",
+        body: "Ship one product on Mac and iPhone that feels like the same studio. Chats and schedules have to stay in sync. Inference has to stay on Sleek Tiki's server so a house Replicate token never lands on the device. StoreKit has to meter tokens without turning the UI into a billing console."
+      },
+      {
+        heading: "Key Design Decisions",
+        body: "Native SwiftUI on macOS 14 and iOS 17, one bundle. Release builds proxy chat, stills, and video through pixelus.io with an Apple app transaction. Debug can use a local house key. Memory, named teammates, and scheduled tasks live in the app and sync over iCloud. Mac-only tools (Notes, Reminders, Mail, Pages, Xcode, Terminal) stay off iPhone."
+      },
+      {
+        heading: "Outcome",
+        body: "MAUDE 1.0 is on App Store Connect for Mac and iPhone. Free is 1,000 tokens a month and one complimentary still. Video is Pro. Pro is $9.99 a month or $79.99 a year for 1,000,000 tokens a month. A still uses 40,000 tokens. A 4-second video uses 200,000."
+      }
+    ],
+    features: [
+      {
+        title: "Chat that uses tools",
+        description: "Web, files, Calendar, and Maps from a prompt. Named teammates (Designer, Engineer, Editor) can split a job. Scheduled tasks stay in sync between Mac and iPhone."
+      },
+      {
+        title: "Stills and video",
+        description: "Stills from a prompt. The free plan includes one complimentary still. Video is Pro. A confirm dialog warns of token cost before a billed video starts."
+      },
+      {
+        title: "Memory",
+        description: "Named facts you can remember, recall, and forget. Rules and setup stay on device and travel with iCloud."
+      },
+      {
+        title: "Google Sign-In",
+        description: "Optional. Gmail, Drive, Docs, Sheets, Slides, and Calendar when you connect a Google account. Sign in with Apple is enough to use the studio."
+      },
+      {
+        title: "On Mac",
+        description: "Notes, Reminders, Mail, Pages, Numbers, Keynote, Finder, Terminal, and Xcode when those apps are installed. Word, Excel, PowerPoint, and Outlook if you have them."
+      },
+      {
+        title: "Tokens and Pro",
+        description: "You pay Apple. A meter in the top right shows the month. Remove Ads is not part of this app. Token top-off is $4.99 for 250,000 extra tokens. Extra stills and video still need Pro."
+      }
+    ],
+    links: [
+      { label: "Privacy Policy", url: "/maude/privacy" },
+      { label: "Terms of Service", url: "/maude/terms" },
+      { label: "Product page", url: "/maude" }
+    ],
   },
   {
     slug: "tessera",

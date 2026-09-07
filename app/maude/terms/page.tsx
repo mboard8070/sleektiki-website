@@ -13,8 +13,8 @@ export default function MaudeTerms() {
       <div className="max-w-3xl mx-auto px-6 py-16">
         <header className="pb-6 mb-8 border-b border-[var(--surface-border)]">
           <p className="text-sm mb-2">
-            <Link href="/maude" className="text-[var(--accent)] hover:underline">
-              &larr; MAUDE
+            <Link href="/projects/maude-mac" className="text-[var(--accent)] hover:underline">
+              &larr; MAUDE Mac/iOS
             </Link>
           </p>
           <h1 className="text-4xl font-bold">Terms of Service</h1>

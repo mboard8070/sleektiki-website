@@ -110,13 +110,22 @@ const projects: Project[] = [
     image: "/images/projects/tessera.png",
   },
   {
-    title: "MAUDE",
+    title: "MAUDE TUI",
     slug: "maude",
     description:
       "Local multi-agent assistant on DGX Spark. One gateway, five clients, on-device inference.",
     tags: ["Nemotron", "Tools", "Tailscale"],
     category: "systems",
     image: "/images/projects/maude.png",
+  },
+  {
+    title: "MAUDE Mac/iOS",
+    slug: "maude-mac",
+    description:
+      "Native SwiftUI studio on Mac and iPhone. Chat, stills, video, tools. Same studio, iCloud sync.",
+    tags: ["SwiftUI", "macOS", "iOS"],
+    category: "systems",
+    image: "/images/projects/maude-mac-chat.jpg",
   },
   {
     title: "MAUDE Mobile",

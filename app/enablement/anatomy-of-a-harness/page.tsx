@@ -394,7 +394,7 @@ export default function AnatomyOfAHarnessPage() {
             <p>
               Read the{" "}
               <Link href="/projects/maude" className="text-[var(--accent)] hover:underline">
-                MAUDE case study
+                MAUDE TUI case study
               </Link>{" "}
               if you want the full stack. The lesson here is the wrap,
               not the hardware.
