@@ -27,7 +27,28 @@ const nextConfig: NextConfig = {
       {
         source: "/app-ads.txt",
         headers: [
-          { key: "Content-Type", value: "text/plain; charset=utf-8" },
+          { key: "Content-Type", value: "text/plain" },
+          { key: "Cache-Control", value: "public, max-age=300" },
+        ],
+      },
+      {
+        source: "/ads.txt",
+        headers: [
+          { key: "Content-Type", value: "text/plain" },
+          { key: "Cache-Control", value: "public, max-age=300" },
+        ],
+      },
+      {
+        source: "/projects/cyte/app-ads.txt",
+        headers: [
+          { key: "Content-Type", value: "text/plain" },
+          { key: "Cache-Control", value: "public, max-age=300" },
+        ],
+      },
+      {
+        source: "/cyte/app-ads.txt",
+        headers: [
+          { key: "Content-Type", value: "text/plain" },
           { key: "Cache-Control", value: "public, max-age=300" },
         ],
       },
@@ -45,6 +66,18 @@ const nextConfig: NextConfig = {
       {
         source: "/.well-known/apple-app-site-association",
         destination: "/.well-known/apple-app-site-association.json",
+      },
+      {
+        source: "/projects/cyte/app-ads.txt",
+        destination: "/app-ads.txt",
+      },
+      {
+        source: "/cyte/app-ads.txt",
+        destination: "/app-ads.txt",
+      },
+      {
+        source: "/ads.txt",
+        destination: "/app-ads.txt",
       },
     ];
   },
