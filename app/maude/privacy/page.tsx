@@ -19,7 +19,7 @@ export default function MaudePrivacy() {
           </p>
           <h1 className="text-4xl font-bold">Privacy Policy</h1>
           <p className="text-sm text-[var(--text-muted)] mt-1">
-            MAUDE for macOS and iOS. Last updated: September 5, 2026
+            MAUDE for macOS and iOS. Last updated: September 8, 2026
           </p>
         </header>
         <div className="space-y-6 text-[var(--text-secondary)] leading-relaxed">
@@ -118,20 +118,23 @@ export default function MaudePrivacy() {
                 Google account is connected.
               </li>
               <li>
-                Gmail (read, compose, send) to list, read, and send mail when
-                you ask.
+                Gmail readonly to list and read mail when you ask. Gmail send
+                to send mail you explicitly ask to send. MAUDE does not request
+                gmail.compose or full Gmail access.
               </li>
               <li>
-                Google Drive (read and file access) to list, search, read, and
-                upload files you ask it to handle.
+                Google Drive readonly to list, search, and read existing files
+                you point MAUDE at. Drive file access to upload or create files
+                MAUDE opens on your behalf (per-file, not full Drive write).
               </li>
               <li>
                 Google Docs, Sheets, and Slides to read and create documents,
                 spreadsheets, and presentations when you ask.
               </li>
               <li>
-                Google Calendar to list, read, create, and delete events when
-                you ask.
+                Google Calendar events to list, read, create, and delete events
+                when you ask. MAUDE does not request full calendar
+                administration (sharing or deleting entire calendars).
               </li>
             </ul>
             <p className="mt-3">
@@ -166,6 +169,52 @@ export default function MaudePrivacy() {
               account on that device. Sign out removes the tokens from the
               Keychain. You can also revoke MAUDE in your Google Account
               permissions.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--text-primary)] mb-2">
+              Data protection
+            </h2>
+            <p>
+              Security procedures are in place to protect the confidentiality of
+              your data, including Google user data that is sensitive (Gmail,
+              Drive, Docs, Sheets, Slides, and Calendar).
+            </p>
+            <ul className="list-disc list-inside mt-3 space-y-2">
+              <li>
+                We use encryption to protect your information. Google API calls
+                and studio requests use TLS (HTTPS) in transit.
+              </li>
+              <li>
+                Google OAuth access tokens and refresh tokens are stored only in
+                the device Keychain, which encrypts secrets at rest using the
+                operating system. Tokens are not stored in iCloud Keychain, not
+                written to disk as plain files, and not sent to Sleek Tiki
+                servers.
+              </li>
+              <li>
+                MAUDE does not operate a Google-data database. Gmail, Drive,
+                Docs, Sheets, Slides, and Calendar content is requested from
+                Google only for the task you asked, used on the device to
+                complete that task, and not retained on Sleek Tiki systems
+                after the request finishes.
+              </li>
+              <li>
+                Access is limited to the Google account signed in on that
+                device. Other users of the same Google account on other devices
+                do not receive MAUDE&apos;s tokens.
+              </li>
+              <li>
+                You can Sign out in the app to delete tokens from the Keychain,
+                or revoke MAUDE under your Google Account permissions. Deleting
+                the app removes local MAUDE data on that device.
+              </li>
+            </ul>
+            <p className="mt-3">
+              Sleek Tiki employees do not browse your Gmail, Drive, or Calendar
+              as a matter of operations. Support only sees what you choose to
+              send to matt@sleektiki.ai.
             </p>
             <p className="mt-3">
               Google&apos;s own rules also apply:{" "}
