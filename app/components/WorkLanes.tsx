@@ -27,7 +27,7 @@ const lanes = [
     label: "03",
     title: "Pipelines and tools",
     body: "Local agents, LoRA trainers, PBR materials, Unreal editor plugins. Built so a technical artist can inspect the Python and a non-technical user can still get a result.",
-    proof: "MAUDE · Surfaced · UE5 Streamliners · DGX Spark",
+    proof: "MAUDE · Surfaced · UE5 Streamliners · AutoRig · DGX Spark",
   },
 ];
 

@@ -101,6 +101,15 @@ const projects: Project[] = [
     image: "/images/projects/datatable-streamliner-assets.png",
   },
   {
+    title: "AutoRig AI",
+    slug: "autorig",
+    description:
+      "Unreal plugin: static or skeletal mesh in, Control Rig out. IK as checkboxes.",
+    tags: ["UE5", "Control Rig", "C++"],
+    category: "enablement",
+    image: "/images/projects/autorig.jpg",
+  },
+  {
     title: "Tessera",
     slug: "tessera",
     description:
