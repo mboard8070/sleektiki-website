@@ -23,6 +23,30 @@ export interface ArtProject {
 }
 
 export const artProjects: ArtProject[] = [
+  {
+    slug: "off-road-mustang",
+    title: "Off Road Mustang",
+    category: "hardsurface",
+    description:
+      "An off-road Mustang concept developed through an AI-assisted Blender-to-Unreal workflow. I directed refinements to the vehicle's proportions, body surfaces, interior, wheels, and automotive finishes, then resolved shading and panel-seam defects while preserving the original concept's character.\n\nThe Unreal-ready asset includes four levels of detail, a 30-bone vehicle skeleton, textures, organized materials, and a Control Rig. I explored desert environments, lighting, and camera compositions for these Unreal Engine screenshots. The concept and reference sheets at the end of the gallery are AI-generated development images.",
+    software: ["Blender", "Unreal Engine", "AI-assisted workflow"],
+    tags: ["automotive", "vehicle", "hard surface", "AI-assisted", "Blender", "Unreal Engine", "Control Rig", "visualization"],
+    cover: "/images/artstation/off-road-mustang/01.webp",
+    coverAspect: 5120 / 2960,
+    assets: [
+      { type: "image", src: "/images/artstation/off-road-mustang/01.webp", width: 5120, height: 2960, caption: "Off Road Mustang in Unreal Engine — front three-quarter view." },
+      { type: "image", src: "/images/artstation/off-road-mustang/02.webp", width: 2560, height: 1480, caption: "Unreal Engine vehicle view." },
+      { type: "image", src: "/images/artstation/off-road-mustang/03.webp", width: 5120, height: 2960, caption: "Front view in the desert environment, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/04.webp", width: 5120, height: 2960, caption: "Elevated three-quarter view, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/05.webp", width: 2560, height: 1480, caption: "Rear view, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/06.webp", width: 2560, height: 1480, caption: "Overhead rear view, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/07.webp", width: 5120, height: 2960, caption: "Vehicle and wheel detail, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/08.webp", width: 5120, height: 2960, caption: "Wide environment composition, Unreal Engine." },
+      { type: "image", src: "/images/artstation/off-road-mustang/09.webp", width: 1536, height: 1024, caption: "AI-generated initial Mustang concept sheet." },
+      { type: "image", src: "/images/artstation/off-road-mustang/10.webp", width: 1536, height: 1024, caption: "AI-generated orthographic concept views." },
+      { type: "image", src: "/images/artstation/off-road-mustang/11.webp", width: 1536, height: 1024, caption: "AI-generated wireframe-style concept sheet." },
+    ],
+  },
 {
     slug: "dearfoams-3d-product-animations",
     title: "Dearfoams 3D product Animations",

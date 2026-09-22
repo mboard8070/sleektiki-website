@@ -195,9 +195,9 @@ export default function ThreeDArt() {
           }}
         >
           <SectionHeading
-            label="Hand-Crafted Work"
+            label="3D Portfolio"
             title="3D Art / Game Development"
-            subtitle="Characters, creatures, hard-surface design, and shipped game projects. Sculpted, modeled, textured, and rendered by hand in ZBrush, Maya, Substance Painter, and Unreal Engine."
+            subtitle="Characters, creatures, hard-surface design, and shipped game projects. Workflows span sculpting, modeling, texturing, AI-assisted concept development, and real-time rendering."
           />
 
           {/* Category filter */}
