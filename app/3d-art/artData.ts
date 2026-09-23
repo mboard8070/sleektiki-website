@@ -50,7 +50,7 @@ export const artProjects: ArtProject[] = [
     cover: "/images/artstation/off-road-mustang/01.webp",
     coverAspect: 5120 / 2960,
     introAsset: "/images/artstation/off-road-mustang/terrain-02.webp",
-    leadAsset: "/videos/artstation/mustang-canyon-crawl-45s.mp4",
+    leadAsset: "/videos/artstation/mustang-canyon-crawl-45s.mp4?v=6f78c1a25aee",
     workflow: {
       title: "From concept to an editable vehicle",
       introduction:
@@ -109,7 +109,7 @@ export const artProjects: ArtProject[] = [
         "The result is a vehicle I can continue to art-direct across modeling, surfacing, and motion. The value of the workflow is in that continuity: keeping the concept recognizable while making the asset increasingly editable, coherent, and useful in a scene.",
     },
     assets: [
-      { type: "video", src: "/videos/artstation/mustang-canyon-crawl-45s.mp4", poster: "/images/artstation/off-road-mustang/canyon-crawl-poster.webp", width: 1920, height: 1080, caption: "Canyon crawl — a 45-second Unreal Engine film featuring five camera views, terrain-following suspension, and tire-driven dirt and gravel effects." },
+      { type: "video", src: "/videos/artstation/mustang-canyon-crawl-45s.mp4?v=6f78c1a25aee", poster: "/images/artstation/off-road-mustang/canyon-crawl-poster.webp", width: 1920, height: 1080, caption: "Canyon crawl — a 45-second Unreal Engine film featuring five camera views, terrain-following suspension, and tire-driven dirt and gravel effects." },
       { type: "image", src: "/images/artstation/off-road-mustang/01.webp", width: 5120, height: 2960, caption: "Off Road Mustang in Unreal Engine — front three-quarter view." },
       { type: "video", src: "/videos/artstation/mustang-rig-demo-web.mp4", poster: "/images/artstation/off-road-mustang/rig-demo-poster.webp", width: 1920, height: 1080, caption: "Custom Unreal Engine plugin rig demo: moving and steering the Mustang over rocky terrain, with adjustable wheelspin, steering response, and terrain following." },
       { type: "image", src: "/images/artstation/off-road-mustang/terrain-01.webp", width: 2575, height: 1495, caption: "Side three-quarter view on uneven desert rock, showing the raised off-road stance, exposed suspension, and rear-mounted spare tire." },
