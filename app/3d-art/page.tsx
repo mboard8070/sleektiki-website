@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import Navbar from "../components/Navbar";
@@ -73,6 +73,9 @@ function ProjectModal({
   project: ArtProject;
   onClose: () => void;
 }) {
+  const introAsset = project.assets.find((asset) => asset.src === project.introAsset);
+  const galleryAssets = project.assets.filter((asset) => asset !== introAsset);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
@@ -140,13 +143,28 @@ function ProjectModal({
 
           {project.description && (
             <div
-              className="text-[var(--text-secondary)] max-w-3xl"
+              className="text-[var(--text-secondary)]"
               style={{ lineHeight: 1.8, marginBottom: "2.5rem" }}
             >
               {project.description.split("\n\n").map((p, i) => (
-                <p key={i} style={{ marginBottom: "1.25rem" }}>
-                  {p}
-                </p>
+                <Fragment key={i}>
+                  <p className="max-w-3xl" style={{ marginBottom: "1.25rem" }}>
+                    {p}
+                  </p>
+                  {i === 0 && introAsset && (
+                    <figure style={{ marginTop: "1.5rem", marginBottom: "2rem" }}>
+                      {introAsset.caption && (
+                        <figcaption
+                          className="text-sm text-[var(--text-secondary)]"
+                          style={{ marginBottom: "0.6rem", lineHeight: 1.7 }}
+                        >
+                          {introAsset.caption}
+                        </figcaption>
+                      )}
+                      <AssetView asset={introAsset} title={project.title} />
+                    </figure>
+                  )}
+                </Fragment>
               ))}
             </div>
           )}
@@ -154,7 +172,7 @@ function ProjectModal({
           {project.workflow && <ProjectWorkflow workflow={project.workflow} />}
 
           <div className="flex flex-col" style={{ gap: "1.5rem" }}>
-            {project.assets.map((asset, i) => (
+            {galleryAssets.map((asset, i) => (
               <figure key={i}>
                 <AssetView asset={asset} title={project.title} />
                 {asset.caption && (

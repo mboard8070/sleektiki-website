@@ -30,6 +30,8 @@ export interface ArtProject {
   coverAspect: number;
   /** CSS object-position for the 4:3 card crop. Defaults to center. */
   coverPosition?: string;
+  /** Asset src to feature after the opening paragraph, with its caption above. */
+  introAsset?: string;
   workflow?: ArtWorkflow;
   assets: ArtAsset[];
 }
@@ -45,6 +47,7 @@ export const artProjects: ArtProject[] = [
     tags: ["automotive", "vehicle", "hard surface", "AI-assisted", "Blender", "Unreal Engine", "Control Rig", "custom plugin", "suspension", "visualization"],
     cover: "/images/artstation/off-road-mustang/01.webp",
     coverAspect: 5120 / 2960,
+    introAsset: "/images/artstation/off-road-mustang/terrain-02.webp",
     workflow: {
       title: "From concept to an editable vehicle",
       introduction:
