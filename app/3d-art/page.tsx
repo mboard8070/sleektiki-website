@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import SectionHeading from "../components/SectionHeading";
 import ScrollReveal from "../components/ScrollReveal";
 import { artProjects, ArtProject, ArtAsset } from "./artData";
+import ProjectWorkflow from "./ProjectWorkflow";
 
 const categories = [
   { key: "All", label: "All" },
@@ -149,6 +150,8 @@ function ProjectModal({
               ))}
             </div>
           )}
+
+          {project.workflow && <ProjectWorkflow workflow={project.workflow} />}
 
           <div className="flex flex-col" style={{ gap: "1.5rem" }}>
             {project.assets.map((asset, i) => (

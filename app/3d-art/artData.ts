@@ -8,6 +8,17 @@ export interface ArtAsset {
   caption?: string;
 }
 
+export interface ArtWorkflow {
+  title: string;
+  introduction: string;
+  stages: {
+    title: string;
+    summary: string;
+    paragraphs: string[];
+  }[];
+  takeaway: string;
+}
+
 export interface ArtProject {
   slug: string;
   title: string;
@@ -19,6 +30,7 @@ export interface ArtProject {
   coverAspect: number;
   /** CSS object-position for the 4:3 card crop. Defaults to center. */
   coverPosition?: string;
+  workflow?: ArtWorkflow;
   assets: ArtAsset[];
 }
 
@@ -33,6 +45,63 @@ export const artProjects: ArtProject[] = [
     tags: ["automotive", "vehicle", "hard surface", "AI-assisted", "Blender", "Unreal Engine", "Control Rig", "custom plugin", "suspension", "visualization"],
     cover: "/images/artstation/off-road-mustang/01.webp",
     coverAspect: 5120 / 2960,
+    workflow: {
+      title: "From concept to an editable vehicle",
+      introduction:
+        "The central challenge was carrying the Mustang's character from an AI concept into a 3D asset that could withstand close inspection, design changes, and animation. I used AI-assisted construction in Blender while directing the proportions, part relationships, surface quality, and final appearance. These selected process notes focus on the decisions that shaped the result.",
+      stages: [
+        {
+          title: "Establish the visual target",
+          summary: "Keep the silhouette, stance, and design language consistent as the work moves into 3D.",
+          paragraphs: [
+            "The concept established the lifted stance, muscular bodywork, oversized tires, exposed hardware, and green-and-black finish. Generated reference views and an initial 3D reconstruction helped explore how those features related in space. I used the original concept to judge whether later interpretations were still the same vehicle.",
+            "The reference images also required judgment: a convincing image can contain inconsistent forms or ambiguous construction. The wireframe-style sheet in the gallery is an AI-generated development image, not a capture of the finished model's topology.",
+          ],
+        },
+        {
+          title: "Rebuild for control in Blender",
+          summary: "Turn the initial reference into surfaces and parts that can be revised deliberately.",
+          paragraphs: [
+            "The generated mesh provided a starting point for volume and proportion. The Blender work developed editable body surfaces, separate panels, openings, returns, and thickness. Those decisions matter when a hood needs a credible edge, a door needs a continuous gap, or a quarter panel needs to hold its curvature around an intake.",
+            "AI assisted with the construction work. I directed what to preserve, what to rebuild, and how each revision should fit the larger design. Breaking the vehicle into manageable assemblies made it possible to refine one area while retaining the accepted work around it.",
+          ],
+        },
+        {
+          title: "Resolve the vehicle as an assembly",
+          summary: "Give the body, cockpit, wheels, and mechanical details coherent relationships.",
+          paragraphs: [
+            "The cockpit developed into modeled seats, dashboard, controls, trim, and floor surfaces. Wheels and tires received their own shape and finish revisions, while brakes, suspension, and exterior hardware were treated as distinct components. Hidden details required design interpretation where the concept offered no clear answer.",
+            "Fit and movement influenced the asset structure. A brake caliper needs to follow steering without spinning with the tire; a wheel that looks right in a still also needs room in an articulated pose. These relationships informed the transition from a visual model to a rigged vehicle.",
+          ],
+        },
+        {
+          title: "Use review to guide the next revision",
+          summary: "Check both the geometry and how the vehicle reads under changing light.",
+          paragraphs: [
+            "Geometry checks and visual review answered different questions. A part could pass a structural check and still have an awkward silhouette, a harsh reflection, or an unconvincing seam. I used both kinds of feedback to decide which changes actually improved the model.",
+            "Two examples were the rear-quarter intake area and the door edges. The quarter panels needed fuller haunches while retaining a continuous curved surface around the vents. Dark artifacts at the doors required a shading correction that preserved the panel shape. Reviewing the vehicle in outdoor lighting exposed issues that were less obvious in the studio.",
+          ],
+        },
+        {
+          title: "Build a coherent material finish",
+          summary: "Make each surface read at the scale and distance of the final presentation.",
+          paragraphs: [
+            "The finish brings together metallic green paint, black stripes, powder-coated wheels, molded rubber, glass, and varied cockpit materials. I refined their response as a group so that painted metal, fabric, plastic, and tire surfaces remained distinct in close views.",
+            "Material detail had to stay consistent across differently sized parts. Surface mapping and texture scale were part of the asset work, alongside the modeling and shading revisions. Unreal lighting then provided another context for judging the overall result.",
+          ],
+        },
+        {
+          title: "Carry the asset into Unreal",
+          summary: "Preserve editability while preparing the vehicle for rigging and presentation.",
+          paragraphs: [
+            "I retained the editable Blender assembly alongside the rigged export version. The handoff included multiple levels of detail, a shared vehicle skeleton, textures, and organized material assignments. Export checks helped catch changes in scale, shading, and part assignments before the asset moved downstream.",
+            "The Unreal stage extended that work into the terrain-following rig and desert presentation shown here. Steering, wheel rotation, and suspension articulation give the asset another level of scrutiny beyond a static render. The exported detail levels are part of the delivery; the gallery and demo show the presentation and rig behavior.",
+          ],
+        },
+      ],
+      takeaway:
+        "The result is a vehicle I can continue to art-direct across modeling, surfacing, and motion. The value of the workflow is in that continuity: keeping the concept recognizable while making the asset increasingly editable, coherent, and useful in a scene.",
+    },
     assets: [
       { type: "image", src: "/images/artstation/off-road-mustang/01.webp", width: 5120, height: 2960, caption: "Off Road Mustang in Unreal Engine — front three-quarter view." },
       { type: "video", src: "/videos/artstation/mustang-rig-demo-web.mp4", poster: "/images/artstation/off-road-mustang/rig-demo-poster.webp", width: 1920, height: 1080, caption: "Custom Unreal Engine plugin rig demo: moving and steering the Mustang over rocky terrain, with adjustable wheelspin, steering response, and terrain following." },
