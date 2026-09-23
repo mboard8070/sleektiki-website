@@ -44,6 +44,7 @@ function AssetView({ asset, title }: { asset: ArtAsset; title: string }) {
         src={asset.src}
         poster={asset.poster}
         controls
+        preload="metadata"
         muted
         loop
         playsInline
@@ -74,7 +75,8 @@ function ProjectModal({
   onClose: () => void;
 }) {
   const introAsset = project.assets.find((asset) => asset.src === project.introAsset);
-  const galleryAssets = project.assets.filter((asset) => asset !== introAsset);
+  const leadAsset = project.assets.find((asset) => asset.src === project.leadAsset);
+  const galleryAssets = project.assets.filter((asset) => asset !== introAsset && asset !== leadAsset);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -139,6 +141,20 @@ function ProjectModal({
                 </span>
               ))}
             </div>
+          )}
+
+          {leadAsset && (
+            <figure style={{ marginBottom: "2.5rem" }}>
+              <AssetView asset={leadAsset} title={project.title} />
+              {leadAsset.caption && (
+                <figcaption
+                  className="text-sm text-[var(--text-muted)]"
+                  style={{ marginTop: "0.6rem", lineHeight: 1.7 }}
+                >
+                  {leadAsset.caption}
+                </figcaption>
+              )}
+            </figure>
           )}
 
           {project.description && (
