@@ -40,6 +40,27 @@ export interface ArtProject {
 
 export const artProjects: ArtProject[] = [
   {
+    slug: "mustang-garage",
+    title: "Mustang Garage",
+    category: "hardsurface",
+    description:
+      "A neon-lit automotive scene in Unreal Engine, pairing the off-road Mustang with a fully dressed workshop. Black metallic paint, opalescent clearcoat, polished chrome wheels, and exposed hardware sit against charcoal brick, stocked tool chests, pegboards, and a blue Ford sign.\n\nThe lighting balances warm workshop practicals with cool neon and controlled reflections. Additional brickwork, tool storage, pegboards, and shaped lights behind the camera give the chrome wheels a more detailed environment to reflect.\n\nThe 45-second Sequencer film uses seven moving camera shots with animated focus to explore the vehicle's stance, wheels, grille, headlights, hood scoop, paint, and side trim before returning to a wide hero view.",
+    software: ["Unreal Engine", "Blender", "AI-assisted workflow"],
+    tags: ["automotive", "Mustang", "cinematic", "environment", "lighting", "materials", "chrome", "Sequencer", "Unreal Engine"],
+    cover: "/images/artstation/mustang-garage/01-hero.webp",
+    coverAspect: 16 / 9,
+    leadAsset: "/videos/artstation/mustang-garage-45s.mp4",
+    assets: [
+      { type: "video", src: "/videos/artstation/mustang-garage-45s.mp4", poster: "/images/artstation/mustang-garage/01-hero.webp", width: 1920, height: 1080, caption: "Mustang Garage — a 45-second Unreal Engine cinematic with seven moving camera shots exploring the car and its details." },
+      { type: "image", src: "/images/artstation/mustang-garage/01-hero.webp", width: 1920, height: 1080, caption: "The black-and-chrome Mustang in its neon workshop, with warm practical lighting and the blue Ford sign." },
+      { type: "image", src: "/images/artstation/mustang-garage/02-front-wheel.webp", width: 1920, height: 1080, caption: "Polished chrome front wheel, red brake caliper, and off-road tire, with structured reflections from the workshop and off-camera lighting." },
+      { type: "image", src: "/images/artstation/mustang-garage/03-grille.webp", width: 1920, height: 1080, caption: "A close view of the grille, headlights, auxiliary lamps, chrome bumper, and front skid plate." },
+      { type: "image", src: "/images/artstation/mustang-garage/04-hood-paint.webp", width: 1920, height: 1080, caption: "Blue neon reflections across the hood scoop, black metallic paint, and opalescent clearcoat." },
+      { type: "image", src: "/images/artstation/mustang-garage/05-rear-wheel.webp", width: 1920, height: 1080, caption: "Rear wheel and tire detail beneath the raised fender, showing the chrome finish, brakes, and suspension." },
+      { type: "image", src: "/images/artstation/mustang-garage/neon-garage.webp", width: 2560, height: 1440, caption: "The original neon garage hero image — black metallic paint with opalescent clearcoat, polished chrome wheels, and a dressed workshop lit with MegaLights." },
+    ],
+  },
+  {
     slug: "off-road-mustang",
     title: "Off Road Mustang",
     category: "hardsurface",
@@ -110,7 +131,6 @@ export const artProjects: ArtProject[] = [
     },
     assets: [
       { type: "video", src: "/videos/artstation/mustang-canyon-crawl-45s.mp4?v=6f78c1a25aee", poster: "/images/artstation/off-road-mustang/canyon-crawl-poster.webp", width: 1920, height: 1080, caption: "Canyon crawl — a 45-second Unreal Engine film featuring five camera views, terrain-following suspension, and tire-driven dirt and gravel effects." },
-      { type: "image", src: "/images/artstation/off-road-mustang/neon-garage.webp", width: 2560, height: 1440, caption: "Neon garage in Unreal Engine — black metallic paint with opalescent clearcoat, polished chrome wheels, and a fully dressed workshop lit with MegaLights." },
       { type: "image", src: "/images/artstation/off-road-mustang/01.webp", width: 5120, height: 2960, caption: "Off Road Mustang in Unreal Engine — front three-quarter view." },
       { type: "video", src: "/videos/artstation/mustang-rig-demo-web.mp4", poster: "/images/artstation/off-road-mustang/rig-demo-poster.webp", width: 1920, height: 1080, caption: "Custom Unreal Engine plugin rig demo: moving and steering the Mustang over rocky terrain, with adjustable wheelspin, steering response, and terrain following." },
       { type: "image", src: "/images/artstation/off-road-mustang/terrain-01.webp", width: 2575, height: 1495, caption: "Side three-quarter view on uneven desert rock, showing the raised off-road stance, exposed suspension, and rear-mounted spare tire." },
